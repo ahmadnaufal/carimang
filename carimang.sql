@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2016 at 05:04 AM
+-- Generation Time: Feb 01, 2016 at 07:50 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -31,7 +31,8 @@ CREATE TABLE `acara_kegiatan` (
   `id_ruangan` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `waktu_mulai` time NOT NULL,
-  `waktu_selesai` time NOT NULL
+  `waktu_selesai` time NOT NULL,
+  `penanggung_jawab` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,7 +69,8 @@ CREATE TABLE `kuliah` (
 CREATE TABLE `perbaikan` (
   `id` int(11) NOT NULL,
   `tanggal_mulai` date NOT NULL,
-  `tanggal_selesai` date NOT NULL
+  `tanggal_selesai` date NOT NULL,
+  `deskripsi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -82,7 +84,8 @@ CREATE TABLE `perkuliahan` (
   `id_ruangan` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `waktu_mulai` time NOT NULL,
-  `waktu_selesai` time NOT NULL
+  `waktu_selesai` time NOT NULL,
+  `penanggung_jawab` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -95,7 +98,7 @@ CREATE TABLE `ruangan` (
   `id` int(11) NOT NULL,
   `nama_ruangan` varchar(256) NOT NULL,
   `kapasitas` int(11) NOT NULL,
-  `tipe_ruangan` enum('kuliah','laboratorium','','') NOT NULL DEFAULT 'kuliah'
+  `tipe_ruangan` enum('kuliah','laboratorium') NOT NULL DEFAULT 'kuliah'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
