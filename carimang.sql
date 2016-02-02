@@ -194,6 +194,12 @@ ALTER TABLE `acara_kegiatan`
   ADD CONSTRAINT `acara_kegiatan_ibfk_2` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `kuliah`
+--
+ALTER TABLE `kuliah`
+  ADD UNIQUE (`kode_kuliah`);
+
+--
 -- Constraints for table `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
