@@ -57,6 +57,7 @@
     <Compile Include="MySqlConnector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Kuliah.cs" />
     <Compile Include="Ruangan.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
