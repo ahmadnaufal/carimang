@@ -47,12 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acara_Kegiatan.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kegiatan.cs" />
     <Compile Include="MySqlConnector.Config.cs" />
     <Compile Include="MySqlConnector.cs" />
     <Compile Include="Program.cs" />

@@ -10,25 +10,16 @@ namespace CariMang {
     class Kegiatan {
 
         private static string TBL_KEGIATAN = "kegiatan";
-        private static string TBL_ACARA_KEGIATAN = "acara_kegiatan";
 
         private static string COL_ID_KEGIATAN = "id";
         private static string COL_NAMA_KEGIATAN = "nama_kegiatan";
         private static string COL_PENYELENGGARA_KEGIATAN = "nama_penyelenggara";
 
-        private static string COL_TANGGAL_KEGIATAN = "tanggal_kegiatan";
-        private static string COL_WAKTUMULAI_KEGIATAN = "waktu_mulai";
-        private static string COL_WAKTUSELESAI_KEGIATAN = "waktu_selesai";
-
         private static string PRM_ID_KEGIATAN = "@id";
         private static string PRM_NAMA_KEGIATAN = "@nama";
         private static string PRM_PENYELENGGARA_KEGIATAN = "@penyelenggara";
 
-        private static string PRM_TANGGAL_KEGIATAN = "@tanggal";
-        private static string PRM_WAKTUMULAI_KEGIATAN = "@mulai";
-        private static string PRM_WAKTUSELESAI_KEGIATAN = "@selesai";
-
-        private string id = 0;
+        private int id = 0;
         private string namakegiatan = "";
         private string namapenyelenggara = "";
 
