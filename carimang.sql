@@ -95,7 +95,7 @@ CREATE TABLE `ruangan` (
   `id` int(11) NOT NULL,
   `nama_ruangan` varchar(256) NOT NULL,
   `kapasitas` int(11) NOT NULL,
-  `tipe_ruangan` enum('kuliah','laboratorium','','') NOT NULL DEFAULT 'kuliah'
+  `tipe_ruangan` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -199,6 +199,12 @@ ALTER TABLE `acara_kegiatan`
 ALTER TABLE `perkuliahan`
   ADD CONSTRAINT `perkuliahan_ibfk_1` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `perkuliahan_ibfk_2` FOREIGN KEY (`id_kuliah`) REFERENCES `kuliah` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `ruangan`
+--
+ALTER TABLE `ruangan`
+  ADD UNIQUE (`nama_ruangan`);
 
 --
 -- Constraints for table `ruangan_perbaikan`

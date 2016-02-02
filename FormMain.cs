@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CariMang
-{
-    public partial class FormMain : Form
-    {
-        public FormMain()
-        {
+using MySql.Data.MySqlClient;
+
+namespace CariMang {
+
+    public partial class FormMain : Form {
+
+        public FormMain() {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            List<Ruangan> all = Ruangan.GetAll();
+            foreach (Ruangan r in all) {
+                MessageBox.Show(r.Nama);
+            }
         }
     }
 }
