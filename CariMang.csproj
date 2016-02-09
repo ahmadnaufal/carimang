@@ -54,6 +54,20 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.Page.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Tab.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahRuangan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahRuangan.Designer.cs">
+      <DependentUpon>FormTambahRuangan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kegiatan.cs" />
     <Compile Include="MySqlConnector.Config.cs" />
     <Compile Include="MySqlConnector.cs" />
@@ -63,6 +77,9 @@
     <Compile Include="Ruangan.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahRuangan.resx">
+      <DependentUpon>FormTambahRuangan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,7 +107,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

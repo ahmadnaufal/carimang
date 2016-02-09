@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace CariMang {
 
-    class Ruangan {
+    public class Ruangan {
 
         public enum TipeRuangan {
             RuangKelas,

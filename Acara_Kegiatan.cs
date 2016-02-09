@@ -131,7 +131,7 @@ namespace CariMang {
                     COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatan_id);
+                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatanid);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
