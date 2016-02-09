@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2016 at 07:17 AM
+-- Generation Time: Feb 09, 2016 at 12:53 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -31,8 +31,8 @@ CREATE TABLE `kegiatan` (
   `nama_ruangan` varchar(256) NOT NULL,
   `nama_kegiatan` varchar(256) NOT NULL,
   `tanggal` date NOT NULL,
-  `waktu_mulai` tinyint(2) NOT NULL DEFAULT '7',
-  `waktu_selesai` time NOT NULL
+  `waktu_mulai` int(2) NOT NULL DEFAULT '7',
+  `waktu_selesai` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -81,9 +81,9 @@ CREATE TABLE `perbaikan` (
 CREATE TABLE `perkuliahan` (
   `kode_kuliah` varchar(64) NOT NULL,
   `nama_ruangan` varchar(256) NOT NULL,
-  `hari` tinyint(1) NOT NULL DEFAULT '0',
-  `waktu_mulai` tinyint(2) NOT NULL DEFAULT '7',
-  `waktu_selesai` tinyint(2) NOT NULL DEFAULT '7',
+  `hari` int(1) NOT NULL DEFAULT '0',
+  `waktu_mulai` int(2) NOT NULL DEFAULT '7',
+  `waktu_selesai` int(2) NOT NULL DEFAULT '7',
   `penanggung_jawab` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -99,6 +99,13 @@ CREATE TABLE `ruangan` (
   `kapasitas` int(11) NOT NULL,
   `tipe_ruangan` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ruangan`
+--
+
+INSERT INTO `ruangan` (`id`, `nama_ruangan`, `kapasitas`, `tipe_ruangan`) VALUES
+(2, 'sdfa', 34, 0);
 
 --
 -- Indexes for dumped tables
@@ -162,7 +169,7 @@ ALTER TABLE `peminjam`
 -- AUTO_INCREMENT for table `ruangan`
 --
 ALTER TABLE `ruangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
