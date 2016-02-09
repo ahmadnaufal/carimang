@@ -9,26 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CariMang {
-    public partial class FormMain : Form {       
+    public partial class FormMain : Form {
         public FormMain() {
             InitializeComponent();
             InitializeLayout();
-            InitializeData();            
+            InitializeData();
         }
 
-        private const int EM_SETCUEBANNER = 0x1501;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
-        private static extern Int32 SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)]string lParam);
-
         private void InitializeLayout() {
-            //SendMessage(textBoxNama.Handle, EM_SETCUEBANNER, 0, "Nama Ruangan");
             tabData.Tag = true;
-            pageDataJadwal.Tag = true;            
+            pageDataJadwal.Tag = true;
         }
 
         private void InitializeData() {
             this.GetAllRuangan();
+            this.GetAllPerkuliahan();
         }
 
         private void GetAllRuangan() {
@@ -39,7 +34,7 @@ namespace CariMang {
 
         private void AddRuangan(Ruangan ruangan) {
             var item = new ListViewItem();
-            item.Text = ruangan.Nama;                     
+            item.Text = ruangan.Nama;
             item.SubItems.Add(ruangan.Tipe.ToString());
             item.SubItems.Add(ruangan.Kapasitas.ToString());
             item.Tag = ruangan;
@@ -58,7 +53,7 @@ namespace CariMang {
                 item.SubItems[1].Text = ruangan.Tipe.ToString();
 
                 ruangan.Kapasitas = form.Kapasitas;
-                item.SubItems[2].Text = ruangan.Kapasitas.ToString();                
+                item.SubItems[2].Text = ruangan.Kapasitas.ToString();
             }
         }
 
@@ -67,16 +62,71 @@ namespace CariMang {
             if (MessageBox.Show("Mau dihapus " + ruangan.Nama + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
-            if (Ruangan.Delete(ruangan.Nama)) {                
-                listViewRuangan.Items.Remove(item);                
+            if (Ruangan.Delete(ruangan)) {
+                listViewRuangan.Items.Remove(item);
             }
             else {
                 MessageBox.Show("Gagal delete ruangan.");
-            }            
-        }                                            
+            }
+        }
 
+        private void GetAllPerkuliahan() {
+            listViewKuliah.Items.Clear();
+            foreach (var perkuliahan in Perkuliahan.GetAll())
+                this.AddPerkuliahan(perkuliahan);
+        }
+
+        private void AddPerkuliahan(Perkuliahan perkuliahan) {
+            var item = new ListViewItem();
+            item.Text = perkuliahan.Kuliah.Kode;
+            item.SubItems.Add(perkuliahan.Kuliah.Nama);
+            item.SubItems.Add(perkuliahan.Ruangan.Nama);
+            item.SubItems.Add(((Perkuliahan.DaftarHari)perkuliahan.HariPerkuliahan).ToString());
+            item.SubItems.Add(String.Format("{0:00}:00 - {1:00}:00", perkuliahan.WaktuMulai, perkuliahan.WaktuSelesai));
+            item.SubItems.Add(perkuliahan.PenanggungJawab);
+            item.Tag = perkuliahan;
+            listViewKuliah.Items.Add(item);
+        }
+
+        private void EditPerkuliahan(ListViewItem item) {
+            Perkuliahan perkuliahan = (Perkuliahan)item.Tag;
+            using (FormPerkuliahan form = new FormPerkuliahan(perkuliahan)) {
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
+                perkuliahan.Kuliah = form.Kuliah;
+                item.SubItems[0].Text = form.Kuliah.Nama;
+
+                perkuliahan.Ruangan = form.Ruangan;
+                item.SubItems[1].Text = form.Ruangan.Nama;
+
+                perkuliahan.HariPerkuliahan = form.HariKuliah;
+                item.SubItems[2].Text = ((Perkuliahan.DaftarHari)form.HariKuliah).ToString();
+
+                perkuliahan.WaktuMulai = form.WaktuMulai;                
+                perkuliahan.WaktuSelesai = form.WaktuSelesai;
+                item.SubItems[3].Text = String.Format("{0:00}:00 - {1:00}:00", form.WaktuMulai, form.WaktuSelesai);
+
+                perkuliahan.PenanggungJawab = form.PenanggungJawab;
+                item.SubItems[4].Text = form.PenanggungJawab;
+            }
+        }
+
+        private void DeletePerkuliahan(ListViewItem item) {
+            Perkuliahan perkuliahan = (Perkuliahan)item.Tag;
+
+            if (MessageBox.Show("Mau dihapus?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    != DialogResult.Yes)
+                return;
+            if (Perkuliahan.Delete(perkuliahan)) {
+                listViewKuliah.Items.Remove(item);
+            }
+            else {
+                MessageBox.Show("Gagal delete perkuliahan.");
+            }
+        }
+        
         private void buttonRuanganTambah_Click(object sender, EventArgs e) {
-            using (FormRuangan form = new FormRuangan()) {                
+            using (FormRuangan form = new FormRuangan()) {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
                 var ruangan = Ruangan.Add(form.Tipe, form.Nama, form.Kapasitas);
@@ -90,16 +140,53 @@ namespace CariMang {
 
         private void buttonRuanganUbah_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in listViewRuangan.Items) {
-                if (item.Selected)
+                if (item.Selected) {
                     this.EditRuangan(item);
+                    return;
+                }                    
             }
         }
 
         private void buttonRuanganHapus_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in listViewRuangan.Items) {
-                if (item.Selected)
-                    this.DeleteRuangan(item);                
+                if (item.Selected) {
+                    this.DeleteRuangan(item);
+                    return;
+                }                    
             }
-        }        
+        }
+
+        private void buttonKuliahTambah_Click(object sender, EventArgs e) {
+            using (FormPerkuliahan form = new FormPerkuliahan()) {
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
+                var perkuliahan = Perkuliahan.Add(
+                    form.Kuliah, form.Ruangan, form.HariKuliah,
+                    form.WaktuMulai, form.WaktuSelesai, form.PenanggungJawab);
+                if (perkuliahan == null) {
+                    MessageBox.Show("Gagal nambah perkuliahan.");
+                    return;
+                }
+                this.AddPerkuliahan(perkuliahan);
+            }
+        }
+
+        private void buttonKuliahUbah_Click(object sender, EventArgs e) {
+            foreach (ListViewItem item in listViewKuliah.Items) {
+                if (item.Selected) {
+                    this.EditPerkuliahan(item);
+                    return;
+                }                    
+            }
+        }
+
+        private void buttonKuliahHapus_Click(object sender, EventArgs e) {
+            foreach (ListViewItem item in listViewKuliah.Items) {
+                if (item.Selected) {
+                    this.DeletePerkuliahan(item);
+                    return;
+                }
+            }
+        }
     }
 }

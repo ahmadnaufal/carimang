@@ -115,11 +115,11 @@ namespace CariMang {
             }
             catch (MySqlException) {
             }
-            
+
             return ruangan;
         }
 
-        public static bool Delete(string nama) {
+        public static bool Delete(Ruangan ruangan) {
             bool result = false;
 
             try {
@@ -130,7 +130,7 @@ namespace CariMang {
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, nama);
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, ruangan.Nama);
 
                     connection.Open();
                     result = command.ExecuteNonQuery() > 0;
@@ -169,7 +169,7 @@ namespace CariMang {
 
         public string Nama {
             get { return this.nama; }
-            set {                
+            set {
                 try {
                     using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                         string query = String.Format(
@@ -194,7 +194,7 @@ namespace CariMang {
 
         public int Kapasitas {
             get { return this.kapasitas; }
-            set {        
+            set {
                 try {
                     using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                         string query = String.Format(
@@ -211,7 +211,7 @@ namespace CariMang {
                         if (command.ExecuteNonQuery() > 0)
                             this.kapasitas = value;
                     }
-                }        
+                }
                 catch (MySqlException) {
                 }
             }

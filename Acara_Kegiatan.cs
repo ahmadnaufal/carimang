@@ -45,7 +45,8 @@ namespace CariMang {
 
                 MySqlCommand command = new MySqlCommand(query, connection);
 
-                connection.Open();
+                if (connection.State != System.Data.ConnectionState.Open)
+                    connection.Open();
                 using (MySqlDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
                         listAcaraKegiatan.Add(new Acara_Kegiatan(

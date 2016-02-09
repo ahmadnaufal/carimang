@@ -23,26 +23,20 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
-            "IF3330",
-            "Proyek Perangkat Lunak",
-            "Adi Mulyanto",
-            "7602",
-            "09.00-10.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
             System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
@@ -68,25 +62,16 @@
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
-            this.panelDataRuangan = new System.Windows.Forms.Panel();
-            this.buttonRuanganUbah = new System.Windows.Forms.Button();
-            this.buttonRuanganHapus = new System.Windows.Forms.Button();
-            this.listViewRuangan = new System.Windows.Forms.ListView();
-            this.columnRuanganTipe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRuanganNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRuanganKapasitas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonRuanganCari = new System.Windows.Forms.Button();
-            this.buttonRuanganBooking = new System.Windows.Forms.Button();
-            this.buttonRuanganTambah = new System.Windows.Forms.Button();
             this.panelDataKuliah = new System.Windows.Forms.Panel();
+            this.buttonKuliahHapus = new System.Windows.Forms.Button();
+            this.buttonKuliahUbah = new System.Windows.Forms.Button();
             this.listViewKuliah = new System.Windows.Forms.ListView();
             this.columnKuliahKode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnKuliahTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahRuang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnKuliahHari = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahWaktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonKuliahCari = new System.Windows.Forms.Button();
-            this.buttonKuliahBooking = new System.Windows.Forms.Button();
+            this.columnKuliahTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonKuliahTambah = new System.Windows.Forms.Button();
             this.panelDataRusak = new System.Windows.Forms.Panel();
             this.listViewRusak = new System.Windows.Forms.ListView();
@@ -103,6 +88,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panelDataRuangan = new System.Windows.Forms.Panel();
+            this.buttonRuanganUbah = new System.Windows.Forms.Button();
+            this.buttonRuanganHapus = new System.Windows.Forms.Button();
+            this.listViewRuangan = new System.Windows.Forms.ListView();
+            this.columnRuanganNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRuanganTipe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRuanganKapasitas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRuanganCari = new System.Windows.Forms.Button();
+            this.buttonRuanganBooking = new System.Windows.Forms.Button();
+            this.buttonRuanganTambah = new System.Windows.Forms.Button();
             this.panelBooking = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listView4 = new System.Windows.Forms.ListView();
@@ -154,10 +149,10 @@
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
             this.panelData.SuspendLayout();
-            this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
             this.panelDataJadwal.SuspendLayout();
+            this.panelDataRuangan.SuspendLayout();
             this.panelBooking.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBookingRuangan.SuspendLayout();
@@ -506,10 +501,10 @@
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelData.Controls.Add(this.panelDataRuangan);
             this.panelData.Controls.Add(this.panelDataKuliah);
             this.panelData.Controls.Add(this.panelDataRusak);
             this.panelData.Controls.Add(this.panelDataJadwal);
+            this.panelData.Controls.Add(this.panelDataRuangan);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelData.Location = new System.Drawing.Point(0, 0);
             this.panelData.Margin = new System.Windows.Forms.Padding(0);
@@ -517,118 +512,12 @@
             this.panelData.Size = new System.Drawing.Size(529, 520);
             this.panelData.TabIndex = 4;
             // 
-            // panelDataRuangan
-            // 
-            this.panelDataRuangan.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelDataRuangan.Controls.Add(this.buttonRuanganUbah);
-            this.panelDataRuangan.Controls.Add(this.buttonRuanganHapus);
-            this.panelDataRuangan.Controls.Add(this.listViewRuangan);
-            this.panelDataRuangan.Controls.Add(this.buttonRuanganCari);
-            this.panelDataRuangan.Controls.Add(this.buttonRuanganBooking);
-            this.panelDataRuangan.Controls.Add(this.buttonRuanganTambah);
-            this.panelDataRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDataRuangan.Location = new System.Drawing.Point(0, 0);
-            this.panelDataRuangan.Margin = new System.Windows.Forms.Padding(0);
-            this.panelDataRuangan.Name = "panelDataRuangan";
-            this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
-            this.panelDataRuangan.TabIndex = 0;
-            // 
-            // buttonRuanganUbah
-            // 
-            this.buttonRuanganUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganUbah.Location = new System.Drawing.Point(383, 12);
-            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
-            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganUbah.TabIndex = 6;
-            this.buttonRuanganUbah.Text = "Ubah";
-            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
-            // 
-            // buttonRuanganHapus
-            // 
-            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
-            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
-            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganHapus.TabIndex = 5;
-            this.buttonRuanganHapus.Text = "Hapus";
-            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
-            // 
-            // listViewRuangan
-            // 
-            this.listViewRuangan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRuangan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnRuanganNama,
-            this.columnRuanganTipe,
-            this.columnRuanganKapasitas});
-            this.listViewRuangan.FullRowSelect = true;
-            this.listViewRuangan.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewRuangan.HideSelection = false;
-            this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
-            this.listViewRuangan.MultiSelect = false;
-            this.listViewRuangan.Name = "listViewRuangan";
-            this.listViewRuangan.Size = new System.Drawing.Size(505, 426);
-            this.listViewRuangan.TabIndex = 4;
-            this.listViewRuangan.UseCompatibleStateImageBehavior = false;
-            this.listViewRuangan.View = System.Windows.Forms.View.Details;
-            // 
-            // columnRuanganTipe
-            // 
-            this.columnRuanganTipe.Text = "Tipe";
-            // 
-            // columnRuanganNama
-            // 
-            this.columnRuanganNama.Text = "Nama";
-            this.columnRuanganNama.Width = 95;
-            // 
-            // columnRuanganKapasitas
-            // 
-            this.columnRuanganKapasitas.Text = "Kapasitas";
-            this.columnRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnRuanganKapasitas.Width = 101;
-            // 
-            // buttonRuanganCari
-            // 
-            this.buttonRuanganCari.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganCari.Location = new System.Drawing.Point(152, 12);
-            this.buttonRuanganCari.Name = "buttonRuanganCari";
-            this.buttonRuanganCari.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganCari.TabIndex = 2;
-            this.buttonRuanganCari.Text = "Cari";
-            // 
-            // buttonRuanganBooking
-            // 
-            this.buttonRuanganBooking.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganBooking.Location = new System.Drawing.Point(82, 12);
-            this.buttonRuanganBooking.Name = "buttonRuanganBooking";
-            this.buttonRuanganBooking.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganBooking.TabIndex = 1;
-            this.buttonRuanganBooking.Text = "Booking";
-            // 
-            // buttonRuanganTambah
-            // 
-            this.buttonRuanganTambah.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganTambah.Location = new System.Drawing.Point(12, 12);
-            this.buttonRuanganTambah.Name = "buttonRuanganTambah";
-            this.buttonRuanganTambah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganTambah.TabIndex = 0;
-            this.buttonRuanganTambah.Text = "Tambah";
-            this.buttonRuanganTambah.Click += new System.EventHandler(this.buttonRuanganTambah_Click);
-            // 
             // panelDataKuliah
             // 
             this.panelDataKuliah.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataKuliah.Controls.Add(this.buttonKuliahHapus);
+            this.panelDataKuliah.Controls.Add(this.buttonKuliahUbah);
             this.panelDataKuliah.Controls.Add(this.listViewKuliah);
-            this.panelDataKuliah.Controls.Add(this.buttonKuliahCari);
-            this.panelDataKuliah.Controls.Add(this.buttonKuliahBooking);
             this.panelDataKuliah.Controls.Add(this.buttonKuliahTambah);
             this.panelDataKuliah.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDataKuliah.Location = new System.Drawing.Point(0, 0);
@@ -636,6 +525,29 @@
             this.panelDataKuliah.Name = "panelDataKuliah";
             this.panelDataKuliah.Size = new System.Drawing.Size(529, 520);
             this.panelDataKuliah.TabIndex = 4;
+            // 
+            // buttonKuliahHapus
+            // 
+            this.buttonKuliahHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonKuliahHapus.FlatAppearance.BorderSize = 0;
+            this.buttonKuliahHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKuliahHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonKuliahHapus.Name = "buttonKuliahHapus";
+            this.buttonKuliahHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonKuliahHapus.TabIndex = 6;
+            this.buttonKuliahHapus.Text = "Hapus";
+            this.buttonKuliahHapus.Click += new System.EventHandler(this.buttonKuliahHapus_Click);
+            // 
+            // buttonKuliahUbah
+            // 
+            this.buttonKuliahUbah.FlatAppearance.BorderSize = 0;
+            this.buttonKuliahUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKuliahUbah.Location = new System.Drawing.Point(82, 12);
+            this.buttonKuliahUbah.Name = "buttonKuliahUbah";
+            this.buttonKuliahUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonKuliahUbah.TabIndex = 5;
+            this.buttonKuliahUbah.Text = "Ubah";
+            this.buttonKuliahUbah.Click += new System.EventHandler(this.buttonKuliahUbah_Click);
             // 
             // listViewKuliah
             // 
@@ -645,13 +557,12 @@
             this.listViewKuliah.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnKuliahKode,
             this.columnKuliahNama,
-            this.columnKuliahTanggung,
             this.columnKuliahRuang,
-            this.columnKuliahWaktu});
+            this.columnKuliahHari,
+            this.columnKuliahWaktu,
+            this.columnKuliahTanggung});
             this.listViewKuliah.FullRowSelect = true;
             this.listViewKuliah.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewKuliah.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
             this.listViewKuliah.Location = new System.Drawing.Point(12, 82);
             this.listViewKuliah.MultiSelect = false;
             this.listViewKuliah.Name = "listViewKuliah";
@@ -668,39 +579,24 @@
             // columnKuliahNama
             // 
             this.columnKuliahNama.Text = "Nama Mata Kuliah";
-            this.columnKuliahNama.Width = 200;
-            // 
-            // columnKuliahTanggung
-            // 
-            this.columnKuliahTanggung.Text = "Penanggung Jawab";
+            this.columnKuliahNama.Width = 100;
             // 
             // columnKuliahRuang
             // 
             this.columnKuliahRuang.Text = "Ruang";
             // 
+            // columnKuliahHari
+            // 
+            this.columnKuliahHari.Text = "Hari";
+            // 
             // columnKuliahWaktu
             // 
             this.columnKuliahWaktu.Text = "Waktu";
             // 
-            // buttonKuliahCari
+            // columnKuliahTanggung
             // 
-            this.buttonKuliahCari.FlatAppearance.BorderSize = 0;
-            this.buttonKuliahCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKuliahCari.Location = new System.Drawing.Point(152, 12);
-            this.buttonKuliahCari.Name = "buttonKuliahCari";
-            this.buttonKuliahCari.Size = new System.Drawing.Size(64, 64);
-            this.buttonKuliahCari.TabIndex = 2;
-            this.buttonKuliahCari.Text = "Cari";
-            // 
-            // buttonKuliahBooking
-            // 
-            this.buttonKuliahBooking.FlatAppearance.BorderSize = 0;
-            this.buttonKuliahBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKuliahBooking.Location = new System.Drawing.Point(82, 12);
-            this.buttonKuliahBooking.Name = "buttonKuliahBooking";
-            this.buttonKuliahBooking.Size = new System.Drawing.Size(64, 64);
-            this.buttonKuliahBooking.TabIndex = 1;
-            this.buttonKuliahBooking.Text = "Booking";
+            this.columnKuliahTanggung.Text = "Penanggung Jawab";
+            this.columnKuliahTanggung.Width = 80;
             // 
             // buttonKuliahTambah
             // 
@@ -711,6 +607,7 @@
             this.buttonKuliahTambah.Size = new System.Drawing.Size(64, 64);
             this.buttonKuliahTambah.TabIndex = 0;
             this.buttonKuliahTambah.Text = "Tambah";
+            this.buttonKuliahTambah.Click += new System.EventHandler(this.buttonKuliahTambah_Click);
             // 
             // panelDataRusak
             // 
@@ -738,7 +635,7 @@
             this.listViewRusak.FullRowSelect = true;
             this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem11});
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
@@ -817,7 +714,7 @@
             this.listViewJadwal.FullRowSelect = true;
             this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewJadwal.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem12});
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
@@ -867,6 +764,112 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Tambah";
             // 
+            // panelDataRuangan
+            // 
+            this.panelDataRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganUbah);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganHapus);
+            this.panelDataRuangan.Controls.Add(this.listViewRuangan);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganCari);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganBooking);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganTambah);
+            this.panelDataRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDataRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelDataRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDataRuangan.Name = "panelDataRuangan";
+            this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelDataRuangan.TabIndex = 0;
+            // 
+            // buttonRuanganUbah
+            // 
+            this.buttonRuanganUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganUbah.Location = new System.Drawing.Point(383, 12);
+            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
+            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganUbah.TabIndex = 6;
+            this.buttonRuanganUbah.Text = "Ubah";
+            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
+            // 
+            // buttonRuanganHapus
+            // 
+            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
+            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganHapus.TabIndex = 5;
+            this.buttonRuanganHapus.Text = "Hapus";
+            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
+            // 
+            // listViewRuangan
+            // 
+            this.listViewRuangan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRuangan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnRuanganNama,
+            this.columnRuanganTipe,
+            this.columnRuanganKapasitas});
+            this.listViewRuangan.FullRowSelect = true;
+            this.listViewRuangan.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewRuangan.HideSelection = false;
+            this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
+            this.listViewRuangan.MultiSelect = false;
+            this.listViewRuangan.Name = "listViewRuangan";
+            this.listViewRuangan.Size = new System.Drawing.Size(505, 426);
+            this.listViewRuangan.TabIndex = 4;
+            this.listViewRuangan.UseCompatibleStateImageBehavior = false;
+            this.listViewRuangan.View = System.Windows.Forms.View.Details;
+            // 
+            // columnRuanganNama
+            // 
+            this.columnRuanganNama.Text = "Nama";
+            this.columnRuanganNama.Width = 95;
+            // 
+            // columnRuanganTipe
+            // 
+            this.columnRuanganTipe.Text = "Tipe";
+            // 
+            // columnRuanganKapasitas
+            // 
+            this.columnRuanganKapasitas.Text = "Kapasitas";
+            this.columnRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnRuanganKapasitas.Width = 101;
+            // 
+            // buttonRuanganCari
+            // 
+            this.buttonRuanganCari.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganCari.Location = new System.Drawing.Point(152, 12);
+            this.buttonRuanganCari.Name = "buttonRuanganCari";
+            this.buttonRuanganCari.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganCari.TabIndex = 2;
+            this.buttonRuanganCari.Text = "Cari";
+            // 
+            // buttonRuanganBooking
+            // 
+            this.buttonRuanganBooking.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganBooking.Location = new System.Drawing.Point(82, 12);
+            this.buttonRuanganBooking.Name = "buttonRuanganBooking";
+            this.buttonRuanganBooking.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganBooking.TabIndex = 1;
+            this.buttonRuanganBooking.Text = "Booking";
+            // 
+            // buttonRuanganTambah
+            // 
+            this.buttonRuanganTambah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonRuanganTambah.Name = "buttonRuanganTambah";
+            this.buttonRuanganTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganTambah.TabIndex = 0;
+            this.buttonRuanganTambah.Text = "Tambah";
+            this.buttonRuanganTambah.Click += new System.EventHandler(this.buttonRuanganTambah_Click);
+            // 
             // panelBooking
             // 
             this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
@@ -906,7 +909,7 @@
             this.listView4.FullRowSelect = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10});
+            listViewItem13});
             this.listView4.Location = new System.Drawing.Point(12, 82);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
@@ -1143,7 +1146,7 @@
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 11;
             this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;           
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -1220,7 +1223,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11});
+            listViewItem14});
             this.listView1.Location = new System.Drawing.Point(12, 182);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -1266,7 +1269,7 @@
             this.listView3.FullRowSelect = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem12});
+            listViewItem15});
             this.listView3.Location = new System.Drawing.Point(12, 82);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
@@ -1343,10 +1346,10 @@
             this.panelPageBooking.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
-            this.panelDataRuangan.ResumeLayout(false);
             this.panelDataKuliah.ResumeLayout(false);
             this.panelDataRusak.ResumeLayout(false);
             this.panelDataJadwal.ResumeLayout(false);
+            this.panelDataRuangan.ResumeLayout(false);
             this.panelBooking.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panelBookingRuangan.ResumeLayout(false);
@@ -1379,8 +1382,6 @@
         private System.Windows.Forms.Button buttonRuanganBooking;
         private System.Windows.Forms.Panel panelData;
         private System.Windows.Forms.Panel panelDataKuliah;
-        private System.Windows.Forms.Button buttonKuliahCari;
-        private System.Windows.Forms.Button buttonKuliahBooking;
         private System.Windows.Forms.Button buttonKuliahTambah;
         private System.Windows.Forms.ListView listViewKuliah;
         private System.Windows.Forms.ColumnHeader columnKuliahKode;
@@ -1461,5 +1462,8 @@
         private System.Windows.Forms.ColumnHeader columnRuanganTipe;
         private System.Windows.Forms.Button buttonRuanganHapus;
         private System.Windows.Forms.Button buttonRuanganUbah;
+        private System.Windows.Forms.Button buttonKuliahHapus;
+        private System.Windows.Forms.Button buttonKuliahUbah;
+        private System.Windows.Forms.ColumnHeader columnKuliahHari;
     }
 }

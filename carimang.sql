@@ -101,13 +101,6 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ruangan`
---
-
-INSERT INTO `ruangan` (`id`, `nama_ruangan`, `kapasitas`, `tipe_ruangan`) VALUES
-(2, 'sdfa', 34, 0);
-
---
 -- Indexes for dumped tables
 --
 
