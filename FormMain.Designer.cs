@@ -23,32 +23,29 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7603",
-            "23 Jan 2015",
-            "25 Jan 2016"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "IF3330",
             "Proyek Perangkat Lunak",
             "Adi Mulyanto",
             "7602",
             "09.00-10.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7602",
             "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7603",
+            "23 Jan 2015",
+            "25 Jan 2016"}, -1);
             this.splitPanel = new System.Windows.Forms.SplitContainer();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -70,39 +67,12 @@
             this.pageStatistikRusak = new System.Windows.Forms.Button();
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
-            this.panelBooking = new System.Windows.Forms.Panel();
-            this.panelBookingRuangan = new System.Windows.Forms.Panel();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panelBookingCari = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox = new System.Windows.Forms.CheckBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
             this.panelDataRuangan = new System.Windows.Forms.Panel();
+            this.buttonRuanganUbah = new System.Windows.Forms.Button();
+            this.buttonRuanganHapus = new System.Windows.Forms.Button();
             this.listViewRuangan = new System.Windows.Forms.ListView();
+            this.columnRuanganTipe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRuanganNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRuanganKapasitas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonRuanganCari = new System.Windows.Forms.Button();
@@ -133,16 +103,46 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panelBooking = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.listView4 = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.panelBookingRuangan = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panelBookingCari = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox = new System.Windows.Forms.CheckBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel)).BeginInit();
             this.splitPanel.Panel1.SuspendLayout();
             this.splitPanel.Panel2.SuspendLayout();
@@ -153,20 +153,20 @@
             this.panelPageData.SuspendLayout();
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
-            this.panelBooking.SuspendLayout();
-            this.panelBookingRuangan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.panelBookingCari.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panelData.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
             this.panelDataJadwal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.panelBooking.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panelBookingRuangan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.panelBookingCari.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitPanel
@@ -503,364 +503,6 @@
             this.pageStatistikRuangan.Text = "Frekuensi Peminjaman Ruangan";
             this.pageStatistikRuangan.UseVisualStyleBackColor = false;
             // 
-            // panelBooking
-            // 
-            this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBooking.Controls.Add(this.panel5);
-            this.panelBooking.Controls.Add(this.panelBookingRuangan);
-            this.panelBooking.Controls.Add(this.panelBookingCari);
-            this.panelBooking.Controls.Add(this.panel4);
-            this.panelBooking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBooking.Location = new System.Drawing.Point(0, 0);
-            this.panelBooking.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBooking.Name = "panelBooking";
-            this.panelBooking.Size = new System.Drawing.Size(529, 520);
-            this.panelBooking.TabIndex = 5;
-            // 
-            // panelBookingRuangan
-            // 
-            this.panelBookingRuangan.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBookingRuangan.Controls.Add(this.button5);
-            this.panelBookingRuangan.Controls.Add(this.label6);
-            this.panelBookingRuangan.Controls.Add(this.numericUpDown4);
-            this.panelBookingRuangan.Controls.Add(this.numericUpDown3);
-            this.panelBookingRuangan.Controls.Add(this.label5);
-            this.panelBookingRuangan.Controls.Add(this.label4);
-            this.panelBookingRuangan.Controls.Add(this.dateTimePicker2);
-            this.panelBookingRuangan.Controls.Add(this.label3);
-            this.panelBookingRuangan.Controls.Add(this.label2);
-            this.panelBookingRuangan.Controls.Add(this.label1);
-            this.panelBookingRuangan.Controls.Add(this.numericUpDown2);
-            this.panelBookingRuangan.Controls.Add(this.comboBox1);
-            this.panelBookingRuangan.Controls.Add(this.textBox2);
-            this.panelBookingRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBookingRuangan.Location = new System.Drawing.Point(0, 0);
-            this.panelBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBookingRuangan.Name = "panelBookingRuangan";
-            this.panelBookingRuangan.Size = new System.Drawing.Size(529, 520);
-            this.panelBookingRuangan.TabIndex = 4;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(152, 74);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown2.TabIndex = 2;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown2.ThousandsSeparator = true;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Ruang 7602",
-            "Ruang 7610"});
-            this.comboBox1.Location = new System.Drawing.Point(152, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(365, 23);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(152, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(365, 23);
-            this.textBox2.TabIndex = 0;
-            // 
-            // panelBookingCari
-            // 
-            this.panelBookingCari.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBookingCari.Controls.Add(this.button4);
-            this.panelBookingCari.Controls.Add(this.dateTimePicker1);
-            this.panelBookingCari.Controls.Add(this.numericUpDown1);
-            this.panelBookingCari.Controls.Add(this.checkBox1);
-            this.panelBookingCari.Controls.Add(this.textBox1);
-            this.panelBookingCari.Controls.Add(this.checkBox);
-            this.panelBookingCari.Controls.Add(this.listView1);
-            this.panelBookingCari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBookingCari.Location = new System.Drawing.Point(0, 0);
-            this.panelBookingCari.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBookingCari.Name = "panelBookingCari";
-            this.panelBookingCari.Size = new System.Drawing.Size(529, 520);
-            this.panelBookingCari.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(12, 102);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.CustomFormat = "hh:mm d MMMM yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 70);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(505, 23);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(152, 41);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.ThousandsSeparator = true;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 42);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 19);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Kapasitas Minimum:";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(152, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 23);
-            this.textBox1.TabIndex = 6;
-            // 
-            // checkBox
-            // 
-            this.checkBox.AutoSize = true;
-            this.checkBox.Checked = true;
-            this.checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox.Location = new System.Drawing.Point(12, 14);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(111, 19);
-            this.checkBox.TabIndex = 5;
-            this.checkBox.Text = "Nama Ruangan:";
-            this.checkBox.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.FullRowSelect = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem16});
-            this.listView1.Location = new System.Drawing.Point(12, 182);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(505, 326);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Nama";
-            this.columnHeader3.Width = 95;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Kapasitas";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 101;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Controls.Add(this.listView3);
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Controls.Add(this.button11);
-            this.panel4.Controls.Add(this.button12);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(529, 520);
-            this.panel4.TabIndex = 5;
-            // 
-            // listView3
-            // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.listView3.FullRowSelect = true;
-            this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem17});
-            this.listView3.Location = new System.Drawing.Point(12, 82);
-            this.listView3.MultiSelect = false;
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(505, 426);
-            this.listView3.TabIndex = 4;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Nama Ruangan";
-            this.columnHeader10.Width = 100;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Waktu Mulai Perbaikan";
-            this.columnHeader11.Width = 200;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Waktu Selesai Perbaikan";
-            this.columnHeader12.Width = 200;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(152, 12);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(64, 64);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "Cari";
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(82, 12);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(64, 64);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "Booking";
-            // 
-            // button12
-            // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(12, 12);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(64, 64);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "Tambah";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel5.Controls.Add(this.listView4);
-            this.panel5.Controls.Add(this.button13);
-            this.panel5.Controls.Add(this.button14);
-            this.panel5.Controls.Add(this.button15);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(529, 520);
-            this.panel5.TabIndex = 5;
-            // 
-            // listView4
-            // 
-            this.listView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
-            this.columnHeader14});
-            this.listView4.FullRowSelect = true;
-            this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem18});
-            this.listView4.Location = new System.Drawing.Point(12, 82);
-            this.listView4.MultiSelect = false;
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(505, 426);
-            this.listView4.TabIndex = 4;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Nama";
-            this.columnHeader13.Width = 95;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Kapasitas";
-            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader14.Width = 101;
-            // 
-            // button13
-            // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(152, 12);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(64, 64);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "Cari";
-            // 
-            // button14
-            // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(82, 12);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(64, 64);
-            this.button14.TabIndex = 1;
-            this.button14.Text = "Booking";
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Location = new System.Drawing.Point(12, 12);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(64, 64);
-            this.button15.TabIndex = 0;
-            this.button15.Text = "Tambah";
-            // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Gainsboro;
@@ -878,6 +520,8 @@
             // panelDataRuangan
             // 
             this.panelDataRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganUbah);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganHapus);
             this.panelDataRuangan.Controls.Add(this.listViewRuangan);
             this.panelDataRuangan.Controls.Add(this.buttonRuanganCari);
             this.panelDataRuangan.Controls.Add(this.buttonRuanganBooking);
@@ -889,6 +533,30 @@
             this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
             this.panelDataRuangan.TabIndex = 0;
             // 
+            // buttonRuanganUbah
+            // 
+            this.buttonRuanganUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganUbah.Location = new System.Drawing.Point(383, 12);
+            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
+            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganUbah.TabIndex = 6;
+            this.buttonRuanganUbah.Text = "Ubah";
+            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
+            // 
+            // buttonRuanganHapus
+            // 
+            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
+            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganHapus.TabIndex = 5;
+            this.buttonRuanganHapus.Text = "Hapus";
+            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
+            // 
             // listViewRuangan
             // 
             this.listViewRuangan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -896,11 +564,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewRuangan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnRuanganNama,
+            this.columnRuanganTipe,
             this.columnRuanganKapasitas});
             this.listViewRuangan.FullRowSelect = true;
             this.listViewRuangan.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewRuangan.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem15});
+            this.listViewRuangan.HideSelection = false;
             this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
             this.listViewRuangan.MultiSelect = false;
             this.listViewRuangan.Name = "listViewRuangan";
@@ -908,6 +576,10 @@
             this.listViewRuangan.TabIndex = 4;
             this.listViewRuangan.UseCompatibleStateImageBehavior = false;
             this.listViewRuangan.View = System.Windows.Forms.View.Details;
+            // 
+            // columnRuanganTipe
+            // 
+            this.columnRuanganTipe.Text = "Tipe";
             // 
             // columnRuanganNama
             // 
@@ -979,7 +651,7 @@
             this.listViewKuliah.FullRowSelect = true;
             this.listViewKuliah.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewKuliah.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem19});
+            listViewItem7});
             this.listViewKuliah.Location = new System.Drawing.Point(12, 82);
             this.listViewKuliah.MultiSelect = false;
             this.listViewKuliah.Name = "listViewKuliah";
@@ -1066,7 +738,7 @@
             this.listViewRusak.FullRowSelect = true;
             this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem20});
+            listViewItem8});
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
@@ -1145,7 +817,7 @@
             this.listViewJadwal.FullRowSelect = true;
             this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewJadwal.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem21});
+            listViewItem9});
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
@@ -1195,70 +867,135 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Tambah";
             // 
-            // label1
+            // panelBooking
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Penanggung Jawab";
+            this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBooking.Controls.Add(this.panel5);
+            this.panelBooking.Controls.Add(this.panelBookingRuangan);
+            this.panelBooking.Controls.Add(this.panelBookingCari);
+            this.panelBooking.Controls.Add(this.panel4);
+            this.panelBooking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBooking.Location = new System.Drawing.Point(0, 0);
+            this.panelBooking.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBooking.Name = "panelBooking";
+            this.panelBooking.Size = new System.Drawing.Size(529, 520);
+            this.panelBooking.TabIndex = 5;
             // 
-            // label2
+            // panel5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nama Ruangan";
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel5.Controls.Add(this.listView4);
+            this.panel5.Controls.Add(this.button13);
+            this.panel5.Controls.Add(this.button14);
+            this.panel5.Controls.Add(this.button15);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(529, 520);
+            this.panel5.TabIndex = 5;
             // 
-            // label3
+            // listView4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Kapasitas";
+            this.listView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14});
+            this.listView4.FullRowSelect = true;
+            this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem10});
+            this.listView4.Location = new System.Drawing.Point(12, 82);
+            this.listView4.MultiSelect = false;
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(505, 426);
+            this.listView4.TabIndex = 4;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
             // 
-            // dateTimePicker2
+            // columnHeader13
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(152, 104);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 6;
+            this.columnHeader13.Text = "Nama";
+            this.columnHeader13.Width = 95;
             // 
-            // label4
+            // columnHeader14
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Tanggal";
+            this.columnHeader14.Text = "Kapasitas";
+            this.columnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader14.Width = 101;
             // 
-            // label5
+            // button13
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Pukul";
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Location = new System.Drawing.Point(152, 12);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(64, 64);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "Cari";
             // 
-            // numericUpDown3
+            // button14
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(152, 133);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(46, 23);
-            this.numericUpDown3.TabIndex = 9;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Location = new System.Drawing.Point(82, 12);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(64, 64);
+            this.button14.TabIndex = 1;
+            this.button14.Text = "Booking";
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Location = new System.Drawing.Point(12, 12);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(64, 64);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Tambah";
+            // 
+            // panelBookingRuangan
+            // 
+            this.panelBookingRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBookingRuangan.Controls.Add(this.button5);
+            this.panelBookingRuangan.Controls.Add(this.label6);
+            this.panelBookingRuangan.Controls.Add(this.numericUpDown4);
+            this.panelBookingRuangan.Controls.Add(this.numericUpDown3);
+            this.panelBookingRuangan.Controls.Add(this.label5);
+            this.panelBookingRuangan.Controls.Add(this.label4);
+            this.panelBookingRuangan.Controls.Add(this.dateTimePicker2);
+            this.panelBookingRuangan.Controls.Add(this.label3);
+            this.panelBookingRuangan.Controls.Add(this.label2);
+            this.panelBookingRuangan.Controls.Add(this.label1);
+            this.panelBookingRuangan.Controls.Add(this.numericUpDown2);
+            this.panelBookingRuangan.Controls.Add(this.comboBox1);
+            this.panelBookingRuangan.Controls.Add(this.textBox2);
+            this.panelBookingRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBookingRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBookingRuangan.Name = "panelBookingRuangan";
+            this.panelBookingRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelBookingRuangan.TabIndex = 4;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(152, 163);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 40);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Booking";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(204, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "s.d.";
             // 
             // numericUpDown4
             // 
@@ -1273,23 +1010,315 @@
             this.numericUpDown4.TabIndex = 10;
             this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label6
+            // numericUpDown3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "s.d.";
+            this.numericUpDown3.Location = new System.Drawing.Point(152, 133);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(46, 23);
+            this.numericUpDown3.TabIndex = 9;
+            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button5
+            // label5
             // 
-            this.button5.Location = new System.Drawing.Point(152, 163);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 40);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Booking";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Pukul";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Tanggal";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(152, 104);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Kapasitas";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Nama Ruangan";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Penanggung Jawab";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(152, 74);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown2.ThousandsSeparator = true;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Ruang 7602",
+            "Ruang 7610"});
+            this.comboBox1.Location = new System.Drawing.Point(152, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(365, 23);
+            this.comboBox1.Sorted = true;
+            this.comboBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(152, 13);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(365, 23);
+            this.textBox2.TabIndex = 0;
+            // 
+            // panelBookingCari
+            // 
+            this.panelBookingCari.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBookingCari.Controls.Add(this.button4);
+            this.panelBookingCari.Controls.Add(this.dateTimePicker1);
+            this.panelBookingCari.Controls.Add(this.numericUpDown1);
+            this.panelBookingCari.Controls.Add(this.checkBox1);
+            this.panelBookingCari.Controls.Add(this.textBox1);
+            this.panelBookingCari.Controls.Add(this.checkBox);
+            this.panelBookingCari.Controls.Add(this.listView1);
+            this.panelBookingCari.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBookingCari.Location = new System.Drawing.Point(0, 0);
+            this.panelBookingCari.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBookingCari.Name = "panelBookingCari";
+            this.panelBookingCari.Size = new System.Drawing.Size(529, 520);
+            this.panelBookingCari.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(12, 102);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;           
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.CustomFormat = "hh:mm d MMMM yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 70);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowCheckBox = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(505, 23);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(152, 41);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDown1.TabIndex = 8;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown1.ThousandsSeparator = true;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 42);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(134, 19);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Kapasitas Minimum:";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(152, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(365, 23);
+            this.textBox1.TabIndex = 6;
+            // 
+            // checkBox
+            // 
+            this.checkBox.AutoSize = true;
+            this.checkBox.Checked = true;
+            this.checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox.Location = new System.Drawing.Point(12, 14);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(111, 19);
+            this.checkBox.TabIndex = 5;
+            this.checkBox.Text = "Nama Ruangan:";
+            this.checkBox.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView1.FullRowSelect = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem11});
+            this.listView1.Location = new System.Drawing.Point(12, 182);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(505, 326);
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nama";
+            this.columnHeader3.Width = 95;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Kapasitas";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 101;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Controls.Add(this.listView3);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.button11);
+            this.panel4.Controls.Add(this.button12);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(529, 520);
+            this.panel4.TabIndex = 5;
+            // 
+            // listView3
+            // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.listView3.FullRowSelect = true;
+            this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem12});
+            this.listView3.Location = new System.Drawing.Point(12, 82);
+            this.listView3.MultiSelect = false;
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(505, 426);
+            this.listView3.TabIndex = 4;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Nama Ruangan";
+            this.columnHeader10.Width = 100;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Waktu Mulai Perbaikan";
+            this.columnHeader11.Width = 200;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Waktu Selesai Perbaikan";
+            this.columnHeader12.Width = 200;
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(152, 12);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(64, 64);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "Cari";
+            // 
+            // button11
+            // 
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(82, 12);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(64, 64);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Booking";
+            // 
+            // button12
+            // 
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(12, 12);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(64, 64);
+            this.button12.TabIndex = 0;
+            this.button12.Text = "Tambah";
             // 
             // FormMain
             // 
@@ -1313,22 +1342,22 @@
             this.panelPageData.ResumeLayout(false);
             this.panelPageBooking.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
-            this.panelBooking.ResumeLayout(false);
-            this.panelBookingRuangan.ResumeLayout(false);
-            this.panelBookingRuangan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.panelBookingCari.ResumeLayout(false);
-            this.panelBookingCari.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
             this.panelDataRuangan.ResumeLayout(false);
             this.panelDataKuliah.ResumeLayout(false);
             this.panelDataRusak.ResumeLayout(false);
             this.panelDataJadwal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.panelBooking.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panelBookingRuangan.ResumeLayout(false);
+            this.panelBookingRuangan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.panelBookingCari.ResumeLayout(false);
+            this.panelBookingCari.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1429,5 +1458,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnRuanganTipe;
+        private System.Windows.Forms.Button buttonRuanganHapus;
+        private System.Windows.Forms.Button buttonRuanganUbah;
     }
 }

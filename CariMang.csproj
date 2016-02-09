@@ -62,11 +62,11 @@
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahRuangan.cs">
+    <Compile Include="FormRuangan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahRuangan.Designer.cs">
-      <DependentUpon>FormTambahRuangan.cs</DependentUpon>
+    <Compile Include="FormRuangan.Designer.cs">
+      <DependentUpon>FormRuangan.cs</DependentUpon>
     </Compile>
     <Compile Include="Kegiatan.cs" />
     <Compile Include="MySqlConnector.Config.cs" />
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahRuangan.resx">
-      <DependentUpon>FormTambahRuangan.cs</DependentUpon>
+    <EmbeddedResource Include="FormRuangan.resx">
+      <DependentUpon>FormRuangan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
