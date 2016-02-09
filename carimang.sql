@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2016 at 08:24 AM
+-- Generation Time: Feb 09, 2016 at 07:17 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kegiatan` (
   `id_peminjam` int(11) NOT NULL,
+  `nama_ruangan` varchar(256) NOT NULL,
   `nama_kegiatan` varchar(256) NOT NULL,
   `tanggal` date NOT NULL,
-  `waktu_mulai` time NOT NULL,
+  `waktu_mulai` tinyint(2) NOT NULL DEFAULT '7',
   `waktu_selesai` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -79,9 +80,10 @@ CREATE TABLE `perbaikan` (
 
 CREATE TABLE `perkuliahan` (
   `kode_kuliah` varchar(64) NOT NULL,
-  `tanggal` date NOT NULL,
-  `waktu_mulai` time NOT NULL,
-  `waktu_selesai` time NOT NULL,
+  `nama_ruangan` varchar(256) NOT NULL,
+  `hari` tinyint(1) NOT NULL DEFAULT '0',
+  `waktu_mulai` tinyint(2) NOT NULL DEFAULT '7',
+  `waktu_selesai` tinyint(2) NOT NULL DEFAULT '7',
   `penanggung_jawab` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -106,7 +108,8 @@ CREATE TABLE `ruangan` (
 -- Indexes for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  ADD KEY `id_peminjam` (`id_peminjam`);
+  ADD KEY `id_peminjam` (`id_peminjam`),
+  ADD KEY `nama_ruangan` (`nama_ruangan`);
 
 --
 -- Indexes for table `kuliah`
@@ -131,7 +134,8 @@ ALTER TABLE `perbaikan`
 -- Indexes for table `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
-  ADD KEY `kode_kuliah` (`kode_kuliah`);
+  ADD KEY `kode_kuliah` (`kode_kuliah`),
+  ADD KEY `nama_ruangan` (`nama_ruangan`);
 
 --
 -- Indexes for table `ruangan`
@@ -167,13 +171,15 @@ ALTER TABLE `ruangan`
 -- Constraints for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  ADD CONSTRAINT `kegiatan_ibfk_1` FOREIGN KEY (`id_peminjam`) REFERENCES `peminjam` (`id`);
+  ADD CONSTRAINT `kegiatan_ibfk_1` FOREIGN KEY (`id_peminjam`) REFERENCES `peminjam` (`id`),
+  ADD CONSTRAINT `kegiatan_ibfk_2` FOREIGN KEY (`nama_ruangan`) REFERENCES `ruangan` (`nama_ruangan`);
 
 --
 -- Constraints for table `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
-  ADD CONSTRAINT `perkuliahan_ibfk_1` FOREIGN KEY (`kode_kuliah`) REFERENCES `kuliah` (`kode_kuliah`) ON DELETE CASCADE;
+  ADD CONSTRAINT `perkuliahan_ibfk_1` FOREIGN KEY (`kode_kuliah`) REFERENCES `kuliah` (`kode_kuliah`) ON DELETE CASCADE,
+  ADD CONSTRAINT `perkuliahan_ibfk_2` FOREIGN KEY (`nama_ruangan`) REFERENCES `ruangan` (`nama_ruangan`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
