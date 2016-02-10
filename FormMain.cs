@@ -27,6 +27,7 @@ namespace CariMang {
         private void InitializeData() {
             this.GetAllRuangan();
             this.GetAllPerkuliahan();
+            this.GetAllPerbaikan();
         }
         
         private void GetAllRuangan() {            
@@ -176,6 +177,60 @@ namespace CariMang {
             }
         }
 
+        private void GetAllPerbaikan()
+        {
+            listViewRusak.Items.Clear();
+            foreach (var perbaikan in Perbaikan.GetAll())
+                this.AddPerbaikan(perbaikan);
+        }
+
+        private void AddPerbaikan(Perbaikan perbaikan)
+        {
+            var item = new ListViewItem();
+            item.Text = perbaikan.NamaRuangan;
+            item.SubItems.Add(perbaikan.TanggalMulai.ToString());
+            item.SubItems.Add(perbaikan.TanggalSelesai.ToString());
+            item.SubItems.Add(perbaikan.Deskripsi);
+            item.Tag = perbaikan;
+            listViewRusak.Items.Add(item);
+        }
+
+        private void EditPerbaikan(ListViewItem item)
+        {
+            Perbaikan perbaikan = (Perbaikan)item.Tag;
+            using (FormPerbaikan form = new FormPerbaikan(perbaikan))
+            {
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
+                perbaikan.NamaRuangan = form.NamaRuangan;
+                item.SubItems[0].Text = perbaikan.NamaRuangan;
+
+                perbaikan.TanggalMulai = form.TanggalMulai;
+                item.SubItems[1].Text = perbaikan.TanggalMulai.ToString();
+
+                perbaikan.TanggalSelesai = form.TanggalSelesai;
+                item.SubItems[2].Text = perbaikan.TanggalSelesai.ToString();
+
+                perbaikan.Deskripsi = form.Deskripsi;
+                item.SubItems[3].Text = perbaikan.Deskripsi;
+            }
+        }
+
+        private void DeletePerbaikan(ListViewItem item)
+        {
+            Perbaikan perbaikan = (Perbaikan)item.Tag;
+            if (MessageBox.Show("Mau dihapus " + perbaikan.NamaRuangan + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    != DialogResult.Yes)
+                return;
+            if (Perbaikan.Delete(perbaikan))
+            {
+                listViewRusak.Items.Remove(item);
+            }
+            else {
+                MessageBox.Show("Gagal delete ruangan.");
+            }
+        }
+
         private void buttonRuanganTambah_Click(object sender, EventArgs e) {
             using (FormRuangan form = new FormRuangan()) {
                 if (form.ShowDialog() != DialogResult.OK)
@@ -238,6 +293,50 @@ namespace CariMang {
                     return;
                 }
             }
-        }       
+        }
+
+        private void buttonRusakTambah_Click(object sender, EventArgs e)
+        {
+            using (FormPerbaikan form = new FormPerbaikan())
+            {
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
+                var perbaikan = Perbaikan.Add(
+                    form.NamaRuangan, form.TanggalMulai, form.TanggalSelesai,
+                    form.Deskripsi);
+                if (perbaikan == null)
+                {
+                    MessageBox.Show("Gagal nambah perbaikan.");
+                    return;
+                }
+                this.AddPerbaikan(perbaikan);
+            }
+        }
+
+        private void panelDataJadwal_Paint(object sender, PaintEventArgs e) {
+
+        }
+
+        private void buttonRusakUbah_Click(object sender, EventArgs e) {
+            foreach (ListViewItem item in listViewRusak.Items)
+            {
+                if (item.Selected)
+                {
+                    this.EditPerbaikan(item);
+                    return;
+                }
+            }
+        }
+
+        private void buttonRusakHapus_Click(object sender, EventArgs e) {
+            foreach (ListViewItem item in listViewRusak.Items)
+            {
+                if (item.Selected)
+                {
+                    this.DeletePerbaikan(item);
+                    return;
+                }
+            }
+        }
     }
 }

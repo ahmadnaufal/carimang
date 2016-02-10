@@ -16,7 +16,7 @@ namespace CariMang {
             MySqlConnection connection = null;
             // if (connection == null) {
             string connectionString = String.Format(
-                @"SERVER={0};DATABASE={1};UID={2};PWD={3}",
+                @"SERVER={0};DATABASE={1};UID={2};PWD={3};Convert Zero Datetime=True",
                 server, database, uid, password);
             try {
                 connection = new MySqlConnection(connectionString);

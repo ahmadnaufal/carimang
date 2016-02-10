@@ -23,11 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7603",
-            "23 Jan 2015",
-            "25 Jan 2016"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7602",
             "60"}, -1);
             System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -37,15 +36,25 @@
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7603",
+            "23 Jan 2015",
+            "25 Jan 2016"}, -1);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitPanel = new System.Windows.Forms.SplitContainer();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -67,6 +76,7 @@
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
+
             this.panelDataJadwal = new System.Windows.Forms.Panel();
             this.comboJadwalCari = new System.Windows.Forms.ComboBox();
             this.dateJadwalCari = new System.Windows.Forms.DateTimePicker();
@@ -89,6 +99,19 @@
             this.colJadwal21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colJadwal22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colJadwal23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+
+            this.panelDataRusak = new System.Windows.Forms.Panel();
+            this.buttonRusakUbah = new System.Windows.Forms.Button();
+            this.buttonRusakHapus = new System.Windows.Forms.Button();
+            this.listViewRusak = new System.Windows.Forms.ListView();
+            this.columnRusakNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakWaktuMulai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakDeskripsi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRusakTambah = new System.Windows.Forms.Button();
+            this.panelDataJadwal = new System.Windows.Forms.Panel();
+            this.listViewJadwal = new System.Windows.Forms.ListView();
+
             this.buttonJadwalCari = new System.Windows.Forms.Button();
             this.panelDataRuangan = new System.Windows.Forms.Panel();
             this.buttonRuanganUbah = new System.Windows.Forms.Button();
@@ -109,12 +132,7 @@
             this.columnKuliahWaktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonKuliahTambah = new System.Windows.Forms.Button();
-            this.panelDataRusak = new System.Windows.Forms.Panel();
-            this.listViewRusak = new System.Windows.Forms.ListView();
-            this.columnRusakNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRusakMulai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonRusakTambah = new System.Windows.Forms.Button();
+
             this.panelBooking = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listView4 = new System.Windows.Forms.ListView();
@@ -176,10 +194,12 @@
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
             this.panelData.SuspendLayout();
+
             this.panelDataJadwal.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
+
             this.panelBooking.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBookingRuangan.SuspendLayout();
@@ -528,10 +548,10 @@
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelData.Controls.Add(this.panelDataRusak);
             this.panelData.Controls.Add(this.panelDataJadwal);
             this.panelData.Controls.Add(this.panelDataRuangan);
             this.panelData.Controls.Add(this.panelDataKuliah);
-            this.panelData.Controls.Add(this.panelDataRusak);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelData.Location = new System.Drawing.Point(0, 0);
             this.panelData.Margin = new System.Windows.Forms.Padding(0);
@@ -544,6 +564,108 @@
             this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
             this.panelDataJadwal.Controls.Add(this.comboJadwalCari);
             this.panelDataJadwal.Controls.Add(this.dateJadwalCari);
+            // 
+            // panelDataRusak
+            // 
+            this.panelDataRusak.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataRusak.Controls.Add(this.buttonRusakUbah);
+            this.panelDataRusak.Controls.Add(this.buttonRusakHapus);
+            this.panelDataRusak.Controls.Add(this.listViewRusak);
+            this.panelDataRusak.Controls.Add(this.buttonRusakTambah);
+            this.panelDataRusak.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDataRusak.Location = new System.Drawing.Point(0, 0);
+            this.panelDataRusak.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDataRusak.Name = "panelDataRusak";
+            this.panelDataRusak.Size = new System.Drawing.Size(529, 520);
+            this.panelDataRusak.TabIndex = 5;
+            // 
+            // buttonRusakUbah
+            // 
+            this.buttonRusakUbah.FlatAppearance.BorderSize = 0;
+            this.buttonRusakUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRusakUbah.Image = global::CariMang.Properties.Resources.edit;
+            this.buttonRusakUbah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRusakUbah.Location = new System.Drawing.Point(82, 12);
+            this.buttonRusakUbah.Name = "buttonRusakUbah";
+            this.buttonRusakUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRusakUbah.TabIndex = 8;
+            this.buttonRusakUbah.Text = "Ubah";
+            this.buttonRusakUbah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRusakUbah.Click += new System.EventHandler(this.buttonRusakUbah_Click);
+            // 
+            // buttonRusakHapus
+            // 
+            this.buttonRusakHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRusakHapus.FlatAppearance.BorderSize = 0;
+            this.buttonRusakHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRusakHapus.Image = global::CariMang.Properties.Resources.delete;
+            this.buttonRusakHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRusakHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRusakHapus.Name = "buttonRusakHapus";
+            this.buttonRusakHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonRusakHapus.TabIndex = 7;
+            this.buttonRusakHapus.Text = "Hapus";
+            this.buttonRusakHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRusakHapus.Click += new System.EventHandler(this.buttonRusakHapus_Click);
+            // 
+            // listViewRusak
+            // 
+            this.listViewRusak.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRusak.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnRusakNama,
+            this.columnRusakWaktuMulai,
+            this.columnRusakWaktuSelesai,
+            this.columnRusakDeskripsi});
+            this.listViewRusak.FullRowSelect = true;
+            this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.listViewRusak.Location = new System.Drawing.Point(12, 82);
+            this.listViewRusak.MultiSelect = false;
+            this.listViewRusak.Name = "listViewRusak";
+            this.listViewRusak.Size = new System.Drawing.Size(505, 426);
+            this.listViewRusak.TabIndex = 4;
+            this.listViewRusak.UseCompatibleStateImageBehavior = false;
+            this.listViewRusak.View = System.Windows.Forms.View.Details;
+            // 
+            // columnRusakNama
+            // 
+            this.columnRusakNama.Text = "Nama Ruangan";
+            this.columnRusakNama.Width = 100;
+            // 
+            // columnRusakWaktuMulai
+            // 
+            this.columnRusakWaktuMulai.Text = "Waktu Mulai Perbaikan";
+            this.columnRusakWaktuMulai.Width = 200;
+            // 
+            // columnRusakWaktuSelesai
+            // 
+            this.columnRusakWaktuSelesai.Text = "Waktu Selesai Perbaikan";
+            this.columnRusakWaktuSelesai.Width = 200;
+            // 
+            // columnRusakDeskripsi
+            // 
+            this.columnRusakDeskripsi.Text = "Deskripsi Perbaikan";
+            // 
+            // buttonRusakTambah
+            // 
+            this.buttonRusakTambah.FlatAppearance.BorderSize = 0;
+            this.buttonRusakTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRusakTambah.Image = global::CariMang.Properties.Resources.add;
+            this.buttonRusakTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRusakTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonRusakTambah.Name = "buttonRusakTambah";
+            this.buttonRusakTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRusakTambah.TabIndex = 0;
+            this.buttonRusakTambah.Text = "Tambah";
+            this.buttonRusakTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRusakTambah.Click += new System.EventHandler(this.buttonRusakTambah_Click);
+            // 
+            // panelDataJadwal
+            // 
+            this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
             this.panelDataJadwal.Controls.Add(this.listViewJadwal);
             this.panelDataJadwal.Controls.Add(this.buttonJadwalCari);
             this.panelDataJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -568,6 +690,7 @@
             this.dateJadwalCari.Name = "dateJadwalCari";
             this.dateJadwalCari.Size = new System.Drawing.Size(200, 23);
             this.dateJadwalCari.TabIndex = 5;
+            this.panelDataJadwal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDataJadwal_Paint);
             // 
             // listViewJadwal
             // 
@@ -575,6 +698,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewJadwal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+
             this.colJadwalRuangan,
             this.colJadwal7,
             this.colJadwal8,
@@ -596,6 +720,7 @@
             this.listViewJadwal.FullRowSelect = true;
             this.listViewJadwal.GridLines = true;
             this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
@@ -904,42 +1029,6 @@
             this.panelDataRusak.Size = new System.Drawing.Size(529, 520);
             this.panelDataRusak.TabIndex = 5;
             // 
-            // listViewRusak
-            // 
-            this.listViewRusak.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRusak.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnRusakNama,
-            this.columnRusakMulai,
-            this.columnRusakWaktuSelesai});
-            this.listViewRusak.FullRowSelect = true;
-            this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5});
-            this.listViewRusak.Location = new System.Drawing.Point(12, 82);
-            this.listViewRusak.MultiSelect = false;
-            this.listViewRusak.Name = "listViewRusak";
-            this.listViewRusak.Size = new System.Drawing.Size(505, 426);
-            this.listViewRusak.TabIndex = 4;
-            this.listViewRusak.UseCompatibleStateImageBehavior = false;
-            this.listViewRusak.View = System.Windows.Forms.View.Details;
-            // 
-            // columnRusakNama
-            // 
-            this.columnRusakNama.Text = "Nama Ruangan";
-            this.columnRusakNama.Width = 100;
-            // 
-            // columnRusakMulai
-            // 
-            this.columnRusakMulai.Text = "Waktu Mulai Perbaikan";
-            this.columnRusakMulai.Width = 200;
-            // 
-            // columnRusakWaktuSelesai
-            // 
-            this.columnRusakWaktuSelesai.Text = "Waktu Selesai Perbaikan";
-            this.columnRusakWaktuSelesai.Width = 200;
-            // 
             // buttonRusakTambah
             // 
             this.buttonRusakTambah.FlatAppearance.BorderSize = 0;
@@ -992,7 +1081,7 @@
             this.listView4.FullRowSelect = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
+            listViewItem3});
             this.listView4.Location = new System.Drawing.Point(12, 82);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
@@ -1123,7 +1212,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.Size = new System.Drawing.Size(50, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Tanggal";
             // 
@@ -1306,7 +1395,9 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
+
+            listViewItem4});
+
             this.listView1.Location = new System.Drawing.Point(12, 182);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -1352,7 +1443,7 @@
             this.listView3.FullRowSelect = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem5});
             this.listView3.Location = new System.Drawing.Point(12, 82);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
@@ -1437,22 +1528,22 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(129, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(274, 30);
+            this.label9.Size = new System.Drawing.Size(276, 30);
             this.label9.TabIndex = 5;
             this.label9.Text = "Statistik Frekuensi Peminjam";
             // 
             // chartStatistikPeminjam
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartStatistikPeminjam.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartStatistikPeminjam.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistikPeminjam.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistikPeminjam.Legends.Add(legend1);
             this.chartStatistikPeminjam.Location = new System.Drawing.Point(120, 122);
             this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartStatistikPeminjam.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartStatistikPeminjam.Series.Add(series1);
             this.chartStatistikPeminjam.Size = new System.Drawing.Size(300, 300);
             this.chartStatistikPeminjam.TabIndex = 1;
             this.chartStatistikPeminjam.Text = "chart2";
@@ -1475,22 +1566,22 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(129, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(274, 30);
+            this.label7.Size = new System.Drawing.Size(275, 30);
             this.label7.TabIndex = 3;
             this.label7.Text = "Statistik Kerusakan Ruangan";
             // 
             // chartStatistikRusak
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartStatistikRusak.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartStatistikRusak.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.chartStatistikRusak.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStatistikRusak.Legends.Add(legend2);
             this.chartStatistikRusak.Location = new System.Drawing.Point(120, 122);
             this.chartStatistikRusak.Name = "chartStatistikRusak";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartStatistikRusak.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartStatistikRusak.Series.Add(series2);
             this.chartStatistikRusak.Size = new System.Drawing.Size(300, 300);
             this.chartStatistikRusak.TabIndex = 2;
             this.chartStatistikRusak.Text = "chart3";
@@ -1513,22 +1604,22 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(129, 49);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(279, 30);
+            this.label8.Size = new System.Drawing.Size(281, 30);
             this.label8.TabIndex = 4;
             this.label8.Text = "Statistik Pemakaian Ruangan";
             // 
             // chartStatistikRuangan
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartStatistikRuangan.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartStatistikRuangan.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chartStatistikRuangan.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartStatistikRuangan.Legends.Add(legend3);
             this.chartStatistikRuangan.Location = new System.Drawing.Point(120, 122);
             this.chartStatistikRuangan.Name = "chartStatistikRuangan";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartStatistikRuangan.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartStatistikRuangan.Series.Add(series3);
             this.chartStatistikRuangan.Size = new System.Drawing.Size(300, 300);
             this.chartStatistikRuangan.TabIndex = 0;
             this.chartStatistikRuangan.Text = "chart1";
@@ -1613,7 +1704,7 @@
         private System.Windows.Forms.Panel panelDataRusak;
         private System.Windows.Forms.ListView listViewRusak;
         private System.Windows.Forms.ColumnHeader columnRusakNama;
-        private System.Windows.Forms.ColumnHeader columnRusakMulai;
+        private System.Windows.Forms.ColumnHeader columnRusakWaktuMulai;
         private System.Windows.Forms.ColumnHeader columnRusakWaktuSelesai;
         private System.Windows.Forms.Button buttonRusakTambah;
         private System.Windows.Forms.Panel panelDataJadwal;
@@ -1706,5 +1797,9 @@
         private System.Windows.Forms.ColumnHeader colJadwal21;
         private System.Windows.Forms.ColumnHeader colJadwal22;
         private System.Windows.Forms.ColumnHeader colJadwal23;
+        private System.Windows.Forms.ColumnHeader columnRusakDeskripsi;
+        private System.Windows.Forms.Button buttonRusakUbah;
+        private System.Windows.Forms.Button buttonRusakHapus;
+
     }
 }

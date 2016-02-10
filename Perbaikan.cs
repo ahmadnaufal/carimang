@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace CariMang {
-    class Perbaikan {
+    public class Perbaikan {
 
         private static string TBL_PERBAIKAN = "perbaikan";
 
@@ -52,8 +52,8 @@ namespace CariMang {
                     {
                         listPerbaikan.Add(new Perbaikan(
                             (string)reader[COL_NAMA_RUANGAN],
-                            Convert.ToDateTime(reader[COL_TANGGAL_MULAI]),
-                            Convert.ToDateTime(reader[COL_TANGGAL_SELESAI]),
+                            (DateTime)reader[COL_TANGGAL_MULAI],
+                            (DateTime)reader[COL_TANGGAL_SELESAI],
                             (string)reader[COL_DESKRIPSI_PERBAIKAN]));
                     }
                 }
@@ -82,8 +82,8 @@ namespace CariMang {
                     {
                         perbaikan = new Perbaikan(
                             (string)reader[COL_NAMA_RUANGAN],
-                            Convert.ToDateTime(reader[COL_TANGGAL_MULAI]),
-                            Convert.ToDateTime(reader[COL_TANGGAL_SELESAI]),
+                            DateTime.Parse((string)reader[COL_TANGGAL_MULAI]),
+                            DateTime.Parse((string)reader[COL_TANGGAL_SELESAI]),
                             (string)reader[COL_DESKRIPSI_PERBAIKAN]);
                     }
                 }
@@ -119,19 +119,25 @@ namespace CariMang {
         }
 
         /* PARAMETER MAY CHANGE */
-        public static bool Delete(string namaruangan)
+        public static bool Delete(Perbaikan perbaikan)
         {
             bool result = false;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 string query = String.Format(
-                    "DELETE FROM {0} WHERE {1}={2}",
+                    "DELETE FROM {0} WHERE {1}={2} AND {3}={4} AND {5}={6} AND {7}={8}",
                     TBL_PERBAIKAN,
-                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN);
+                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                    COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
+                    COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI,
+                    COL_DESKRIPSI_PERBAIKAN, PRM_DESKRIPSI_PERBAIKAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, perbaikan.NamaRuangan);
+                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, perbaikan.TanggalMulai);
+                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, perbaikan.TanggalSelesai);
+                command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, perbaikan.Deskripsi);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
