@@ -155,7 +155,7 @@ namespace CariMang {
                     result = command.ExecuteNonQuery() > 0;
                 }
             }
-            catch (MySqlException) {
+            catch (MySqlException) {                
             }
 
             return result;

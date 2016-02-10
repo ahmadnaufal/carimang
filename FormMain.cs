@@ -190,5 +190,9 @@ namespace CariMang {
                 }
             }
         }
+
+        private void panelDataJadwal_Paint(object sender, PaintEventArgs e) {
+
+        }
     }
 }
