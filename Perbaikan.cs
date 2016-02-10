@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MySql.Data.MySqlClient;
+
 namespace CariMang {
     class Perbaikan {
 
@@ -24,20 +26,22 @@ namespace CariMang {
         private DateTime tanggalselesai = DateTime.Now;
         private string deskripsi = "";
 
-        private Perbaikan(string namakegiatan, string namapenyelenggara)
+        private Perbaikan(string namaruangan, DateTime tanggalmulai, DateTime tanggalselesai, string deskripsi)
         {
-            this.namakegiatan = namakegiatan;
-            this.namapenyelenggara = namapenyelenggara;
+            this.namaruangan = namaruangan;
+            this.tanggalmulai = tanggalmulai;
+            this.tanggalselesai = tanggalselesai;
+            this.deskripsi = deskripsi;
         }
 
-        public static List<Kegiatan> GetAll()
+        public static List<Perbaikan> GetAll()
         {
-            List<Kegiatan> listKegiatan = new List<Kegiatan>();
+            List<Perbaikan> listKegiatan = new List<Perbaikan>();
 
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 String query = String.Format(
-                    "SELECT * FROM {0}", TBL_KEGIATAN);
+                    "SELECT * FROM {0}", TBL_PERBAIKAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -46,67 +50,76 @@ namespace CariMang {
                 {
                     while (reader.Read())
                     {
-                        listKegiatan.Add(new Kegiatan(
-                            (string)reader[COL_NAMA_KEGIATAN],
-                            (string)reader[COL_PENYELENGGARA_KEGIATAN]));
+                        listKegiatan.Add(new Perbaikan(
+                            (string)reader[COL_NAMA_RUANGAN],
+                            Convert.ToDateTime(reader[COL_TANGGAL_MULAI]),
+                            Convert.ToDateTime(reader[COL_TANGGAL_SELESAI]),
+                            (string)reader[COL_DESKRIPSI_PERBAIKAN]));
                     }
                 }
             }
             return listKegiatan;
         }
 
-        public static Kegiatan Get(int kegiatan_id)
+        public static Perbaikan Get(string nama_ruangan)
         {
-            Kegiatan kegiatan = null;
+            Perbaikan perbaikan = null;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 string query = String.Format(
                     "SELECT * FROM {0} WHERE {1}={2}",
-                    TBL_KEGIATAN,
-                    COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
+                    TBL_PERBAIKAN,
+                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatan_id);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, nama_ruangan);
 
                 connection.Open();
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        kegiatan = new Kegiatan(
-                            (string)reader[COL_NAMA_KEGIATAN],
-                            (string)reader[COL_PENYELENGGARA_KEGIATAN]);
+                        perbaikan = new Perbaikan(
+                            (string)reader[COL_NAMA_RUANGAN],
+                            Convert.ToDateTime(reader[COL_TANGGAL_MULAI]),
+                            Convert.ToDateTime(reader[COL_TANGGAL_SELESAI]),
+                            (string)reader[COL_DESKRIPSI_PERBAIKAN]);
                     }
                 }
             }
-            return kegiatan;
+            return perbaikan;
         }
 
-        public static Kegiatan Add(string namakegiatan, string namapenyelenggara)
+        public static Perbaikan Add(string namaruangan, DateTime tanggalmulai, DateTime tanggalselesai, string deskripsi)
         {
-            Kegiatan kegiatan = null;
+            Perbaikan perbaikan = null;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 string query = String.Format(
-                    "INSERT INTO {0} ({1}, {2}) VALUES ({4}, {5})",
-                    TBL_KEGIATAN,
-                    COL_NAMA_KEGIATAN, COL_PENYELENGGARA_KEGIATAN,
-                    PRM_NAMA_KEGIATAN, PRM_PENYELENGGARA_KEGIATAN);
+                    "INSERT INTO {0} ({1}, {2}, {3}, {4}) VALUES ({5}, {6}, {7}, {8})",
+                    TBL_PERBAIKAN,
+                    COL_NAMA_RUANGAN, COL_TANGGAL_MULAI,
+                    COL_TANGGAL_SELESAI, COL_DESKRIPSI_PERBAIKAN,
+                    PRM_NAMA_RUANGAN, PRM_TANGGAL_MULAI,
+                    PRM_TANGGAL_SELESAI, PRM_DESKRIPSI_PERBAIKAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_NAMA_KEGIATAN, namakegiatan);
-                command.Parameters.AddWithValue(PRM_PENYELENGGARA_KEGIATAN, namapenyelenggara);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
+                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, tanggalmulai.ToString());
+                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, tanggalselesai.ToString());
+                command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, deskripsi);
 
                 connection.Open();
                 if (command.ExecuteNonQuery() > 0)
-                    kegiatan = new Kegiatan(namakegiatan, namapenyelenggara);
+                    perbaikan = new Perbaikan(namaruangan, tanggalmulai, tanggalselesai, deskripsi);
             }
-            return kegiatan;
+            return perbaikan;
         }
 
-        public static bool Delete(int kegiatan_id)
+        /* PARAMETER MAY CHANGE */
+        public static bool Delete(string namaruangan)
         {
             bool result = false;
 
@@ -114,11 +127,11 @@ namespace CariMang {
             {
                 string query = String.Format(
                     "DELETE FROM {0} WHERE {1}={2}",
-                    TBL_KEGIATAN,
-                    COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
+                    TBL_PERBAIKAN,
+                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatan_id);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
@@ -127,53 +140,118 @@ namespace CariMang {
         }
 
 
-        public string NamaKegiatan
+        public string NamaRuangan
         {
-            get { return this.namakegiatan; }
+            get { return this.namaruangan; }
             set
             {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
                         "UPDATE {0} SET {1}={2} WHERE {3}={4}",
-                        TBL_KEGIATAN,
-                        COL_NAMA_KEGIATAN, PRM_NAMA_KEGIATAN,
-                        COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
+                        TBL_PERBAIKAN,
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "1",
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "2",
+                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
+                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_KEGIATAN, value);
-                    command.Parameters.AddWithValue(PRM_ID_KEGIATAN, this.id);
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "1", value);
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "2", this.namaruangan);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
-                        this.namakegiatan = value;
+                        this.namaruangan = value;
                 }
             }
         }
 
-        public string NamaPenyelenggara
+        public DateTime TanggalMulai
         {
-            get { return this.namapenyelenggara; }
+            get { return this.tanggalmulai; }
             set
             {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
                         "UPDATE {0} SET {1}={2} WHERE {3}={4}",
-                        TBL_KEGIATAN,
-                        COL_PENYELENGGARA_KEGIATAN, PRM_PENYELENGGARA_KEGIATAN,
-                        COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
+                        TBL_PERBAIKAN,
+                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI + "1",
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI + "2",
+                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_PENYELENGGARA_KEGIATAN, value);
-                    command.Parameters.AddWithValue(PRM_ID_KEGIATAN, this.id);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "1", value.ToString());
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "2", this.tanggalmulai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
-                        this.namapenyelenggara = value;
+                        this.tanggalmulai = value;
                 }
             }
         }
+
+        public DateTime TanggalSelesai
+        {
+            get { return this.tanggalselesai; }
+            set
+            {
+                using (MySqlConnection connection = MySqlConnector.GetConnection())
+                {
+                    string query = String.Format(
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        TBL_PERBAIKAN,
+                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "1",
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
+                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "2");
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "1", value.ToString());
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "2", this.tanggalselesai);
+
+                    connection.Open();
+                    if (command.ExecuteNonQuery() > 0)
+                        this.tanggalselesai = value;
+                }
+            }
+        }
+
+        public string Deskripsi
+        {
+            get { return this.deskripsi; }
+            set
+            {
+                using (MySqlConnection connection = MySqlConnector.GetConnection())
+                {
+                    string query = String.Format(
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        TBL_PERBAIKAN,
+                        COL_DESKRIPSI_PERBAIKAN, PRM_DESKRIPSI_PERBAIKAN,
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
+                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, value.ToString());
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
+
+                    connection.Open();
+                    if (command.ExecuteNonQuery() > 0)
+                        this.deskripsi = value;
+                }
+            }
+        }
+
 
     }
 }
