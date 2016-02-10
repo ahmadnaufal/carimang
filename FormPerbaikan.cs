@@ -36,8 +36,8 @@ namespace CariMang {
                 }
             }
 
-            dateTimeMulai.Value = perbaikan.TanggalMulai;
-            dateTimeSelesai.Value = perbaikan.TanggalSelesai;
+            dateTimeMulai.Value = perbaikan.TanggalMulai.Date;
+            dateTimeSelesai.Value = perbaikan.TanggalSelesai.Date;
 
             textBoxDeskripsi.Text = perbaikan.Deskripsi;
         }        

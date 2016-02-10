@@ -82,8 +82,8 @@ namespace CariMang {
                     {
                         perbaikan = new Perbaikan(
                             (string)reader[COL_NAMA_RUANGAN],
-                            DateTime.Parse((string)reader[COL_TANGGAL_MULAI]),
-                            DateTime.Parse((string)reader[COL_TANGGAL_SELESAI]),
+                            (DateTime)reader[COL_TANGGAL_MULAI],
+                            (DateTime)reader[COL_TANGGAL_SELESAI],
                             (string)reader[COL_DESKRIPSI_PERBAIKAN]);
                     }
                 }
@@ -107,8 +107,8 @@ namespace CariMang {
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
-                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, tanggalmulai.ToString());
-                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, tanggalselesai.ToString());
+                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, tanggalmulai.Date.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, tanggalselesai.Date.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, deskripsi);
 
                 connection.Open();
@@ -126,18 +126,16 @@ namespace CariMang {
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 string query = String.Format(
-                    "DELETE FROM {0} WHERE {1}={2} AND {3}={4} AND {5}={6} AND {7}={8}",
+                    "DELETE FROM {0} WHERE {1}={2} AND {3}={4} AND {5}={6}",
                     TBL_PERBAIKAN,
                     COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
                     COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
-                    COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI,
-                    COL_DESKRIPSI_PERBAIKAN, PRM_DESKRIPSI_PERBAIKAN);
+                    COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, perbaikan.NamaRuangan);
-                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, perbaikan.TanggalMulai);
-                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, perbaikan.TanggalSelesai);
-                command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, perbaikan.Deskripsi);
+                command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, perbaikan.TanggalMulai.Date.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, perbaikan.TanggalSelesai.Date.ToString("yyyy-MM-dd"));
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
@@ -154,7 +152,7 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
                         TBL_PERBAIKAN,
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "1",
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "2",
@@ -164,8 +162,8 @@ namespace CariMang {
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "1", value);
                     command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "2", this.namaruangan);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString("yyyy-MM-dd"));
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
@@ -182,7 +180,7 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
                         TBL_PERBAIKAN,
                         COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI + "1",
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
@@ -190,10 +188,10 @@ namespace CariMang {
                         COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "1", value.ToString());
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "1", value.Date.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "2", this.tanggalmulai);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "2", this.tanggalmulai.Date.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString("yyyy-MM-dd"));
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
@@ -210,7 +208,7 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
                         TBL_PERBAIKAN,
                         COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "1",
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
@@ -218,10 +216,10 @@ namespace CariMang {
                         COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "2");
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "1", value.ToString());
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "1", value.Date.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "2", this.tanggalselesai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "2", this.tanggalselesai.Date.ToString("yyyy-MM-dd"));
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
@@ -238,7 +236,7 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                        "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
                         TBL_PERBAIKAN,
                         COL_DESKRIPSI_PERBAIKAN, PRM_DESKRIPSI_PERBAIKAN,
                         COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
@@ -248,8 +246,8 @@ namespace CariMang {
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, value.ToString());
                     command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.namaruangan);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai);
+                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString("yyyy-MM-dd"));
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
