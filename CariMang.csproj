@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acara_Kegiatan.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +77,7 @@
     <Compile Include="Kegiatan.cs" />
     <Compile Include="MySqlConnector.Config.cs" />
     <Compile Include="MySqlConnector.cs" />
+    <Compile Include="Peminjam.cs" />
     <Compile Include="Perkuliahan.cs" />
     <Compile Include="Perbaikan.cs" />
     <Compile Include="Program.cs" />

@@ -36,7 +36,7 @@ namespace CariMang {
 
         public static List<Perbaikan> GetAll()
         {
-            List<Perbaikan> listKegiatan = new List<Perbaikan>();
+            List<Perbaikan> listPerbaikan = new List<Perbaikan>();
 
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {

@@ -6,42 +6,46 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CariMang {
-    class Acara_Kegiatan {
-        private static string TBL_ACARA_KEGIATAN = "acara_kegiatan";
+    class Kegiatan {
+        private static string TBL_KEGIATAN = "kegiatan";
 
-        private static string COL_ID_KEGIATAN = "id_kegiatan";
-        private static string COL_ID_RUANGAN = "id_ruangan";
+        private static string COL_ID_PEMINJAM = "id_peminjam";
+        private static string COL_NAMA_RUANGAN = "nama_ruangan";
+        private static string COL_NAMA_KEGIATAN = "nama_kegiatan";
         private static string COL_TANGGAL_KEGIATAN = "tanggal_kegiatan";
         private static string COL_WAKTUMULAI_KEGIATAN = "waktu_mulai";
         private static string COL_WAKTUSELESAI_KEGIATAN = "waktu_selesai";
 
-        private static string PRM_ID_KEGIATAN = "@idkegiatan";
-        private static string PRM_ID_RUANGAN = "@idruangan";
+        private static string PRM_ID_PEMINJAM = "@idpeminjam";
+        private static string PRM_NAMA_RUANGAN = "@namaruangan";
+        private static string PRM_NAMA_KEGIATAN = "@namakegiatan";
         private static string PRM_TANGGAL_KEGIATAN = "@tanggal";
         private static string PRM_WAKTUMULAI_KEGIATAN = "@mulai";
         private static string PRM_WAKTUSELESAI_KEGIATAN = "@selesai";
 
-        private int idkegiatan = 0;
-        private int idruangan = 0;
+        private int idpeminjam = 0;
+        private string namaruangan = "";
+        private string namakegiatan = "";
         private DateTime tanggalkegiatan = DateTime.Now;
-        private DateTime mulaikegiatan = DateTime.Now;
-        private DateTime selesaikegiatan = DateTime.Now;
+        private int mulaikegiatan = 0;
+        private int selesaikegiatan = 0;
 
-        private Acara_Kegiatan(int idkegiatan, int idruangan,
-                                DateTime tanggalkegiatan, DateTime mulaikegiatan, DateTime selesaikegiatan) {
-            this.idkegiatan = idkegiatan;
-            this.idruangan = idruangan;
+        private Kegiatan(int idpeminjam, string namaruangan, string namakegiatan,
+                                DateTime tanggalkegiatan, int mulaikegiatan, int selesaikegiatan) {
+            this.idpeminjam = idpeminjam;
+            this.namaruangan = namaruangan;
+            this.namakegiatan = namakegiatan;
             this.tanggalkegiatan = tanggalkegiatan;
             this.mulaikegiatan = mulaikegiatan;
             this.selesaikegiatan = selesaikegiatan;
         }
 
-        public static List<Acara_Kegiatan> GetAll() {
-            List<Acara_Kegiatan> listAcaraKegiatan = new List<Acara_Kegiatan>();
+        public static List<Kegiatan> GetAll() {
+            List<Kegiatan> listKegiatan = new List<Kegiatan>();
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                 String query = String.Format(
-                    "SELECT * FROM {0}", TBL_ACARA_KEGIATAN);
+                    "SELECT * FROM {0}", TBL_KEGIATAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -49,90 +53,99 @@ namespace CariMang {
                     connection.Open();
                 using (MySqlDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
-                        listAcaraKegiatan.Add(new Acara_Kegiatan(
-                            (int)reader[COL_ID_KEGIATAN],
-                            (int)reader[COL_ID_RUANGAN],
+                        listKegiatan.Add(new Kegiatan(
+                            (int)reader[COL_ID_PEMINJAM],
+                            (string)reader[COL_NAMA_RUANGAN],
+                            (string)reader[COL_NAMA_KEGIATAN],
                             DateTime.Parse((string)reader[COL_TANGGAL_KEGIATAN]),
-                            DateTime.Parse((string)reader[COL_WAKTUMULAI_KEGIATAN]),
-                            DateTime.Parse((string)reader[COL_WAKTUSELESAI_KEGIATAN]))
+                            (int)reader[COL_WAKTUMULAI_KEGIATAN],
+                            (int)reader[COL_WAKTUSELESAI_KEGIATAN])
                         );
                     }
                 }
             }
-            return listAcaraKegiatan;
+            return listKegiatan;
         }
 
-        public static Acara_Kegiatan Get(int kegiatanid, int ruanganid) {
-            Acara_Kegiatan acarakegiatan = null;
+        public static Kegiatan Get(int peminjamid, string namaruangan, string namakegiatan) {
+            Kegiatan kegiatan = null;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                 string query = String.Format(
                     "SELECT * FROM {0} WHERE {1}={2} AND {3}={4}",
-                    TBL_ACARA_KEGIATAN,
-                    COL_ID_KEGIATAN, PRM_ID_KEGIATAN,
-                    COL_ID_RUANGAN, PRM_ID_RUANGAN);
+                    TBL_KEGIATAN,
+                    COL_ID_PEMINJAM, PRM_ID_PEMINJAM,
+                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                    COL_NAMA_KEGIATAN, PRM_NAMA_KEGIATAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatanid);
-                command.Parameters.AddWithValue(PRM_ID_RUANGAN, ruanganid);
+                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, peminjamid);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
+                command.Parameters.AddWithValue(PRM_NAMA_KEGIATAN, namakegiatan);
 
                 connection.Open();
                 using (MySqlDataReader reader = command.ExecuteReader()) {
                     if (reader.Read()) {
-                        acarakegiatan = new Acara_Kegiatan(
-                            (int)reader[COL_ID_KEGIATAN],
-                            (int)reader[COL_ID_RUANGAN],
+                        kegiatan = new Kegiatan(
+                            (int)reader[COL_ID_PEMINJAM],
+                            (string)reader[COL_NAMA_RUANGAN],
+                            (string)reader[COL_NAMA_KEGIATAN],
                             DateTime.Parse((string)reader[COL_TANGGAL_KEGIATAN]),
-                            DateTime.Parse((string)reader[COL_WAKTUMULAI_KEGIATAN]),
-                            DateTime.Parse((string)reader[COL_WAKTUSELESAI_KEGIATAN])
+                            (int)reader[COL_WAKTUMULAI_KEGIATAN],
+                            (int)reader[COL_WAKTUSELESAI_KEGIATAN]
                         );
                     }
                 }
             }
-            return acarakegiatan;
+            return kegiatan;
         }
 
-        public static Acara_Kegiatan Add(int idkegiatan, int idruangan,
-                                DateTime tanggalkegiatan, DateTime mulaikegiatan, DateTime selesaikegiatan) {
-            Acara_Kegiatan acarakegiatan = null;
+        public static Kegiatan Add(int idpeminjam, string namaruangan, string namakegiatan,
+                                DateTime tanggalkegiatan, int mulaikegiatan, int selesaikegiatan) {
+            Kegiatan kegiatan = null;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                 string query = String.Format(
-                    "INSERT INTO {0} ({1}, {2}, {3}, {4}, {5}) VALUES ({6}, {7}, {8}, {9}, {10})",
-                    TBL_ACARA_KEGIATAN,
-                    COL_ID_KEGIATAN, COL_ID_RUANGAN, COL_TANGGAL_KEGIATAN,
-                    COL_WAKTUMULAI_KEGIATAN, COL_WAKTUSELESAI_KEGIATAN,
-                    PRM_ID_KEGIATAN, PRM_ID_RUANGAN, PRM_TANGGAL_KEGIATAN,
-                    PRM_WAKTUMULAI_KEGIATAN, PRM_WAKTUSELESAI_KEGIATAN);
+                    "INSERT INTO {0} ({1}, {2}, {3}, {4}, {5}, {6}) VALUES ({7}, {8}, {9}, {10}, {11}, {12})",
+                    TBL_KEGIATAN,
+                    COL_ID_PEMINJAM, COL_NAMA_RUANGAN, COL_NAMA_KEGIATAN,
+                    COL_TANGGAL_KEGIATAN, COL_WAKTUMULAI_KEGIATAN, COL_WAKTUSELESAI_KEGIATAN,
+                    PRM_ID_PEMINJAM, PRM_NAMA_RUANGAN, PRM_NAMA_KEGIATAN,
+                    PRM_TANGGAL_KEGIATAN, PRM_WAKTUMULAI_KEGIATAN, PRM_WAKTUSELESAI_KEGIATAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, idkegiatan);
-                command.Parameters.AddWithValue(PRM_ID_RUANGAN, idruangan);
+                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, idpeminjam);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
+                command.Parameters.AddWithValue(PRM_NAMA_KEGIATAN, namakegiatan);
                 command.Parameters.AddWithValue(PRM_TANGGAL_KEGIATAN, tanggalkegiatan.ToString("yyyy-MM-dd"));
-                command.Parameters.AddWithValue(PRM_WAKTUMULAI_KEGIATAN, mulaikegiatan.ToString("yyyy-MM-dd"));
-                command.Parameters.AddWithValue(PRM_WAKTUSELESAI_KEGIATAN, selesaikegiatan.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue(PRM_WAKTUMULAI_KEGIATAN, mulaikegiatan);
+                command.Parameters.AddWithValue(PRM_WAKTUSELESAI_KEGIATAN, selesaikegiatan);
 
                 connection.Open();
                 if (command.ExecuteNonQuery() > 0)
-                    acarakegiatan = new Acara_Kegiatan(
-                        idkegiatan, idruangan, tanggalkegiatan,
-                        mulaikegiatan, selesaikegiatan
+                    kegiatan = new Kegiatan(
+                        idpeminjam, namaruangan, namakegiatan,
+                        tanggalkegiatan, mulaikegiatan, selesaikegiatan
                     );
             }
-            return acarakegiatan;
+            return kegiatan;
         }
 
-        public static bool Delete(int kegiatanid, int ruanganid) {
+        public static bool Delete(int idpeminjam, string namaruangan, string namakegiatan) {
             bool result = false;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                 string query = String.Format(
-                    "DELETE FROM {0} WHERE {1}={2} AND {3}={4}",
-                    TBL_ACARA_KEGIATAN,
-                    COL_ID_KEGIATAN, PRM_ID_KEGIATAN);
+                    "DELETE FROM {0} WHERE {1}={2} AND {3}={4} AND {5}={6}",
+                    TBL_KEGIATAN,
+                    COL_ID_PEMINJAM, PRM_ID_PEMINJAM,
+                    COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                    COL_NAMA_KEGIATAN, PRM_NAMA_KEGIATAN);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_KEGIATAN, kegiatanid);
+                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, idpeminjam);
+                command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, namaruangan);
+                command.Parameters.AddWithValue(PRM_NAMA_KEGIATAN, namakegiatan);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
