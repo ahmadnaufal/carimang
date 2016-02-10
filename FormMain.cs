@@ -95,20 +95,21 @@ namespace CariMang {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
                 perkuliahan.Kuliah = form.Kuliah;
-                item.SubItems[0].Text = form.Kuliah.Nama;
+                item.SubItems[0].Text = form.Kuliah.Kode;
+                item.SubItems[1].Text = form.Kuliah.Nama;
 
                 perkuliahan.Ruangan = form.Ruangan;
-                item.SubItems[1].Text = form.Ruangan.Nama;
+                item.SubItems[2].Text = form.Ruangan.Nama;
 
                 perkuliahan.HariPerkuliahan = form.HariKuliah;
-                item.SubItems[2].Text = ((Perkuliahan.DaftarHari)form.HariKuliah).ToString();
+                item.SubItems[3].Text = ((Perkuliahan.DaftarHari)form.HariKuliah).ToString();
 
                 perkuliahan.WaktuMulai = form.WaktuMulai;                
                 perkuliahan.WaktuSelesai = form.WaktuSelesai;
-                item.SubItems[3].Text = String.Format("{0:00}:00 - {1:00}:00", form.WaktuMulai, form.WaktuSelesai);
+                item.SubItems[4].Text = String.Format("{0:00}:00 - {1:00}:00", form.WaktuMulai, form.WaktuSelesai);
 
                 perkuliahan.PenanggungJawab = form.PenanggungJawab;
-                item.SubItems[4].Text = form.PenanggungJawab;
+                item.SubItems[5].Text = form.PenanggungJawab;
             }
         }
 
@@ -181,7 +182,6 @@ namespace CariMang {
             }
         }
 
-<<<<<<< Updated upstream
         private void buttonKuliahHapus_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in listViewKuliah.Items) {
                 if (item.Selected) {
@@ -190,7 +190,5 @@ namespace CariMang {
                 }
             }
         }
-=======
->>>>>>> Stashed changes
     }
 }

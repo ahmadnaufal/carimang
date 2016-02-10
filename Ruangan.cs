@@ -35,6 +35,25 @@ namespace CariMang {
             this.kapasitas = kapasitas;
         }
 
+        public override bool Equals(object obj) {
+            if (obj == null)
+                return false;
+
+            Ruangan ruangan = obj as Ruangan;
+            return this.Equals(ruangan);
+        }
+
+        public bool Equals(Ruangan ruangan) {
+            if ((object)ruangan == null)
+                return false;
+
+            return this.nama.Equals(ruangan.nama);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
+        }
+
         public static List<Ruangan> GetAll() {
             List<Ruangan> listRuangan = new List<Ruangan>();
 

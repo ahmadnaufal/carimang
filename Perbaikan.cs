@@ -50,7 +50,7 @@ namespace CariMang {
                 {
                     while (reader.Read())
                     {
-                        listKegiatan.Add(new Perbaikan(
+                        listPerbaikan.Add(new Perbaikan(
                             (string)reader[COL_NAMA_RUANGAN],
                             Convert.ToDateTime(reader[COL_TANGGAL_MULAI]),
                             Convert.ToDateTime(reader[COL_TANGGAL_SELESAI]),
@@ -58,7 +58,7 @@ namespace CariMang {
                     }
                 }
             }
-            return listKegiatan;
+            return listPerbaikan;
         }
 
         public static Perbaikan Get(string nama_ruangan)

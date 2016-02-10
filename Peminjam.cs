@@ -96,7 +96,7 @@ namespace CariMang {
                     COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_Peminjam, id);
+                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, id);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;

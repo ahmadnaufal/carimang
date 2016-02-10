@@ -323,7 +323,7 @@ namespace CariMang {
             }
         }
 
-        public string SelesaiKegiatan
+        public int SelesaiKegiatan
         {
             get { return this.selesaikegiatan; }
             set

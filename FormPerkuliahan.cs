@@ -35,19 +35,20 @@ namespace CariMang {
         public FormPerkuliahan(Perkuliahan perkuliahan) {
             InitializeComponent();
             InitializeData();
-            for (int i = 0; i < comboKuliah.Items.Count; ++i) {
-                if (comboKuliah.Items[i].Equals(perkuliahan.Kuliah.Nama)) {
+            for (int i = 0; i < DaftarKuliah.Count; ++i) {
+                if (DaftarKuliah[i].Equals(perkuliahan.Kuliah)) {
                     comboKuliah.SelectedIndex = i;
                     break;
                 }
             }
             textTanggung.Text = perkuliahan.PenanggungJawab;
-            for (int i = 0; i < comboKuliah.Items.Count; ++i) {
-                if (comboRuangan.Items[i].Equals(perkuliahan.Ruangan.Nama)) {
+            for (int i = 0; i < DaftarRuangan.Count; ++i) {
+                if (DaftarRuangan[i].Equals(perkuliahan.Ruangan)) {
                     comboRuangan.SelectedIndex = i;
                     break;
                 }
             }
+            comboHari.SelectedIndex = perkuliahan.HariPerkuliahan;
             numWaktuMulai.Value = (Decimal)perkuliahan.WaktuMulai;
             numWaktuSelesai.Value = (Decimal)perkuliahan.WaktuSelesai;
         }

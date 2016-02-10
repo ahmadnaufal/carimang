@@ -30,6 +30,25 @@ namespace CariMang {
             this.peserta = peserta;
         }
 
+        public override bool Equals(object obj) {
+            if (obj == null)
+                return false;
+
+            Kuliah kuliah = obj as Kuliah;
+            return this.Equals(kuliah);
+        }
+
+        public bool Equals(Kuliah kuliah) {
+            if ((object)kuliah == null)
+                return false;
+
+            return this.kode.Equals(kuliah.kode);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
+        }
+
         public static List<Kuliah> GetAll() {
             List<Kuliah> listKuliah = new List<Kuliah>();
 
@@ -53,7 +72,7 @@ namespace CariMang {
             }
             catch (MySqlException) {
             }
-            
+
             return listKuliah;
         }
 
@@ -71,7 +90,7 @@ namespace CariMang {
                     command.Parameters.AddWithValue(PRM_KODE_KULIAH, kode);
 
                     if (connection.State != System.Data.ConnectionState.Open)
-                        connection.Open();                    
+                        connection.Open();
                     using (MySqlDataReader reader = command.ExecuteReader()) {
                         if (reader.Read()) {
                             kuliah = new Kuliah(
@@ -81,7 +100,7 @@ namespace CariMang {
                         }
                     }
                 }
-            }    
+            }
             catch (MySqlException) {
             }
 
@@ -130,7 +149,7 @@ namespace CariMang {
 
                     connection.Open();
                     result = command.ExecuteNonQuery() > 0;
-                }                
+                }
             }
             catch (MySqlException) {
             }

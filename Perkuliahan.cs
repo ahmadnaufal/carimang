@@ -47,6 +47,30 @@ namespace CariMang {
             this.penanggungJawab = penanggungJawab;
         }
 
+        public override bool Equals(object obj) {
+            if (obj == null)
+                return false;
+
+            Perkuliahan perkuliahan = obj as Perkuliahan;
+            return this.Equals(perkuliahan);
+        }
+
+        public bool Equals(Perkuliahan perkuliahan) {
+            if ((object)perkuliahan == null)
+                return false;
+
+            return
+                this.kuliah.Equals(perkuliahan.kuliah) &&
+                this.ruangan.Equals(perkuliahan.ruangan) &&
+                this.hariPerkuliahan.Equals(perkuliahan.hariPerkuliahan) &&
+                this.waktuMulai.Equals(perkuliahan.waktuMulai) &&
+                this.waktuSelesai.Equals(perkuliahan.waktuSelesai);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
+        }
+
         public static List<Perkuliahan> GetAll() {
             List<Perkuliahan> listPerkuliahan = new List<Perkuliahan>();
 
@@ -61,8 +85,8 @@ namespace CariMang {
                     using (MySqlDataReader reader = command.ExecuteReader()) {
                         while (reader.Read()) {
                             Kuliah kuliah = Kuliah.Get((string)reader[COL_KODE_KULIAH]);
-                            Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);                                                        
-                            int hari = (int)reader[COL_HARI_PERKULIAHAN];                            
+                            Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);
+                            int hari = (int)reader[COL_HARI_PERKULIAHAN];
                             int mulai = (int)reader[COL_WAKTU_MULAI];
                             int selesai = (int)reader[COL_WAKTU_SELESAI];
                             string tanggung = (string)reader[COL_PENANGGUNG_JAWAB];
@@ -130,7 +154,7 @@ namespace CariMang {
                     command.Parameters.AddWithValue(PRM_WAKTU_MULAI, waktuMulai);
                     command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, waktuSelesai);
                     command.Parameters.AddWithValue(PRM_TANGGUNG, penanggungJawab);
-                    
+
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
                         perkuliahan = new Perkuliahan(kuliah, ruangan, hariPerkuliahan,
