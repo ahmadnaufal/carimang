@@ -23,7 +23,23 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "IF3330",
+            "Proyek Perangkat Lunak",
+            "Adi Mulyanto",
+            "7602",
+            "09.00-10.00"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
@@ -42,7 +58,6 @@
             "25 Jan 2016"}, -1);
             this.splitPanel = new System.Windows.Forms.SplitContainer();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panelTab = new System.Windows.Forms.Panel();
             this.tabData = new System.Windows.Forms.Button();
@@ -61,7 +76,27 @@
             this.pageStatistikRusak = new System.Windows.Forms.Button();
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
+            this.panelStatistik = new System.Windows.Forms.Panel();
+            this.panelStatistikPeminjam = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chartStatistikPeminjam = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelStatistikRusak = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chartStatistikRusak = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelStatistikRuangan = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chartStatistikRuangan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelData = new System.Windows.Forms.Panel();
+            this.panelDataRuangan = new System.Windows.Forms.Panel();
+            this.buttonRuanganUbah = new System.Windows.Forms.Button();
+            this.buttonRuanganHapus = new System.Windows.Forms.Button();
+            this.listViewRuangan = new System.Windows.Forms.ListView();
+            this.columnRuanganNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRuanganTipe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRuanganKapasitas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRuanganCari = new System.Windows.Forms.Button();
+            this.buttonRuanganBooking = new System.Windows.Forms.Button();
+            this.buttonRuanganTambah = new System.Windows.Forms.Button();
             this.panelDataKuliah = new System.Windows.Forms.Panel();
             this.buttonKuliahHapus = new System.Windows.Forms.Button();
             this.buttonKuliahUbah = new System.Windows.Forms.Button();
@@ -148,6 +183,13 @@
             this.panelPageData.SuspendLayout();
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
+            this.panelStatistik.SuspendLayout();
+            this.panelStatistikPeminjam.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).BeginInit();
+            this.panelStatistikRusak.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).BeginInit();
+            this.panelStatistikRuangan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).BeginInit();
             this.panelData.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
@@ -184,6 +226,7 @@
             // splitPanel.Panel2
             // 
             this.splitPanel.Panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.splitPanel.Panel2.Controls.Add(this.panelStatistik);
             this.splitPanel.Panel2.Controls.Add(this.panelData);
             this.splitPanel.Panel2.Controls.Add(this.panelBooking);
             this.splitPanel.Size = new System.Drawing.Size(789, 520);
@@ -196,7 +239,6 @@
             this.panelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTitle.BackColor = System.Drawing.Color.DimGray;
-            this.panelTitle.Controls.Add(this.buttonBack);
             this.panelTitle.Controls.Add(this.labelTitle);
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -204,25 +246,12 @@
             this.panelTitle.Size = new System.Drawing.Size(256, 66);
             this.panelTitle.TabIndex = 7;
             // 
-            // buttonBack
-            // 
-            this.buttonBack.FlatAppearance.BorderSize = 0;
-            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Location = new System.Drawing.Point(51, 23);
-            this.buttonBack.MaximumSize = new System.Drawing.Size(37, 37);
-            this.buttonBack.MinimumSize = new System.Drawing.Size(37, 37);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(37, 37);
-            this.buttonBack.TabIndex = 3;
-            this.buttonBack.Text = "button1";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(94, 23);
+            this.labelTitle.Location = new System.Drawing.Point(65, 23);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(118, 32);
             this.labelTitle.TabIndex = 2;
@@ -464,6 +493,8 @@
             this.pageStatistikRusak.Size = new System.Drawing.Size(256, 40);
             this.pageStatistikRusak.TabIndex = 2;
             this.pageStatistikRusak.Text = "Frekuensi Kerusakan Ruangan";
+            this.pageStatistikRusak.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageStatistikRusak.Click += new System.EventHandler(this.pageStatistikRusak_Click);
             // 
             // pageStatistikPeminjam
             // 
@@ -479,6 +510,8 @@
             this.pageStatistikPeminjam.Size = new System.Drawing.Size(256, 40);
             this.pageStatistikPeminjam.TabIndex = 1;
             this.pageStatistikPeminjam.Text = "Frekuensi Peminjam";
+            this.pageStatistikPeminjam.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageStatistikPeminjam.Click += new System.EventHandler(this.pageStatistikPeminjam_Click);
             // 
             // pageStatistikRuangan
             // 
@@ -497,6 +530,135 @@
             this.pageStatistikRuangan.TabIndex = 0;
             this.pageStatistikRuangan.Text = "Frekuensi Peminjaman Ruangan";
             this.pageStatistikRuangan.UseVisualStyleBackColor = false;
+            this.pageStatistikRuangan.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageStatistikRuangan.Click += new System.EventHandler(this.pageStatistikRuangan_Click);
+            // 
+            // panelStatistik
+            // 
+            this.panelStatistik.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistik.Controls.Add(this.panelStatistikRuangan);
+            this.panelStatistik.Controls.Add(this.panelStatistikPeminjam);
+            this.panelStatistik.Controls.Add(this.panelStatistikRusak);
+            this.panelStatistik.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistik.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistik.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistik.Name = "panelStatistik";
+            this.panelStatistik.Size = new System.Drawing.Size(529, 520);
+            this.panelStatistik.TabIndex = 6;
+            // 
+            // panelStatistikPeminjam
+            // 
+            this.panelStatistikPeminjam.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikPeminjam.Controls.Add(this.label9);
+            this.panelStatistikPeminjam.Controls.Add(this.chartStatistikPeminjam);
+            this.panelStatistikPeminjam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikPeminjam.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikPeminjam.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikPeminjam.Name = "panelStatistikPeminjam";
+            this.panelStatistikPeminjam.Size = new System.Drawing.Size(529, 520);
+            this.panelStatistikPeminjam.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(129, 49);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(276, 30);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Statistik Frekuensi Peminjam";
+            // 
+            // chartStatistikPeminjam
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chartStatistikPeminjam.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartStatistikPeminjam.Legends.Add(legend4);
+            this.chartStatistikPeminjam.Location = new System.Drawing.Point(120, 122);
+            this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartStatistikPeminjam.Series.Add(series4);
+            this.chartStatistikPeminjam.Size = new System.Drawing.Size(300, 300);
+            this.chartStatistikPeminjam.TabIndex = 1;
+            this.chartStatistikPeminjam.Text = "chart2";
+            // 
+            // panelStatistikRusak
+            // 
+            this.panelStatistikRusak.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikRusak.Controls.Add(this.label7);
+            this.panelStatistikRusak.Controls.Add(this.chartStatistikRusak);
+            this.panelStatistikRusak.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikRusak.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikRusak.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikRusak.Name = "panelStatistikRusak";
+            this.panelStatistikRusak.Size = new System.Drawing.Size(529, 520);
+            this.panelStatistikRusak.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(129, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(275, 30);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Statistik Kerusakan Ruangan";
+            // 
+            // chartStatistikRusak
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chartStatistikRusak.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartStatistikRusak.Legends.Add(legend5);
+            this.chartStatistikRusak.Location = new System.Drawing.Point(120, 122);
+            this.chartStatistikRusak.Name = "chartStatistikRusak";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartStatistikRusak.Series.Add(series5);
+            this.chartStatistikRusak.Size = new System.Drawing.Size(300, 300);
+            this.chartStatistikRusak.TabIndex = 2;
+            this.chartStatistikRusak.Text = "chart3";
+            // 
+            // panelStatistikRuangan
+            // 
+            this.panelStatistikRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikRuangan.Controls.Add(this.label8);
+            this.panelStatistikRuangan.Controls.Add(this.chartStatistikRuangan);
+            this.panelStatistikRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikRuangan.Name = "panelStatistikRuangan";
+            this.panelStatistikRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelStatistikRuangan.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(129, 49);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(281, 30);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Statistik Pemakaian Ruangan";
+            // 
+            // chartStatistikRuangan
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chartStatistikRuangan.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartStatistikRuangan.Legends.Add(legend6);
+            this.chartStatistikRuangan.Location = new System.Drawing.Point(120, 122);
+            this.chartStatistikRuangan.Name = "chartStatistikRuangan";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartStatistikRuangan.Series.Add(series6);
+            this.chartStatistikRuangan.Size = new System.Drawing.Size(300, 300);
+            this.chartStatistikRuangan.TabIndex = 0;
+            this.chartStatistikRuangan.Text = "chart1";
             // 
             // panelData
             // 
@@ -511,6 +673,112 @@
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(529, 520);
             this.panelData.TabIndex = 4;
+            // 
+            // panelDataRuangan
+            // 
+            this.panelDataRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganUbah);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganHapus);
+            this.panelDataRuangan.Controls.Add(this.listViewRuangan);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganCari);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganBooking);
+            this.panelDataRuangan.Controls.Add(this.buttonRuanganTambah);
+            this.panelDataRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDataRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelDataRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDataRuangan.Name = "panelDataRuangan";
+            this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelDataRuangan.TabIndex = 0;
+            // 
+            // buttonRuanganUbah
+            // 
+            this.buttonRuanganUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganUbah.Location = new System.Drawing.Point(383, 12);
+            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
+            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganUbah.TabIndex = 6;
+            this.buttonRuanganUbah.Text = "Ubah";
+            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
+            // 
+            // buttonRuanganHapus
+            // 
+            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
+            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganHapus.TabIndex = 5;
+            this.buttonRuanganHapus.Text = "Hapus";
+            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
+            // 
+            // listViewRuangan
+            // 
+            this.listViewRuangan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewRuangan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnRuanganNama,
+            this.columnRuanganTipe,
+            this.columnRuanganKapasitas});
+            this.listViewRuangan.FullRowSelect = true;
+            this.listViewRuangan.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewRuangan.HideSelection = false;
+            this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
+            this.listViewRuangan.MultiSelect = false;
+            this.listViewRuangan.Name = "listViewRuangan";
+            this.listViewRuangan.Size = new System.Drawing.Size(505, 426);
+            this.listViewRuangan.TabIndex = 4;
+            this.listViewRuangan.UseCompatibleStateImageBehavior = false;
+            this.listViewRuangan.View = System.Windows.Forms.View.Details;
+            // 
+            // columnRuanganNama
+            // 
+            this.columnRuanganNama.Text = "Nama";
+            this.columnRuanganNama.Width = 95;
+            // 
+            // columnRuanganTipe
+            // 
+            this.columnRuanganTipe.Text = "Tipe";
+            // 
+            // columnRuanganKapasitas
+            // 
+            this.columnRuanganKapasitas.Text = "Kapasitas";
+            this.columnRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnRuanganKapasitas.Width = 101;
+            // 
+            // buttonRuanganCari
+            // 
+            this.buttonRuanganCari.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganCari.Location = new System.Drawing.Point(152, 12);
+            this.buttonRuanganCari.Name = "buttonRuanganCari";
+            this.buttonRuanganCari.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganCari.TabIndex = 2;
+            this.buttonRuanganCari.Text = "Cari";
+            // 
+            // buttonRuanganBooking
+            // 
+            this.buttonRuanganBooking.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganBooking.Location = new System.Drawing.Point(82, 12);
+            this.buttonRuanganBooking.Name = "buttonRuanganBooking";
+            this.buttonRuanganBooking.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganBooking.TabIndex = 1;
+            this.buttonRuanganBooking.Text = "Booking";
+            // 
+            // buttonRuanganTambah
+            // 
+            this.buttonRuanganTambah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonRuanganTambah.Name = "buttonRuanganTambah";
+            this.buttonRuanganTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganTambah.TabIndex = 0;
+            this.buttonRuanganTambah.Text = "Tambah";
+            this.buttonRuanganTambah.Click += new System.EventHandler(this.buttonRuanganTambah_Click);
             // 
             // panelDataKuliah
             // 
@@ -1040,7 +1308,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.Size = new System.Drawing.Size(50, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Tanggal";
             // 
@@ -1345,6 +1613,16 @@
             this.panelPageData.ResumeLayout(false);
             this.panelPageBooking.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
+            this.panelStatistik.ResumeLayout(false);
+            this.panelStatistikPeminjam.ResumeLayout(false);
+            this.panelStatistikPeminjam.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).EndInit();
+            this.panelStatistikRusak.ResumeLayout(false);
+            this.panelStatistikRusak.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).EndInit();
+            this.panelStatistikRuangan.ResumeLayout(false);
+            this.panelStatistikRuangan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).EndInit();
             this.panelData.ResumeLayout(false);
             this.panelDataKuliah.ResumeLayout(false);
             this.panelDataRusak.ResumeLayout(false);
@@ -1409,7 +1687,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panelTab;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panelPageBooking;
         private System.Windows.Forms.Button pageBookingCari;
@@ -1465,5 +1742,15 @@
         private System.Windows.Forms.Button buttonKuliahHapus;
         private System.Windows.Forms.Button buttonKuliahUbah;
         private System.Windows.Forms.ColumnHeader columnKuliahHari;
+        private System.Windows.Forms.Panel panelStatistik;
+        private System.Windows.Forms.Panel panelStatistikRuangan;
+        private System.Windows.Forms.Panel panelStatistikPeminjam;
+        private System.Windows.Forms.Panel panelStatistikRusak;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistikRuangan;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistikRusak;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistikPeminjam;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

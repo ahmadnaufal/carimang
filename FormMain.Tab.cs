@@ -66,7 +66,7 @@ namespace CariMang {
 
             this.tab_Click(tab);
             this.panelPageStatistik.BringToFront();
-            
+            this.panelStatistik.BringToFront();
         }
 
         private void tab_BackColorChanged(object sender, EventArgs e) {

@@ -19,6 +19,7 @@ namespace CariMang {
         private void InitializeLayout() {
             tabData.Tag = true;
             pageDataJadwal.Tag = true;
+            pageStatistikRuangan.Tag = true;
         }
 
         private void InitializeData() {
@@ -180,6 +181,7 @@ namespace CariMang {
             }
         }
 
+<<<<<<< Updated upstream
         private void buttonKuliahHapus_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in listViewKuliah.Items) {
                 if (item.Selected) {
@@ -188,5 +190,7 @@ namespace CariMang {
                 }
             }
         }
+=======
+>>>>>>> Stashed changes
     }
 }

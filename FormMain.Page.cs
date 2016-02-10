@@ -82,6 +82,48 @@ namespace CariMang {
             this.panelDataRusak.BringToFront();
         }
 
+        private void pageStatistikRuangan_Click(object sender, EventArgs e)
+        {
+            Button page = sender as Button;
+            if (page == null)
+                return;
+
+            bool selected = page.Tag == null ? false : (bool)page.Tag;
+            if (selected)
+                return;
+
+            this.page_Click(page);
+            this.panelStatistikRuangan.BringToFront();
+        }
+
+        private void pageStatistikPeminjam_Click(object sender, EventArgs e)
+        {
+            Button page = sender as Button;
+            if (page == null)
+                return;
+
+            bool selected = page.Tag == null ? false : (bool)page.Tag;
+            if (selected)
+                return;
+
+            this.page_Click(page);
+            this.panelStatistikPeminjam.BringToFront();
+        }
+
+        private void pageStatistikRusak_Click(object sender, EventArgs e)
+        {
+            Button page = sender as Button;
+            if (page == null)
+                return;
+
+            bool selected = page.Tag == null ? false : (bool)page.Tag;
+            if (selected)
+                return;
+
+            this.page_Click(page);
+            this.panelStatistikRusak.BringToFront();
+        }
+
         private void page_BackColorChanged(object sender, EventArgs e) {
             Button page = sender as Button;
             if (page == null)
