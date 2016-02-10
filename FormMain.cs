@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace CariMang {
     public partial class FormMain : Form {
+        private List<Ruangan> daftarRuangan = new List<Ruangan>();
+
         public FormMain() {
             InitializeComponent();
             InitializeLayout();
@@ -26,20 +28,48 @@ namespace CariMang {
             this.GetAllRuangan();
             this.GetAllPerkuliahan();
         }
-
-        private void GetAllRuangan() {
+        
+        private void GetAllRuangan() {            
+            comboJadwalCari.Items.Clear();
+            comboJadwalCari.Items.Add("(Cari semua)");
             listViewRuangan.Items.Clear();
             foreach (var ruangan in Ruangan.GetAll())
                 this.AddRuangan(ruangan);
+            comboJadwalCari.SelectedIndex = 0;
+        }
+
+        private void AddJadwal(Perkuliahan perkuliahan) {
+            ListViewItem item = null;
+            foreach (ListViewItem itemRuangan in listViewJadwal.Items) {
+                if (perkuliahan.Ruangan.Equals(itemRuangan.Tag)) {
+                    item = itemRuangan;
+                    break;
+                }
+            }            
+            if (item == null) {
+                item = new ListViewItem();
+                item.UseItemStyleForSubItems = false;
+                item.Text = perkuliahan.Ruangan.Nama;
+                for (int i = 7; i < 23; ++i)
+                    item.SubItems.Add("");
+                item.Tag = perkuliahan.Ruangan;
+                listViewJadwal.Items.Add(item);
+            }
+            for (int i = perkuliahan.WaktuMulai; i < perkuliahan.WaktuSelesai; ++i) {
+                item.SubItems[i-6].Text = perkuliahan.Kuliah.Kode;
+                item.SubItems[i-6].BackColor = Color.Red;
+            }                
         }
 
         private void AddRuangan(Ruangan ruangan) {
+            daftarRuangan.Add(ruangan);
             var item = new ListViewItem();
             item.Text = ruangan.Nama;
             item.SubItems.Add(ruangan.Tipe.ToString());
             item.SubItems.Add(ruangan.Kapasitas.ToString());
             item.Tag = ruangan;
             listViewRuangan.Items.Add(item);
+            comboJadwalCari.Items.Add(ruangan.Nama);
         }
 
         private void EditRuangan(ListViewItem item) {
@@ -126,7 +156,26 @@ namespace CariMang {
                 MessageBox.Show("Gagal delete perkuliahan.");
             }
         }
-        
+
+        private void buttonJadwalCari_Click(object sender, EventArgs e) {
+            List<Ruangan> selectedRuangan;
+            var selectedIndex = comboJadwalCari.SelectedIndex;
+            if (selectedIndex == 0) {
+                selectedRuangan = daftarRuangan;
+            }                
+            else {
+                selectedRuangan = new List<Ruangan>();
+                selectedRuangan.Add(daftarRuangan[selectedIndex - 1]);
+            }
+            listViewJadwal.Items.Clear();
+            var hari = ((int)dateJadwalCari.Value.DayOfWeek + 6) % 7;            
+            foreach (var perkuliahan in Perkuliahan.GetAll()) {
+                if (perkuliahan.HariPerkuliahan.Equals(hari) && selectedRuangan.Contains(perkuliahan.Ruangan)) {
+                    AddJadwal(perkuliahan);
+                }
+            }
+        }
+
         private void buttonRuanganTambah_Click(object sender, EventArgs e) {
             using (FormRuangan form = new FormRuangan()) {
                 if (form.ShowDialog() != DialogResult.OK)
@@ -189,10 +238,6 @@ namespace CariMang {
                     return;
                 }
             }
-        }
-
-        private void panelDataJadwal_Paint(object sender, PaintEventArgs e) {
-
-        }
+        }       
     }
 }

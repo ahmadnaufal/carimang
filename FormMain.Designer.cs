@@ -23,20 +23,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
             System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7602",
             "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ruang 7602",
+            "60"}, -1);
             System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
@@ -70,12 +67,40 @@
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
+            this.panelDataJadwal = new System.Windows.Forms.Panel();
+            this.comboJadwalCari = new System.Windows.Forms.ComboBox();
+            this.dateJadwalCari = new System.Windows.Forms.DateTimePicker();
+            this.listViewJadwal = new System.Windows.Forms.ListView();
+            this.colJadwalRuangan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colJadwal23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonJadwalCari = new System.Windows.Forms.Button();
             this.panelDataRuangan = new System.Windows.Forms.Panel();
+            this.buttonRuanganUbah = new System.Windows.Forms.Button();
+            this.buttonRuanganHapus = new System.Windows.Forms.Button();
             this.listViewRuangan = new System.Windows.Forms.ListView();
             this.columnRuanganNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRuanganTipe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRuanganKapasitas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRuanganTambah = new System.Windows.Forms.Button();
             this.panelDataKuliah = new System.Windows.Forms.Panel();
+            this.buttonKuliahHapus = new System.Windows.Forms.Button();
+            this.buttonKuliahUbah = new System.Windows.Forms.Button();
             this.listViewKuliah = new System.Windows.Forms.ListView();
             this.columnKuliahKode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -83,17 +108,13 @@
             this.columnKuliahHari = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahWaktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonKuliahTambah = new System.Windows.Forms.Button();
             this.panelDataRusak = new System.Windows.Forms.Panel();
             this.listViewRusak = new System.Windows.Forms.ListView();
             this.columnRusakNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRusakMulai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panelDataJadwal = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateDataCari = new System.Windows.Forms.DateTimePicker();
-            this.listViewJadwal = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRusakTambah = new System.Windows.Forms.Button();
             this.panelBooking = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listView4 = new System.Windows.Forms.ListView();
@@ -144,14 +165,6 @@
             this.panelStatistikRuangan = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.chartStatistikRuangan = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonJadwalCari = new System.Windows.Forms.Button();
-            this.buttonRuanganUbah = new System.Windows.Forms.Button();
-            this.buttonRuanganHapus = new System.Windows.Forms.Button();
-            this.buttonRuanganTambah = new System.Windows.Forms.Button();
-            this.buttonKuliahHapus = new System.Windows.Forms.Button();
-            this.buttonKuliahUbah = new System.Windows.Forms.Button();
-            this.buttonKuliahTambah = new System.Windows.Forms.Button();
-            this.buttonRusakTambah = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel)).BeginInit();
             this.splitPanel.Panel1.SuspendLayout();
             this.splitPanel.Panel2.SuspendLayout();
@@ -163,10 +176,10 @@
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
             this.panelData.SuspendLayout();
+            this.panelDataJadwal.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
-            this.panelDataJadwal.SuspendLayout();
             this.panelBooking.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBookingRuangan.SuspendLayout();
@@ -526,6 +539,158 @@
             this.panelData.Size = new System.Drawing.Size(529, 520);
             this.panelData.TabIndex = 4;
             // 
+            // panelDataJadwal
+            // 
+            this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataJadwal.Controls.Add(this.comboJadwalCari);
+            this.panelDataJadwal.Controls.Add(this.dateJadwalCari);
+            this.panelDataJadwal.Controls.Add(this.listViewJadwal);
+            this.panelDataJadwal.Controls.Add(this.buttonJadwalCari);
+            this.panelDataJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDataJadwal.Location = new System.Drawing.Point(0, 0);
+            this.panelDataJadwal.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDataJadwal.Name = "panelDataJadwal";
+            this.panelDataJadwal.Size = new System.Drawing.Size(529, 520);
+            this.panelDataJadwal.TabIndex = 5;
+            // 
+            // comboJadwalCari
+            // 
+            this.comboJadwalCari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboJadwalCari.FormattingEnabled = true;
+            this.comboJadwalCari.Location = new System.Drawing.Point(83, 42);
+            this.comboJadwalCari.Name = "comboJadwalCari";
+            this.comboJadwalCari.Size = new System.Drawing.Size(199, 23);
+            this.comboJadwalCari.TabIndex = 6;
+            // 
+            // dateJadwalCari
+            // 
+            this.dateJadwalCari.Location = new System.Drawing.Point(82, 12);
+            this.dateJadwalCari.Name = "dateJadwalCari";
+            this.dateJadwalCari.Size = new System.Drawing.Size(200, 23);
+            this.dateJadwalCari.TabIndex = 5;
+            // 
+            // listViewJadwal
+            // 
+            this.listViewJadwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewJadwal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colJadwalRuangan,
+            this.colJadwal7,
+            this.colJadwal8,
+            this.colJadwal9,
+            this.colJadwal10,
+            this.colJadwal11,
+            this.colJadwal12,
+            this.colJadwal13,
+            this.colJadwal14,
+            this.colJadwal15,
+            this.colJadwal16,
+            this.colJadwal17,
+            this.colJadwal18,
+            this.colJadwal19,
+            this.colJadwal20,
+            this.colJadwal21,
+            this.colJadwal22,
+            this.colJadwal23});
+            this.listViewJadwal.FullRowSelect = true;
+            this.listViewJadwal.GridLines = true;
+            this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
+            this.listViewJadwal.MultiSelect = false;
+            this.listViewJadwal.Name = "listViewJadwal";
+            this.listViewJadwal.Size = new System.Drawing.Size(505, 426);
+            this.listViewJadwal.TabIndex = 4;
+            this.listViewJadwal.UseCompatibleStateImageBehavior = false;
+            this.listViewJadwal.View = System.Windows.Forms.View.Details;
+            // 
+            // colJadwalRuangan
+            // 
+            this.colJadwalRuangan.Text = "Ruangan";
+            this.colJadwalRuangan.Width = 95;
+            // 
+            // colJadwal7
+            // 
+            this.colJadwal7.Text = "07.00";
+            // 
+            // colJadwal8
+            // 
+            this.colJadwal8.Text = "08.00";
+            // 
+            // colJadwal9
+            // 
+            this.colJadwal9.Text = "09.00";
+            // 
+            // colJadwal10
+            // 
+            this.colJadwal10.Text = "10.00";
+            // 
+            // colJadwal11
+            // 
+            this.colJadwal11.Text = "11.00";
+            // 
+            // colJadwal12
+            // 
+            this.colJadwal12.Text = "12.00";
+            // 
+            // colJadwal13
+            // 
+            this.colJadwal13.Text = "13.00";
+            // 
+            // colJadwal14
+            // 
+            this.colJadwal14.Text = "14.00";
+            // 
+            // colJadwal15
+            // 
+            this.colJadwal15.Text = "15.00";
+            // 
+            // colJadwal16
+            // 
+            this.colJadwal16.Text = "16.00";
+            // 
+            // colJadwal17
+            // 
+            this.colJadwal17.Text = "17.00";
+            // 
+            // colJadwal18
+            // 
+            this.colJadwal18.Text = "18.00";
+            // 
+            // colJadwal19
+            // 
+            this.colJadwal19.Text = "19.00";
+            // 
+            // colJadwal20
+            // 
+            this.colJadwal20.Text = "20.00";
+            // 
+            // colJadwal21
+            // 
+            this.colJadwal21.Text = "21.00";
+            // 
+            // colJadwal22
+            // 
+            this.colJadwal22.Text = "22.00";
+            // 
+            // colJadwal23
+            // 
+            this.colJadwal23.Text = "23.00";
+            // 
+            // buttonJadwalCari
+            // 
+            this.buttonJadwalCari.FlatAppearance.BorderSize = 0;
+            this.buttonJadwalCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonJadwalCari.Image = global::CariMang.Properties.Resources.find;
+            this.buttonJadwalCari.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonJadwalCari.Location = new System.Drawing.Point(12, 12);
+            this.buttonJadwalCari.Name = "buttonJadwalCari";
+            this.buttonJadwalCari.Size = new System.Drawing.Size(64, 64);
+            this.buttonJadwalCari.TabIndex = 0;
+            this.buttonJadwalCari.Text = "Cari";
+            this.buttonJadwalCari.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonJadwalCari.Click += new System.EventHandler(this.buttonJadwalCari_Click);
+            // 
             // panelDataRuangan
             // 
             this.panelDataRuangan.BackColor = System.Drawing.Color.Gainsboro;
@@ -539,6 +704,35 @@
             this.panelDataRuangan.Name = "panelDataRuangan";
             this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
             this.panelDataRuangan.TabIndex = 0;
+            // 
+            // buttonRuanganUbah
+            // 
+            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganUbah.Image = global::CariMang.Properties.Resources.edit;
+            this.buttonRuanganUbah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRuanganUbah.Location = new System.Drawing.Point(82, 12);
+            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
+            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganUbah.TabIndex = 6;
+            this.buttonRuanganUbah.Text = "Ubah";
+            this.buttonRuanganUbah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
+            // 
+            // buttonRuanganHapus
+            // 
+            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganHapus.Image = global::CariMang.Properties.Resources.delete;
+            this.buttonRuanganHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
+            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganHapus.TabIndex = 5;
+            this.buttonRuanganHapus.Text = "Hapus";
+            this.buttonRuanganHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
             // 
             // listViewRuangan
             // 
@@ -563,17 +757,32 @@
             // columnRuanganNama
             // 
             this.columnRuanganNama.Text = "Nama";
-            this.columnRuanganNama.Width = 95;
+            this.columnRuanganNama.Width = 200;
             // 
             // columnRuanganTipe
             // 
             this.columnRuanganTipe.Text = "Tipe";
+            this.columnRuanganTipe.Width = 100;
             // 
             // columnRuanganKapasitas
             // 
             this.columnRuanganKapasitas.Text = "Kapasitas";
             this.columnRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnRuanganKapasitas.Width = 101;
+            // 
+            // buttonRuanganTambah
+            // 
+            this.buttonRuanganTambah.FlatAppearance.BorderSize = 0;
+            this.buttonRuanganTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRuanganTambah.Image = global::CariMang.Properties.Resources.add;
+            this.buttonRuanganTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRuanganTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonRuanganTambah.Name = "buttonRuanganTambah";
+            this.buttonRuanganTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRuanganTambah.TabIndex = 0;
+            this.buttonRuanganTambah.Text = "Tambah";
+            this.buttonRuanganTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRuanganTambah.Click += new System.EventHandler(this.buttonRuanganTambah_Click);
             // 
             // panelDataKuliah
             // 
@@ -588,6 +797,35 @@
             this.panelDataKuliah.Name = "panelDataKuliah";
             this.panelDataKuliah.Size = new System.Drawing.Size(529, 520);
             this.panelDataKuliah.TabIndex = 4;
+            // 
+            // buttonKuliahHapus
+            // 
+            this.buttonKuliahHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonKuliahHapus.FlatAppearance.BorderSize = 0;
+            this.buttonKuliahHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKuliahHapus.Image = global::CariMang.Properties.Resources.delete;
+            this.buttonKuliahHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonKuliahHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonKuliahHapus.Name = "buttonKuliahHapus";
+            this.buttonKuliahHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonKuliahHapus.TabIndex = 6;
+            this.buttonKuliahHapus.Text = "Hapus";
+            this.buttonKuliahHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonKuliahHapus.Click += new System.EventHandler(this.buttonKuliahHapus_Click);
+            // 
+            // buttonKuliahUbah
+            // 
+            this.buttonKuliahUbah.FlatAppearance.BorderSize = 0;
+            this.buttonKuliahUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKuliahUbah.Image = global::CariMang.Properties.Resources.edit;
+            this.buttonKuliahUbah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonKuliahUbah.Location = new System.Drawing.Point(82, 12);
+            this.buttonKuliahUbah.Name = "buttonKuliahUbah";
+            this.buttonKuliahUbah.Size = new System.Drawing.Size(64, 64);
+            this.buttonKuliahUbah.TabIndex = 5;
+            this.buttonKuliahUbah.Text = "Ubah";
+            this.buttonKuliahUbah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonKuliahUbah.Click += new System.EventHandler(this.buttonKuliahUbah_Click);
             // 
             // listViewKuliah
             // 
@@ -633,11 +871,26 @@
             // columnKuliahWaktu
             // 
             this.columnKuliahWaktu.Text = "Waktu";
+            this.columnKuliahWaktu.Width = 100;
             // 
             // columnKuliahTanggung
             // 
             this.columnKuliahTanggung.Text = "Penanggung Jawab";
             this.columnKuliahTanggung.Width = 80;
+            // 
+            // buttonKuliahTambah
+            // 
+            this.buttonKuliahTambah.FlatAppearance.BorderSize = 0;
+            this.buttonKuliahTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKuliahTambah.Image = global::CariMang.Properties.Resources.add;
+            this.buttonKuliahTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonKuliahTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonKuliahTambah.Name = "buttonKuliahTambah";
+            this.buttonKuliahTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonKuliahTambah.TabIndex = 0;
+            this.buttonKuliahTambah.Text = "Tambah";
+            this.buttonKuliahTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonKuliahTambah.Click += new System.EventHandler(this.buttonKuliahTambah_Click);
             // 
             // panelDataRusak
             // 
@@ -663,7 +916,7 @@
             this.listViewRusak.FullRowSelect = true;
             this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
+            listViewItem5});
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
@@ -687,67 +940,18 @@
             this.columnRusakWaktuSelesai.Text = "Waktu Selesai Perbaikan";
             this.columnRusakWaktuSelesai.Width = 200;
             // 
-            // panelDataJadwal
+            // buttonRusakTambah
             // 
-            this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelDataJadwal.Controls.Add(this.comboBox2);
-            this.panelDataJadwal.Controls.Add(this.dateDataCari);
-            this.panelDataJadwal.Controls.Add(this.listViewJadwal);
-            this.panelDataJadwal.Controls.Add(this.buttonJadwalCari);
-            this.panelDataJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDataJadwal.Location = new System.Drawing.Point(0, 0);
-            this.panelDataJadwal.Margin = new System.Windows.Forms.Padding(0);
-            this.panelDataJadwal.Name = "panelDataJadwal";
-            this.panelDataJadwal.Size = new System.Drawing.Size(529, 520);
-            this.panelDataJadwal.TabIndex = 5;
-            this.panelDataJadwal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDataJadwal_Paint);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(83, 42);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 23);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // dateDataCari
-            // 
-            this.dateDataCari.Location = new System.Drawing.Point(82, 12);
-            this.dateDataCari.Name = "dateDataCari";
-            this.dateDataCari.Size = new System.Drawing.Size(200, 23);
-            this.dateDataCari.TabIndex = 5;
-            // 
-            // listViewJadwal
-            // 
-            this.listViewJadwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewJadwal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listViewJadwal.FullRowSelect = true;
-            this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewJadwal.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6});
-            this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
-            this.listViewJadwal.MultiSelect = false;
-            this.listViewJadwal.Name = "listViewJadwal";
-            this.listViewJadwal.Size = new System.Drawing.Size(505, 426);
-            this.listViewJadwal.TabIndex = 4;
-            this.listViewJadwal.UseCompatibleStateImageBehavior = false;
-            this.listViewJadwal.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Nama";
-            this.columnHeader1.Width = 95;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Kapasitas";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader2.Width = 101;
+            this.buttonRusakTambah.FlatAppearance.BorderSize = 0;
+            this.buttonRusakTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRusakTambah.Image = global::CariMang.Properties.Resources.add;
+            this.buttonRusakTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRusakTambah.Location = new System.Drawing.Point(12, 12);
+            this.buttonRusakTambah.Name = "buttonRusakTambah";
+            this.buttonRusakTambah.Size = new System.Drawing.Size(64, 64);
+            this.buttonRusakTambah.TabIndex = 0;
+            this.buttonRusakTambah.Text = "Tambah";
+            this.buttonRusakTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // panelBooking
             // 
@@ -788,7 +992,7 @@
             this.listView4.FullRowSelect = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem6});
             this.listView4.Location = new System.Drawing.Point(12, 82);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
@@ -1102,7 +1306,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem7});
             this.listView1.Location = new System.Drawing.Point(12, 182);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -1148,7 +1352,7 @@
             this.listView3.FullRowSelect = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem10});
+            listViewItem8});
             this.listView3.Location = new System.Drawing.Point(12, 82);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
@@ -1329,118 +1533,6 @@
             this.chartStatistikRuangan.TabIndex = 0;
             this.chartStatistikRuangan.Text = "chart1";
             // 
-            // buttonJadwalCari
-            // 
-            this.buttonJadwalCari.FlatAppearance.BorderSize = 0;
-            this.buttonJadwalCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonJadwalCari.Image = global::CariMang.Properties.Resources.find;
-            this.buttonJadwalCari.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonJadwalCari.Location = new System.Drawing.Point(12, 12);
-            this.buttonJadwalCari.Name = "buttonJadwalCari";
-            this.buttonJadwalCari.Size = new System.Drawing.Size(64, 64);
-            this.buttonJadwalCari.TabIndex = 0;
-            this.buttonJadwalCari.Text = "Cari";
-            this.buttonJadwalCari.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // buttonRuanganUbah
-            // 
-            this.buttonRuanganUbah.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganUbah.Image = global::CariMang.Properties.Resources.edit;
-            this.buttonRuanganUbah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRuanganUbah.Location = new System.Drawing.Point(82, 12);
-            this.buttonRuanganUbah.Name = "buttonRuanganUbah";
-            this.buttonRuanganUbah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganUbah.TabIndex = 6;
-            this.buttonRuanganUbah.Text = "Ubah";
-            this.buttonRuanganUbah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonRuanganUbah.Click += new System.EventHandler(this.buttonRuanganUbah_Click);
-            // 
-            // buttonRuanganHapus
-            // 
-            this.buttonRuanganHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRuanganHapus.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganHapus.Image = global::CariMang.Properties.Resources.delete;
-            this.buttonRuanganHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
-            this.buttonRuanganHapus.Name = "buttonRuanganHapus";
-            this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganHapus.TabIndex = 5;
-            this.buttonRuanganHapus.Text = "Hapus";
-            this.buttonRuanganHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonRuanganHapus.Click += new System.EventHandler(this.buttonRuanganHapus_Click);
-            // 
-            // buttonRuanganTambah
-            // 
-            this.buttonRuanganTambah.FlatAppearance.BorderSize = 0;
-            this.buttonRuanganTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRuanganTambah.Image = global::CariMang.Properties.Resources.add;
-            this.buttonRuanganTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRuanganTambah.Location = new System.Drawing.Point(12, 12);
-            this.buttonRuanganTambah.Name = "buttonRuanganTambah";
-            this.buttonRuanganTambah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRuanganTambah.TabIndex = 0;
-            this.buttonRuanganTambah.Text = "Tambah";
-            this.buttonRuanganTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonRuanganTambah.Click += new System.EventHandler(this.buttonRuanganTambah_Click);
-            // 
-            // buttonKuliahHapus
-            // 
-            this.buttonKuliahHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonKuliahHapus.FlatAppearance.BorderSize = 0;
-            this.buttonKuliahHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKuliahHapus.Image = global::CariMang.Properties.Resources.delete;
-            this.buttonKuliahHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonKuliahHapus.Location = new System.Drawing.Point(453, 12);
-            this.buttonKuliahHapus.Name = "buttonKuliahHapus";
-            this.buttonKuliahHapus.Size = new System.Drawing.Size(64, 64);
-            this.buttonKuliahHapus.TabIndex = 6;
-            this.buttonKuliahHapus.Text = "Hapus";
-            this.buttonKuliahHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonKuliahHapus.Click += new System.EventHandler(this.buttonKuliahHapus_Click);
-            // 
-            // buttonKuliahUbah
-            // 
-            this.buttonKuliahUbah.FlatAppearance.BorderSize = 0;
-            this.buttonKuliahUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKuliahUbah.Image = global::CariMang.Properties.Resources.edit;
-            this.buttonKuliahUbah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonKuliahUbah.Location = new System.Drawing.Point(82, 12);
-            this.buttonKuliahUbah.Name = "buttonKuliahUbah";
-            this.buttonKuliahUbah.Size = new System.Drawing.Size(64, 64);
-            this.buttonKuliahUbah.TabIndex = 5;
-            this.buttonKuliahUbah.Text = "Ubah";
-            this.buttonKuliahUbah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonKuliahUbah.Click += new System.EventHandler(this.buttonKuliahUbah_Click);
-            // 
-            // buttonKuliahTambah
-            // 
-            this.buttonKuliahTambah.FlatAppearance.BorderSize = 0;
-            this.buttonKuliahTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKuliahTambah.Image = global::CariMang.Properties.Resources.add;
-            this.buttonKuliahTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonKuliahTambah.Location = new System.Drawing.Point(12, 12);
-            this.buttonKuliahTambah.Name = "buttonKuliahTambah";
-            this.buttonKuliahTambah.Size = new System.Drawing.Size(64, 64);
-            this.buttonKuliahTambah.TabIndex = 0;
-            this.buttonKuliahTambah.Text = "Tambah";
-            this.buttonKuliahTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonKuliahTambah.Click += new System.EventHandler(this.buttonKuliahTambah_Click);
-            // 
-            // buttonRusakTambah
-            // 
-            this.buttonRusakTambah.FlatAppearance.BorderSize = 0;
-            this.buttonRusakTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRusakTambah.Image = global::CariMang.Properties.Resources.add;
-            this.buttonRusakTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRusakTambah.Location = new System.Drawing.Point(12, 12);
-            this.buttonRusakTambah.Name = "buttonRusakTambah";
-            this.buttonRusakTambah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRusakTambah.TabIndex = 0;
-            this.buttonRusakTambah.Text = "Tambah";
-            this.buttonRusakTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1464,10 +1556,10 @@
             this.panelPageBooking.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
+            this.panelDataJadwal.ResumeLayout(false);
             this.panelDataRuangan.ResumeLayout(false);
             this.panelDataKuliah.ResumeLayout(false);
             this.panelDataRusak.ResumeLayout(false);
-            this.panelDataJadwal.ResumeLayout(false);
             this.panelBooking.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panelBookingRuangan.ResumeLayout(false);
@@ -1526,8 +1618,7 @@
         private System.Windows.Forms.Button buttonRusakTambah;
         private System.Windows.Forms.Panel panelDataJadwal;
         private System.Windows.Forms.ListView listViewJadwal;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader colJadwalRuangan;
         private System.Windows.Forms.Button buttonJadwalCari;
         private System.Windows.Forms.Panel panelTab;
         private System.Windows.Forms.Panel panelTitle;
@@ -1596,7 +1687,24 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateDataCari;
+        private System.Windows.Forms.ComboBox comboJadwalCari;
+        private System.Windows.Forms.DateTimePicker dateJadwalCari;
+        private System.Windows.Forms.ColumnHeader colJadwal7;
+        private System.Windows.Forms.ColumnHeader colJadwal8;
+        private System.Windows.Forms.ColumnHeader colJadwal9;
+        private System.Windows.Forms.ColumnHeader colJadwal10;
+        private System.Windows.Forms.ColumnHeader colJadwal11;
+        private System.Windows.Forms.ColumnHeader colJadwal12;
+        private System.Windows.Forms.ColumnHeader colJadwal13;
+        private System.Windows.Forms.ColumnHeader colJadwal14;
+        private System.Windows.Forms.ColumnHeader colJadwal15;
+        private System.Windows.Forms.ColumnHeader colJadwal16;
+        private System.Windows.Forms.ColumnHeader colJadwal17;
+        private System.Windows.Forms.ColumnHeader colJadwal18;
+        private System.Windows.Forms.ColumnHeader colJadwal19;
+        private System.Windows.Forms.ColumnHeader colJadwal20;
+        private System.Windows.Forms.ColumnHeader colJadwal21;
+        private System.Windows.Forms.ColumnHeader colJadwal22;
+        private System.Windows.Forms.ColumnHeader colJadwal23;
     }
 }
