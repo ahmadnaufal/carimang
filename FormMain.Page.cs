@@ -15,7 +15,15 @@ namespace CariMang {
         private Color PAGE_FORE = Color.White;
         private Color PAGE_FORE_SELECTED = Color.DimGray;
 
-        private void page_Click(Button page) {
+        private void page_Click(object sender) {
+            Button page = sender as Button;
+            if (page == null)
+                return;
+
+            bool selected = page.Tag == null ? false : (bool)page.Tag;
+            if (selected)
+                return;
+
             foreach (var control in page.Parent.Controls) {
                 if (control is Button && !control.Equals(page)) {
                     Button otherPage = control as Button;
@@ -28,100 +36,6 @@ namespace CariMang {
             }
             page.Tag = true;
             page.BackColor = PAGE_COLOR_SELECTED;
-        }
-
-        private void pageDataJadwal_Click(object sender, EventArgs e) {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);            
-            this.panelDataJadwal.BringToFront();
-        }        
-
-        private void pageDataRuangan_Click(object sender, EventArgs e) {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);            
-            this.panelDataRuangan.BringToFront();
-        }
-
-        private void pageDataKuliah_Click(object sender, EventArgs e) {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);            
-            this.panelDataKuliah.BringToFront();
-        }
-
-        private void pageDataRusak_Click(object sender, EventArgs e) {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);            
-            this.panelDataRusak.BringToFront();
-        }
-
-        private void pageStatistikRuangan_Click(object sender, EventArgs e)
-        {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);
-            this.panelStatistikRuangan.BringToFront();
-        }
-
-        private void pageStatistikPeminjam_Click(object sender, EventArgs e)
-        {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);
-            this.panelStatistikPeminjam.BringToFront();
-        }
-
-        private void pageStatistikRusak_Click(object sender, EventArgs e)
-        {
-            Button page = sender as Button;
-            if (page == null)
-                return;
-
-            bool selected = page.Tag == null ? false : (bool)page.Tag;
-            if (selected)
-                return;
-
-            this.page_Click(page);
-            this.panelStatistikRusak.BringToFront();
         }
 
         private void page_BackColorChanged(object sender, EventArgs e) {
@@ -142,5 +56,50 @@ namespace CariMang {
             }
             page.Invalidate();
         }
+
+        private void pageDataJadwal_Click(object sender, EventArgs e) {            
+            this.page_Click(sender);            
+            this.panelDataJadwal.BringToFront();
+        }        
+
+        private void pageDataRuangan_Click(object sender, EventArgs e) {
+            this.page_Click(sender);            
+            this.panelDataRuangan.BringToFront();
+        }
+
+        private void pageDataKuliah_Click(object sender, EventArgs e) {            
+            this.page_Click(sender);            
+            this.panelDataKuliah.BringToFront();
+        }
+
+        private void pageDataRusak_Click(object sender, EventArgs e) {
+            this.page_Click(sender);            
+            this.panelDataRusak.BringToFront();
+        }
+
+        private void pageBookingCek_Click(object sender, EventArgs e) {            
+            this.page_Click(sender);
+            this.panelBookingCek.BringToFront();
+        }
+
+        private void pageBookingRuangan_Click(object sender, EventArgs e) {
+            this.page_Click(sender);
+            this.panelBookingRuangan.BringToFront();
+        }
+
+        private void pageStatistikRuangan_Click(object sender, EventArgs e) {
+            this.page_Click(sender);
+            this.panelStatistikRuangan.BringToFront();
+        }
+
+        private void pageStatistikPeminjam_Click(object sender, EventArgs e) {
+            this.page_Click(sender);
+            this.panelStatistikPeminjam.BringToFront();
+        }
+
+        private void pageStatistikRusak_Click(object sender, EventArgs e) {
+            this.page_Click(sender);
+            this.panelStatistikRusak.BringToFront();
+        }        
     }
 }

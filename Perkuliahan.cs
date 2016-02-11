@@ -23,8 +23,8 @@ namespace CariMang {
         private static string COL_PENANGGUNG_JAWAB = "penanggung_jawab";
 
         private static string PRM_KODE = "@kode";
-        private static string PRM_NAMA = "@nama";
-        private static string PRM_HARI = "@hari";
+        private static string PRM_NAMA = "@nama";        
+        private static string PRM_HARI_PERKULIAHAN = "@hari_perkuliahan";
         private static string PRM_WAKTU_SELESAI = "@waktu_selesai";
         private static string PRM_WAKTU_MULAI = "@waktu_mulai";
         private static string PRM_TANGGUNG = "@tanggung";
@@ -101,35 +101,39 @@ namespace CariMang {
             return listPerkuliahan;
         }
 
-        // public static Perkuliahan Get(string kode) {
-        //     Perkuliahan perkuliahan = null;
-        //
-        //     try {
-        //         using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-        //             string query = String.Format(
-        //                 "SELECT * FROM {0} WHERE {1}={2}",
-        //                 TBL_PERKULIAHAN,
-        //                 COL_KODE_KULIAH, PRM_KODE);
-        //
-        //             MySqlCommand command = new MySqlCommand(query, connection);
-        //             command.Parameters.AddWithValue(PRM_KODE_PERKULIAHAN, kode);
-        //
-        //             connection.Open();
-        //             using (MySqlDataReader reader = command.ExecuteReader()) {
-        //                 if (reader.Read()) {
-        //                     perkuliahan = new Perkuliahan(
-        //                         (string)reader[COL_NAMA_PERKULIAHAN],
-        //                         (string)reader[COL_KODE_PERKULIAHAN],
-        //                         (int)reader[COL_PESERTA]);
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     catch (MySqlException) {
-        //     }
-        //
-        //     return perkuliahan;
-        // }
+        public static List<Perkuliahan> GetAll(DateTime tanggal) {
+            List<Perkuliahan> listPerkuliahan = new List<Perkuliahan>();
+
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    String query = String.Format(
+                        "SELECT * FROM {0} WHERE {1}={2}",
+                        TBL_PERKULIAHAN,
+                        COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN);
+
+                    int hariPerkuliahan = ((int)tanggal.Date.DayOfWeek + 6) % 7;
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, hariPerkuliahan);
+
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader()) {
+                        while (reader.Read()) {
+                            Kuliah kuliah = Kuliah.Get((string)reader[COL_KODE_KULIAH]);
+                            Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);
+                            int hari = (int)reader[COL_HARI_PERKULIAHAN];
+                            int mulai = (int)reader[COL_WAKTU_MULAI];
+                            int selesai = (int)reader[COL_WAKTU_SELESAI];
+                            string tanggung = (string)reader[COL_PENANGGUNG_JAWAB];
+                            listPerkuliahan.Add(new Perkuliahan(kuliah, ruangan, hari, mulai, selesai, tanggung));
+                        }
+                    }
+                }
+            }
+            catch (MySqlException) {
+            }
+
+            return listPerkuliahan;
+        }                
 
         public static Perkuliahan Add(
                 Kuliah kuliah, Ruangan ruangan, int hariPerkuliahan,
@@ -144,13 +148,13 @@ namespace CariMang {
                         TBL_PERKULIAHAN,
                         COL_KODE_KULIAH, COL_NAMA_RUANGAN, COL_HARI_PERKULIAHAN,
                         COL_WAKTU_MULAI, COL_WAKTU_SELESAI, COL_PENANGGUNG_JAWAB,
-                        PRM_KODE, PRM_NAMA, PRM_HARI,
+                        PRM_KODE, PRM_NAMA, PRM_HARI_PERKULIAHAN,
                         PRM_WAKTU_MULAI, PRM_WAKTU_SELESAI, PRM_TANGGUNG);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue(PRM_KODE, kuliah.Kode);
                     command.Parameters.AddWithValue(PRM_NAMA, ruangan.Nama);
-                    command.Parameters.AddWithValue(PRM_HARI, hariPerkuliahan);
+                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, hariPerkuliahan);
                     command.Parameters.AddWithValue(PRM_WAKTU_MULAI, waktuMulai);
                     command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, waktuSelesai);
                     command.Parameters.AddWithValue(PRM_TANGGUNG, penanggungJawab);
@@ -177,14 +181,14 @@ namespace CariMang {
                         TBL_PERKULIAHAN,
                         COL_KODE_KULIAH, PRM_KODE,
                         COL_NAMA_RUANGAN, PRM_NAMA,
-                        COL_HARI_PERKULIAHAN, PRM_HARI,
+                        COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                         COL_WAKTU_MULAI, PRM_WAKTU_MULAI,
                         COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue(PRM_KODE, perkuliahan.kuliah.Kode);
                     command.Parameters.AddWithValue(PRM_NAMA, perkuliahan.ruangan.Nama);
-                    command.Parameters.AddWithValue(PRM_HARI, perkuliahan.HariPerkuliahan);
+                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, perkuliahan.HariPerkuliahan);
                     command.Parameters.AddWithValue(PRM_WAKTU_MULAI, perkuliahan.WaktuMulai);
                     command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, perkuliahan.WaktuSelesai);
 
@@ -198,6 +202,35 @@ namespace CariMang {
             return result;
         }
 
+        public static bool Exists(Ruangan ruangan, DateTime tanggal, int waktuMulai, int waktuSelesai) {
+            bool result = false;            
+
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    string query = String.Format(
+                        "SELECT COUNT(*) FROM {0} WHERE {1}={2} AND {3}={4} AND ( ({5} BETWEEN {6} AND {7}) OR ({8} BETWEEN {9} AND {10}) ) ",
+                        TBL_PERKULIAHAN,
+                        COL_NAMA_RUANGAN, PRM_NAMA,
+                        COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
+                        PRM_WAKTU_MULAI, COL_WAKTU_MULAI, COL_WAKTU_SELESAI + "-1",
+                        PRM_WAKTU_SELESAI, COL_WAKTU_MULAI + "+1", COL_WAKTU_SELESAI);
+                    
+                    MySqlCommand command = new MySqlCommand(query, connection);                    
+                    command.Parameters.AddWithValue(PRM_NAMA, ruangan.Nama);
+                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, ((int)tanggal.DayOfWeek + 6) % 7);
+                    command.Parameters.AddWithValue(PRM_WAKTU_MULAI, waktuMulai);
+                    command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, waktuSelesai);
+
+                    connection.Open();
+                    result = (long)command.ExecuteScalar() > 0;
+                }
+            }
+            catch (MySqlException) {
+            }
+
+            return false;
+        }
+
         public Kuliah Kuliah {
             get { return this.kuliah; }
             set {
@@ -209,7 +242,7 @@ namespace CariMang {
                             COL_KODE_KULIAH, PRM_KODE + "1",
                             COL_KODE_KULIAH, PRM_KODE + "2",
                             COL_NAMA_RUANGAN, PRM_NAMA,
-                            COL_HARI_PERKULIAHAN, PRM_HARI,
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI,
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
@@ -217,7 +250,7 @@ namespace CariMang {
                         command.Parameters.AddWithValue(PRM_KODE + "1", value.Kode);
                         command.Parameters.AddWithValue(PRM_KODE + "2", this.kuliah.Kode);
                         command.Parameters.AddWithValue(PRM_NAMA, this.ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_HARI, this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI, this.waktuMulai);
                         command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, this.waktuSelesai);
 
@@ -242,7 +275,7 @@ namespace CariMang {
                             COL_NAMA_RUANGAN, PRM_NAMA + "1",
                             COL_NAMA_RUANGAN, PRM_NAMA + "2",
                             COL_KODE_KULIAH, PRM_KODE,
-                            COL_HARI_PERKULIAHAN, PRM_HARI,
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI,
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
@@ -250,7 +283,7 @@ namespace CariMang {
                         command.Parameters.AddWithValue(PRM_NAMA + "1", value.Nama);
                         command.Parameters.AddWithValue(PRM_NAMA + "2", this.ruangan.Nama);
                         command.Parameters.AddWithValue(PRM_KODE, this.kuliah.Kode);
-                        command.Parameters.AddWithValue(PRM_HARI, this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI, this.waktuMulai);
                         command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, this.waktuSelesai);
 
@@ -272,16 +305,16 @@ namespace CariMang {
                         string query = String.Format(
                             "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8} AND {9}={10} AND {11}={12}",
                             TBL_PERKULIAHAN,
-                            COL_HARI_PERKULIAHAN, PRM_HARI + "1",
-                            COL_HARI_PERKULIAHAN, PRM_HARI + "2",
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN + "1",
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN + "2",
                             COL_KODE_KULIAH, PRM_KODE,
                             COL_NAMA_RUANGAN, PRM_NAMA,
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI,
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue(PRM_HARI + "1", value);
-                        command.Parameters.AddWithValue(PRM_HARI + "2", this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN + "1", value);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN + "2", this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_KODE, this.kuliah.Kode);
                         command.Parameters.AddWithValue(PRM_NAMA, this.ruangan.Nama);
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI, this.waktuMulai);
@@ -309,7 +342,7 @@ namespace CariMang {
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI + "2",
                             COL_KODE_KULIAH, PRM_KODE,
                             COL_NAMA_RUANGAN, PRM_NAMA,
-                            COL_HARI_PERKULIAHAN, PRM_HARI,
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
@@ -317,7 +350,7 @@ namespace CariMang {
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI + "2", this.waktuMulai);
                         command.Parameters.AddWithValue(PRM_KODE, this.kuliah.Kode);
                         command.Parameters.AddWithValue(PRM_NAMA, this.ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_HARI, this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, this.waktuSelesai);
 
                         connection.Open();
@@ -342,7 +375,7 @@ namespace CariMang {
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI + "2",
                             COL_KODE_KULIAH, PRM_KODE,
                             COL_NAMA_RUANGAN, PRM_NAMA,
-                            COL_HARI_PERKULIAHAN, PRM_HARI,
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
@@ -350,7 +383,7 @@ namespace CariMang {
                         command.Parameters.AddWithValue(PRM_WAKTU_SELESAI + "2", this.waktuSelesai);
                         command.Parameters.AddWithValue(PRM_KODE, this.kuliah.Kode);
                         command.Parameters.AddWithValue(PRM_NAMA, this.ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_HARI, this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI, this.waktuMulai);
 
                         connection.Open();
@@ -374,7 +407,7 @@ namespace CariMang {
                             COL_PENANGGUNG_JAWAB, PRM_TANGGUNG,
                             COL_KODE_KULIAH, PRM_KODE,
                             COL_NAMA_RUANGAN, PRM_NAMA,
-                            COL_HARI_PERKULIAHAN, PRM_HARI,
+                            COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                             COL_WAKTU_MULAI, PRM_WAKTU_MULAI,
                             COL_WAKTU_SELESAI, PRM_WAKTU_SELESAI);
 
@@ -382,7 +415,7 @@ namespace CariMang {
                         command.Parameters.AddWithValue(PRM_TANGGUNG, value);
                         command.Parameters.AddWithValue(PRM_KODE, this.kuliah.Kode);
                         command.Parameters.AddWithValue(PRM_NAMA, this.ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_HARI, this.hariPerkuliahan);
+                        command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, this.hariPerkuliahan);
                         command.Parameters.AddWithValue(PRM_WAKTU_MULAI, this.waktuMulai);
                         command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, this.waktuSelesai);
 

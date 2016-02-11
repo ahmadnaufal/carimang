@@ -48,7 +48,7 @@
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.button1_Click);
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -59,7 +59,7 @@
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Batal";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelRuangan
             // 
@@ -69,7 +69,6 @@
             this.labelRuangan.Size = new System.Drawing.Size(51, 13);
             this.labelRuangan.TabIndex = 2;
             this.labelRuangan.Text = "Ruangan";
-            this.labelRuangan.Click += new System.EventHandler(this.labelNama_Click);
             // 
             // labelTanggalSelesai
             // 

@@ -29,7 +29,7 @@ namespace CariMang {
             InitializeData();
             for (int i = 0; i < DaftarRuangan.Count; ++i)
             {
-                if (DaftarRuangan[i].Nama.Equals(perbaikan.NamaRuangan))
+                if (DaftarRuangan[i].Equals(perbaikan.Ruangan))
                 {
                     comboRuangan.SelectedIndex = i;
                     break;
@@ -42,7 +42,7 @@ namespace CariMang {
             textBoxDeskripsi.Text = perbaikan.Deskripsi;
         }        
 
-        public string NamaRuangan {
+        public Ruangan Ruangan {
             get; set;
         }
 
@@ -58,13 +58,8 @@ namespace CariMang {
             get; set;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.NamaRuangan = DaftarRuangan.ElementAt(comboRuangan.SelectedIndex).Nama;
-            if (String.IsNullOrWhiteSpace(this.NamaRuangan)) {
-                MessageBox.Show("Nama ruangan tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            this.NamaRuangan = this.NamaRuangan.Trim();
+        private void buttonOK_Click(object sender, EventArgs e) {
+            this.Ruangan = DaftarRuangan.ElementAt(comboRuangan.SelectedIndex);                        
             this.TanggalMulai = dateTimeMulai.Value;
             this.TanggalSelesai = dateTimeSelesai.Value;
             this.Deskripsi = textBoxDeskripsi.Text;
@@ -72,13 +67,8 @@ namespace CariMang {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void buttonCancel_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void labelNama_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -147,7 +147,7 @@
     <None Include="Assets\statistic.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\add64.png" />
+    <None Include="Assets\booking.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

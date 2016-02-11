@@ -46,7 +46,11 @@ namespace CariMang {
         }
 
         public override int GetHashCode() {
-            return base.GetHashCode();
+            return this.kode.GetHashCode();
+        }
+
+        public override string ToString() {
+            return this.kode;
         }
 
         public static List<Kuliah> GetAll() {
@@ -119,8 +123,8 @@ namespace CariMang {
                         PRM_NAMA_KULIAH, PRM_KODE_KULIAH, PRM_PESERTA);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_KULIAH, nama);
-                    command.Parameters.AddWithValue(PRM_KODE_KULIAH, kode);
+                    command.Parameters.AddWithValue(PRM_NAMA_KULIAH, nama.Trim());
+                    command.Parameters.AddWithValue(PRM_KODE_KULIAH, kode.Trim().ToUpper());
                     command.Parameters.AddWithValue(PRM_PESERTA, peserta);
 
                     connection.Open();

@@ -7,8 +7,22 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace CariMang {
+    public class RuanganStatus : Tuple<bool, string> {
+        public RuanganStatus(bool availability, string reason): base(availability, reason) {
 
-    public class Ruangan {
+        }
+
+        public bool Available {
+            get { return this.Item1; }
+            private set { }
+        }
+        public string Reason {
+            get { return this.Item2;  }
+            private set { }
+        }
+    }
+
+    public class Ruangan {        
 
         public enum TipeRuangan {
             RuangKelas,
@@ -43,7 +57,7 @@ namespace CariMang {
             return this.Equals(ruangan);
         }
 
-        public bool Equals(Ruangan ruangan) {
+        public bool Equals(Ruangan ruangan) {            
             if ((object)ruangan == null)
                 return false;
 
@@ -51,7 +65,11 @@ namespace CariMang {
         }
 
         public override int GetHashCode() {
-            return base.GetHashCode();
+            return this.nama.GetHashCode();
+        }
+
+        public override string ToString() {
+            return this.nama;
         }
 
         public static List<Ruangan> GetAll() {
@@ -233,6 +251,18 @@ namespace CariMang {
                 }
                 catch (MySqlException) {
                 }
+            }
+        }
+
+        public RuanganStatus Status(DateTime tanggal, int waktuMulai, int waktuSelesai) {
+            if (Perkuliahan.Exists(this, tanggal, waktuMulai, waktuSelesai)) {
+                return new RuanganStatus(false, "Ada perkuliahan.");
+            }
+            else if (Perbaikan.Exists(this, tanggal)) {
+                return new RuanganStatus(false, "Ada perbaikan.");
+            }
+            else {
+                return new RuanganStatus(true, null);
             }
         }
     }

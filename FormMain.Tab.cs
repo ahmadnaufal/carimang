@@ -9,8 +9,8 @@ using System.Windows.Forms;
 namespace CariMang {
     partial class FormMain {
         private Color TAB_COLOR = Color.DimGray;
-        private Color TAB_COLOR_HOVER = Color.DarkGray;
-        private Color TAB_COLOR_SELECTED = Color.Gray;
+        private Color TAB_COLOR_HOVER = Color.Gray;
+        private Color TAB_COLOR_SELECTED = Color.DarkGray;
 
         private void tab_Click(Button tab) {            
             foreach (var control in tab.Parent.Controls) {

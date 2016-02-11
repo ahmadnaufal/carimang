@@ -22,6 +22,7 @@ namespace CariMang {
         private void InitializeLayout() {
             tabData.Tag = true;
             pageDataJadwal.Tag = true;
+            pageBookingCek.Tag = true;
             pageStatistikRuangan.Tag = true;
         }
 
@@ -31,10 +32,10 @@ namespace CariMang {
             this.GetAllPerbaikan();
         }
 
-        private void AddJadwal(Perkuliahan perkuliahan) {
+        private void AddJadwal(Ruangan ruangan, int waktuMulai, int waktuSelesai, string alasan) {
             ListViewItem item = null;
             foreach (ListViewItem itemRuangan in listViewJadwal.Items) {
-                if (perkuliahan.Ruangan.Equals(itemRuangan.Tag)) {
+                if (ruangan.Equals(itemRuangan.Tag)) {
                     item = itemRuangan;
                     break;
                 }
@@ -42,15 +43,18 @@ namespace CariMang {
             if (item == null) {
                 item = new ListViewItem();
                 item.UseItemStyleForSubItems = false;
-                item.Text = perkuliahan.Ruangan.Nama;
+                item.Text = ruangan.Nama;
                 for (int i = 7; i < 23; ++i)
                     item.SubItems.Add("");
-                item.Tag = perkuliahan.Ruangan;
+                item.Tag = ruangan;
                 listViewJadwal.Items.Add(item);
             }
-            for (int i = perkuliahan.WaktuMulai; i < perkuliahan.WaktuSelesai; ++i) {
-                item.SubItems[i - 6].Text = perkuliahan.Kuliah.Kode;
-                item.SubItems[i - 6].BackColor = Color.Red;
+            for (int i = waktuMulai; i < waktuSelesai; ++i) {
+                int subIndex = i - 6;
+                if (subIndex <= 0 || subIndex >= item.SubItems.Count)
+                    continue;
+                item.SubItems[subIndex].Text = alasan;
+                item.SubItems[subIndex].BackColor = Color.Red;
             }
         }
 
@@ -58,20 +62,29 @@ namespace CariMang {
             comboJadwalCari.Items.Clear();
             comboJadwalCari.Items.Add("(Cari semua)");
             listViewRuangan.Items.Clear();
+            comboBookingCek.Items.Clear();
+
             foreach (var ruangan in Ruangan.GetAll())
                 this.AddRuangan(ruangan);
             comboJadwalCari.SelectedIndex = 0;
+            comboBookingCek.SelectedIndex = comboBookingCek.Items.Count > 0 ? 0 : -1;
+            comboBookingRuangan.SelectedIndex = comboBookingRuangan.Items.Count > 0 ? 0 : -1;
         }        
 
         private void AddRuangan(Ruangan ruangan) {
             daftarRuangan.Add(ruangan);
+
+            comboJadwalCari.Items.Add(ruangan.Nama);
+
             var item = new ListViewItem();
             item.Text = ruangan.Nama;
             item.SubItems.Add(ruangan.Tipe.ToString());
-            item.SubItems.Add(ruangan.Kapasitas.ToString());
+            item.SubItems.Add(ruangan.Kapasitas.ToString());            
             item.Tag = ruangan;
-            listViewRuangan.Items.Add(item);
-            comboJadwalCari.Items.Add(ruangan.Nama);
+            listViewRuangan.Items.Add(item);            
+
+            comboBookingCek.Items.Add(ruangan);
+            comboBookingRuangan.Items.Add(ruangan);
         }
 
         private void EditRuangan(ListViewItem item) {
@@ -170,9 +183,9 @@ namespace CariMang {
         private void AddPerbaikan(Perbaikan perbaikan)
         {
             var item = new ListViewItem();
-            item.Text = perbaikan.NamaRuangan;
-            item.SubItems.Add(perbaikan.TanggalMulai.ToString("yyyy-MM-dd"));
-            item.SubItems.Add(perbaikan.TanggalSelesai.ToString("yyyy-MM-dd"));
+            item.Text = perbaikan.Ruangan.Nama;
+            item.SubItems.Add(perbaikan.TanggalMulai.ToString(Perbaikan.FMT_TANGGAL));
+            item.SubItems.Add(perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_TANGGAL));
             item.SubItems.Add(perbaikan.Deskripsi);
             item.Tag = perbaikan;
             listViewRusak.Items.Add(item);
@@ -185,14 +198,14 @@ namespace CariMang {
             {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
-                perbaikan.NamaRuangan = form.NamaRuangan;
-                item.SubItems[0].Text = perbaikan.NamaRuangan;
+                perbaikan.Ruangan = form.Ruangan;
+                item.SubItems[0].Text = perbaikan.Ruangan.Nama;                
 
                 perbaikan.TanggalMulai = form.TanggalMulai;
-                item.SubItems[1].Text = perbaikan.TanggalMulai.ToString("yyyy-MM-dd");
+                item.SubItems[1].Text = perbaikan.TanggalMulai.ToString(Perbaikan.FMT_TANGGAL);
 
                 perbaikan.TanggalSelesai = form.TanggalSelesai;
-                item.SubItems[2].Text = perbaikan.TanggalSelesai.ToString("yyyy-MM-dd");
+                item.SubItems[2].Text = perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_TANGGAL);
 
                 perbaikan.Deskripsi = form.Deskripsi;
                 item.SubItems[3].Text = perbaikan.Deskripsi;
@@ -202,7 +215,7 @@ namespace CariMang {
         private void DeletePerbaikan(ListViewItem item)
         {
             Perbaikan perbaikan = (Perbaikan)item.Tag;
-            if (MessageBox.Show("Mau dihapus " + perbaikan.NamaRuangan + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            if (MessageBox.Show("Mau dihapus " + perbaikan.Ruangan.Nama + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
             if (Perbaikan.Delete(perbaikan))
@@ -214,23 +227,33 @@ namespace CariMang {
             }
         }
 
+
+        //
+        // Tab Data
+        //
         private void buttonJadwalCari_Click(object sender, EventArgs e) {
-            List<Ruangan> selectedRuangan;
+            HashSet<Ruangan> selectedRuangan;
+            
             var selectedIndex = comboJadwalCari.SelectedIndex;
             if (selectedIndex == 0) {
-                selectedRuangan = daftarRuangan;
+                selectedRuangan = new HashSet<Ruangan>(daftarRuangan);
             }
             else {
-                selectedRuangan = new List<Ruangan>();
+                selectedRuangan = new HashSet<Ruangan>();
                 selectedRuangan.Add(daftarRuangan[selectedIndex - 1]);
             }
             listViewJadwal.Items.Clear();
-            var hari = ((int)dateJadwalCari.Value.DayOfWeek + 6) % 7;
-            foreach (var perkuliahan in Perkuliahan.GetAll()) {
-                if (perkuliahan.HariPerkuliahan.Equals(hari) &&
-                    selectedRuangan.Contains(perkuliahan.Ruangan) &&
-                    !Perbaikan.Contains(perkuliahan.Ruangan, dateJadwalCari.Value)) {
-                    AddJadwal(perkuliahan);
+
+            var tanggal = dateJadwalCari.Value;
+            foreach (var perkuliahan in Perkuliahan.GetAll(tanggal)) {                
+                if (selectedRuangan.Contains(perkuliahan.Ruangan)) {                    
+                    AddJadwal(perkuliahan.Ruangan, perkuliahan.WaktuMulai, perkuliahan.WaktuSelesai, perkuliahan.Kuliah.Kode);
+                }
+            }
+            foreach (var perbaikan in Perbaikan.GetAll(tanggal)) {
+                if (selectedRuangan.Contains(perbaikan.Ruangan)) {
+                    String alasan = String.IsNullOrWhiteSpace(perbaikan.Deskripsi) ? "Perbaikan" : perbaikan.Deskripsi;                                        
+                    AddJadwal(perbaikan.Ruangan, 0, 24, alasan);                    
                 }
             }
         }
@@ -306,7 +329,7 @@ namespace CariMang {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
                 var perbaikan = Perbaikan.Add(
-                    form.NamaRuangan, form.TanggalMulai, form.TanggalSelesai,
+                    form.Ruangan, form.TanggalMulai, form.TanggalSelesai,
                     form.Deskripsi);
                 if (perbaikan == null)
                 {
@@ -337,6 +360,40 @@ namespace CariMang {
                     return;
                 }
             }
+        }
+
+
+        // 
+        // Tab Booking
+        //
+        private void buttonBookingCek_Click(object sender, EventArgs e) {
+            Ruangan ruangan = daftarRuangan[comboBookingCek.SelectedIndex];
+            var tanggal = dateBookingCek.Value;
+            int mulai = (int)numBookingCekMulai.Value;
+            int selesai = (int)numBookingCekSelesai.Value;
+
+            var status = ruangan.Status(tanggal, mulai, selesai);
+            if (status.Available) {
+                MessageBox.Show("Ruangan tersedia.", "Tersedia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                MessageBox.Show(status.Reason, "Tidak tersedia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }            
+        }
+
+        private void buttonBookingRuangan_Click(object sender, EventArgs e) {            
+            string tanggung = textBookingRuanganTanggung.Text.Trim();
+            if (tanggung.Length == 0) {
+                MessageBox.Show("Penanggung jawab tidak boleh kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Ruangan ruangan = daftarRuangan[comboBookingRuangan.SelectedIndex];
+            var tanggal = dateBookingRuangan.Value;
+            int mulai = (int)numBookingRuanganMulai.Value;
+            int selesai = (int)numBookingRuanganSelesai.Value;
+            var status = ruangan.Status(tanggal, mulai, selesai);
+            // TODO: add booking ruangan
         }
     }
 }
