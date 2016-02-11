@@ -77,23 +77,29 @@ namespace CariMang {
             get; set;
         }
 
-        private void buttonOK_Click(object sender, EventArgs e) {            
-            if (String.IsNullOrWhiteSpace(textTanggung.Text)) {
-                MessageBox.Show("Nama penanggung jawab tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        private void buttonOK_Click(object sender, EventArgs e) {                        
             this.Kuliah = DaftarKuliah.ElementAt(comboKuliah.SelectedIndex);
             this.Ruangan = DaftarRuangan.ElementAt(comboRuangan.SelectedIndex);
             this.HariKuliah = comboHari.SelectedIndex;
             this.WaktuMulai = (int)numWaktuMulai.Value;
             this.WaktuSelesai = (int)numWaktuSelesai.Value;
             this.PenanggungJawab = textTanggung.Text.Trim();
+
+            if (String.IsNullOrWhiteSpace(this.PenanggungJawab)) {
+                MessageBox.Show("Nama penanggung jawab tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (this.WaktuMulai >= this.WaktuSelesai) {
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -18,10 +18,11 @@ namespace CariMang {
         private static string PRM_NAMA_PEMINJAM = "@nama_peminjam";
 
         private int id = 0;
-        private string namapeminjam = "";
+        private string nama = "";
 
-        private Peminjam(string namapeminjam) {
-            this.namapeminjam = namapeminjam;
+        private Peminjam(int id, string nama) {
+            this.id = id;
+            this.nama = nama;
         }
 
         public static List<Peminjam> GetAll() {
@@ -37,6 +38,7 @@ namespace CariMang {
                 using (MySqlDataReader reader = command.ExecuteReader()) {
                     while (reader.Read()) {
                         listPeminjam.Add(new Peminjam(
+                            (int)reader[COL_ID_PEMINJAM],
                             (string)reader[COL_NAMA_PEMINJAM]));
                     }
                 }
@@ -60,6 +62,7 @@ namespace CariMang {
                 using (MySqlDataReader reader = command.ExecuteReader()) {
                     if (reader.Read()) {
                         peminjam = new Peminjam(
+                            (int)reader[COL_ID_PEMINJAM],
                             (string)reader[COL_NAMA_PEMINJAM]);
                     }
                 }
@@ -67,7 +70,7 @@ namespace CariMang {
             return peminjam;
         }
 
-        public static Peminjam Add(string namapeminjam) {
+        public static Peminjam Add(string nama) {
             Peminjam peminjam = null;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
@@ -77,16 +80,16 @@ namespace CariMang {
                     COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, namapeminjam);
+                command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, nama);
 
                 connection.Open();
                 if (command.ExecuteNonQuery() > 0)
-                    peminjam = new Peminjam(namapeminjam);
+                    peminjam = new Peminjam((int)command.LastInsertedId, nama);
             }
             return peminjam;
         }
 
-        public static bool Delete(int id) {
+        public static bool Delete(Peminjam peminjam) {
             bool result = false;
 
             using (MySqlConnection connection = MySqlConnector.GetConnection()) {
@@ -96,7 +99,7 @@ namespace CariMang {
                     COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, id);
+                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, peminjam.id);
 
                 connection.Open();
                 result = command.ExecuteNonQuery() > 0;
@@ -105,8 +108,8 @@ namespace CariMang {
         }
 
 
-        public string NamaPeminjam {
-            get { return this.namapeminjam; }
+        public string Nama {
+            get { return this.nama; }
             set {
                 using (MySqlConnection connection = MySqlConnector.GetConnection()) {
                     string query = String.Format(
@@ -121,11 +124,15 @@ namespace CariMang {
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
-                        this.namapeminjam = value;
+                        this.nama = value;
                 }
             }
         }
 
+        public int Id {
+            get { return this.id; }
+            private set { }
+        }
         
     }
 }

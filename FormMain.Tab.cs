@@ -12,7 +12,15 @@ namespace CariMang {
         private Color TAB_COLOR_HOVER = Color.Gray;
         private Color TAB_COLOR_SELECTED = Color.DarkGray;
 
-        private void tab_Click(Button tab) {            
+        private bool tab_Click(object sender, EventArgs e) {
+            Button tab = sender as Button;
+            if (tab == null)
+                return false;
+
+            bool selected = tab.Tag == null ? false : (bool)tab.Tag;
+            if (selected)
+                return false;            
+
             foreach (var control in tab.Parent.Controls) {
                 if (control is Button && !control.Equals(tab)) {
                     Button otherTab = control as Button;
@@ -25,48 +33,16 @@ namespace CariMang {
             }
             tab.Tag = true;
             tab.BackColor = TAB_COLOR_SELECTED;
-        }
 
-        private void tabData_Click(object sender, EventArgs e) {
-            Button tab = sender as Button;
-            if (tab == null)
-                return;
+            if (e is System.Windows.Forms.MouseEventArgs) {
+                buttonHistory.Push(new List<Button>() {
+                    activeTab, activePage[activeTab]
+                });
+                buttonBack.Enabled = true;
+            }
+            activeTab = tab;          
 
-            bool selected = tab.Tag == null ? false : (bool)tab.Tag;
-            if (selected)
-                return;
-
-            this.tab_Click(tab);
-            this.panelPageData.BringToFront();
-            this.panelData.BringToFront();
-        }
-
-        private void tabBooking_Click(object sender, EventArgs e) {
-            Button tab = sender as Button;
-            if (tab == null)
-                return;
-
-            bool selected = tab.Tag == null ? false : (bool)tab.Tag;
-            if (selected)
-                return;
-
-            this.tab_Click(tab);
-            this.panelPageBooking.BringToFront();
-            this.panelBooking.BringToFront();
-        }
-
-        private void tabStatistik_Click(object sender, EventArgs e) {
-            Button tab = sender as Button;
-            if (tab == null)
-                return;
-
-            bool selected = tab.Tag == null ? false : (bool)tab.Tag;
-            if (selected)
-                return;
-
-            this.tab_Click(tab);
-            this.panelPageStatistik.BringToFront();
-            this.panelStatistik.BringToFront();
+            return true;
         }
 
         private void tab_BackColorChanged(object sender, EventArgs e) {
@@ -77,7 +53,7 @@ namespace CariMang {
             bool selected = tab.Tag == null ? false : (bool)tab.Tag;
             if (selected) {
                 tab.FlatAppearance.MouseDownBackColor = tab.BackColor;
-                tab.FlatAppearance.MouseOverBackColor = tab.BackColor;
+                tab.FlatAppearance.MouseOverBackColor = tab.BackColor;                
             }
             else {
                 tab.FlatAppearance.MouseDownBackColor = TAB_COLOR_SELECTED;
@@ -85,5 +61,26 @@ namespace CariMang {
             }
             tab.Invalidate();
         }
+
+        private void tabData_Click(object sender, EventArgs e) {            
+            if (!this.tab_Click(sender, e))
+                return;                
+            this.panelPageData.BringToFront();            
+            this.panelData.BringToFront();            
+        }
+
+        private void tabBooking_Click(object sender, EventArgs e) {
+            if (!this.tab_Click(sender, e))
+                return;
+            this.panelPageBooking.BringToFront();            
+            this.panelBooking.BringToFront();            
+        }
+
+        private void tabStatistik_Click(object sender, EventArgs e) {
+            if (!this.tab_Click(sender, e))
+                return;
+            this.panelPageStatistik.BringToFront();
+            this.panelStatistik.BringToFront();            
+        }        
     }
 }

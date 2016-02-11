@@ -10,8 +10,7 @@ namespace CariMang {
     public class RuanganStatus : Tuple<bool, string> {
         public RuanganStatus(bool availability, string reason): base(availability, reason) {
 
-        }
-
+        }        
         public bool Available {
             get { return this.Item1; }
             private set { }
@@ -258,10 +257,13 @@ namespace CariMang {
             if (Perkuliahan.Exists(this, tanggal, waktuMulai, waktuSelesai)) {
                 return new RuanganStatus(false, "Ada perkuliahan.");
             }
+            else if (Kegiatan.Exists(this, tanggal, waktuMulai, waktuSelesai)) {
+                return new RuanganStatus(false, "Telah dibooking oleh kegiatan.");
+            }
             else if (Perbaikan.Exists(this, tanggal)) {
                 return new RuanganStatus(false, "Ada perbaikan.");
             }
-            else {
+            else {                
                 return new RuanganStatus(true, null);
             }
         }

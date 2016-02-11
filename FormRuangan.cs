@@ -44,21 +44,22 @@ namespace CariMang {
             get; set;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            this.Nama = textNama.Text;            
+        private void buttonOK_Click(object sender, EventArgs e) {
+            this.Nama = textNama.Text.Trim();                        
+            this.Kapasitas = (int)numKapasitas.Value;
+            this.Tipe = (Ruangan.TipeRuangan)comboTipe.SelectedIndex;
+
             if (String.IsNullOrWhiteSpace(this.Nama)) {
                 MessageBox.Show("Nama ruangan tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Nama = this.Nama.Trim();
-            this.Kapasitas = (int)numKapasitas.Value;
-            this.Tipe = (Ruangan.TipeRuangan)comboTipe.SelectedIndex;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void buttonCancel_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace CariMang {
     public partial class FormMain : Form {
+        private Button activeTab = null;
+        private Dictionary<Button, Button> activePage = new Dictionary<Button, Button>(); 
         private List<Ruangan> daftarRuangan = new List<Ruangan>();
-        private List<Perbaikan> daftarPerbaikan = new List<Perbaikan>();
+        private Stack<List<Button>> buttonHistory = new Stack<List<Button>>();
         
         public FormMain() {            
             InitializeComponent();
@@ -21,9 +23,13 @@ namespace CariMang {
 
         private void InitializeLayout() {
             tabData.Tag = true;
-            pageDataJadwal.Tag = true;
+            pageDataJadwal.Tag = true;            
             pageBookingCek.Tag = true;
             pageStatistikRuangan.Tag = true;
+            activeTab = tabData;
+            activePage[tabData] = pageDataJadwal;
+            activePage[tabBooking] = pageBookingCek;
+            activePage[tabStatistik] = pageStatistikRuangan;            
         }
 
         private void InitializeData() {
@@ -44,7 +50,7 @@ namespace CariMang {
                 item = new ListViewItem();
                 item.UseItemStyleForSubItems = false;
                 item.Text = ruangan.Nama;
-                for (int i = 7; i < 23; ++i)
+                for (int i = 0; i < listViewJadwal.Columns.Count-1; ++i)
                     item.SubItems.Add("");
                 item.Tag = ruangan;
                 listViewJadwal.Items.Add(item);
@@ -60,9 +66,10 @@ namespace CariMang {
 
         private void GetAllRuangan() {            
             comboJadwalCari.Items.Clear();
-            comboJadwalCari.Items.Add("(Cari semua)");
+            comboJadwalCari.Items.Add("(Cari semua ruangan)");
             listViewRuangan.Items.Clear();
             comboBookingCek.Items.Clear();
+            comboBookingRuangan.Items.Clear();
 
             foreach (var ruangan in Ruangan.GetAll())
                 this.AddRuangan(ruangan);
@@ -243,11 +250,19 @@ namespace CariMang {
                 selectedRuangan.Add(daftarRuangan[selectedIndex - 1]);
             }
             listViewJadwal.Items.Clear();
+            foreach (var ruangan in selectedRuangan) {
+                AddJadwal(ruangan, 0, 0, null);
+            }
 
             var tanggal = dateJadwalCari.Value;
             foreach (var perkuliahan in Perkuliahan.GetAll(tanggal)) {                
                 if (selectedRuangan.Contains(perkuliahan.Ruangan)) {                    
                     AddJadwal(perkuliahan.Ruangan, perkuliahan.WaktuMulai, perkuliahan.WaktuSelesai, perkuliahan.Kuliah.Kode);
+                }
+            }
+            foreach (var kegiatan in Kegiatan.GetAll(tanggal)) {
+                if (selectedRuangan.Contains(kegiatan.Ruangan)) {
+                    AddJadwal(kegiatan.Ruangan, kegiatan.WaktuMulai, kegiatan.WaktuSelesai, kegiatan.Nama);
                 }
             }
             foreach (var perbaikan in Perbaikan.GetAll(tanggal)) {
@@ -368,9 +383,18 @@ namespace CariMang {
         //
         private void buttonBookingCek_Click(object sender, EventArgs e) {
             Ruangan ruangan = daftarRuangan[comboBookingCek.SelectedIndex];
+            int kapasitas = (int)numBookingCek.Value;
             var tanggal = dateBookingCek.Value;
             int mulai = (int)numBookingCekMulai.Value;
-            int selesai = (int)numBookingCekSelesai.Value;
+            int selesai = (int)numBookingCekSelesai.Value;            
+            if (kapasitas > ruangan.Kapasitas) {
+                MessageBox.Show("Kapasitas ruangan tidak mencukupi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (mulai >= selesai) {
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var status = ruangan.Status(tanggal, mulai, selesai);
             if (status.Available) {
@@ -381,7 +405,12 @@ namespace CariMang {
             }            
         }
 
-        private void buttonBookingRuangan_Click(object sender, EventArgs e) {            
+        private void buttonBookingRuangan_Click(object sender, EventArgs e) {
+            string nama = textBookingRuanganKegiatan.Text.Trim();
+            if (nama.Length == 0) {
+                MessageBox.Show("Nama kegiatan tidak boleh kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string tanggung = textBookingRuanganTanggung.Text.Trim();
             if (tanggung.Length == 0) {
                 MessageBox.Show("Penanggung jawab tidak boleh kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -389,11 +418,40 @@ namespace CariMang {
             }
 
             Ruangan ruangan = daftarRuangan[comboBookingRuangan.SelectedIndex];
+            int kapasitas = (int)numBookingRuanganKapasitas.Value;
             var tanggal = dateBookingRuangan.Value;
             int mulai = (int)numBookingRuanganMulai.Value;
             int selesai = (int)numBookingRuanganSelesai.Value;
+            if (kapasitas > ruangan.Kapasitas) {
+                MessageBox.Show("Kapasitas ruangan tidak mencukupi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (mulai >= selesai) {
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var status = ruangan.Status(tanggal, mulai, selesai);
-            // TODO: add booking ruangan
+            if (!status.Available) {
+                MessageBox.Show(status.Reason, "Tidak tersedia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            Peminjam peminjam = Peminjam.Add(tanggung);
+            var kegiatan = Kegiatan.Add(peminjam, ruangan, nama, tanggal, mulai, selesai);
+            if (kegiatan != null) {
+                MessageBox.Show("Kegiatan telah ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+        
+        private void buttonBack_Click(object sender, EventArgs e) {
+            if (buttonHistory.Count == 0)
+                return;            
+            foreach (var button in buttonHistory.Pop()) {
+                button.PerformClick();
+            }
+            if (buttonHistory.Count == 0)
+                buttonBack.Enabled = false;
+        }        
     }
 }

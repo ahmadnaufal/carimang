@@ -61,14 +61,20 @@ namespace CariMang {
         private void buttonOK_Click(object sender, EventArgs e) {
             this.Ruangan = DaftarRuangan.ElementAt(comboRuangan.SelectedIndex);                        
             this.TanggalMulai = dateTimeMulai.Value;
-            this.TanggalSelesai = dateTimeSelesai.Value;
+            this.TanggalSelesai = dateTimeSelesai.Value;            
             this.Deskripsi = textBoxDeskripsi.Text;
+
+            if (this.TanggalMulai > this.TanggalSelesai) {
+                MessageBox.Show("Tanggal mulai harus lebih kecil/sama dengan tanggal selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

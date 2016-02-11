@@ -39,10 +39,10 @@
             this.buttonOK.Location = new System.Drawing.Point(116, 106);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 0;
+            this.buttonOK.TabIndex = 6;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.button1_Click);
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -50,10 +50,10 @@
             this.buttonCancel.Location = new System.Drawing.Point(197, 106);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 1;
+            this.buttonCancel.TabIndex = 7;
             this.buttonCancel.Text = "Batal";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelNama
             // 
@@ -61,7 +61,7 @@
             this.labelNama.Location = new System.Drawing.Point(13, 13);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(35, 13);
-            this.labelNama.TabIndex = 2;
+            this.labelNama.TabIndex = 0;
             this.labelNama.Text = "Nama";
             // 
             // textNama
@@ -69,7 +69,7 @@
             this.textNama.Location = new System.Drawing.Point(87, 12);
             this.textNama.Name = "textNama";
             this.textNama.Size = new System.Drawing.Size(185, 20);
-            this.textNama.TabIndex = 3;
+            this.textNama.TabIndex = 1;
             // 
             // labelKapasitas
             // 
@@ -82,6 +82,11 @@
             // 
             // numKapasitas
             // 
+            this.numKapasitas.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numKapasitas.Location = new System.Drawing.Point(87, 75);
             this.numKapasitas.Maximum = new decimal(new int[] {
             500,
@@ -109,7 +114,7 @@
             this.comboTipe.Location = new System.Drawing.Point(87, 44);
             this.comboTipe.Name = "comboTipe";
             this.comboTipe.Size = new System.Drawing.Size(185, 21);
-            this.comboTipe.TabIndex = 6;
+            this.comboTipe.TabIndex = 3;
             // 
             // labelTipe
             // 
@@ -117,7 +122,7 @@
             this.labelTipe.Location = new System.Drawing.Point(13, 44);
             this.labelTipe.Name = "labelTipe";
             this.labelTipe.Size = new System.Drawing.Size(28, 13);
-            this.labelTipe.TabIndex = 7;
+            this.labelTipe.TabIndex = 2;
             this.labelTipe.Text = "Tipe";
             // 
             // FormRuangan

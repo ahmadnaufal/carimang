@@ -45,7 +45,7 @@
             this.buttonOK.Location = new System.Drawing.Point(152, 202);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 0;
+            this.buttonOK.TabIndex = 8;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -56,7 +56,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(233, 202);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 1;
+            this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Batal";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -67,7 +67,7 @@
             this.labelRuangan.Location = new System.Drawing.Point(13, 13);
             this.labelRuangan.Name = "labelRuangan";
             this.labelRuangan.Size = new System.Drawing.Size(51, 13);
-            this.labelRuangan.TabIndex = 2;
+            this.labelRuangan.TabIndex = 0;
             this.labelRuangan.Text = "Ruangan";
             // 
             // labelTanggalSelesai
@@ -86,7 +86,7 @@
             this.comboRuangan.Location = new System.Drawing.Point(108, 10);
             this.comboRuangan.Name = "comboRuangan";
             this.comboRuangan.Size = new System.Drawing.Size(200, 21);
-            this.comboRuangan.TabIndex = 6;
+            this.comboRuangan.TabIndex = 1;
             // 
             // labelTanggalMulai
             // 
@@ -94,22 +94,26 @@
             this.labelTanggalMulai.Location = new System.Drawing.Point(13, 46);
             this.labelTanggalMulai.Name = "labelTanggalMulai";
             this.labelTanggalMulai.Size = new System.Drawing.Size(74, 13);
-            this.labelTanggalMulai.TabIndex = 7;
+            this.labelTanggalMulai.TabIndex = 2;
             this.labelTanggalMulai.Text = "Tanggal Mulai";
             // 
             // dateTimeMulai
             // 
+            this.dateTimeMulai.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateTimeMulai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeMulai.Location = new System.Drawing.Point(108, 42);
             this.dateTimeMulai.Name = "dateTimeMulai";
             this.dateTimeMulai.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeMulai.TabIndex = 8;
+            this.dateTimeMulai.TabIndex = 3;
             // 
             // dateTimeSelesai
             // 
+            this.dateTimeSelesai.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateTimeSelesai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeSelesai.Location = new System.Drawing.Point(108, 75);
             this.dateTimeSelesai.Name = "dateTimeSelesai";
             this.dateTimeSelesai.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeSelesai.TabIndex = 9;
+            this.dateTimeSelesai.TabIndex = 5;
             // 
             // textBoxDeskripsi
             // 
@@ -118,7 +122,7 @@
             this.textBoxDeskripsi.Name = "textBoxDeskripsi";
             this.textBoxDeskripsi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDeskripsi.Size = new System.Drawing.Size(200, 77);
-            this.textBoxDeskripsi.TabIndex = 10;
+            this.textBoxDeskripsi.TabIndex = 7;
             // 
             // labelDeskripsi
             // 
@@ -126,7 +130,7 @@
             this.labelDeskripsi.Location = new System.Drawing.Point(14, 110);
             this.labelDeskripsi.Name = "labelDeskripsi";
             this.labelDeskripsi.Size = new System.Drawing.Size(50, 13);
-            this.labelDeskripsi.TabIndex = 11;
+            this.labelDeskripsi.TabIndex = 6;
             this.labelDeskripsi.Text = "Deskripsi";
             // 
             // FormPerbaikan
