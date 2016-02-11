@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace CariMang {
     public partial class FormMain : Form {
         private List<Ruangan> daftarRuangan = new List<Ruangan>();
-
-        public FormMain() {
+        private List<Perbaikan> daftarPerbaikan = new List<Perbaikan>();
+        
+        public FormMain() {            
             InitializeComponent();
             InitializeLayout();
             InitializeData();
@@ -29,15 +30,6 @@ namespace CariMang {
             this.GetAllPerkuliahan();
             this.GetAllPerbaikan();
         }
-        
-        private void GetAllRuangan() {            
-            comboJadwalCari.Items.Clear();
-            comboJadwalCari.Items.Add("(Cari semua)");
-            listViewRuangan.Items.Clear();
-            foreach (var ruangan in Ruangan.GetAll())
-                this.AddRuangan(ruangan);
-            comboJadwalCari.SelectedIndex = 0;
-        }
 
         private void AddJadwal(Perkuliahan perkuliahan) {
             ListViewItem item = null;
@@ -46,7 +38,7 @@ namespace CariMang {
                     item = itemRuangan;
                     break;
                 }
-            }            
+            }
             if (item == null) {
                 item = new ListViewItem();
                 item.UseItemStyleForSubItems = false;
@@ -57,10 +49,19 @@ namespace CariMang {
                 listViewJadwal.Items.Add(item);
             }
             for (int i = perkuliahan.WaktuMulai; i < perkuliahan.WaktuSelesai; ++i) {
-                item.SubItems[i-6].Text = perkuliahan.Kuliah.Kode;
-                item.SubItems[i-6].BackColor = Color.Red;
-            }                
+                item.SubItems[i - 6].Text = perkuliahan.Kuliah.Kode;
+                item.SubItems[i - 6].BackColor = Color.Red;
+            }
         }
+
+        private void GetAllRuangan() {            
+            comboJadwalCari.Items.Clear();
+            comboJadwalCari.Items.Add("(Cari semua)");
+            listViewRuangan.Items.Clear();
+            foreach (var ruangan in Ruangan.GetAll())
+                this.AddRuangan(ruangan);
+            comboJadwalCari.SelectedIndex = 0;
+        }        
 
         private void AddRuangan(Ruangan ruangan) {
             daftarRuangan.Add(ruangan);
@@ -95,7 +96,8 @@ namespace CariMang {
                     != DialogResult.Yes)
                 return;
             if (Ruangan.Delete(ruangan)) {
-                listViewRuangan.Items.Remove(item);
+                daftarRuangan.Remove(ruangan);
+                listViewRuangan.Items.Remove(item);                
             }
             else {
                 MessageBox.Show("Gagal delete ruangan.");
@@ -150,32 +152,13 @@ namespace CariMang {
             if (MessageBox.Show("Mau dihapus?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
-            if (Perkuliahan.Delete(perkuliahan)) {
+            if (Perkuliahan.Delete(perkuliahan)) {                
                 listViewKuliah.Items.Remove(item);
             }
             else {
                 MessageBox.Show("Gagal delete perkuliahan.");
             }
-        }
-
-        private void buttonJadwalCari_Click(object sender, EventArgs e) {
-            List<Ruangan> selectedRuangan;
-            var selectedIndex = comboJadwalCari.SelectedIndex;
-            if (selectedIndex == 0) {
-                selectedRuangan = daftarRuangan;
-            }                
-            else {
-                selectedRuangan = new List<Ruangan>();
-                selectedRuangan.Add(daftarRuangan[selectedIndex - 1]);
-            }
-            listViewJadwal.Items.Clear();
-            var hari = ((int)dateJadwalCari.Value.DayOfWeek + 6) % 7;            
-            foreach (var perkuliahan in Perkuliahan.GetAll()) {
-                if (perkuliahan.HariPerkuliahan.Equals(hari) && selectedRuangan.Contains(perkuliahan.Ruangan)) {
-                    AddJadwal(perkuliahan);
-                }
-            }
-        }
+        }        
 
         private void GetAllPerbaikan()
         {
@@ -228,6 +211,27 @@ namespace CariMang {
             }
             else {
                 MessageBox.Show("Gagal delete ruangan.");
+            }
+        }
+
+        private void buttonJadwalCari_Click(object sender, EventArgs e) {
+            List<Ruangan> selectedRuangan;
+            var selectedIndex = comboJadwalCari.SelectedIndex;
+            if (selectedIndex == 0) {
+                selectedRuangan = daftarRuangan;
+            }
+            else {
+                selectedRuangan = new List<Ruangan>();
+                selectedRuangan.Add(daftarRuangan[selectedIndex - 1]);
+            }
+            listViewJadwal.Items.Clear();
+            var hari = ((int)dateJadwalCari.Value.DayOfWeek + 6) % 7;
+            foreach (var perkuliahan in Perkuliahan.GetAll()) {
+                if (perkuliahan.HariPerkuliahan.Equals(hari) &&
+                    selectedRuangan.Contains(perkuliahan.Ruangan) &&
+                    !Perbaikan.Contains(perkuliahan.Ruangan, dateJadwalCari.Value)) {
+                    AddJadwal(perkuliahan);
+                }
             }
         }
 
@@ -311,11 +315,7 @@ namespace CariMang {
                 }
                 this.AddPerbaikan(perbaikan);
             }
-        }
-
-        private void panelDataJadwal_Paint(object sender, PaintEventArgs e) {
-
-        }
+        }       
 
         private void buttonRusakUbah_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in listViewRusak.Items)

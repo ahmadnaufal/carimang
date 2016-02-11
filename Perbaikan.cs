@@ -17,6 +17,7 @@ namespace CariMang {
         private static string COL_DESKRIPSI_PERBAIKAN = "deskripsi";
 
         private static string PRM_NAMA_RUANGAN = "@nama_ruangan";
+        private static string PRM_TANGGAL = "@tanggal";
         private static string PRM_TANGGAL_MULAI = "@tanggal_mulai";
         private static string PRM_TANGGAL_SELESAI = "@tanggal_selesai";
         private static string PRM_DESKRIPSI_PERBAIKAN = "@deskripsi";
@@ -143,6 +144,30 @@ namespace CariMang {
             return result;
         }
 
+        public static bool Contains(Ruangan ruangan, DateTime waktu) {
+            bool result = false;
+
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    string query = String.Format(
+                        "SELECT COUNT(*) FROM {0} WHERE {1}={2} AND ({3} BETWEEN {4} AND {5})",
+                        TBL_PERBAIKAN,
+                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                        PRM_TANGGAL, COL_TANGGAL_MULAI, COL_TANGGAL_SELESAI);
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, ruangan.Nama);
+                    command.Parameters.AddWithValue(PRM_TANGGAL, waktu.Date.ToString("yyyy-MM-dd"));                    
+
+                    connection.Open();
+                    result = (long)command.ExecuteScalar() > 0;
+                }
+            }
+            catch (MySqlException) {
+            }
+
+            return result;
+        }
 
         public string NamaRuangan
         {

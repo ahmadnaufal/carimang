@@ -29,20 +29,7 @@
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7602",
             "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7603",
-            "23 Jan 2015",
-            "25 Jan 2016"}, -1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ruang 7602",
-            "60"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ruang 7603",
             "23 Jan 2015",
             "25 Jan 2016"}, -1);
@@ -76,7 +63,15 @@
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
-
+            this.panelDataRusak = new System.Windows.Forms.Panel();
+            this.buttonRusakUbah = new System.Windows.Forms.Button();
+            this.buttonRusakHapus = new System.Windows.Forms.Button();
+            this.listViewRusak = new System.Windows.Forms.ListView();
+            this.columnRusakNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakWaktuMulai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnRusakDeskripsi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRusakTambah = new System.Windows.Forms.Button();
             this.panelDataJadwal = new System.Windows.Forms.Panel();
             this.comboJadwalCari = new System.Windows.Forms.ComboBox();
             this.dateJadwalCari = new System.Windows.Forms.DateTimePicker();
@@ -99,19 +94,6 @@
             this.colJadwal21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colJadwal22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colJadwal23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-
-            this.panelDataRusak = new System.Windows.Forms.Panel();
-            this.buttonRusakUbah = new System.Windows.Forms.Button();
-            this.buttonRusakHapus = new System.Windows.Forms.Button();
-            this.listViewRusak = new System.Windows.Forms.ListView();
-            this.columnRusakNama = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRusakWaktuMulai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnRusakDeskripsi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonRusakTambah = new System.Windows.Forms.Button();
-            this.panelDataJadwal = new System.Windows.Forms.Panel();
-            this.listViewJadwal = new System.Windows.Forms.ListView();
-
             this.buttonJadwalCari = new System.Windows.Forms.Button();
             this.panelDataRuangan = new System.Windows.Forms.Panel();
             this.buttonRuanganUbah = new System.Windows.Forms.Button();
@@ -132,7 +114,6 @@
             this.columnKuliahWaktu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKuliahTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonKuliahTambah = new System.Windows.Forms.Button();
-
             this.panelBooking = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listView4 = new System.Windows.Forms.ListView();
@@ -194,12 +175,10 @@
             this.panelPageBooking.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
             this.panelData.SuspendLayout();
-
+            this.panelDataRusak.SuspendLayout();
             this.panelDataJadwal.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
-            this.panelDataRusak.SuspendLayout();
-
             this.panelBooking.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBookingRuangan.SuspendLayout();
@@ -392,7 +371,7 @@
             this.pageDataKuliah.Name = "pageDataKuliah";
             this.pageDataKuliah.Size = new System.Drawing.Size(256, 40);
             this.pageDataKuliah.TabIndex = 2;
-            this.pageDataKuliah.Text = "Daftar Kuliah";
+            this.pageDataKuliah.Text = "Daftar Perkuliahan";
             this.pageDataKuliah.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
             this.pageDataKuliah.Click += new System.EventHandler(this.pageDataKuliah_Click);
             // 
@@ -548,22 +527,16 @@
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelData.Controls.Add(this.panelDataRusak);
             this.panelData.Controls.Add(this.panelDataJadwal);
             this.panelData.Controls.Add(this.panelDataRuangan);
             this.panelData.Controls.Add(this.panelDataKuliah);
+            this.panelData.Controls.Add(this.panelDataRusak);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelData.Location = new System.Drawing.Point(0, 0);
             this.panelData.Margin = new System.Windows.Forms.Padding(0);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(529, 520);
             this.panelData.TabIndex = 4;
-            // 
-            // panelDataJadwal
-            // 
-            this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelDataJadwal.Controls.Add(this.comboJadwalCari);
-            this.panelDataJadwal.Controls.Add(this.dateJadwalCari);
             // 
             // panelDataRusak
             // 
@@ -620,8 +593,6 @@
             this.columnRusakDeskripsi});
             this.listViewRusak.FullRowSelect = true;
             this.listViewRusak.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewRusak.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
@@ -638,16 +609,17 @@
             // columnRusakWaktuMulai
             // 
             this.columnRusakWaktuMulai.Text = "Waktu Mulai Perbaikan";
-            this.columnRusakWaktuMulai.Width = 200;
+            this.columnRusakWaktuMulai.Width = 150;
             // 
             // columnRusakWaktuSelesai
             // 
             this.columnRusakWaktuSelesai.Text = "Waktu Selesai Perbaikan";
-            this.columnRusakWaktuSelesai.Width = 200;
+            this.columnRusakWaktuSelesai.Width = 150;
             // 
             // columnRusakDeskripsi
             // 
             this.columnRusakDeskripsi.Text = "Deskripsi Perbaikan";
+            this.columnRusakDeskripsi.Width = 100;
             // 
             // buttonRusakTambah
             // 
@@ -666,6 +638,8 @@
             // panelDataJadwal
             // 
             this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelDataJadwal.Controls.Add(this.comboJadwalCari);
+            this.panelDataJadwal.Controls.Add(this.dateJadwalCari);
             this.panelDataJadwal.Controls.Add(this.listViewJadwal);
             this.panelDataJadwal.Controls.Add(this.buttonJadwalCari);
             this.panelDataJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -673,7 +647,7 @@
             this.panelDataJadwal.Margin = new System.Windows.Forms.Padding(0);
             this.panelDataJadwal.Name = "panelDataJadwal";
             this.panelDataJadwal.Size = new System.Drawing.Size(529, 520);
-            this.panelDataJadwal.TabIndex = 5;
+            this.panelDataJadwal.TabIndex = 5;            
             // 
             // comboJadwalCari
             // 
@@ -690,7 +664,6 @@
             this.dateJadwalCari.Name = "dateJadwalCari";
             this.dateJadwalCari.Size = new System.Drawing.Size(200, 23);
             this.dateJadwalCari.TabIndex = 5;
-            this.panelDataJadwal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDataJadwal_Paint);
             // 
             // listViewJadwal
             // 
@@ -698,7 +671,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewJadwal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-
             this.colJadwalRuangan,
             this.colJadwal7,
             this.colJadwal8,
@@ -720,7 +692,6 @@
             this.listViewJadwal.FullRowSelect = true;
             this.listViewJadwal.GridLines = true;
             this.listViewJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
@@ -1017,31 +988,6 @@
             this.buttonKuliahTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonKuliahTambah.Click += new System.EventHandler(this.buttonKuliahTambah_Click);
             // 
-            // panelDataRusak
-            // 
-            this.panelDataRusak.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelDataRusak.Controls.Add(this.listViewRusak);
-            this.panelDataRusak.Controls.Add(this.buttonRusakTambah);
-            this.panelDataRusak.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDataRusak.Location = new System.Drawing.Point(0, 0);
-            this.panelDataRusak.Margin = new System.Windows.Forms.Padding(0);
-            this.panelDataRusak.Name = "panelDataRusak";
-            this.panelDataRusak.Size = new System.Drawing.Size(529, 520);
-            this.panelDataRusak.TabIndex = 5;
-            // 
-            // buttonRusakTambah
-            // 
-            this.buttonRusakTambah.FlatAppearance.BorderSize = 0;
-            this.buttonRusakTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRusakTambah.Image = global::CariMang.Properties.Resources.add;
-            this.buttonRusakTambah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRusakTambah.Location = new System.Drawing.Point(12, 12);
-            this.buttonRusakTambah.Name = "buttonRusakTambah";
-            this.buttonRusakTambah.Size = new System.Drawing.Size(64, 64);
-            this.buttonRusakTambah.TabIndex = 0;
-            this.buttonRusakTambah.Text = "Tambah";
-            this.buttonRusakTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
             // panelBooking
             // 
             this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
@@ -1081,7 +1027,7 @@
             this.listView4.FullRowSelect = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView4.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.listView4.Location = new System.Drawing.Point(12, 82);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
@@ -1212,7 +1158,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.Size = new System.Drawing.Size(49, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Tanggal";
             // 
@@ -1395,9 +1341,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-
-            listViewItem4});
-
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(12, 182);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -1443,7 +1387,7 @@
             this.listView3.FullRowSelect = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5});
+            listViewItem3});
             this.listView3.Location = new System.Drawing.Point(12, 82);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
@@ -1528,7 +1472,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(129, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(276, 30);
+            this.label9.Size = new System.Drawing.Size(274, 30);
             this.label9.TabIndex = 5;
             this.label9.Text = "Statistik Frekuensi Peminjam";
             // 
@@ -1566,7 +1510,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(129, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(275, 30);
+            this.label7.Size = new System.Drawing.Size(274, 30);
             this.label7.TabIndex = 3;
             this.label7.Text = "Statistik Kerusakan Ruangan";
             // 
@@ -1604,7 +1548,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(129, 49);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(281, 30);
+            this.label8.Size = new System.Drawing.Size(279, 30);
             this.label8.TabIndex = 4;
             this.label8.Text = "Statistik Pemakaian Ruangan";
             // 
@@ -1647,10 +1591,10 @@
             this.panelPageBooking.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
+            this.panelDataRusak.ResumeLayout(false);
             this.panelDataJadwal.ResumeLayout(false);
             this.panelDataRuangan.ResumeLayout(false);
             this.panelDataKuliah.ResumeLayout(false);
-            this.panelDataRusak.ResumeLayout(false);
             this.panelBooking.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panelBookingRuangan.ResumeLayout(false);
