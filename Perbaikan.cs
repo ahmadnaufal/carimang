@@ -23,6 +23,7 @@ namespace CariMang {
         private static string PRM_DESKRIPSI_PERBAIKAN = "@deskripsi";
 
         public static string FMT_TANGGAL = "yyyy-MM-dd";
+        public static string FMT_DISPLAY_TANGGAL = "D";
 
         private Ruangan ruangan = null;
         private DateTime tanggalmulai = DateTime.Now;

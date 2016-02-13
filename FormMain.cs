@@ -191,8 +191,8 @@ namespace CariMang {
         {
             var item = new ListViewItem();
             item.Text = perbaikan.Ruangan.Nama;
-            item.SubItems.Add(perbaikan.TanggalMulai.ToString(Perbaikan.FMT_TANGGAL));
-            item.SubItems.Add(perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_TANGGAL));
+            item.SubItems.Add(perbaikan.TanggalMulai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL));
+            item.SubItems.Add(perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL));
             item.SubItems.Add(perbaikan.Deskripsi);
             item.Tag = perbaikan;
             listViewRusak.Items.Add(item);
@@ -209,10 +209,10 @@ namespace CariMang {
                 item.SubItems[0].Text = perbaikan.Ruangan.Nama;                
 
                 perbaikan.TanggalMulai = form.TanggalMulai;
-                item.SubItems[1].Text = perbaikan.TanggalMulai.ToString(Perbaikan.FMT_TANGGAL);
+                item.SubItems[1].Text = perbaikan.TanggalMulai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL);
 
                 perbaikan.TanggalSelesai = form.TanggalSelesai;
-                item.SubItems[2].Text = perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_TANGGAL);
+                item.SubItems[2].Text = perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL);
 
                 perbaikan.Deskripsi = form.Deskripsi;
                 item.SubItems[3].Text = perbaikan.Deskripsi;
