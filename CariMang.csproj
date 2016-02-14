@@ -90,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Kuliah.cs" />
     <Compile Include="Ruangan.cs" />
+    <Compile Include="StatistikPeminjam.cs" />
+    <Compile Include="StatistikRuangan.cs" />
+    <Compile Include="StatistikRusak.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

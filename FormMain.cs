@@ -452,6 +452,54 @@ namespace CariMang {
             }
             if (buttonHistory.Count == 0)
                 buttonBack.Enabled = false;
-        }        
+        }
+
+        private void buttonStatistikRusak_Click(object sender, EventArgs e) {
+            DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
+            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
+            if (tanggalAkhir.CompareTo(tanggalAwal) < 0) {
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            List<StatistikRusak> listStatistikRusak = StatistikRusak.GetStatistik(tanggalAwal, tanggalAkhir);
+            chartStatistikRusak.DataSource = listStatistikRusak;
+            chartStatistikRusak.Series.First().XValueMember = "NamaRuangan";
+            chartStatistikRusak.Series.First().YValueMembers = "JumlahPerbaikan";
+            chartStatistikRusak.DataBind();
+        }
+
+        private void buttonStatistikRuangan_Click(object sender, EventArgs e) {
+            DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
+            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
+            if (tanggalAkhir.CompareTo(tanggalAwal) < 0)
+            {
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            List<StatistikRuangan> listStatistikRuangan = StatistikRuangan.GetStatistik(tanggalAwal, tanggalAkhir);
+            chartStatistikRuangan.DataSource = listStatistikRuangan;
+            chartStatistikRuangan.Series.First().XValueMember = "NamaRuangan";
+            chartStatistikRuangan.Series.First().YValueMembers = "JumlahPemakaian";
+            chartStatistikRuangan.DataBind();
+        }
+
+        private void buttonStatistikPeminjam_Click(object sender, EventArgs e)
+        {
+            DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
+            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
+            if (tanggalAkhir.CompareTo(tanggalAwal) < 0)
+            {
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            List<StatistikPeminjam> listStatistikPeminjam = StatistikPeminjam.GetStatistik(tanggalAwal, tanggalAkhir);
+            chartStatistikPeminjam.DataSource = listStatistikPeminjam;
+            chartStatistikPeminjam.Series.First().XValueMember = "NamaPeminjam";
+            chartStatistikPeminjam.Series.First().YValueMembers = "JumlahPeminjam";
+            chartStatistikPeminjam.DataBind();
+        }
     }
 }
