@@ -54,31 +54,6 @@
             this.panelPageBooking = new System.Windows.Forms.Panel();
             this.pageBookingRuangan = new System.Windows.Forms.Button();
             this.pageBookingCek = new System.Windows.Forms.Button();
-            this.panelStatistik = new System.Windows.Forms.Panel();
-            this.panelStatistikPeminjam = new System.Windows.Forms.Panel();
-            this.buttonStatistikPeminjam = new System.Windows.Forms.Button();
-            this.datePickerTanggalAkhirStatistikPeminjam = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAkhirStatistikPeminjam = new System.Windows.Forms.Label();
-            this.datePickerTanggalAwalStatistikPeminjam = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAwalStatistikPeminjam = new System.Windows.Forms.Label();
-            this.chartStatistikPeminjam = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelStatistikPeminjam = new System.Windows.Forms.Label();
-            this.panelStatistikRusak = new System.Windows.Forms.Panel();
-            this.buttonStatistikRusak = new System.Windows.Forms.Button();
-            this.datePickerTanggalAkhirStatistikRusak = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAkhirStatistikRusak = new System.Windows.Forms.Label();
-            this.datePickerTanggalAwalStatistikRusak = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAwalStatistikRusak = new System.Windows.Forms.Label();
-            this.chartStatistikRusak = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelStatistikRusak = new System.Windows.Forms.Label();
-            this.panelStatistikRuangan = new System.Windows.Forms.Panel();
-            this.buttonStatistikRuangan = new System.Windows.Forms.Button();
-            this.datePickerTanggalAkhirStatistikRuangan = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAkhirStatistikRuangan = new System.Windows.Forms.Label();
-            this.datePickerTanggalAwalStatistikRuangan = new System.Windows.Forms.DateTimePicker();
-            this.labelTanggalAwalStatistikRuangan = new System.Windows.Forms.Label();
-            this.labelStatistikRuangan = new System.Windows.Forms.Label();
-            this.chartStatistikRuangan = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelData = new System.Windows.Forms.Panel();
             this.panelDataJadwal = new System.Windows.Forms.Panel();
             this.comboJadwalCari = new System.Windows.Forms.ComboBox();
@@ -130,6 +105,31 @@
             this.columnRusakWaktuSelesai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnRusakDeskripsi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonRusakTambah = new System.Windows.Forms.Button();
+            this.panelStatistik = new System.Windows.Forms.Panel();
+            this.panelStatistikRuangan = new System.Windows.Forms.Panel();
+            this.buttonStatistikRuangan = new System.Windows.Forms.Button();
+            this.datePickerTanggalAkhirStatistikRuangan = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAkhirStatistikRuangan = new System.Windows.Forms.Label();
+            this.datePickerTanggalAwalStatistikRuangan = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAwalStatistikRuangan = new System.Windows.Forms.Label();
+            this.labelStatistikRuangan = new System.Windows.Forms.Label();
+            this.chartStatistikRuangan = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelStatistikPeminjam = new System.Windows.Forms.Panel();
+            this.buttonStatistikPeminjam = new System.Windows.Forms.Button();
+            this.datePickerTanggalAkhirStatistikPeminjam = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAkhirStatistikPeminjam = new System.Windows.Forms.Label();
+            this.datePickerTanggalAwalStatistikPeminjam = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAwalStatistikPeminjam = new System.Windows.Forms.Label();
+            this.chartStatistikPeminjam = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.labelStatistikPeminjam = new System.Windows.Forms.Label();
+            this.panelStatistikRusak = new System.Windows.Forms.Panel();
+            this.buttonStatistikRusak = new System.Windows.Forms.Button();
+            this.datePickerTanggalAkhirStatistikRusak = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAkhirStatistikRusak = new System.Windows.Forms.Label();
+            this.datePickerTanggalAwalStatistikRusak = new System.Windows.Forms.DateTimePicker();
+            this.labelTanggalAwalStatistikRusak = new System.Windows.Forms.Label();
+            this.chartStatistikRusak = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.labelStatistikRusak = new System.Windows.Forms.Label();
             this.panelBooking = new System.Windows.Forms.Panel();
             this.panelBookingCek = new System.Windows.Forms.Panel();
             this.labelBookingCekRuangan = new System.Windows.Forms.Label();
@@ -170,18 +170,18 @@
             this.panelPageData.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
             this.panelPageBooking.SuspendLayout();
-            this.panelStatistik.SuspendLayout();
-            this.panelStatistikPeminjam.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).BeginInit();
-            this.panelStatistikRusak.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).BeginInit();
-            this.panelStatistikRuangan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).BeginInit();
             this.panelData.SuspendLayout();
             this.panelDataJadwal.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
             this.panelDataKuliah.SuspendLayout();
             this.panelDataRusak.SuspendLayout();
+            this.panelStatistik.SuspendLayout();
+            this.panelStatistikRuangan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).BeginInit();
+            this.panelStatistikPeminjam.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).BeginInit();
+            this.panelStatistikRusak.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).BeginInit();
             this.panelBooking.SuspendLayout();
             this.panelBookingCek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBookingCek)).BeginInit();
@@ -214,9 +214,9 @@
             // 
             this.splitPanel.Panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitPanel.Panel2.Controls.Add(this.panelData);
-            this.splitPanel.Panel2.Controls.Add(this.panelStatistik);
             this.splitPanel.Panel2.Controls.Add(this.panelBooking);
-            this.splitPanel.Size = new System.Drawing.Size(789, 520);
+            this.splitPanel.Panel2.Controls.Add(this.panelStatistik);
+            this.splitPanel.Size = new System.Drawing.Size(784, 521);
             this.splitPanel.SplitterDistance = 256;
             this.splitPanel.TabIndex = 0;
             this.splitPanel.TabStop = false;
@@ -340,7 +340,7 @@
             this.panelPage.Location = new System.Drawing.Point(0, 102);
             this.panelPage.Margin = new System.Windows.Forms.Padding(0);
             this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(256, 418);
+            this.panelPage.Size = new System.Drawing.Size(256, 419);
             this.panelPage.TabIndex = 5;
             // 
             // panelPageData
@@ -354,7 +354,7 @@
             this.panelPageData.Location = new System.Drawing.Point(0, 0);
             this.panelPageData.Margin = new System.Windows.Forms.Padding(0);
             this.panelPageData.Name = "panelPageData";
-            this.panelPageData.Size = new System.Drawing.Size(256, 418);
+            this.panelPageData.Size = new System.Drawing.Size(256, 419);
             this.panelPageData.TabIndex = 6;
             // 
             // pageDataRusak
@@ -438,7 +438,7 @@
             this.panelPageStatistik.Location = new System.Drawing.Point(0, 0);
             this.panelPageStatistik.Margin = new System.Windows.Forms.Padding(0);
             this.panelPageStatistik.Name = "panelPageStatistik";
-            this.panelPageStatistik.Size = new System.Drawing.Size(256, 418);
+            this.panelPageStatistik.Size = new System.Drawing.Size(256, 419);
             this.panelPageStatistik.TabIndex = 7;
             // 
             // pageStatistikRusak
@@ -504,7 +504,7 @@
             this.panelPageBooking.Location = new System.Drawing.Point(0, 0);
             this.panelPageBooking.Margin = new System.Windows.Forms.Padding(0);
             this.panelPageBooking.Name = "panelPageBooking";
-            this.panelPageBooking.Size = new System.Drawing.Size(256, 418);
+            this.panelPageBooking.Size = new System.Drawing.Size(256, 419);
             this.panelPageBooking.TabIndex = 7;
             // 
             // pageBookingRuangan
@@ -544,287 +544,6 @@
             this.pageBookingCek.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
             this.pageBookingCek.Click += new System.EventHandler(this.pageBookingCek_Click);
             // 
-            // panelStatistik
-            // 
-            this.panelStatistik.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelStatistik.Controls.Add(this.panelStatistikRuangan);
-            this.panelStatistik.Controls.Add(this.panelStatistikPeminjam);
-            this.panelStatistik.Controls.Add(this.panelStatistikRusak);
-            this.panelStatistik.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStatistik.Location = new System.Drawing.Point(0, 0);
-            this.panelStatistik.Margin = new System.Windows.Forms.Padding(0);
-            this.panelStatistik.Name = "panelStatistik";
-            this.panelStatistik.Size = new System.Drawing.Size(529, 520);
-            this.panelStatistik.TabIndex = 6;
-            // 
-            // panelStatistikPeminjam
-            // 
-            this.panelStatistikPeminjam.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelStatistikPeminjam.Controls.Add(this.buttonStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.datePickerTanggalAkhirStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.labelTanggalAkhirStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.datePickerTanggalAwalStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.labelTanggalAwalStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.chartStatistikPeminjam);
-            this.panelStatistikPeminjam.Controls.Add(this.labelStatistikPeminjam);
-            this.panelStatistikPeminjam.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStatistikPeminjam.Location = new System.Drawing.Point(0, 0);
-            this.panelStatistikPeminjam.Margin = new System.Windows.Forms.Padding(0);
-            this.panelStatistikPeminjam.Name = "panelStatistikPeminjam";
-            this.panelStatistikPeminjam.Size = new System.Drawing.Size(529, 520);
-            this.panelStatistikPeminjam.TabIndex = 4;
-            // 
-            // buttonStatistikPeminjam
-            // 
-            this.buttonStatistikPeminjam.Location = new System.Drawing.Point(349, 97);
-            this.buttonStatistikPeminjam.Name = "buttonStatistikPeminjam";
-            this.buttonStatistikPeminjam.Size = new System.Drawing.Size(135, 52);
-            this.buttonStatistikPeminjam.TabIndex = 15;
-            this.buttonStatistikPeminjam.Text = "Buat Statistik";
-            this.buttonStatistikPeminjam.UseVisualStyleBackColor = true;
-            this.buttonStatistikPeminjam.Click += new System.EventHandler(this.buttonStatistikPeminjam_Click);
-            // 
-            // datePickerTanggalAkhirStatistikPeminjam
-            // 
-            this.datePickerTanggalAkhirStatistikPeminjam.Location = new System.Drawing.Point(133, 127);
-            this.datePickerTanggalAkhirStatistikPeminjam.Name = "datePickerTanggalAkhirStatistikPeminjam";
-            this.datePickerTanggalAkhirStatistikPeminjam.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAkhirStatistikPeminjam.TabIndex = 14;
-            // 
-            // labelTanggalAkhirStatistikPeminjam
-            // 
-            this.labelTanggalAkhirStatistikPeminjam.AutoSize = true;
-            this.labelTanggalAkhirStatistikPeminjam.Location = new System.Drawing.Point(102, 131);
-            this.labelTanggalAkhirStatistikPeminjam.Name = "labelTanggalAkhirStatistikPeminjam";
-            this.labelTanggalAkhirStatistikPeminjam.Size = new System.Drawing.Size(25, 15);
-            this.labelTanggalAkhirStatistikPeminjam.TabIndex = 13;
-            this.labelTanggalAkhirStatistikPeminjam.Text = "s.d.";
-            // 
-            // datePickerTanggalAwalStatistikPeminjam
-            // 
-            this.datePickerTanggalAwalStatistikPeminjam.Location = new System.Drawing.Point(133, 98);
-            this.datePickerTanggalAwalStatistikPeminjam.Name = "datePickerTanggalAwalStatistikPeminjam";
-            this.datePickerTanggalAwalStatistikPeminjam.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAwalStatistikPeminjam.TabIndex = 12;
-            // 
-            // labelTanggalAwalStatistikPeminjam
-            // 
-            this.labelTanggalAwalStatistikPeminjam.AutoSize = true;
-            this.labelTanggalAwalStatistikPeminjam.Location = new System.Drawing.Point(39, 102);
-            this.labelTanggalAwalStatistikPeminjam.Name = "labelTanggalAwalStatistikPeminjam";
-            this.labelTanggalAwalStatistikPeminjam.Size = new System.Drawing.Size(90, 15);
-            this.labelTanggalAwalStatistikPeminjam.TabIndex = 11;
-            this.labelTanggalAwalStatistikPeminjam.Text = "Periode tanggal";
-            // 
-            // chartStatistikPeminjam
-            // 
-            this.chartStatistikPeminjam.BackColor = System.Drawing.Color.Transparent;
-            this.chartStatistikPeminjam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chartStatistikPeminjam.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartStatistikPeminjam.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chartStatistikPeminjam.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStatistikPeminjam.Legends.Add(legend2);
-            this.chartStatistikPeminjam.Location = new System.Drawing.Point(75, 182);
-            this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartStatistikPeminjam.Series.Add(series2);
-            this.chartStatistikPeminjam.Size = new System.Drawing.Size(409, 300);
-            this.chartStatistikPeminjam.TabIndex = 10;
-            this.chartStatistikPeminjam.Text = "chartStatistikPeminjam";
-            this.chartStatistikPeminjam.UseWaitCursor = true;
-            // 
-            // labelStatistikPeminjam
-            // 
-            this.labelStatistikPeminjam.AutoSize = true;
-            this.labelStatistikPeminjam.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatistikPeminjam.Location = new System.Drawing.Point(129, 49);
-            this.labelStatistikPeminjam.Name = "labelStatistikPeminjam";
-            this.labelStatistikPeminjam.Size = new System.Drawing.Size(276, 30);
-            this.labelStatistikPeminjam.TabIndex = 5;
-            this.labelStatistikPeminjam.Text = "Statistik Frekuensi Peminjam";
-            // 
-            // panelStatistikRusak
-            // 
-            this.panelStatistikRusak.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelStatistikRusak.Controls.Add(this.buttonStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.datePickerTanggalAkhirStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.labelTanggalAkhirStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.datePickerTanggalAwalStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.labelTanggalAwalStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.chartStatistikRusak);
-            this.panelStatistikRusak.Controls.Add(this.labelStatistikRusak);
-            this.panelStatistikRusak.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStatistikRusak.Location = new System.Drawing.Point(0, 0);
-            this.panelStatistikRusak.Margin = new System.Windows.Forms.Padding(0);
-            this.panelStatistikRusak.Name = "panelStatistikRusak";
-            this.panelStatistikRusak.Size = new System.Drawing.Size(529, 520);
-            this.panelStatistikRusak.TabIndex = 5;
-            // 
-            // buttonStatistikRusak
-            // 
-            this.buttonStatistikRusak.Location = new System.Drawing.Point(349, 97);
-            this.buttonStatistikRusak.Name = "buttonStatistikRusak";
-            this.buttonStatistikRusak.Size = new System.Drawing.Size(135, 52);
-            this.buttonStatistikRusak.TabIndex = 21;
-            this.buttonStatistikRusak.Text = "Buat Statistik";
-            this.buttonStatistikRusak.UseVisualStyleBackColor = true;
-            this.buttonStatistikRusak.Click += new System.EventHandler(this.buttonStatistikRusak_Click);
-            // 
-            // datePickerTanggalAkhirStatistikRusak
-            // 
-            this.datePickerTanggalAkhirStatistikRusak.Location = new System.Drawing.Point(133, 127);
-            this.datePickerTanggalAkhirStatistikRusak.Name = "datePickerTanggalAkhirStatistikRusak";
-            this.datePickerTanggalAkhirStatistikRusak.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAkhirStatistikRusak.TabIndex = 20;
-            // 
-            // labelTanggalAkhirStatistikRusak
-            // 
-            this.labelTanggalAkhirStatistikRusak.AutoSize = true;
-            this.labelTanggalAkhirStatistikRusak.Location = new System.Drawing.Point(102, 131);
-            this.labelTanggalAkhirStatistikRusak.Name = "labelTanggalAkhirStatistikRusak";
-            this.labelTanggalAkhirStatistikRusak.Size = new System.Drawing.Size(25, 15);
-            this.labelTanggalAkhirStatistikRusak.TabIndex = 19;
-            this.labelTanggalAkhirStatistikRusak.Text = "s.d.";
-            // 
-            // datePickerTanggalAwalStatistikRusak
-            // 
-            this.datePickerTanggalAwalStatistikRusak.Location = new System.Drawing.Point(133, 98);
-            this.datePickerTanggalAwalStatistikRusak.Name = "datePickerTanggalAwalStatistikRusak";
-            this.datePickerTanggalAwalStatistikRusak.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAwalStatistikRusak.TabIndex = 18;
-            // 
-            // labelTanggalAwalStatistikRusak
-            // 
-            this.labelTanggalAwalStatistikRusak.AutoSize = true;
-            this.labelTanggalAwalStatistikRusak.Location = new System.Drawing.Point(39, 102);
-            this.labelTanggalAwalStatistikRusak.Name = "labelTanggalAwalStatistikRusak";
-            this.labelTanggalAwalStatistikRusak.Size = new System.Drawing.Size(90, 15);
-            this.labelTanggalAwalStatistikRusak.TabIndex = 17;
-            this.labelTanggalAwalStatistikRusak.Text = "Periode tanggal";
-            // 
-            // chartStatistikRusak
-            // 
-            this.chartStatistikRusak.BackColor = System.Drawing.Color.Transparent;
-            this.chartStatistikRusak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chartStatistikRusak.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartStatistikRusak.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chartStatistikRusak.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartStatistikRusak.Legends.Add(legend3);
-            this.chartStatistikRusak.Location = new System.Drawing.Point(75, 182);
-            this.chartStatistikRusak.Name = "chartStatistikRusak";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartStatistikRusak.Series.Add(series3);
-            this.chartStatistikRusak.Size = new System.Drawing.Size(409, 300);
-            this.chartStatistikRusak.TabIndex = 16;
-            this.chartStatistikRusak.Text = "chart2";
-            // 
-            // labelStatistikRusak
-            // 
-            this.labelStatistikRusak.AutoSize = true;
-            this.labelStatistikRusak.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatistikRusak.Location = new System.Drawing.Point(129, 49);
-            this.labelStatistikRusak.Name = "labelStatistikRusak";
-            this.labelStatistikRusak.Size = new System.Drawing.Size(275, 30);
-            this.labelStatistikRusak.TabIndex = 3;
-            this.labelStatistikRusak.Text = "Statistik Kerusakan Ruangan";
-            // 
-            // panelStatistikRuangan
-            // 
-            this.panelStatistikRuangan.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelStatistikRuangan.Controls.Add(this.buttonStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.datePickerTanggalAkhirStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.labelTanggalAkhirStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.datePickerTanggalAwalStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.labelTanggalAwalStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.labelStatistikRuangan);
-            this.panelStatistikRuangan.Controls.Add(this.chartStatistikRuangan);
-            this.panelStatistikRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStatistikRuangan.Location = new System.Drawing.Point(0, 0);
-            this.panelStatistikRuangan.Margin = new System.Windows.Forms.Padding(0);
-            this.panelStatistikRuangan.Name = "panelStatistikRuangan";
-            this.panelStatistikRuangan.Size = new System.Drawing.Size(529, 520);
-            this.panelStatistikRuangan.TabIndex = 0;
-            // 
-            // buttonStatistikRuangan
-            // 
-            this.buttonStatistikRuangan.Location = new System.Drawing.Point(349, 97);
-            this.buttonStatistikRuangan.Name = "buttonStatistikRuangan";
-            this.buttonStatistikRuangan.Size = new System.Drawing.Size(135, 52);
-            this.buttonStatistikRuangan.TabIndex = 9;
-            this.buttonStatistikRuangan.Text = "Buat Statistik";
-            this.buttonStatistikRuangan.UseVisualStyleBackColor = true;
-            this.buttonStatistikRuangan.Click += new System.EventHandler(this.buttonStatistikRuangan_Click);
-            // 
-            // datePickerTanggalAkhirStatistikRuangan
-            // 
-            this.datePickerTanggalAkhirStatistikRuangan.Location = new System.Drawing.Point(133, 127);
-            this.datePickerTanggalAkhirStatistikRuangan.Name = "datePickerTanggalAkhirStatistikRuangan";
-            this.datePickerTanggalAkhirStatistikRuangan.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAkhirStatistikRuangan.TabIndex = 8;
-            // 
-            // labelTanggalAkhirStatistikRuangan
-            // 
-            this.labelTanggalAkhirStatistikRuangan.AutoSize = true;
-            this.labelTanggalAkhirStatistikRuangan.Location = new System.Drawing.Point(102, 131);
-            this.labelTanggalAkhirStatistikRuangan.Name = "labelTanggalAkhirStatistikRuangan";
-            this.labelTanggalAkhirStatistikRuangan.Size = new System.Drawing.Size(25, 15);
-            this.labelTanggalAkhirStatistikRuangan.TabIndex = 7;
-            this.labelTanggalAkhirStatistikRuangan.Text = "s.d.";
-            // 
-            // datePickerTanggalAwalStatistikRuangan
-            // 
-            this.datePickerTanggalAwalStatistikRuangan.Location = new System.Drawing.Point(133, 98);
-            this.datePickerTanggalAwalStatistikRuangan.Name = "datePickerTanggalAwalStatistikRuangan";
-            this.datePickerTanggalAwalStatistikRuangan.Size = new System.Drawing.Size(200, 23);
-            this.datePickerTanggalAwalStatistikRuangan.TabIndex = 6;
-            // 
-            // labelTanggalAwalStatistikRuangan
-            // 
-            this.labelTanggalAwalStatistikRuangan.AutoSize = true;
-            this.labelTanggalAwalStatistikRuangan.Location = new System.Drawing.Point(39, 102);
-            this.labelTanggalAwalStatistikRuangan.Name = "labelTanggalAwalStatistikRuangan";
-            this.labelTanggalAwalStatistikRuangan.Size = new System.Drawing.Size(90, 15);
-            this.labelTanggalAwalStatistikRuangan.TabIndex = 5;
-            this.labelTanggalAwalStatistikRuangan.Text = "Periode tanggal";
-            // 
-            // labelStatistikRuangan
-            // 
-            this.labelStatistikRuangan.AutoSize = true;
-            this.labelStatistikRuangan.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatistikRuangan.Location = new System.Drawing.Point(129, 49);
-            this.labelStatistikRuangan.Name = "labelStatistikRuangan";
-            this.labelStatistikRuangan.Size = new System.Drawing.Size(281, 30);
-            this.labelStatistikRuangan.TabIndex = 4;
-            this.labelStatistikRuangan.Text = "Statistik Pemakaian Ruangan";
-            // 
-            // chartStatistikRuangan
-            // 
-            this.chartStatistikRuangan.BackColor = System.Drawing.Color.Transparent;
-            this.chartStatistikRuangan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chartStatistikRuangan.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartStatistikRuangan.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistikRuangan.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistikRuangan.Legends.Add(legend1);
-            this.chartStatistikRuangan.Location = new System.Drawing.Point(75, 182);
-            this.chartStatistikRuangan.Name = "chartStatistikRuangan";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartStatistikRuangan.Series.Add(series1);
-            this.chartStatistikRuangan.Size = new System.Drawing.Size(409, 300);
-            this.chartStatistikRuangan.TabIndex = 0;
-            this.chartStatistikRuangan.Text = "chart1";
-            // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.Gainsboro;
@@ -836,7 +555,7 @@
             this.panelData.Location = new System.Drawing.Point(0, 0);
             this.panelData.Margin = new System.Windows.Forms.Padding(0);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(529, 520);
+            this.panelData.Size = new System.Drawing.Size(524, 521);
             this.panelData.TabIndex = 4;
             // 
             // panelDataJadwal
@@ -850,7 +569,7 @@
             this.panelDataJadwal.Location = new System.Drawing.Point(0, 0);
             this.panelDataJadwal.Margin = new System.Windows.Forms.Padding(0);
             this.panelDataJadwal.Name = "panelDataJadwal";
-            this.panelDataJadwal.Size = new System.Drawing.Size(529, 520);
+            this.panelDataJadwal.Size = new System.Drawing.Size(524, 521);
             this.panelDataJadwal.TabIndex = 5;
             // 
             // comboJadwalCari
@@ -900,7 +619,7 @@
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
-            this.listViewJadwal.Size = new System.Drawing.Size(505, 426);
+            this.listViewJadwal.Size = new System.Drawing.Size(500, 427);
             this.listViewJadwal.TabIndex = 3;
             this.listViewJadwal.UseCompatibleStateImageBehavior = false;
             this.listViewJadwal.View = System.Windows.Forms.View.Details;
@@ -996,7 +715,7 @@
             this.panelDataRuangan.Location = new System.Drawing.Point(0, 0);
             this.panelDataRuangan.Margin = new System.Windows.Forms.Padding(0);
             this.panelDataRuangan.Name = "panelDataRuangan";
-            this.panelDataRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelDataRuangan.Size = new System.Drawing.Size(524, 521);
             this.panelDataRuangan.TabIndex = 0;
             // 
             // buttonRuanganUbah
@@ -1020,7 +739,7 @@
             this.buttonRuanganHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRuanganHapus.Image = global::CariMang.Properties.Resources.delete;
             this.buttonRuanganHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRuanganHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRuanganHapus.Location = new System.Drawing.Point(448, 12);
             this.buttonRuanganHapus.Name = "buttonRuanganHapus";
             this.buttonRuanganHapus.Size = new System.Drawing.Size(64, 64);
             this.buttonRuanganHapus.TabIndex = 5;
@@ -1043,7 +762,7 @@
             this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
             this.listViewRuangan.MultiSelect = false;
             this.listViewRuangan.Name = "listViewRuangan";
-            this.listViewRuangan.Size = new System.Drawing.Size(505, 426);
+            this.listViewRuangan.Size = new System.Drawing.Size(500, 427);
             this.listViewRuangan.TabIndex = 4;
             this.listViewRuangan.UseCompatibleStateImageBehavior = false;
             this.listViewRuangan.View = System.Windows.Forms.View.Details;
@@ -1089,7 +808,7 @@
             this.panelDataKuliah.Location = new System.Drawing.Point(0, 0);
             this.panelDataKuliah.Margin = new System.Windows.Forms.Padding(0);
             this.panelDataKuliah.Name = "panelDataKuliah";
-            this.panelDataKuliah.Size = new System.Drawing.Size(529, 520);
+            this.panelDataKuliah.Size = new System.Drawing.Size(524, 521);
             this.panelDataKuliah.TabIndex = 4;
             // 
             // buttonKuliahHapus
@@ -1099,7 +818,7 @@
             this.buttonKuliahHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKuliahHapus.Image = global::CariMang.Properties.Resources.delete;
             this.buttonKuliahHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonKuliahHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonKuliahHapus.Location = new System.Drawing.Point(448, 12);
             this.buttonKuliahHapus.Name = "buttonKuliahHapus";
             this.buttonKuliahHapus.Size = new System.Drawing.Size(64, 64);
             this.buttonKuliahHapus.TabIndex = 6;
@@ -1139,7 +858,7 @@
             this.listViewKuliah.Location = new System.Drawing.Point(12, 82);
             this.listViewKuliah.MultiSelect = false;
             this.listViewKuliah.Name = "listViewKuliah";
-            this.listViewKuliah.Size = new System.Drawing.Size(505, 426);
+            this.listViewKuliah.Size = new System.Drawing.Size(500, 427);
             this.listViewKuliah.TabIndex = 4;
             this.listViewKuliah.UseCompatibleStateImageBehavior = false;
             this.listViewKuliah.View = System.Windows.Forms.View.Details;
@@ -1197,7 +916,7 @@
             this.panelDataRusak.Location = new System.Drawing.Point(0, 0);
             this.panelDataRusak.Margin = new System.Windows.Forms.Padding(0);
             this.panelDataRusak.Name = "panelDataRusak";
-            this.panelDataRusak.Size = new System.Drawing.Size(529, 520);
+            this.panelDataRusak.Size = new System.Drawing.Size(524, 521);
             this.panelDataRusak.TabIndex = 5;
             // 
             // buttonRusakUbah
@@ -1221,7 +940,7 @@
             this.buttonRusakHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRusakHapus.Image = global::CariMang.Properties.Resources.delete;
             this.buttonRusakHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRusakHapus.Location = new System.Drawing.Point(453, 12);
+            this.buttonRusakHapus.Location = new System.Drawing.Point(448, 12);
             this.buttonRusakHapus.Name = "buttonRusakHapus";
             this.buttonRusakHapus.Size = new System.Drawing.Size(64, 64);
             this.buttonRusakHapus.TabIndex = 7;
@@ -1244,7 +963,7 @@
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
-            this.listViewRusak.Size = new System.Drawing.Size(505, 426);
+            this.listViewRusak.Size = new System.Drawing.Size(500, 427);
             this.listViewRusak.TabIndex = 4;
             this.listViewRusak.UseCompatibleStateImageBehavior = false;
             this.listViewRusak.View = System.Windows.Forms.View.Details;
@@ -1282,16 +1001,309 @@
             this.buttonRusakTambah.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonRusakTambah.Click += new System.EventHandler(this.buttonRusakTambah_Click);
             // 
+            // panelStatistik
+            // 
+            this.panelStatistik.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistik.Controls.Add(this.panelStatistikRusak);
+            this.panelStatistik.Controls.Add(this.panelStatistikRuangan);
+            this.panelStatistik.Controls.Add(this.panelStatistikPeminjam);
+            this.panelStatistik.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistik.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistik.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistik.Name = "panelStatistik";
+            this.panelStatistik.Size = new System.Drawing.Size(524, 521);
+            this.panelStatistik.TabIndex = 6;
+            // 
+            // panelStatistikRuangan
+            // 
+            this.panelStatistikRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikRuangan.Controls.Add(this.buttonStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.datePickerTanggalAkhirStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.labelTanggalAkhirStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.datePickerTanggalAwalStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.labelTanggalAwalStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.labelStatistikRuangan);
+            this.panelStatistikRuangan.Controls.Add(this.chartStatistikRuangan);
+            this.panelStatistikRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikRuangan.Name = "panelStatistikRuangan";
+            this.panelStatistikRuangan.Size = new System.Drawing.Size(524, 521);
+            this.panelStatistikRuangan.TabIndex = 0;
+            // 
+            // buttonStatistikRuangan
+            // 
+            this.buttonStatistikRuangan.Location = new System.Drawing.Point(349, 97);
+            this.buttonStatistikRuangan.Name = "buttonStatistikRuangan";
+            this.buttonStatistikRuangan.Size = new System.Drawing.Size(135, 52);
+            this.buttonStatistikRuangan.TabIndex = 5;
+            this.buttonStatistikRuangan.Text = "Buat Statistik";
+            this.buttonStatistikRuangan.UseVisualStyleBackColor = true;
+            this.buttonStatistikRuangan.Click += new System.EventHandler(this.buttonStatistikRuangan_Click);
+            // 
+            // datePickerTanggalAkhirStatistikRuangan
+            // 
+            this.datePickerTanggalAkhirStatistikRuangan.Location = new System.Drawing.Point(133, 127);
+            this.datePickerTanggalAkhirStatistikRuangan.Name = "datePickerTanggalAkhirStatistikRuangan";
+            this.datePickerTanggalAkhirStatistikRuangan.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAkhirStatistikRuangan.TabIndex = 4;
+            // 
+            // labelTanggalAkhirStatistikRuangan
+            // 
+            this.labelTanggalAkhirStatistikRuangan.AutoSize = true;
+            this.labelTanggalAkhirStatistikRuangan.Location = new System.Drawing.Point(102, 131);
+            this.labelTanggalAkhirStatistikRuangan.Name = "labelTanggalAkhirStatistikRuangan";
+            this.labelTanggalAkhirStatistikRuangan.Size = new System.Drawing.Size(25, 15);
+            this.labelTanggalAkhirStatistikRuangan.TabIndex = 3;
+            this.labelTanggalAkhirStatistikRuangan.Text = "s.d.";
+            // 
+            // datePickerTanggalAwalStatistikRuangan
+            // 
+            this.datePickerTanggalAwalStatistikRuangan.Location = new System.Drawing.Point(133, 98);
+            this.datePickerTanggalAwalStatistikRuangan.Name = "datePickerTanggalAwalStatistikRuangan";
+            this.datePickerTanggalAwalStatistikRuangan.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAwalStatistikRuangan.TabIndex = 2;
+            // 
+            // labelTanggalAwalStatistikRuangan
+            // 
+            this.labelTanggalAwalStatistikRuangan.AutoSize = true;
+            this.labelTanggalAwalStatistikRuangan.Location = new System.Drawing.Point(39, 102);
+            this.labelTanggalAwalStatistikRuangan.Name = "labelTanggalAwalStatistikRuangan";
+            this.labelTanggalAwalStatistikRuangan.Size = new System.Drawing.Size(90, 15);
+            this.labelTanggalAwalStatistikRuangan.TabIndex = 1;
+            this.labelTanggalAwalStatistikRuangan.Text = "Periode tanggal";
+            // 
+            // labelStatistikRuangan
+            // 
+            this.labelStatistikRuangan.AutoSize = true;
+            this.labelStatistikRuangan.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatistikRuangan.Location = new System.Drawing.Point(129, 49);
+            this.labelStatistikRuangan.Name = "labelStatistikRuangan";
+            this.labelStatistikRuangan.Size = new System.Drawing.Size(279, 30);
+            this.labelStatistikRuangan.TabIndex = 0;
+            this.labelStatistikRuangan.Text = "Statistik Pemakaian Ruangan";
+            // 
+            // chartStatistikRuangan
+            // 
+            this.chartStatistikRuangan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartStatistikRuangan.BackColor = System.Drawing.Color.Transparent;
+            this.chartStatistikRuangan.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartStatistikRuangan.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chartStatistikRuangan.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStatistikRuangan.Legends.Add(legend2);
+            this.chartStatistikRuangan.Location = new System.Drawing.Point(12, 182);
+            this.chartStatistikRuangan.Name = "chartStatistikRuangan";
+            this.chartStatistikRuangan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Pemakaian Ruangan";
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRuangan.Series.Add(series2);
+            this.chartStatistikRuangan.Size = new System.Drawing.Size(500, 327);
+            this.chartStatistikRuangan.TabIndex = 6;
+            this.chartStatistikRuangan.Text = "Statistik Peminjaman Ruangan";
+            // 
+            // panelStatistikPeminjam
+            // 
+            this.panelStatistikPeminjam.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikPeminjam.Controls.Add(this.buttonStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.datePickerTanggalAkhirStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.labelTanggalAkhirStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.datePickerTanggalAwalStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.labelTanggalAwalStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.chartStatistikPeminjam);
+            this.panelStatistikPeminjam.Controls.Add(this.labelStatistikPeminjam);
+            this.panelStatistikPeminjam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikPeminjam.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikPeminjam.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikPeminjam.Name = "panelStatistikPeminjam";
+            this.panelStatistikPeminjam.Size = new System.Drawing.Size(524, 521);
+            this.panelStatistikPeminjam.TabIndex = 4;
+            // 
+            // buttonStatistikPeminjam
+            // 
+            this.buttonStatistikPeminjam.Location = new System.Drawing.Point(349, 97);
+            this.buttonStatistikPeminjam.Name = "buttonStatistikPeminjam";
+            this.buttonStatistikPeminjam.Size = new System.Drawing.Size(135, 52);
+            this.buttonStatistikPeminjam.TabIndex = 5;
+            this.buttonStatistikPeminjam.Text = "Buat Statistik";
+            this.buttonStatistikPeminjam.UseVisualStyleBackColor = true;
+            this.buttonStatistikPeminjam.Click += new System.EventHandler(this.buttonStatistikPeminjam_Click);
+            // 
+            // datePickerTanggalAkhirStatistikPeminjam
+            // 
+            this.datePickerTanggalAkhirStatistikPeminjam.Location = new System.Drawing.Point(133, 127);
+            this.datePickerTanggalAkhirStatistikPeminjam.Name = "datePickerTanggalAkhirStatistikPeminjam";
+            this.datePickerTanggalAkhirStatistikPeminjam.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAkhirStatistikPeminjam.TabIndex = 4;
+            // 
+            // labelTanggalAkhirStatistikPeminjam
+            // 
+            this.labelTanggalAkhirStatistikPeminjam.AutoSize = true;
+            this.labelTanggalAkhirStatistikPeminjam.Location = new System.Drawing.Point(102, 131);
+            this.labelTanggalAkhirStatistikPeminjam.Name = "labelTanggalAkhirStatistikPeminjam";
+            this.labelTanggalAkhirStatistikPeminjam.Size = new System.Drawing.Size(25, 15);
+            this.labelTanggalAkhirStatistikPeminjam.TabIndex = 3;
+            this.labelTanggalAkhirStatistikPeminjam.Text = "s.d.";
+            // 
+            // datePickerTanggalAwalStatistikPeminjam
+            // 
+            this.datePickerTanggalAwalStatistikPeminjam.Location = new System.Drawing.Point(133, 98);
+            this.datePickerTanggalAwalStatistikPeminjam.Name = "datePickerTanggalAwalStatistikPeminjam";
+            this.datePickerTanggalAwalStatistikPeminjam.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAwalStatistikPeminjam.TabIndex = 2;
+            // 
+            // labelTanggalAwalStatistikPeminjam
+            // 
+            this.labelTanggalAwalStatistikPeminjam.AutoSize = true;
+            this.labelTanggalAwalStatistikPeminjam.Location = new System.Drawing.Point(39, 102);
+            this.labelTanggalAwalStatistikPeminjam.Name = "labelTanggalAwalStatistikPeminjam";
+            this.labelTanggalAwalStatistikPeminjam.Size = new System.Drawing.Size(90, 15);
+            this.labelTanggalAwalStatistikPeminjam.TabIndex = 1;
+            this.labelTanggalAwalStatistikPeminjam.Text = "Periode tanggal";
+            // 
+            // chartStatistikPeminjam
+            // 
+            this.chartStatistikPeminjam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartStatistikPeminjam.BackColor = System.Drawing.Color.Transparent;
+            this.chartStatistikPeminjam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chartStatistikPeminjam.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartStatistikPeminjam.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartStatistikPeminjam.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartStatistikPeminjam.Legends.Add(legend3);
+            this.chartStatistikPeminjam.Location = new System.Drawing.Point(12, 182);
+            this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
+            this.chartStatistikPeminjam.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Banyaknya Peminjaman";
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikPeminjam.Series.Add(series3);
+            this.chartStatistikPeminjam.Size = new System.Drawing.Size(500, 327);
+            this.chartStatistikPeminjam.TabIndex = 6;
+            this.chartStatistikPeminjam.Text = "Statistik Peminjam";
+            // 
+            // labelStatistikPeminjam
+            // 
+            this.labelStatistikPeminjam.AutoSize = true;
+            this.labelStatistikPeminjam.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatistikPeminjam.Location = new System.Drawing.Point(129, 49);
+            this.labelStatistikPeminjam.Name = "labelStatistikPeminjam";
+            this.labelStatistikPeminjam.Size = new System.Drawing.Size(274, 30);
+            this.labelStatistikPeminjam.TabIndex = 0;
+            this.labelStatistikPeminjam.Text = "Statistik Frekuensi Peminjam";
+            // 
+            // panelStatistikRusak
+            // 
+            this.panelStatistikRusak.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelStatistikRusak.Controls.Add(this.buttonStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.datePickerTanggalAkhirStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.labelTanggalAkhirStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.datePickerTanggalAwalStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.labelTanggalAwalStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.chartStatistikRusak);
+            this.panelStatistikRusak.Controls.Add(this.labelStatistikRusak);
+            this.panelStatistikRusak.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStatistikRusak.Location = new System.Drawing.Point(0, 0);
+            this.panelStatistikRusak.Margin = new System.Windows.Forms.Padding(0);
+            this.panelStatistikRusak.Name = "panelStatistikRusak";
+            this.panelStatistikRusak.Size = new System.Drawing.Size(524, 521);
+            this.panelStatistikRusak.TabIndex = 5;
+            // 
+            // buttonStatistikRusak
+            // 
+            this.buttonStatistikRusak.Location = new System.Drawing.Point(349, 97);
+            this.buttonStatistikRusak.Name = "buttonStatistikRusak";
+            this.buttonStatistikRusak.Size = new System.Drawing.Size(135, 52);
+            this.buttonStatistikRusak.TabIndex = 5;
+            this.buttonStatistikRusak.Text = "Buat Statistik";
+            this.buttonStatistikRusak.UseVisualStyleBackColor = true;
+            this.buttonStatistikRusak.Click += new System.EventHandler(this.buttonStatistikRusak_Click);
+            // 
+            // datePickerTanggalAkhirStatistikRusak
+            // 
+            this.datePickerTanggalAkhirStatistikRusak.Location = new System.Drawing.Point(133, 127);
+            this.datePickerTanggalAkhirStatistikRusak.Name = "datePickerTanggalAkhirStatistikRusak";
+            this.datePickerTanggalAkhirStatistikRusak.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAkhirStatistikRusak.TabIndex = 4;
+            // 
+            // labelTanggalAkhirStatistikRusak
+            // 
+            this.labelTanggalAkhirStatistikRusak.AutoSize = true;
+            this.labelTanggalAkhirStatistikRusak.Location = new System.Drawing.Point(102, 131);
+            this.labelTanggalAkhirStatistikRusak.Name = "labelTanggalAkhirStatistikRusak";
+            this.labelTanggalAkhirStatistikRusak.Size = new System.Drawing.Size(25, 15);
+            this.labelTanggalAkhirStatistikRusak.TabIndex = 3;
+            this.labelTanggalAkhirStatistikRusak.Text = "s.d.";
+            // 
+            // datePickerTanggalAwalStatistikRusak
+            // 
+            this.datePickerTanggalAwalStatistikRusak.Location = new System.Drawing.Point(133, 98);
+            this.datePickerTanggalAwalStatistikRusak.Name = "datePickerTanggalAwalStatistikRusak";
+            this.datePickerTanggalAwalStatistikRusak.Size = new System.Drawing.Size(200, 23);
+            this.datePickerTanggalAwalStatistikRusak.TabIndex = 2;
+            // 
+            // labelTanggalAwalStatistikRusak
+            // 
+            this.labelTanggalAwalStatistikRusak.AutoSize = true;
+            this.labelTanggalAwalStatistikRusak.Location = new System.Drawing.Point(39, 102);
+            this.labelTanggalAwalStatistikRusak.Name = "labelTanggalAwalStatistikRusak";
+            this.labelTanggalAwalStatistikRusak.Size = new System.Drawing.Size(90, 15);
+            this.labelTanggalAwalStatistikRusak.TabIndex = 1;
+            this.labelTanggalAwalStatistikRusak.Text = "Periode tanggal";
+            // 
+            // chartStatistikRusak
+            // 
+            this.chartStatistikRusak.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartStatistikRusak.BackColor = System.Drawing.Color.Transparent;
+            this.chartStatistikRusak.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartStatistikRusak.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistikRusak.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistikRusak.Legends.Add(legend1);
+            this.chartStatistikRusak.Location = new System.Drawing.Point(12, 182);
+            this.chartStatistikRusak.Name = "chartStatistikRusak";
+            this.chartStatistikRusak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Kerusakan Ruangan";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRusak.Series.Add(series1);
+            this.chartStatistikRusak.Size = new System.Drawing.Size(500, 327);
+            this.chartStatistikRusak.TabIndex = 6;
+            this.chartStatistikRusak.Text = "Statistik Ruangan Rusak";
+            // 
+            // labelStatistikRusak
+            // 
+            this.labelStatistikRusak.AutoSize = true;
+            this.labelStatistikRusak.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatistikRusak.Location = new System.Drawing.Point(129, 49);
+            this.labelStatistikRusak.Name = "labelStatistikRusak";
+            this.labelStatistikRusak.Size = new System.Drawing.Size(274, 30);
+            this.labelStatistikRusak.TabIndex = 0;
+            this.labelStatistikRusak.Text = "Statistik Kerusakan Ruangan";
+            // 
             // panelBooking
             // 
             this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBooking.Controls.Add(this.panelBookingCek);
             this.panelBooking.Controls.Add(this.panelBookingRuangan);
+            this.panelBooking.Controls.Add(this.panelBookingCek);
             this.panelBooking.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBooking.Location = new System.Drawing.Point(0, 0);
             this.panelBooking.Margin = new System.Windows.Forms.Padding(0);
             this.panelBooking.Name = "panelBooking";
-            this.panelBooking.Size = new System.Drawing.Size(529, 520);
+            this.panelBooking.Size = new System.Drawing.Size(524, 521);
             this.panelBooking.TabIndex = 5;
             // 
             // panelBookingCek
@@ -1312,7 +1324,7 @@
             this.panelBookingCek.Location = new System.Drawing.Point(0, 0);
             this.panelBookingCek.Margin = new System.Windows.Forms.Padding(0);
             this.panelBookingCek.Name = "panelBookingCek";
-            this.panelBookingCek.Size = new System.Drawing.Size(529, 520);
+            this.panelBookingCek.Size = new System.Drawing.Size(524, 521);
             this.panelBookingCek.TabIndex = 0;
             // 
             // labelBookingCekRuangan
@@ -1321,7 +1333,7 @@
             this.labelBookingCekRuangan.Location = new System.Drawing.Point(9, 18);
             this.labelBookingCekRuangan.Name = "labelBookingCekRuangan";
             this.labelBookingCekRuangan.Size = new System.Drawing.Size(54, 15);
-            this.labelBookingCekRuangan.TabIndex = 12;
+            this.labelBookingCekRuangan.TabIndex = 0;
             this.labelBookingCekRuangan.Text = "Ruangan";
             // 
             // comboBookingCek
@@ -1331,7 +1343,7 @@
             this.comboBookingCek.Location = new System.Drawing.Point(152, 12);
             this.comboBookingCek.Name = "comboBookingCek";
             this.comboBookingCek.Size = new System.Drawing.Size(365, 23);
-            this.comboBookingCek.TabIndex = 13;
+            this.comboBookingCek.TabIndex = 1;
             // 
             // labelBookingCekKapasitas
             // 
@@ -1339,7 +1351,7 @@
             this.labelBookingCekKapasitas.Location = new System.Drawing.Point(9, 46);
             this.labelBookingCekKapasitas.Name = "labelBookingCekKapasitas";
             this.labelBookingCekKapasitas.Size = new System.Drawing.Size(56, 15);
-            this.labelBookingCekKapasitas.TabIndex = 14;
+            this.labelBookingCekKapasitas.TabIndex = 2;
             this.labelBookingCekKapasitas.Text = "Kapasitas";
             // 
             // numBookingCek
@@ -1362,7 +1374,7 @@
             0});
             this.numBookingCek.Name = "numBookingCek";
             this.numBookingCek.Size = new System.Drawing.Size(64, 23);
-            this.numBookingCek.TabIndex = 8;
+            this.numBookingCek.TabIndex = 3;
             this.numBookingCek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingCek.ThousandsSeparator = true;
             this.numBookingCek.Value = new decimal(new int[] {
@@ -1376,8 +1388,8 @@
             this.labelBookingCekTanggal.AutoSize = true;
             this.labelBookingCekTanggal.Location = new System.Drawing.Point(9, 74);
             this.labelBookingCekTanggal.Name = "labelBookingCekTanggal";
-            this.labelBookingCekTanggal.Size = new System.Drawing.Size(50, 15);
-            this.labelBookingCekTanggal.TabIndex = 16;
+            this.labelBookingCekTanggal.Size = new System.Drawing.Size(49, 15);
+            this.labelBookingCekTanggal.TabIndex = 4;
             this.labelBookingCekTanggal.Text = "Tanggal";
             // 
             // dateBookingCek
@@ -1387,7 +1399,7 @@
             this.dateBookingCek.Location = new System.Drawing.Point(152, 70);
             this.dateBookingCek.Name = "dateBookingCek";
             this.dateBookingCek.Size = new System.Drawing.Size(224, 23);
-            this.dateBookingCek.TabIndex = 15;
+            this.dateBookingCek.TabIndex = 5;
             // 
             // labelBookingCekPukul
             // 
@@ -1395,7 +1407,7 @@
             this.labelBookingCekPukul.Location = new System.Drawing.Point(9, 102);
             this.labelBookingCekPukul.Name = "labelBookingCekPukul";
             this.labelBookingCekPukul.Size = new System.Drawing.Size(37, 15);
-            this.labelBookingCekPukul.TabIndex = 19;
+            this.labelBookingCekPukul.TabIndex = 6;
             this.labelBookingCekPukul.Text = "Pukul";
             // 
             // numBookingCekMulai
@@ -1413,7 +1425,7 @@
             0});
             this.numBookingCekMulai.Name = "numBookingCekMulai";
             this.numBookingCekMulai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingCekMulai.TabIndex = 18;
+            this.numBookingCekMulai.TabIndex = 7;
             this.numBookingCekMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingCekMulai.Value = new decimal(new int[] {
             7,
@@ -1427,7 +1439,7 @@
             this.labelBookingCekPukulSd.Location = new System.Drawing.Point(214, 102);
             this.labelBookingCekPukulSd.Name = "labelBookingCekPukulSd";
             this.labelBookingCekPukulSd.Size = new System.Drawing.Size(25, 15);
-            this.labelBookingCekPukulSd.TabIndex = 21;
+            this.labelBookingCekPukulSd.TabIndex = 8;
             this.labelBookingCekPukulSd.Text = "s.d.";
             // 
             // numBookingCekSelesai
@@ -1445,7 +1457,7 @@
             0});
             this.numBookingCekSelesai.Name = "numBookingCekSelesai";
             this.numBookingCekSelesai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingCekSelesai.TabIndex = 20;
+            this.numBookingCekSelesai.TabIndex = 9;
             this.numBookingCekSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingCekSelesai.Value = new decimal(new int[] {
             8,
@@ -1459,7 +1471,7 @@
             this.buttonBookingCek.Location = new System.Drawing.Point(152, 128);
             this.buttonBookingCek.Name = "buttonBookingCek";
             this.buttonBookingCek.Size = new System.Drawing.Size(84, 36);
-            this.buttonBookingCek.TabIndex = 11;
+            this.buttonBookingCek.TabIndex = 10;
             this.buttonBookingCek.Text = "Cek";
             this.buttonBookingCek.Click += new System.EventHandler(this.buttonBookingCek_Click);
             // 
@@ -1485,7 +1497,7 @@
             this.panelBookingRuangan.Location = new System.Drawing.Point(0, 0);
             this.panelBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
             this.panelBookingRuangan.Name = "panelBookingRuangan";
-            this.panelBookingRuangan.Size = new System.Drawing.Size(529, 520);
+            this.panelBookingRuangan.Size = new System.Drawing.Size(524, 521);
             this.panelBookingRuangan.TabIndex = 4;
             // 
             // labelBookingRuangan
@@ -1494,7 +1506,7 @@
             this.labelBookingRuangan.Location = new System.Drawing.Point(9, 18);
             this.labelBookingRuangan.Name = "labelBookingRuangan";
             this.labelBookingRuangan.Size = new System.Drawing.Size(54, 15);
-            this.labelBookingRuangan.TabIndex = 24;
+            this.labelBookingRuangan.TabIndex = 0;
             this.labelBookingRuangan.Text = "Ruangan";
             // 
             // comboBookingRuangan
@@ -1504,7 +1516,7 @@
             this.comboBookingRuangan.Location = new System.Drawing.Point(152, 12);
             this.comboBookingRuangan.Name = "comboBookingRuangan";
             this.comboBookingRuangan.Size = new System.Drawing.Size(365, 23);
-            this.comboBookingRuangan.TabIndex = 25;
+            this.comboBookingRuangan.TabIndex = 1;
             // 
             // labelBookingRuanganKapasitas
             // 
@@ -1512,7 +1524,7 @@
             this.labelBookingRuanganKapasitas.Location = new System.Drawing.Point(9, 46);
             this.labelBookingRuanganKapasitas.Name = "labelBookingRuanganKapasitas";
             this.labelBookingRuanganKapasitas.Size = new System.Drawing.Size(56, 15);
-            this.labelBookingRuanganKapasitas.TabIndex = 26;
+            this.labelBookingRuanganKapasitas.TabIndex = 2;
             this.labelBookingRuanganKapasitas.Text = "Kapasitas";
             // 
             // numBookingRuanganKapasitas
@@ -1535,7 +1547,7 @@
             0});
             this.numBookingRuanganKapasitas.Name = "numBookingRuanganKapasitas";
             this.numBookingRuanganKapasitas.Size = new System.Drawing.Size(64, 23);
-            this.numBookingRuanganKapasitas.TabIndex = 22;
+            this.numBookingRuanganKapasitas.TabIndex = 3;
             this.numBookingRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingRuanganKapasitas.ThousandsSeparator = true;
             this.numBookingRuanganKapasitas.Value = new decimal(new int[] {
@@ -1549,8 +1561,8 @@
             this.labelBookingRuanganTanggal.AutoSize = true;
             this.labelBookingRuanganTanggal.Location = new System.Drawing.Point(9, 74);
             this.labelBookingRuanganTanggal.Name = "labelBookingRuanganTanggal";
-            this.labelBookingRuanganTanggal.Size = new System.Drawing.Size(50, 15);
-            this.labelBookingRuanganTanggal.TabIndex = 28;
+            this.labelBookingRuanganTanggal.Size = new System.Drawing.Size(49, 15);
+            this.labelBookingRuanganTanggal.TabIndex = 4;
             this.labelBookingRuanganTanggal.Text = "Tanggal";
             // 
             // dateBookingRuangan
@@ -1560,7 +1572,7 @@
             this.dateBookingRuangan.Location = new System.Drawing.Point(152, 70);
             this.dateBookingRuangan.Name = "dateBookingRuangan";
             this.dateBookingRuangan.Size = new System.Drawing.Size(224, 23);
-            this.dateBookingRuangan.TabIndex = 27;
+            this.dateBookingRuangan.TabIndex = 5;
             // 
             // labelBookingRuanganWaktu
             // 
@@ -1568,7 +1580,7 @@
             this.labelBookingRuanganWaktu.Location = new System.Drawing.Point(9, 102);
             this.labelBookingRuanganWaktu.Name = "labelBookingRuanganWaktu";
             this.labelBookingRuanganWaktu.Size = new System.Drawing.Size(37, 15);
-            this.labelBookingRuanganWaktu.TabIndex = 30;
+            this.labelBookingRuanganWaktu.TabIndex = 6;
             this.labelBookingRuanganWaktu.Text = "Pukul";
             // 
             // numBookingRuanganMulai
@@ -1586,7 +1598,7 @@
             0});
             this.numBookingRuanganMulai.Name = "numBookingRuanganMulai";
             this.numBookingRuanganMulai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingRuanganMulai.TabIndex = 29;
+            this.numBookingRuanganMulai.TabIndex = 7;
             this.numBookingRuanganMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingRuanganMulai.Value = new decimal(new int[] {
             7,
@@ -1600,7 +1612,7 @@
             this.labelBookingRuanganSd.Location = new System.Drawing.Point(214, 102);
             this.labelBookingRuanganSd.Name = "labelBookingRuanganSd";
             this.labelBookingRuanganSd.Size = new System.Drawing.Size(25, 15);
-            this.labelBookingRuanganSd.TabIndex = 32;
+            this.labelBookingRuanganSd.TabIndex = 8;
             this.labelBookingRuanganSd.Text = "s.d.";
             // 
             // numBookingRuanganSelesai
@@ -1618,7 +1630,7 @@
             0});
             this.numBookingRuanganSelesai.Name = "numBookingRuanganSelesai";
             this.numBookingRuanganSelesai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingRuanganSelesai.TabIndex = 31;
+            this.numBookingRuanganSelesai.TabIndex = 9;
             this.numBookingRuanganSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBookingRuanganSelesai.Value = new decimal(new int[] {
             8,
@@ -1632,7 +1644,7 @@
             this.labelBookingRuanganKegiatan.Location = new System.Drawing.Point(9, 131);
             this.labelBookingRuanganKegiatan.Name = "labelBookingRuanganKegiatan";
             this.labelBookingRuanganKegiatan.Size = new System.Drawing.Size(88, 15);
-            this.labelBookingRuanganKegiatan.TabIndex = 3;
+            this.labelBookingRuanganKegiatan.TabIndex = 10;
             this.labelBookingRuanganKegiatan.Text = "Nama Kegiatan";
             // 
             // textBookingRuanganKegiatan
@@ -1640,7 +1652,7 @@
             this.textBookingRuanganKegiatan.Location = new System.Drawing.Point(152, 128);
             this.textBookingRuanganKegiatan.Name = "textBookingRuanganKegiatan";
             this.textBookingRuanganKegiatan.Size = new System.Drawing.Size(365, 23);
-            this.textBookingRuanganKegiatan.TabIndex = 0;
+            this.textBookingRuanganKegiatan.TabIndex = 11;
             // 
             // labelBookingRuanganTanggung
             // 
@@ -1648,7 +1660,7 @@
             this.labelBookingRuanganTanggung.Location = new System.Drawing.Point(10, 160);
             this.labelBookingRuanganTanggung.Name = "labelBookingRuanganTanggung";
             this.labelBookingRuanganTanggung.Size = new System.Drawing.Size(110, 15);
-            this.labelBookingRuanganTanggung.TabIndex = 34;
+            this.labelBookingRuanganTanggung.TabIndex = 12;
             this.labelBookingRuanganTanggung.Text = "Penanggung Jawab";
             // 
             // textBookingRuanganTanggung
@@ -1656,7 +1668,7 @@
             this.textBookingRuanganTanggung.Location = new System.Drawing.Point(152, 157);
             this.textBookingRuanganTanggung.Name = "textBookingRuanganTanggung";
             this.textBookingRuanganTanggung.Size = new System.Drawing.Size(365, 23);
-            this.textBookingRuanganTanggung.TabIndex = 33;
+            this.textBookingRuanganTanggung.TabIndex = 13;
             // 
             // buttonBookingRuangan
             // 
@@ -1664,7 +1676,7 @@
             this.buttonBookingRuangan.Location = new System.Drawing.Point(152, 186);
             this.buttonBookingRuangan.Name = "buttonBookingRuangan";
             this.buttonBookingRuangan.Size = new System.Drawing.Size(84, 36);
-            this.buttonBookingRuangan.TabIndex = 23;
+            this.buttonBookingRuangan.TabIndex = 14;
             this.buttonBookingRuangan.Text = "Booking";
             this.buttonBookingRuangan.Click += new System.EventHandler(this.buttonBookingRuangan_Click);
             // 
@@ -1672,10 +1684,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 520);
+            this.ClientSize = new System.Drawing.Size(784, 521);
             this.Controls.Add(this.splitPanel);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimumSize = new System.Drawing.Size(800, 560);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cari Mang";
@@ -1690,21 +1703,21 @@
             this.panelPageData.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
             this.panelPageBooking.ResumeLayout(false);
+            this.panelData.ResumeLayout(false);
+            this.panelDataJadwal.ResumeLayout(false);
+            this.panelDataRuangan.ResumeLayout(false);
+            this.panelDataKuliah.ResumeLayout(false);
+            this.panelDataRusak.ResumeLayout(false);
             this.panelStatistik.ResumeLayout(false);
+            this.panelStatistikRuangan.ResumeLayout(false);
+            this.panelStatistikRuangan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).EndInit();
             this.panelStatistikPeminjam.ResumeLayout(false);
             this.panelStatistikPeminjam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).EndInit();
             this.panelStatistikRusak.ResumeLayout(false);
             this.panelStatistikRusak.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).EndInit();
-            this.panelStatistikRuangan.ResumeLayout(false);
-            this.panelStatistikRuangan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRuangan)).EndInit();
-            this.panelData.ResumeLayout(false);
-            this.panelDataJadwal.ResumeLayout(false);
-            this.panelDataRuangan.ResumeLayout(false);
-            this.panelDataKuliah.ResumeLayout(false);
-            this.panelDataRusak.ResumeLayout(false);
             this.panelBooking.ResumeLayout(false);
             this.panelBookingCek.ResumeLayout(false);
             this.panelBookingCek.PerformLayout();

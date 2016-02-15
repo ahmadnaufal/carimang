@@ -35,13 +35,6 @@ CREATE TABLE `kegiatan` (
   `waktu_selesai` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `kegiatan`
---
-
-INSERT INTO `kegiatan` (`id_peminjam`, `nama_ruangan`, `nama_kegiatan`, `tanggal`, `waktu_mulai`, `waktu_selesai`) VALUES
-(1, '7601', 'Gantengisme', '2016-02-14', 7, 9);
-
 -- --------------------------------------------------------
 
 --
@@ -65,13 +58,6 @@ CREATE TABLE `peminjam` (
   `id` int(11) NOT NULL,
   `nama_peminjam` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `peminjam`
---
-
-INSERT INTO `peminjam` (`id`, `nama_peminjam`) VALUES
-(1, 'HMIF');
 
 -- --------------------------------------------------------
 
@@ -114,17 +100,6 @@ CREATE TABLE `ruangan` (
   `kapasitas` int(11) NOT NULL,
   `tipe_ruangan` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ruangan`
---
-
-INSERT INTO `ruangan` (`id`, `nama_ruangan`, `kapasitas`, `tipe_ruangan`) VALUES
-(2, '7603', 34, 0),
-(3, '7602', 50, 0),
-(4, '7601', 50, 0),
-(5, 'Laboratorium Dasar 1', 50, 1),
-(6, 'Laboratorium Dasar 2', 50, 1);
 
 --
 -- Indexes for dumped tables

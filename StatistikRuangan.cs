@@ -42,8 +42,6 @@ namespace CariMang
                     PRM_TANGGAL_SELESAI
                     );
 
-                Console.WriteLine(query);
-
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, tanggalAwal.Date.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, tanggalAkhir.Date.ToString("yyyy-MM-dd"));

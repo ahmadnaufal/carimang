@@ -60,8 +60,8 @@ namespace CariMang {
 
         private void buttonOK_Click(object sender, EventArgs e) {
             this.Ruangan = DaftarRuangan.ElementAt(comboRuangan.SelectedIndex);                        
-            this.TanggalMulai = dateTimeMulai.Value;
-            this.TanggalSelesai = dateTimeSelesai.Value;            
+            this.TanggalMulai = dateTimeMulai.Value.Date;
+            this.TanggalSelesai = dateTimeSelesai.Value.Date;            
             this.Deskripsi = textBoxDeskripsi.Text;
 
             if (this.TanggalMulai > this.TanggalSelesai) {

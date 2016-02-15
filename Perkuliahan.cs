@@ -228,7 +228,7 @@ namespace CariMang {
             catch (MySqlException) {
             }
 
-            return false;
+            return result;
         }
 
         public Kuliah Kuliah {

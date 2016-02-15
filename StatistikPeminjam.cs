@@ -13,6 +13,7 @@ namespace CariMang
         private static string TBL_PEMINJAM = "peminjam";
         private static string TBL_KEGIATAN = "kegiatan";
 
+        private static string COL_ID = "id";
         private static string COL_ID_PEMINJAM = "id_peminjam";
         private static string COL_NAMA_PEMINJAM = "nama_peminjam";
         private static string COL_JUMLAH_PEMINJAM = "jumlah_peminjam";
@@ -37,14 +38,12 @@ namespace CariMang
             using (MySqlConnection connection = MySqlConnector.GetConnection())
             {
                 String query = String.Format(
-                    "SELECT {0}, COUNT(*) AS {1} FROM {2} NATURAL JOIN {3} WHERE ({4} >= {5} AND {4} <= {6}) GROUP BY {0} ORDER BY {1} DESC LIMIT 5",
+                    "SELECT {0}, COUNT(*) AS {1} FROM {2}, {3} WHERE ({2}.{4} = {3}.{5}) AND ({6} BETWEEN {7} AND {8}) GROUP BY {0} ORDER BY {1} DESC LIMIT 5",
                     COL_NAMA_PEMINJAM, COL_JUMLAH_PEMINJAM,
                     TBL_PEMINJAM, TBL_KEGIATAN,
-                    COL_TANGGAL_KEGIATAN, PRM_TANGGAL_MULAI,
-                    PRM_TANGGAL_SELESAI
+                    COL_ID, COL_ID_PEMINJAM,
+                    COL_TANGGAL_KEGIATAN, PRM_TANGGAL_MULAI, PRM_TANGGAL_SELESAI
                     );
-
-                Console.WriteLine(query);
 
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, tanggalAwal.Date.ToString("yyyy-MM-dd"));

@@ -11,11 +11,13 @@ namespace CariMang {
 
         private static string TBL_PERBAIKAN = "perbaikan";
 
+        private static string COL_ID = "id";
         private static string COL_NAMA_RUANGAN = "nama_ruangan";
         private static string COL_TANGGAL_MULAI = "tanggal_mulai";
         private static string COL_TANGGAL_SELESAI = "tanggal_selesai";
         private static string COL_DESKRIPSI_PERBAIKAN = "deskripsi";
 
+        private static string PRM_ID = "@id";
         private static string PRM_NAMA_RUANGAN = "@nama_ruangan";
         private static string PRM_TANGGAL = "@tanggal";
         private static string PRM_TANGGAL_MULAI = "@tanggal_mulai";
@@ -25,13 +27,15 @@ namespace CariMang {
         public static string FMT_TANGGAL = "yyyy-MM-dd";
         public static string FMT_DISPLAY_TANGGAL = "D";
 
+        private int id = 0;
         private Ruangan ruangan = null;
         private DateTime tanggalmulai = DateTime.Now;
         private DateTime tanggalselesai = DateTime.Now;
         private string deskripsi = "";
 
-        private Perbaikan(Ruangan ruangan, DateTime tanggalmulai, DateTime tanggalselesai, string deskripsi)
+        private Perbaikan(int id, Ruangan ruangan, DateTime tanggalmulai, DateTime tanggalselesai, string deskripsi)
         {
+            this.id = id;
             this.ruangan = ruangan;
             this.tanggalmulai = tanggalmulai;
             this.tanggalselesai = tanggalselesai;
@@ -57,6 +61,7 @@ namespace CariMang {
                         {
                             Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);
                             listPerbaikan.Add(new Perbaikan(
+                                (int)reader[COL_ID],
                                 ruangan,
                                 (DateTime)reader[COL_TANGGAL_MULAI],
                                 (DateTime)reader[COL_TANGGAL_SELESAI],
@@ -90,6 +95,7 @@ namespace CariMang {
                         while (reader.Read()) {
                             Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);
                             listPerbaikan.Add(new Perbaikan(
+                                (int)reader[COL_ID],
                                 ruangan,
                                 (DateTime)reader[COL_TANGGAL_MULAI],
                                 (DateTime)reader[COL_TANGGAL_SELESAI],
@@ -105,7 +111,7 @@ namespace CariMang {
             return listPerbaikan;
         }
 
-        public static Perbaikan Get(string nama_ruangan)
+        public static Perbaikan Get(int id)
         {
             Perbaikan perbaikan = null;
 
@@ -113,12 +119,12 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "SELECT * FROM {0} WHERE {1}={2}",
+                        "SELECT * FROM {0} WHERE {1}={2} LIMIT 1",
                         TBL_PERBAIKAN,
-                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN);
+                        COL_ID, PRM_ID);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, nama_ruangan);
+                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, id);
 
                     connection.Open();
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -127,6 +133,7 @@ namespace CariMang {
                         {
                             Ruangan ruangan = Ruangan.Get((string)reader[COL_NAMA_RUANGAN]);
                             perbaikan = new Perbaikan(
+                                (int)reader[COL_ID],
                                 ruangan,
                                 (DateTime)reader[COL_TANGGAL_MULAI],
                                 (DateTime)reader[COL_TANGGAL_SELESAI],
@@ -165,7 +172,7 @@ namespace CariMang {
 
                     connection.Open();
                     if (command.ExecuteNonQuery() > 0)
-                        perbaikan = new Perbaikan(ruangan, tanggalmulai, tanggalselesai, deskripsi);
+                        perbaikan = new Perbaikan((int)command.LastInsertedId, ruangan, tanggalmulai, tanggalselesai, deskripsi);
                 }
             }
             catch (MySqlException e) {
@@ -183,16 +190,12 @@ namespace CariMang {
                 using (MySqlConnection connection = MySqlConnector.GetConnection())
                 {
                     string query = String.Format(
-                        "DELETE FROM {0} WHERE {1}={2} AND {3}={4} AND {5}={6}",
+                        "DELETE FROM {0} WHERE {1}={2}",
                         TBL_PERBAIKAN,
-                        COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
-                        COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
-                        COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
+                        COL_ID, PRM_ID);
 
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, perbaikan.Ruangan.Nama);
-                    command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, perbaikan.TanggalMulai.Date.ToString(FMT_TANGGAL));
-                    command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, perbaikan.TanggalSelesai.Date.ToString(FMT_TANGGAL));
+                    command.Parameters.AddWithValue(PRM_ID, perbaikan.id);                    
 
                     connection.Open();
                     result = command.ExecuteNonQuery() > 0;
@@ -240,18 +243,14 @@ namespace CariMang {
                     using (MySqlConnection connection = MySqlConnector.GetConnection())
                     {
                         string query = String.Format(
-                            "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
+                            "UPDATE {0} SET {1}={2} WHERE {3}={4}",
                             TBL_PERBAIKAN,
-                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "1",
-                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN + "2",
-                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
-                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
+                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
+                            COL_ID, PRM_ID);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "1", value.Nama);
-                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN + "2", this.Ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString(FMT_TANGGAL));
+                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, value.Nama);                        
+                        command.Parameters.AddWithValue(PRM_ID, this.id);                        
 
                         connection.Open();
                         if (command.ExecuteNonQuery() > 0)
@@ -273,18 +272,14 @@ namespace CariMang {
                     using (MySqlConnection connection = MySqlConnector.GetConnection())
                     {
                         string query = String.Format(
-                            "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
+                            "UPDATE {0} SET {1}={2} WHERE {3}={4}",
                             TBL_PERBAIKAN,
-                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI + "1",
-                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
-                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI + "2",
-                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
+                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
+                            COL_ID, PRM_ID);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "1", value.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.Ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI + "2", this.tanggalmulai.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString(FMT_TANGGAL));
+                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, value.Date.ToString(FMT_TANGGAL));
+                        command.Parameters.AddWithValue(PRM_ID, this.id);
 
                         connection.Open();
                         if (command.ExecuteNonQuery() > 0)
@@ -306,18 +301,14 @@ namespace CariMang {
                     using (MySqlConnection connection = MySqlConnector.GetConnection())
                     {
                         string query = String.Format(
-                            "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
+                            "UPDATE {0} SET {1}={2} WHERE {3}={4}",
                             TBL_PERBAIKAN,
-                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "1",
-                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
-                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
-                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI + "2");
+                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI,
+                            COL_ID, PRM_ID);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "1", value.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.Ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI + "2", this.tanggalselesai.Date.ToString(FMT_TANGGAL));
+                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, value.Date.ToString(FMT_TANGGAL));
+                        command.Parameters.AddWithValue(PRM_ID, this.id);                        
 
                         connection.Open();
                         if (command.ExecuteNonQuery() > 0)
@@ -339,19 +330,15 @@ namespace CariMang {
                     using (MySqlConnection connection = MySqlConnector.GetConnection())
                     {
                         string query = String.Format(
-                            "UPDATE {0} SET {1}={2} WHERE {3}={4} AND {5}={6} AND {7}={8}",
+                            "UPDATE {0} SET {1}={2} WHERE {3}={4}",
                             TBL_PERBAIKAN,
                             COL_DESKRIPSI_PERBAIKAN, PRM_DESKRIPSI_PERBAIKAN,
-                            COL_NAMA_RUANGAN, PRM_NAMA_RUANGAN,
-                            COL_TANGGAL_MULAI, PRM_TANGGAL_MULAI,
-                            COL_TANGGAL_SELESAI, PRM_TANGGAL_SELESAI);
+                            COL_ID, PRM_ID);
 
                         MySqlCommand command = new MySqlCommand(query, connection);
                         command.Parameters.AddWithValue(PRM_DESKRIPSI_PERBAIKAN, value.ToString());
-                        command.Parameters.AddWithValue(PRM_NAMA_RUANGAN, this.Ruangan.Nama);
-                        command.Parameters.AddWithValue(PRM_TANGGAL_MULAI, this.tanggalmulai.Date.ToString(FMT_TANGGAL));
-                        command.Parameters.AddWithValue(PRM_TANGGAL_SELESAI, this.tanggalselesai.Date.ToString(FMT_TANGGAL));
-
+                        command.Parameters.AddWithValue(PRM_ID, this.id);
+                        
                         connection.Open();
                         if (command.ExecuteNonQuery() > 0)
                             this.deskripsi = value;

@@ -234,6 +234,15 @@ namespace CariMang {
             }
         }
 
+        private void buttonBack_Click(object sender, EventArgs e) {
+            if (buttonHistory.Count == 0)
+                return;
+            foreach (var button in buttonHistory.Pop()) {
+                button.PerformClick();
+            }
+            if (buttonHistory.Count == 0)
+                buttonBack.Enabled = false;
+        }
 
         //
         // Tab Data
@@ -265,8 +274,8 @@ namespace CariMang {
                     AddJadwal(kegiatan.Ruangan, kegiatan.WaktuMulai, kegiatan.WaktuSelesai, kegiatan.Nama);
                 }
             }
-            foreach (var perbaikan in Perbaikan.GetAll(tanggal)) {
-                if (selectedRuangan.Contains(perbaikan.Ruangan)) {
+            foreach (var perbaikan in Perbaikan.GetAll(tanggal)) {                
+                if (selectedRuangan.Contains(perbaikan.Ruangan)) {                    
                     String alasan = String.IsNullOrWhiteSpace(perbaikan.Deskripsi) ? "Perbaikan" : perbaikan.Deskripsi;                                        
                     AddJadwal(perbaikan.Ruangan, 0, 24, alasan);                    
                 }
@@ -442,18 +451,11 @@ namespace CariMang {
             if (kegiatan != null) {
                 MessageBox.Show("Kegiatan telah ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-        
-        private void buttonBack_Click(object sender, EventArgs e) {
-            if (buttonHistory.Count == 0)
-                return;            
-            foreach (var button in buttonHistory.Pop()) {
-                button.PerformClick();
-            }
-            if (buttonHistory.Count == 0)
-                buttonBack.Enabled = false;
-        }
+        }               
 
+        // 
+        // Tab Statistik
+        //
         private void buttonStatistikRusak_Click(object sender, EventArgs e) {
             DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
@@ -470,9 +472,9 @@ namespace CariMang {
         }
 
         private void buttonStatistikRuangan_Click(object sender, EventArgs e) {
-            DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
-            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
-            if (tanggalAkhir.CompareTo(tanggalAwal) < 0)
+            DateTime tanggalAwal = datePickerTanggalAwalStatistikRuangan.Value.Date;
+            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRuangan.Value.Date;
+            if (tanggalAkhir < tanggalAwal)
             {
                 MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -487,9 +489,9 @@ namespace CariMang {
 
         private void buttonStatistikPeminjam_Click(object sender, EventArgs e)
         {
-            DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
-            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
-            if (tanggalAkhir.CompareTo(tanggalAwal) < 0)
+            DateTime tanggalAwal = datePickerTanggalAwalStatistikPeminjam.Value.Date;
+            DateTime tanggalAkhir = datePickerTanggalAkhirStatistikPeminjam.Value.Date;
+            if (tanggalAkhir < tanggalAwal)
             {
                 MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
