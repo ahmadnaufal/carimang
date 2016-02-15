@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2016 at 12:53 PM
+-- Generation Time: Feb 15, 2016 at 11:09 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -35,6 +35,13 @@ CREATE TABLE `kegiatan` (
   `waktu_selesai` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `kegiatan`
+--
+
+INSERT INTO `kegiatan` (`id_peminjam`, `nama_ruangan`, `nama_kegiatan`, `tanggal`, `waktu_mulai`, `waktu_selesai`) VALUES
+(1, '7601', 'Gantengisme', '2016-02-14', 7, 9);
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +66,13 @@ CREATE TABLE `peminjam` (
   `nama_peminjam` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `peminjam`
+--
+
+INSERT INTO `peminjam` (`id`, `nama_peminjam`) VALUES
+(1, 'HMIF');
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +80,7 @@ CREATE TABLE `peminjam` (
 --
 
 CREATE TABLE `perbaikan` (
+  `id` int(11) NOT NULL,
   `nama_ruangan` varchar(256) NOT NULL,
   `tanggal_mulai` date NOT NULL,
   `tanggal_selesai` date NOT NULL,
@@ -101,6 +116,17 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `ruangan`
+--
+
+INSERT INTO `ruangan` (`id`, `nama_ruangan`, `kapasitas`, `tipe_ruangan`) VALUES
+(2, '7603', 34, 0),
+(3, '7602', 50, 0),
+(4, '7601', 50, 0),
+(5, 'Laboratorium Dasar 1', 50, 1),
+(6, 'Laboratorium Dasar 2', 50, 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -108,7 +134,7 @@ CREATE TABLE `ruangan` (
 -- Indexes for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  ADD KEY `id_peminjam` (`id_peminjam`),
+  ADD PRIMARY KEY (`id_peminjam`,`nama_ruangan`,`nama_kegiatan`,`tanggal`,`waktu_mulai`,`waktu_selesai`),
   ADD KEY `nama_ruangan` (`nama_ruangan`);
 
 --
@@ -128,7 +154,8 @@ ALTER TABLE `peminjam`
 -- Indexes for table `perbaikan`
 --
 ALTER TABLE `perbaikan`
-  ADD PRIMARY KEY (`nama_ruangan`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nama_ruangan` (`nama_ruangan`);
 
 --
 -- Indexes for table `perkuliahan`
@@ -157,12 +184,17 @@ ALTER TABLE `kuliah`
 -- AUTO_INCREMENT for table `peminjam`
 --
 ALTER TABLE `peminjam`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `perbaikan`
+--
+ALTER TABLE `perbaikan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `ruangan`
 --
 ALTER TABLE `ruangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
@@ -173,6 +205,12 @@ ALTER TABLE `ruangan`
 ALTER TABLE `kegiatan`
   ADD CONSTRAINT `kegiatan_ibfk_1` FOREIGN KEY (`id_peminjam`) REFERENCES `peminjam` (`id`),
   ADD CONSTRAINT `kegiatan_ibfk_2` FOREIGN KEY (`nama_ruangan`) REFERENCES `ruangan` (`nama_ruangan`);
+
+--
+-- Constraints for table `perbaikan`
+--
+ALTER TABLE `perbaikan`
+  ADD CONSTRAINT `perbaikan_ibfk_1` FOREIGN KEY (`nama_ruangan`) REFERENCES `ruangan` (`nama_ruangan`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `perkuliahan`
