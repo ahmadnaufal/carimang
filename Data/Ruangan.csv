@@ -1,0 +1,17 @@
+id,nama_ruangan,kapasitas,tipe_ruangan
+1,7601,100,0
+2,7602,150,0
+3,7603,50,0
+4,7604,65,0
+5,7605,70,0
+6,7606,95,0
+7,7607,50,0
+8,7608,100,0
+9,7609,45,0
+10,7610,80,0
+11,7611,200,0
+12,Multimedia,110,0
+13,Laboratorium Dasar I,70,1
+14,Laboratorium Dasar II,45,1
+15,Laboratorium Dasar III,55,1
+16,Laboratorium Dasar IV,100,1

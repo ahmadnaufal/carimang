@@ -1,0 +1,24 @@
+id,nama_kuliah,kode_kuliah,peserta
+1,Dasar Pemrograman,IF1210,\N
+2,Probabilitas dan Statistika,IF2122,\N
+3,Pemrograman Berorientasi Objek,IF2210,\N
+4,Strategi Algoritma,IF2211,\N
+5,Sistem Operasi,IF2230,\N
+6,Basis Data,IF2240,\N
+7,Dasar Rekayasa Perangkat Lunak,IF2250,\N
+8,Pengembangan Aplikasi pada Platform Khusus,IF3111,\N
+9,Sistem Paralel dan Terdistribusi,IF3230,\N
+10,Sistem Informasi,IF3240,\N
+11,Proyek Perangkat Lunak,IF3250,\N
+12,Grafika Komputer,IF3260,\N
+13,Socio-Informatika dan Profesionalisme,IF3280,\N
+14,Kriptografi,IF4020,\N
+15,Pemodelan dan Simulasi,IF4021,\N
+16,Keamanan dan Penjaminan Informasi,IF4033,\N
+17,Pemodelan Data Lanjut,IF4040,\N
+18,Teknologi Basis Data,IF4041,\N
+19,Visualisasi Data dan Informasi,IF4061,\N
+20,Kerja Praktek,IF4090,\N
+21,Tugas Akhir I dan Seminar,IF4091,\N
+22,Tugas Akhir II,IF4092,\N
+23,Rekayasa Perangkat Lunak Spesifik Domain,IF4150,\N
