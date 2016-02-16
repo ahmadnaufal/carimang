@@ -455,16 +455,22 @@ namespace CariMang {
         private void buttonStatistikRusak_Click(object sender, EventArgs e) {
             DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
-            if (tanggalAkhir.CompareTo(tanggalAwal) < 0) {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (tanggalAkhir < tanggalAwal) {
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             List<StatistikRusak> listStatistikRusak = StatistikRusak.GetStatistik(tanggalAwal, tanggalAkhir);
+            if (listStatistikRusak.Count == 0) {
+                chartStatistikRusak.Visible = false;
+                MessageBox.Show("Data pada periode tersebut kosong.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             chartStatistikRusak.DataSource = listStatistikRusak;
             chartStatistikRusak.Series.First().XValueMember = "NamaRuangan";
             chartStatistikRusak.Series.First().YValueMembers = "JumlahPerbaikan";
             chartStatistikRusak.DataBind();
+            chartStatistikRusak.Visible = true;   
         }
 
         private void buttonStatistikRuangan_Click(object sender, EventArgs e) {
@@ -472,15 +478,21 @@ namespace CariMang {
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRuangan.Value.Date;
             if (tanggalAkhir < tanggalAwal)
             {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             List<StatistikRuangan> listStatistikRuangan = StatistikRuangan.GetStatistik(tanggalAwal, tanggalAkhir);
+            if (listStatistikRuangan.Count == 0) {
+                chartStatistikRuangan.Visible = false;
+                MessageBox.Show("Data pada periode tersebut kosong.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             chartStatistikRuangan.DataSource = listStatistikRuangan;
             chartStatistikRuangan.Series.First().XValueMember = "NamaRuangan";
             chartStatistikRuangan.Series.First().YValueMembers = "JumlahPemakaian";
             chartStatistikRuangan.DataBind();
+            chartStatistikRuangan.Visible = true;
         }
 
         private void buttonStatistikPeminjam_Click(object sender, EventArgs e)
@@ -489,15 +501,21 @@ namespace CariMang {
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikPeminjam.Value.Date;
             if (tanggalAkhir < tanggalAwal)
             {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             List<StatistikPeminjam> listStatistikPeminjam = StatistikPeminjam.GetStatistik(tanggalAwal, tanggalAkhir);
+            if (listStatistikPeminjam.Count == 0) {
+                chartStatistikPeminjam.Visible = false;
+                MessageBox.Show("Data pada periode tersebut kosong.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             chartStatistikPeminjam.DataSource = listStatistikPeminjam;
             chartStatistikPeminjam.Series.First().XValueMember = "NamaPeminjam";
             chartStatistikPeminjam.Series.First().YValueMembers = "JumlahPeminjam";
             chartStatistikPeminjam.DataBind();
+            chartStatistikPeminjam.Visible = true;
         }
     }
 }

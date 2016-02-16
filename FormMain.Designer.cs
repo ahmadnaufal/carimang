@@ -1110,6 +1110,7 @@
             this.chartStatistikRuangan.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRuangan.TabIndex = 6;
             this.chartStatistikRuangan.Text = "Statistik Peminjaman Ruangan";
+            this.chartStatistikRuangan.Visible = false;
             // 
             // panelStatistikRusak
             // 
@@ -1197,6 +1198,7 @@
             this.chartStatistikRusak.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRusak.TabIndex = 6;
             this.chartStatistikRusak.Text = "Statistik Ruangan Rusak";
+            this.chartStatistikRusak.Visible = false;
             // 
             // labelStatistikRusak
             // 
@@ -1294,6 +1296,7 @@
             this.chartStatistikPeminjam.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikPeminjam.TabIndex = 6;
             this.chartStatistikPeminjam.Text = "Statistik Peminjam";
+            this.chartStatistikPeminjam.Visible = false;
             // 
             // labelStatistikPeminjam
             // 
