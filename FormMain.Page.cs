@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace CariMang {
     partial class FormMain {
-        private Color PAGE_COLOR = Color.DarkGray;
-        private Color PAGE_COLOR_HOVER = Color.Silver;
+        private Color PAGE_COLOR = Color.Transparent;
+        private Color PAGE_COLOR_HOVER = Color.Gray;
         private Color PAGE_COLOR_SELECTED = Color.Gainsboro;
 
         private Color PAGE_FORE = Color.White;
-        private Color PAGE_FORE_SELECTED = Color.DimGray;
+        private Color PAGE_FORE_SELECTED = Color.Black;
 
         private bool page_Click(object sender, EventArgs e) {
             Button page = sender as Button;
@@ -60,7 +60,7 @@ namespace CariMang {
                 page.ForeColor = PAGE_FORE_SELECTED;
             }
             else {
-                page.FlatAppearance.MouseDownBackColor = PAGE_COLOR_SELECTED;
+                page.FlatAppearance.MouseDownBackColor = PAGE_COLOR_HOVER;
                 page.FlatAppearance.MouseOverBackColor = PAGE_COLOR_HOVER;                
                 page.ForeColor = PAGE_FORE;
             }

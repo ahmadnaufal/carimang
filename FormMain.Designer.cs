@@ -24,15 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitPanel = new System.Windows.Forms.SplitContainer();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -225,7 +225,7 @@
             // 
             this.panelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTitle.BackColor = System.Drawing.Color.DimGray;
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
             this.panelTitle.Controls.Add(this.buttonBack);
             this.panelTitle.Controls.Add(this.labelTitle);
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
@@ -268,7 +268,7 @@
             // 
             this.panelTab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelTab.BackColor = System.Drawing.Color.DimGray;
+            this.panelTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
             this.panelTab.Controls.Add(this.tabData);
             this.panelTab.Controls.Add(this.tabBooking);
             this.panelTab.Controls.Add(this.tabStatistik);
@@ -280,10 +280,10 @@
             // 
             // tabData
             // 
-            this.tabData.BackColor = System.Drawing.Color.DarkGray;
+            this.tabData.BackColor = System.Drawing.Color.DimGray;
             this.tabData.FlatAppearance.BorderSize = 0;
-            this.tabData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.tabData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.tabData.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.tabData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
             this.tabData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabData.ForeColor = System.Drawing.Color.White;
             this.tabData.Location = new System.Drawing.Point(8, 12);
@@ -299,8 +299,8 @@
             // tabBooking
             // 
             this.tabBooking.FlatAppearance.BorderSize = 0;
-            this.tabBooking.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.tabBooking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.tabBooking.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.tabBooking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.tabBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabBooking.ForeColor = System.Drawing.Color.White;
             this.tabBooking.Location = new System.Drawing.Point(88, 12);
@@ -315,8 +315,8 @@
             // tabStatistik
             // 
             this.tabStatistik.FlatAppearance.BorderSize = 0;
-            this.tabStatistik.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.tabStatistik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.tabStatistik.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.tabStatistik.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
             this.tabStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabStatistik.ForeColor = System.Drawing.Color.White;
             this.tabStatistik.Location = new System.Drawing.Point(168, 12);
@@ -333,7 +333,6 @@
             this.panelPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPage.BackColor = System.Drawing.Color.DarkGray;
             this.panelPage.Controls.Add(this.panelPageData);
             this.panelPage.Controls.Add(this.panelPageStatistik);
             this.panelPage.Controls.Add(this.panelPageBooking);
@@ -345,7 +344,6 @@
             // 
             // panelPageData
             // 
-            this.panelPageData.BackColor = System.Drawing.Color.DarkGray;
             this.panelPageData.Controls.Add(this.pageDataRusak);
             this.panelPageData.Controls.Add(this.pageDataKuliah);
             this.panelPageData.Controls.Add(this.pageDataRuangan);
@@ -361,7 +359,8 @@
             // 
             this.pageDataRusak.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageDataRusak.FlatAppearance.BorderSize = 0;
-            this.pageDataRusak.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageDataRusak.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageDataRusak.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageDataRusak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageDataRusak.ForeColor = System.Drawing.Color.White;
             this.pageDataRusak.Location = new System.Drawing.Point(0, 120);
@@ -378,7 +377,8 @@
             // 
             this.pageDataKuliah.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageDataKuliah.FlatAppearance.BorderSize = 0;
-            this.pageDataKuliah.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageDataKuliah.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageDataKuliah.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageDataKuliah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageDataKuliah.ForeColor = System.Drawing.Color.White;
             this.pageDataKuliah.Location = new System.Drawing.Point(0, 80);
@@ -395,7 +395,8 @@
             // 
             this.pageDataRuangan.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageDataRuangan.FlatAppearance.BorderSize = 0;
-            this.pageDataRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageDataRuangan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageDataRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageDataRuangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageDataRuangan.ForeColor = System.Drawing.Color.White;
             this.pageDataRuangan.Location = new System.Drawing.Point(0, 40);
@@ -416,7 +417,7 @@
             this.pageDataJadwal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
             this.pageDataJadwal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.pageDataJadwal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pageDataJadwal.ForeColor = System.Drawing.Color.DimGray;
+            this.pageDataJadwal.ForeColor = System.Drawing.Color.Black;
             this.pageDataJadwal.Location = new System.Drawing.Point(0, 0);
             this.pageDataJadwal.Margin = new System.Windows.Forms.Padding(0);
             this.pageDataJadwal.MinimumSize = new System.Drawing.Size(0, 40);
@@ -430,7 +431,6 @@
             // 
             // panelPageStatistik
             // 
-            this.panelPageStatistik.BackColor = System.Drawing.Color.DarkGray;
             this.panelPageStatistik.Controls.Add(this.pageStatistikRusak);
             this.panelPageStatistik.Controls.Add(this.pageStatistikPeminjam);
             this.panelPageStatistik.Controls.Add(this.pageStatistikRuangan);
@@ -445,7 +445,8 @@
             // 
             this.pageStatistikRusak.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageStatistikRusak.FlatAppearance.BorderSize = 0;
-            this.pageStatistikRusak.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageStatistikRusak.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageStatistikRusak.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageStatistikRusak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageStatistikRusak.ForeColor = System.Drawing.Color.White;
             this.pageStatistikRusak.Location = new System.Drawing.Point(0, 80);
@@ -462,7 +463,8 @@
             // 
             this.pageStatistikPeminjam.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageStatistikPeminjam.FlatAppearance.BorderSize = 0;
-            this.pageStatistikPeminjam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageStatistikPeminjam.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageStatistikPeminjam.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageStatistikPeminjam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageStatistikPeminjam.ForeColor = System.Drawing.Color.White;
             this.pageStatistikPeminjam.Location = new System.Drawing.Point(0, 40);
@@ -483,7 +485,7 @@
             this.pageStatistikRuangan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
             this.pageStatistikRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.pageStatistikRuangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pageStatistikRuangan.ForeColor = System.Drawing.Color.DimGray;
+            this.pageStatistikRuangan.ForeColor = System.Drawing.Color.Black;
             this.pageStatistikRuangan.Location = new System.Drawing.Point(0, 0);
             this.pageStatistikRuangan.Margin = new System.Windows.Forms.Padding(0);
             this.pageStatistikRuangan.MinimumSize = new System.Drawing.Size(0, 40);
@@ -497,7 +499,6 @@
             // 
             // panelPageBooking
             // 
-            this.panelPageBooking.BackColor = System.Drawing.Color.DarkGray;
             this.panelPageBooking.Controls.Add(this.pageBookingRuangan);
             this.panelPageBooking.Controls.Add(this.pageBookingCek);
             this.panelPageBooking.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -511,7 +512,8 @@
             // 
             this.pageBookingRuangan.Dock = System.Windows.Forms.DockStyle.Top;
             this.pageBookingRuangan.FlatAppearance.BorderSize = 0;
-            this.pageBookingRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.pageBookingRuangan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageBookingRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.pageBookingRuangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pageBookingRuangan.ForeColor = System.Drawing.Color.White;
             this.pageBookingRuangan.Location = new System.Drawing.Point(0, 40);
@@ -532,7 +534,7 @@
             this.pageBookingCek.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
             this.pageBookingCek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.pageBookingCek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pageBookingCek.ForeColor = System.Drawing.Color.DimGray;
+            this.pageBookingCek.ForeColor = System.Drawing.Color.Black;
             this.pageBookingCek.Location = new System.Drawing.Point(0, 0);
             this.pageBookingCek.Margin = new System.Windows.Forms.Padding(0);
             this.pageBookingCek.MinimumSize = new System.Drawing.Size(0, 40);
@@ -546,7 +548,6 @@
             // 
             // panelData
             // 
-            this.panelData.BackColor = System.Drawing.Color.Gainsboro;
             this.panelData.Controls.Add(this.panelDataJadwal);
             this.panelData.Controls.Add(this.panelDataRuangan);
             this.panelData.Controls.Add(this.panelDataKuliah);
@@ -560,7 +561,6 @@
             // 
             // panelDataJadwal
             // 
-            this.panelDataJadwal.BackColor = System.Drawing.Color.Gainsboro;
             this.panelDataJadwal.Controls.Add(this.comboJadwalCari);
             this.panelDataJadwal.Controls.Add(this.dateJadwalCari);
             this.panelDataJadwal.Controls.Add(this.listViewJadwal);
@@ -1091,22 +1091,22 @@
             this.chartStatistikRuangan.BackColor = System.Drawing.Color.Transparent;
             this.chartStatistikRuangan.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikRuangan.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX2.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorGrid.Enabled = false;
-            chartArea1.AxisY2.MajorGrid.Enabled = false;
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistikRuangan.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistikRuangan.Legends.Add(legend1);
+            chartArea7.AxisX.MajorGrid.Enabled = false;
+            chartArea7.AxisX2.MajorGrid.Enabled = false;
+            chartArea7.AxisY.MajorGrid.Enabled = false;
+            chartArea7.AxisY2.MajorGrid.Enabled = false;
+            chartArea7.Name = "ChartArea1";
+            this.chartStatistikRuangan.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chartStatistikRuangan.Legends.Add(legend7);
             this.chartStatistikRuangan.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRuangan.Name = "chartStatistikRuangan";
             this.chartStatistikRuangan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Pemakaian Ruangan";
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikRuangan.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Pemakaian Ruangan";
+            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRuangan.Series.Add(series7);
             this.chartStatistikRuangan.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRuangan.TabIndex = 6;
             this.chartStatistikRuangan.Text = "Statistik Peminjaman Ruangan";
@@ -1179,22 +1179,22 @@
             this.chartStatistikRusak.BackColor = System.Drawing.Color.Transparent;
             this.chartStatistikRusak.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikRusak.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX2.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorGrid.Enabled = false;
-            chartArea2.AxisY2.MajorGrid.Enabled = false;
-            chartArea2.Name = "ChartArea1";
-            this.chartStatistikRusak.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStatistikRusak.Legends.Add(legend2);
+            chartArea8.AxisX.MajorGrid.Enabled = false;
+            chartArea8.AxisX2.MajorGrid.Enabled = false;
+            chartArea8.AxisY.MajorGrid.Enabled = false;
+            chartArea8.AxisY2.MajorGrid.Enabled = false;
+            chartArea8.Name = "ChartArea1";
+            this.chartStatistikRusak.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartStatistikRusak.Legends.Add(legend8);
             this.chartStatistikRusak.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRusak.Name = "chartStatistikRusak";
             this.chartStatistikRusak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Kerusakan Ruangan";
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikRusak.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Kerusakan Ruangan";
+            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRusak.Series.Add(series8);
             this.chartStatistikRusak.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRusak.TabIndex = 6;
             this.chartStatistikRusak.Text = "Statistik Ruangan Rusak";
@@ -1278,21 +1278,21 @@
             this.chartStatistikPeminjam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chartStatistikPeminjam.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikPeminjam.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisX2.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.Name = "ChartArea1";
-            this.chartStatistikPeminjam.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartStatistikPeminjam.Legends.Add(legend3);
+            chartArea9.AxisX.MajorGrid.Enabled = false;
+            chartArea9.AxisX2.MajorGrid.Enabled = false;
+            chartArea9.AxisY.MajorGrid.Enabled = false;
+            chartArea9.Name = "ChartArea1";
+            this.chartStatistikPeminjam.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartStatistikPeminjam.Legends.Add(legend9);
             this.chartStatistikPeminjam.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
             this.chartStatistikPeminjam.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Banyaknya Peminjaman";
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikPeminjam.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Banyaknya Peminjaman";
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikPeminjam.Series.Add(series9);
             this.chartStatistikPeminjam.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikPeminjam.TabIndex = 6;
             this.chartStatistikPeminjam.Text = "Statistik Peminjam";

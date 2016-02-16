@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace CariMang {
     partial class FormMain {
-        private Color TAB_COLOR = Color.DimGray;
-        private Color TAB_COLOR_HOVER = Color.Gray;
-        private Color TAB_COLOR_SELECTED = Color.DarkGray;
+        private Color TAB_COLOR = Color.Transparent;
+        private Color TAB_COLOR_HOVER = Color.FromArgb(89, 89, 89);
+        private Color TAB_COLOR_SELECTED = Color.DimGray; 
 
         private bool tab_Click(object sender, EventArgs e) {
             Button tab = sender as Button;
@@ -56,7 +56,7 @@ namespace CariMang {
                 tab.FlatAppearance.MouseOverBackColor = tab.BackColor;                
             }
             else {
-                tab.FlatAppearance.MouseDownBackColor = TAB_COLOR_SELECTED;
+                tab.FlatAppearance.MouseDownBackColor = TAB_COLOR_HOVER;
                 tab.FlatAppearance.MouseOverBackColor = TAB_COLOR_HOVER;
             }
             tab.Invalidate();
