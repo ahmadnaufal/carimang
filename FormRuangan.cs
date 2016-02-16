@@ -26,6 +26,7 @@ namespace CariMang {
             InitializeComponent();
             InitializeData();
             this.Nama = this.textNama.Text = ruangan.Nama;
+            this.textNama.Enabled = false;
             this.Tipe = ruangan.Tipe;
             this.comboTipe.SelectedIndex = (int)ruangan.Tipe;
             this.Kapasitas = ruangan.Kapasitas;

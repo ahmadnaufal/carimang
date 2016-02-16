@@ -64,7 +64,8 @@ namespace CariMang {
             }
         }
 
-        private void GetAllRuangan() {            
+        private void GetAllRuangan() {
+            daftarRuangan.Clear();
             comboJadwalCari.Items.Clear();
             comboJadwalCari.Items.Add("(Cari semua ruangan)");
             listViewRuangan.Items.Clear();
@@ -76,7 +77,7 @@ namespace CariMang {
             comboJadwalCari.SelectedIndex = 0;
             comboBookingCek.SelectedIndex = comboBookingCek.Items.Count > 0 ? 0 : -1;
             comboBookingRuangan.SelectedIndex = comboBookingRuangan.Items.Count > 0 ? 0 : -1;
-        }        
+        }
 
         private void AddRuangan(Ruangan ruangan) {
             daftarRuangan.Add(ruangan);
@@ -99,14 +100,10 @@ namespace CariMang {
             using (FormRuangan form = new FormRuangan(ruangan)) {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
-                ruangan.Nama = form.Nama;
-                item.SubItems[0].Text = ruangan.Nama;
-
-                ruangan.Tipe = form.Tipe;
-                item.SubItems[1].Text = ruangan.Tipe.ToString();
-
-                ruangan.Kapasitas = form.Kapasitas;
-                item.SubItems[2].Text = ruangan.Kapasitas.ToString();
+                ruangan.Nama = form.Nama;                
+                ruangan.Tipe = form.Tipe;                
+                ruangan.Kapasitas = form.Kapasitas;                
+                GetAllRuangan();
             }
         }
 
@@ -116,8 +113,7 @@ namespace CariMang {
                     != DialogResult.Yes)
                 return;
             if (Ruangan.Delete(ruangan)) {
-                daftarRuangan.Remove(ruangan);
-                listViewRuangan.Items.Remove(item);                
+                GetAllRuangan();
             }
             else {
                 MessageBox.Show("Gagal delete ruangan.");

@@ -223,7 +223,8 @@ namespace CariMang {
                             this.nama = value;
                     }
                 }
-                catch (MySqlException) {
+                catch (MySqlException e) {
+                    Console.WriteLine(e.Message);
                 }
             }
         }
