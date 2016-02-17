@@ -247,7 +247,9 @@ namespace CariMang {
             }
         }
 
-        private void DeleteKegiatan(Kegiatan kegiatan) {            
+        private void DeleteKegiatan(Kegiatan kegiatan) {
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus jadwal booking ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
             if (Kegiatan.Delete(kegiatan.Peminjam, kegiatan.Ruangan, kegiatan.Nama)) {
                 this.GetAllKegiatan();
             }
