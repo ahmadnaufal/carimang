@@ -36,6 +36,7 @@ namespace CariMang {
             this.GetAllRuangan();
             this.GetAllPerkuliahan();
             this.GetAllPerbaikan();
+            this.GetAllKegiatan();
         }
 
         private void AddJadwal(Ruangan ruangan, int waktuMulai, int waktuSelesai, string alasan) {
@@ -227,6 +228,32 @@ namespace CariMang {
             }
             else {
                 MessageBox.Show("Gagal delete ruangan.");
+            }
+        }
+
+        private void GetAllKegiatan() {
+            viewBookingJadwal.Items.Clear();
+            foreach (var kegiatan in Kegiatan.GetAll()) {
+                var item = new ListViewItem();
+                item.Tag = kegiatan;
+                item.Text = kegiatan.Ruangan.Nama;
+                item.SubItems.Add(
+                    String.Format("{0} {1:00}:00-{2:00}:00",
+                    kegiatan.Tanggal.ToShortDateString(),
+                    kegiatan.WaktuMulai,
+                    kegiatan.WaktuSelesai));
+                item.SubItems.Add(kegiatan.Nama);
+                item.SubItems.Add(kegiatan.Peminjam.Nama);
+                viewBookingJadwal.Items.Add(item);
+            }
+        }
+
+        private void DeleteKegiatan(Kegiatan kegiatan) {            
+            if (Kegiatan.Delete(kegiatan.Peminjam, kegiatan.Ruangan, kegiatan.Nama)) {
+                this.GetAllKegiatan();
+            }
+            else {
+                MessageBox.Show("Gagal menghapus ruangan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -444,10 +471,23 @@ namespace CariMang {
 
             Peminjam peminjam = Peminjam.Add(tanggung);
             var kegiatan = Kegiatan.Add(peminjam, ruangan, nama, tanggal, mulai, selesai);
-            if (kegiatan != null) {
-                MessageBox.Show("Kegiatan telah ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (kegiatan == null) {
+                MessageBox.Show("Gagal menambahkan kegiatan", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }               
+
+            this.GetAllKegiatan();
+            MessageBox.Show("Kegiatan telah ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonBookingJadwalHapus_Click(object sender, EventArgs e) {
+            foreach (ListViewItem item in viewBookingJadwal.Items) {
+                if (item.Selected) {
+                    this.DeleteKegiatan((Kegiatan)item.Tag);
+                    return;
+                }
+            }
+        }
 
         // 
         // Tab Statistik
@@ -516,6 +556,6 @@ namespace CariMang {
             chartStatistikPeminjam.Series.First().YValueMembers = "JumlahPeminjam";
             chartStatistikPeminjam.DataBind();
             chartStatistikPeminjam.Visible = true;
-        }
+        }        
     }
 }

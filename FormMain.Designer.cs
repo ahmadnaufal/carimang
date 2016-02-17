@@ -42,6 +42,10 @@
             this.tabBooking = new System.Windows.Forms.Button();
             this.tabStatistik = new System.Windows.Forms.Button();
             this.panelPage = new System.Windows.Forms.Panel();
+            this.panelPageBooking = new System.Windows.Forms.Panel();
+            this.pageBookingJadwal = new System.Windows.Forms.Button();
+            this.pageBookingRuangan = new System.Windows.Forms.Button();
+            this.pageBookingCek = new System.Windows.Forms.Button();
             this.panelPageData = new System.Windows.Forms.Panel();
             this.pageDataRusak = new System.Windows.Forms.Button();
             this.pageDataKuliah = new System.Windows.Forms.Button();
@@ -51,9 +55,42 @@
             this.pageStatistikRusak = new System.Windows.Forms.Button();
             this.pageStatistikPeminjam = new System.Windows.Forms.Button();
             this.pageStatistikRuangan = new System.Windows.Forms.Button();
-            this.panelPageBooking = new System.Windows.Forms.Panel();
-            this.pageBookingRuangan = new System.Windows.Forms.Button();
-            this.pageBookingCek = new System.Windows.Forms.Button();
+            this.panelBooking = new System.Windows.Forms.Panel();
+            this.panelBookingJadwal = new System.Windows.Forms.Panel();
+            this.buttonBookingJadwalHapus = new System.Windows.Forms.Button();
+            this.viewBookingJadwal = new System.Windows.Forms.ListView();
+            this.colBookingJadwalRuangan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBookingJadwal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBookingJadwalKegiatan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBookingJadwalTanggung = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panelBookingCek = new System.Windows.Forms.Panel();
+            this.labelBookingCekRuangan = new System.Windows.Forms.Label();
+            this.comboBookingCek = new System.Windows.Forms.ComboBox();
+            this.labelBookingCekKapasitas = new System.Windows.Forms.Label();
+            this.numBookingCek = new System.Windows.Forms.NumericUpDown();
+            this.labelBookingCekTanggal = new System.Windows.Forms.Label();
+            this.dateBookingCek = new System.Windows.Forms.DateTimePicker();
+            this.labelBookingCekPukul = new System.Windows.Forms.Label();
+            this.numBookingCekMulai = new System.Windows.Forms.NumericUpDown();
+            this.labelBookingCekPukulSd = new System.Windows.Forms.Label();
+            this.numBookingCekSelesai = new System.Windows.Forms.NumericUpDown();
+            this.buttonBookingCek = new System.Windows.Forms.Button();
+            this.panelBookingRuangan = new System.Windows.Forms.Panel();
+            this.labelBookingRuangan = new System.Windows.Forms.Label();
+            this.comboBookingRuangan = new System.Windows.Forms.ComboBox();
+            this.labelBookingRuanganKapasitas = new System.Windows.Forms.Label();
+            this.numBookingRuanganKapasitas = new System.Windows.Forms.NumericUpDown();
+            this.labelBookingRuanganTanggal = new System.Windows.Forms.Label();
+            this.dateBookingRuangan = new System.Windows.Forms.DateTimePicker();
+            this.labelBookingRuanganWaktu = new System.Windows.Forms.Label();
+            this.numBookingRuanganMulai = new System.Windows.Forms.NumericUpDown();
+            this.labelBookingRuanganSd = new System.Windows.Forms.Label();
+            this.numBookingRuanganSelesai = new System.Windows.Forms.NumericUpDown();
+            this.labelBookingRuanganKegiatan = new System.Windows.Forms.Label();
+            this.textBookingRuanganKegiatan = new System.Windows.Forms.TextBox();
+            this.labelBookingRuanganTanggung = new System.Windows.Forms.Label();
+            this.textBookingRuanganTanggung = new System.Windows.Forms.TextBox();
+            this.buttonBookingRuangan = new System.Windows.Forms.Button();
             this.panelData = new System.Windows.Forms.Panel();
             this.panelDataJadwal = new System.Windows.Forms.Panel();
             this.comboJadwalCari = new System.Windows.Forms.ComboBox();
@@ -130,35 +167,6 @@
             this.labelTanggalAwalStatistikPeminjam = new System.Windows.Forms.Label();
             this.chartStatistikPeminjam = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelStatistikPeminjam = new System.Windows.Forms.Label();
-            this.panelBooking = new System.Windows.Forms.Panel();
-            this.panelBookingCek = new System.Windows.Forms.Panel();
-            this.labelBookingCekRuangan = new System.Windows.Forms.Label();
-            this.comboBookingCek = new System.Windows.Forms.ComboBox();
-            this.labelBookingCekKapasitas = new System.Windows.Forms.Label();
-            this.numBookingCek = new System.Windows.Forms.NumericUpDown();
-            this.labelBookingCekTanggal = new System.Windows.Forms.Label();
-            this.dateBookingCek = new System.Windows.Forms.DateTimePicker();
-            this.labelBookingCekPukul = new System.Windows.Forms.Label();
-            this.numBookingCekMulai = new System.Windows.Forms.NumericUpDown();
-            this.labelBookingCekPukulSd = new System.Windows.Forms.Label();
-            this.numBookingCekSelesai = new System.Windows.Forms.NumericUpDown();
-            this.buttonBookingCek = new System.Windows.Forms.Button();
-            this.panelBookingRuangan = new System.Windows.Forms.Panel();
-            this.labelBookingRuangan = new System.Windows.Forms.Label();
-            this.comboBookingRuangan = new System.Windows.Forms.ComboBox();
-            this.labelBookingRuanganKapasitas = new System.Windows.Forms.Label();
-            this.numBookingRuanganKapasitas = new System.Windows.Forms.NumericUpDown();
-            this.labelBookingRuanganTanggal = new System.Windows.Forms.Label();
-            this.dateBookingRuangan = new System.Windows.Forms.DateTimePicker();
-            this.labelBookingRuanganWaktu = new System.Windows.Forms.Label();
-            this.numBookingRuanganMulai = new System.Windows.Forms.NumericUpDown();
-            this.labelBookingRuanganSd = new System.Windows.Forms.Label();
-            this.numBookingRuanganSelesai = new System.Windows.Forms.NumericUpDown();
-            this.labelBookingRuanganKegiatan = new System.Windows.Forms.Label();
-            this.textBookingRuanganKegiatan = new System.Windows.Forms.TextBox();
-            this.labelBookingRuanganTanggung = new System.Windows.Forms.Label();
-            this.textBookingRuanganTanggung = new System.Windows.Forms.TextBox();
-            this.buttonBookingRuangan = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel)).BeginInit();
             this.splitPanel.Panel1.SuspendLayout();
@@ -167,9 +175,19 @@
             this.panelTitle.SuspendLayout();
             this.panelTab.SuspendLayout();
             this.panelPage.SuspendLayout();
+            this.panelPageBooking.SuspendLayout();
             this.panelPageData.SuspendLayout();
             this.panelPageStatistik.SuspendLayout();
-            this.panelPageBooking.SuspendLayout();
+            this.panelBooking.SuspendLayout();
+            this.panelBookingJadwal.SuspendLayout();
+            this.panelBookingCek.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCek)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekMulai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekSelesai)).BeginInit();
+            this.panelBookingRuangan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganKapasitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganMulai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganSelesai)).BeginInit();
             this.panelData.SuspendLayout();
             this.panelDataJadwal.SuspendLayout();
             this.panelDataRuangan.SuspendLayout();
@@ -182,15 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).BeginInit();
             this.panelStatistikPeminjam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).BeginInit();
-            this.panelBooking.SuspendLayout();
-            this.panelBookingCek.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCek)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekMulai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekSelesai)).BeginInit();
-            this.panelBookingRuangan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganKapasitas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganMulai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganSelesai)).BeginInit();
             this.SuspendLayout();
             // 
             // splitPanel
@@ -214,8 +223,8 @@
             // 
             this.splitPanel.Panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitPanel.Panel2.Controls.Add(this.panelData);
-            this.splitPanel.Panel2.Controls.Add(this.panelStatistik);
             this.splitPanel.Panel2.Controls.Add(this.panelBooking);
+            this.splitPanel.Panel2.Controls.Add(this.panelStatistik);
             this.splitPanel.Size = new System.Drawing.Size(784, 521);
             this.splitPanel.SplitterDistance = 256;
             this.splitPanel.TabIndex = 0;
@@ -345,6 +354,77 @@
             this.panelPage.Name = "panelPage";
             this.panelPage.Size = new System.Drawing.Size(256, 419);
             this.panelPage.TabIndex = 5;
+            // 
+            // panelPageBooking
+            // 
+            this.panelPageBooking.Controls.Add(this.pageBookingJadwal);
+            this.panelPageBooking.Controls.Add(this.pageBookingRuangan);
+            this.panelPageBooking.Controls.Add(this.pageBookingCek);
+            this.panelPageBooking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPageBooking.Location = new System.Drawing.Point(0, 0);
+            this.panelPageBooking.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPageBooking.Name = "panelPageBooking";
+            this.panelPageBooking.Size = new System.Drawing.Size(256, 419);
+            this.panelPageBooking.TabIndex = 7;
+            // 
+            // pageBookingJadwal
+            // 
+            this.pageBookingJadwal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageBookingJadwal.FlatAppearance.BorderSize = 0;
+            this.pageBookingJadwal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageBookingJadwal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.pageBookingJadwal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pageBookingJadwal.ForeColor = System.Drawing.Color.White;
+            this.pageBookingJadwal.Location = new System.Drawing.Point(0, 80);
+            this.pageBookingJadwal.Margin = new System.Windows.Forms.Padding(0);
+            this.pageBookingJadwal.MinimumSize = new System.Drawing.Size(0, 40);
+            this.pageBookingJadwal.Name = "pageBookingJadwal";
+            this.pageBookingJadwal.Size = new System.Drawing.Size(256, 40);
+            this.pageBookingJadwal.TabIndex = 2;
+            this.pageBookingJadwal.TabStop = false;
+            this.pageBookingJadwal.Text = "Jadwal Booking";
+            this.pageBookingJadwal.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageBookingJadwal.Click += new System.EventHandler(this.pageBookingJadwal_Click);
+            // 
+            // pageBookingRuangan
+            // 
+            this.pageBookingRuangan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageBookingRuangan.FlatAppearance.BorderSize = 0;
+            this.pageBookingRuangan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.pageBookingRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.pageBookingRuangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pageBookingRuangan.ForeColor = System.Drawing.Color.White;
+            this.pageBookingRuangan.Location = new System.Drawing.Point(0, 40);
+            this.pageBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.pageBookingRuangan.MinimumSize = new System.Drawing.Size(0, 40);
+            this.pageBookingRuangan.Name = "pageBookingRuangan";
+            this.pageBookingRuangan.Size = new System.Drawing.Size(256, 40);
+            this.pageBookingRuangan.TabIndex = 1;
+            this.pageBookingRuangan.TabStop = false;
+            this.pageBookingRuangan.Text = "Booking Ruangan";
+            this.pageBookingRuangan.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageBookingRuangan.Click += new System.EventHandler(this.pageBookingRuangan_Click);
+            // 
+            // pageBookingCek
+            // 
+            this.pageBookingCek.BackColor = System.Drawing.Color.Gainsboro;
+            this.pageBookingCek.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pageBookingCek.FlatAppearance.BorderSize = 0;
+            this.pageBookingCek.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.pageBookingCek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.pageBookingCek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pageBookingCek.ForeColor = System.Drawing.Color.Black;
+            this.pageBookingCek.Location = new System.Drawing.Point(0, 0);
+            this.pageBookingCek.Margin = new System.Windows.Forms.Padding(0);
+            this.pageBookingCek.MinimumSize = new System.Drawing.Size(0, 40);
+            this.pageBookingCek.Name = "pageBookingCek";
+            this.pageBookingCek.Size = new System.Drawing.Size(256, 40);
+            this.pageBookingCek.TabIndex = 0;
+            this.pageBookingCek.TabStop = false;
+            this.pageBookingCek.Text = "Cek Ruangan";
+            this.pageBookingCek.UseVisualStyleBackColor = false;
+            this.pageBookingCek.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
+            this.pageBookingCek.Click += new System.EventHandler(this.pageBookingCek_Click);
             // 
             // panelPageData
             // 
@@ -508,56 +588,460 @@
             this.pageStatistikRuangan.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
             this.pageStatistikRuangan.Click += new System.EventHandler(this.pageStatistikRuangan_Click);
             // 
-            // panelPageBooking
+            // panelBooking
             // 
-            this.panelPageBooking.Controls.Add(this.pageBookingRuangan);
-            this.panelPageBooking.Controls.Add(this.pageBookingCek);
-            this.panelPageBooking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPageBooking.Location = new System.Drawing.Point(0, 0);
-            this.panelPageBooking.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPageBooking.Name = "panelPageBooking";
-            this.panelPageBooking.Size = new System.Drawing.Size(256, 419);
-            this.panelPageBooking.TabIndex = 7;
+            this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBooking.Controls.Add(this.panelBookingCek);
+            this.panelBooking.Controls.Add(this.panelBookingRuangan);
+            this.panelBooking.Controls.Add(this.panelBookingJadwal);
+            this.panelBooking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBooking.Location = new System.Drawing.Point(0, 0);
+            this.panelBooking.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBooking.Name = "panelBooking";
+            this.panelBooking.Size = new System.Drawing.Size(524, 521);
+            this.panelBooking.TabIndex = 5;
             // 
-            // pageBookingRuangan
+            // panelBookingJadwal
             // 
-            this.pageBookingRuangan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pageBookingRuangan.FlatAppearance.BorderSize = 0;
-            this.pageBookingRuangan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.pageBookingRuangan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.pageBookingRuangan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pageBookingRuangan.ForeColor = System.Drawing.Color.White;
-            this.pageBookingRuangan.Location = new System.Drawing.Point(0, 40);
-            this.pageBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
-            this.pageBookingRuangan.MinimumSize = new System.Drawing.Size(0, 40);
-            this.pageBookingRuangan.Name = "pageBookingRuangan";
-            this.pageBookingRuangan.Size = new System.Drawing.Size(256, 40);
-            this.pageBookingRuangan.TabIndex = 1;
-            this.pageBookingRuangan.TabStop = false;
-            this.pageBookingRuangan.Text = "Booking Ruangan";
-            this.pageBookingRuangan.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
-            this.pageBookingRuangan.Click += new System.EventHandler(this.pageBookingRuangan_Click);
+            this.panelBookingJadwal.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBookingJadwal.Controls.Add(this.buttonBookingJadwalHapus);
+            this.panelBookingJadwal.Controls.Add(this.viewBookingJadwal);
+            this.panelBookingJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBookingJadwal.Location = new System.Drawing.Point(0, 0);
+            this.panelBookingJadwal.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBookingJadwal.Name = "panelBookingJadwal";
+            this.panelBookingJadwal.Size = new System.Drawing.Size(524, 521);
+            this.panelBookingJadwal.TabIndex = 11;
             // 
-            // pageBookingCek
+            // buttonBookingJadwalHapus
             // 
-            this.pageBookingCek.BackColor = System.Drawing.Color.Gainsboro;
-            this.pageBookingCek.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pageBookingCek.FlatAppearance.BorderSize = 0;
-            this.pageBookingCek.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.pageBookingCek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.pageBookingCek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pageBookingCek.ForeColor = System.Drawing.Color.Black;
-            this.pageBookingCek.Location = new System.Drawing.Point(0, 0);
-            this.pageBookingCek.Margin = new System.Windows.Forms.Padding(0);
-            this.pageBookingCek.MinimumSize = new System.Drawing.Size(0, 40);
-            this.pageBookingCek.Name = "pageBookingCek";
-            this.pageBookingCek.Size = new System.Drawing.Size(256, 40);
-            this.pageBookingCek.TabIndex = 0;
-            this.pageBookingCek.TabStop = false;
-            this.pageBookingCek.Text = "Cek Ruangan";
-            this.pageBookingCek.UseVisualStyleBackColor = false;
-            this.pageBookingCek.BackColorChanged += new System.EventHandler(this.page_BackColorChanged);
-            this.pageBookingCek.Click += new System.EventHandler(this.pageBookingCek_Click);
+            this.buttonBookingJadwalHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBookingJadwalHapus.FlatAppearance.BorderSize = 0;
+            this.buttonBookingJadwalHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBookingJadwalHapus.Image = global::CariMang.Properties.Resources.delete;
+            this.buttonBookingJadwalHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonBookingJadwalHapus.Location = new System.Drawing.Point(448, 12);
+            this.buttonBookingJadwalHapus.Name = "buttonBookingJadwalHapus";
+            this.buttonBookingJadwalHapus.Size = new System.Drawing.Size(64, 64);
+            this.buttonBookingJadwalHapus.TabIndex = 5;
+            this.buttonBookingJadwalHapus.Text = "Hapus";
+            this.buttonBookingJadwalHapus.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonBookingJadwalHapus.Click += new System.EventHandler(this.buttonBookingJadwalHapus_Click);
+            // 
+            // viewBookingJadwal
+            // 
+            this.viewBookingJadwal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewBookingJadwal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colBookingJadwalRuangan,
+            this.colBookingJadwal,
+            this.colBookingJadwalKegiatan,
+            this.colBookingJadwalTanggung});
+            this.viewBookingJadwal.FullRowSelect = true;
+            this.viewBookingJadwal.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.viewBookingJadwal.HideSelection = false;
+            this.viewBookingJadwal.Location = new System.Drawing.Point(12, 82);
+            this.viewBookingJadwal.MultiSelect = false;
+            this.viewBookingJadwal.Name = "viewBookingJadwal";
+            this.viewBookingJadwal.Size = new System.Drawing.Size(500, 427);
+            this.viewBookingJadwal.TabIndex = 4;
+            this.viewBookingJadwal.UseCompatibleStateImageBehavior = false;
+            this.viewBookingJadwal.View = System.Windows.Forms.View.Details;
+            // 
+            // colBookingJadwalRuangan
+            // 
+            this.colBookingJadwalRuangan.Text = "Ruangan";
+            this.colBookingJadwalRuangan.Width = 80;
+            // 
+            // colBookingJadwal
+            // 
+            this.colBookingJadwal.Text = "Jadwal";
+            this.colBookingJadwal.Width = 150;
+            // 
+            // colBookingJadwalKegiatan
+            // 
+            this.colBookingJadwalKegiatan.Text = "Kegiatan";
+            this.colBookingJadwalKegiatan.Width = 150;
+            // 
+            // colBookingJadwalTanggung
+            // 
+            this.colBookingJadwalTanggung.Text = "Penanggung Jawab";
+            this.colBookingJadwalTanggung.Width = 100;
+            // 
+            // panelBookingCek
+            // 
+            this.panelBookingCek.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBookingCek.Controls.Add(this.labelBookingCekRuangan);
+            this.panelBookingCek.Controls.Add(this.comboBookingCek);
+            this.panelBookingCek.Controls.Add(this.labelBookingCekKapasitas);
+            this.panelBookingCek.Controls.Add(this.numBookingCek);
+            this.panelBookingCek.Controls.Add(this.labelBookingCekTanggal);
+            this.panelBookingCek.Controls.Add(this.dateBookingCek);
+            this.panelBookingCek.Controls.Add(this.labelBookingCekPukul);
+            this.panelBookingCek.Controls.Add(this.numBookingCekMulai);
+            this.panelBookingCek.Controls.Add(this.labelBookingCekPukulSd);
+            this.panelBookingCek.Controls.Add(this.numBookingCekSelesai);
+            this.panelBookingCek.Controls.Add(this.buttonBookingCek);
+            this.panelBookingCek.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBookingCek.Location = new System.Drawing.Point(0, 0);
+            this.panelBookingCek.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBookingCek.Name = "panelBookingCek";
+            this.panelBookingCek.Size = new System.Drawing.Size(524, 521);
+            this.panelBookingCek.TabIndex = 0;
+            // 
+            // labelBookingCekRuangan
+            // 
+            this.labelBookingCekRuangan.AutoSize = true;
+            this.labelBookingCekRuangan.Location = new System.Drawing.Point(9, 18);
+            this.labelBookingCekRuangan.Name = "labelBookingCekRuangan";
+            this.labelBookingCekRuangan.Size = new System.Drawing.Size(54, 15);
+            this.labelBookingCekRuangan.TabIndex = 0;
+            this.labelBookingCekRuangan.Text = "Ruangan";
+            // 
+            // comboBookingCek
+            // 
+            this.comboBookingCek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBookingCek.FormattingEnabled = true;
+            this.comboBookingCek.Location = new System.Drawing.Point(152, 12);
+            this.comboBookingCek.Name = "comboBookingCek";
+            this.comboBookingCek.Size = new System.Drawing.Size(365, 23);
+            this.comboBookingCek.TabIndex = 1;
+            // 
+            // labelBookingCekKapasitas
+            // 
+            this.labelBookingCekKapasitas.AutoSize = true;
+            this.labelBookingCekKapasitas.Location = new System.Drawing.Point(9, 46);
+            this.labelBookingCekKapasitas.Name = "labelBookingCekKapasitas";
+            this.labelBookingCekKapasitas.Size = new System.Drawing.Size(56, 15);
+            this.labelBookingCekKapasitas.TabIndex = 2;
+            this.labelBookingCekKapasitas.Text = "Kapasitas";
+            // 
+            // numBookingCek
+            // 
+            this.numBookingCek.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numBookingCek.Location = new System.Drawing.Point(152, 41);
+            this.numBookingCek.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numBookingCek.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBookingCek.Name = "numBookingCek";
+            this.numBookingCek.Size = new System.Drawing.Size(64, 23);
+            this.numBookingCek.TabIndex = 3;
+            this.numBookingCek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingCek.ThousandsSeparator = true;
+            this.numBookingCek.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // labelBookingCekTanggal
+            // 
+            this.labelBookingCekTanggal.AutoSize = true;
+            this.labelBookingCekTanggal.Location = new System.Drawing.Point(9, 74);
+            this.labelBookingCekTanggal.Name = "labelBookingCekTanggal";
+            this.labelBookingCekTanggal.Size = new System.Drawing.Size(49, 15);
+            this.labelBookingCekTanggal.TabIndex = 4;
+            this.labelBookingCekTanggal.Text = "Tanggal";
+            // 
+            // dateBookingCek
+            // 
+            this.dateBookingCek.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateBookingCek.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateBookingCek.Location = new System.Drawing.Point(152, 70);
+            this.dateBookingCek.Name = "dateBookingCek";
+            this.dateBookingCek.Size = new System.Drawing.Size(224, 23);
+            this.dateBookingCek.TabIndex = 5;
+            // 
+            // labelBookingCekPukul
+            // 
+            this.labelBookingCekPukul.AutoSize = true;
+            this.labelBookingCekPukul.Location = new System.Drawing.Point(9, 102);
+            this.labelBookingCekPukul.Name = "labelBookingCekPukul";
+            this.labelBookingCekPukul.Size = new System.Drawing.Size(37, 15);
+            this.labelBookingCekPukul.TabIndex = 6;
+            this.labelBookingCekPukul.Text = "Pukul";
+            // 
+            // numBookingCekMulai
+            // 
+            this.numBookingCekMulai.Location = new System.Drawing.Point(152, 99);
+            this.numBookingCekMulai.Maximum = new decimal(new int[] {
+            22,
+            0,
+            0,
+            0});
+            this.numBookingCekMulai.Minimum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.numBookingCekMulai.Name = "numBookingCekMulai";
+            this.numBookingCekMulai.Size = new System.Drawing.Size(56, 23);
+            this.numBookingCekMulai.TabIndex = 7;
+            this.numBookingCekMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingCekMulai.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            // 
+            // labelBookingCekPukulSd
+            // 
+            this.labelBookingCekPukulSd.AutoSize = true;
+            this.labelBookingCekPukulSd.Location = new System.Drawing.Point(214, 102);
+            this.labelBookingCekPukulSd.Name = "labelBookingCekPukulSd";
+            this.labelBookingCekPukulSd.Size = new System.Drawing.Size(25, 15);
+            this.labelBookingCekPukulSd.TabIndex = 8;
+            this.labelBookingCekPukulSd.Text = "s.d.";
+            // 
+            // numBookingCekSelesai
+            // 
+            this.numBookingCekSelesai.Location = new System.Drawing.Point(245, 99);
+            this.numBookingCekSelesai.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numBookingCekSelesai.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numBookingCekSelesai.Name = "numBookingCekSelesai";
+            this.numBookingCekSelesai.Size = new System.Drawing.Size(56, 23);
+            this.numBookingCekSelesai.TabIndex = 9;
+            this.numBookingCekSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingCekSelesai.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // buttonBookingCek
+            // 
+            this.buttonBookingCek.FlatAppearance.BorderSize = 0;
+            this.buttonBookingCek.Location = new System.Drawing.Point(152, 128);
+            this.buttonBookingCek.Name = "buttonBookingCek";
+            this.buttonBookingCek.Size = new System.Drawing.Size(84, 36);
+            this.buttonBookingCek.TabIndex = 10;
+            this.buttonBookingCek.Text = "Cek";
+            this.buttonBookingCek.Click += new System.EventHandler(this.buttonBookingCek_Click);
+            // 
+            // panelBookingRuangan
+            // 
+            this.panelBookingRuangan.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuangan);
+            this.panelBookingRuangan.Controls.Add(this.comboBookingRuangan);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganKapasitas);
+            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganKapasitas);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganTanggal);
+            this.panelBookingRuangan.Controls.Add(this.dateBookingRuangan);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganWaktu);
+            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganMulai);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganSd);
+            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganSelesai);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganKegiatan);
+            this.panelBookingRuangan.Controls.Add(this.textBookingRuanganKegiatan);
+            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganTanggung);
+            this.panelBookingRuangan.Controls.Add(this.textBookingRuanganTanggung);
+            this.panelBookingRuangan.Controls.Add(this.buttonBookingRuangan);
+            this.panelBookingRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBookingRuangan.Location = new System.Drawing.Point(0, 0);
+            this.panelBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
+            this.panelBookingRuangan.Name = "panelBookingRuangan";
+            this.panelBookingRuangan.Size = new System.Drawing.Size(524, 521);
+            this.panelBookingRuangan.TabIndex = 4;
+            // 
+            // labelBookingRuangan
+            // 
+            this.labelBookingRuangan.AutoSize = true;
+            this.labelBookingRuangan.Location = new System.Drawing.Point(9, 18);
+            this.labelBookingRuangan.Name = "labelBookingRuangan";
+            this.labelBookingRuangan.Size = new System.Drawing.Size(54, 15);
+            this.labelBookingRuangan.TabIndex = 0;
+            this.labelBookingRuangan.Text = "Ruangan";
+            // 
+            // comboBookingRuangan
+            // 
+            this.comboBookingRuangan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBookingRuangan.FormattingEnabled = true;
+            this.comboBookingRuangan.Location = new System.Drawing.Point(152, 12);
+            this.comboBookingRuangan.Name = "comboBookingRuangan";
+            this.comboBookingRuangan.Size = new System.Drawing.Size(365, 23);
+            this.comboBookingRuangan.TabIndex = 1;
+            // 
+            // labelBookingRuanganKapasitas
+            // 
+            this.labelBookingRuanganKapasitas.AutoSize = true;
+            this.labelBookingRuanganKapasitas.Location = new System.Drawing.Point(9, 46);
+            this.labelBookingRuanganKapasitas.Name = "labelBookingRuanganKapasitas";
+            this.labelBookingRuanganKapasitas.Size = new System.Drawing.Size(56, 15);
+            this.labelBookingRuanganKapasitas.TabIndex = 2;
+            this.labelBookingRuanganKapasitas.Text = "Kapasitas";
+            // 
+            // numBookingRuanganKapasitas
+            // 
+            this.numBookingRuanganKapasitas.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numBookingRuanganKapasitas.Location = new System.Drawing.Point(152, 41);
+            this.numBookingRuanganKapasitas.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numBookingRuanganKapasitas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numBookingRuanganKapasitas.Name = "numBookingRuanganKapasitas";
+            this.numBookingRuanganKapasitas.Size = new System.Drawing.Size(64, 23);
+            this.numBookingRuanganKapasitas.TabIndex = 3;
+            this.numBookingRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingRuanganKapasitas.ThousandsSeparator = true;
+            this.numBookingRuanganKapasitas.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // labelBookingRuanganTanggal
+            // 
+            this.labelBookingRuanganTanggal.AutoSize = true;
+            this.labelBookingRuanganTanggal.Location = new System.Drawing.Point(9, 74);
+            this.labelBookingRuanganTanggal.Name = "labelBookingRuanganTanggal";
+            this.labelBookingRuanganTanggal.Size = new System.Drawing.Size(49, 15);
+            this.labelBookingRuanganTanggal.TabIndex = 4;
+            this.labelBookingRuanganTanggal.Text = "Tanggal";
+            // 
+            // dateBookingRuangan
+            // 
+            this.dateBookingRuangan.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateBookingRuangan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateBookingRuangan.Location = new System.Drawing.Point(152, 70);
+            this.dateBookingRuangan.Name = "dateBookingRuangan";
+            this.dateBookingRuangan.Size = new System.Drawing.Size(224, 23);
+            this.dateBookingRuangan.TabIndex = 5;
+            // 
+            // labelBookingRuanganWaktu
+            // 
+            this.labelBookingRuanganWaktu.AutoSize = true;
+            this.labelBookingRuanganWaktu.Location = new System.Drawing.Point(9, 102);
+            this.labelBookingRuanganWaktu.Name = "labelBookingRuanganWaktu";
+            this.labelBookingRuanganWaktu.Size = new System.Drawing.Size(37, 15);
+            this.labelBookingRuanganWaktu.TabIndex = 6;
+            this.labelBookingRuanganWaktu.Text = "Pukul";
+            // 
+            // numBookingRuanganMulai
+            // 
+            this.numBookingRuanganMulai.Location = new System.Drawing.Point(152, 99);
+            this.numBookingRuanganMulai.Maximum = new decimal(new int[] {
+            22,
+            0,
+            0,
+            0});
+            this.numBookingRuanganMulai.Minimum = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            this.numBookingRuanganMulai.Name = "numBookingRuanganMulai";
+            this.numBookingRuanganMulai.Size = new System.Drawing.Size(56, 23);
+            this.numBookingRuanganMulai.TabIndex = 7;
+            this.numBookingRuanganMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingRuanganMulai.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            // 
+            // labelBookingRuanganSd
+            // 
+            this.labelBookingRuanganSd.AutoSize = true;
+            this.labelBookingRuanganSd.Location = new System.Drawing.Point(214, 102);
+            this.labelBookingRuanganSd.Name = "labelBookingRuanganSd";
+            this.labelBookingRuanganSd.Size = new System.Drawing.Size(25, 15);
+            this.labelBookingRuanganSd.TabIndex = 8;
+            this.labelBookingRuanganSd.Text = "s.d.";
+            // 
+            // numBookingRuanganSelesai
+            // 
+            this.numBookingRuanganSelesai.Location = new System.Drawing.Point(245, 99);
+            this.numBookingRuanganSelesai.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numBookingRuanganSelesai.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numBookingRuanganSelesai.Name = "numBookingRuanganSelesai";
+            this.numBookingRuanganSelesai.Size = new System.Drawing.Size(56, 23);
+            this.numBookingRuanganSelesai.TabIndex = 9;
+            this.numBookingRuanganSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numBookingRuanganSelesai.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // labelBookingRuanganKegiatan
+            // 
+            this.labelBookingRuanganKegiatan.AutoSize = true;
+            this.labelBookingRuanganKegiatan.Location = new System.Drawing.Point(9, 131);
+            this.labelBookingRuanganKegiatan.Name = "labelBookingRuanganKegiatan";
+            this.labelBookingRuanganKegiatan.Size = new System.Drawing.Size(88, 15);
+            this.labelBookingRuanganKegiatan.TabIndex = 10;
+            this.labelBookingRuanganKegiatan.Text = "Nama Kegiatan";
+            // 
+            // textBookingRuanganKegiatan
+            // 
+            this.textBookingRuanganKegiatan.Location = new System.Drawing.Point(152, 128);
+            this.textBookingRuanganKegiatan.Name = "textBookingRuanganKegiatan";
+            this.textBookingRuanganKegiatan.Size = new System.Drawing.Size(365, 23);
+            this.textBookingRuanganKegiatan.TabIndex = 11;
+            // 
+            // labelBookingRuanganTanggung
+            // 
+            this.labelBookingRuanganTanggung.AutoSize = true;
+            this.labelBookingRuanganTanggung.Location = new System.Drawing.Point(10, 160);
+            this.labelBookingRuanganTanggung.Name = "labelBookingRuanganTanggung";
+            this.labelBookingRuanganTanggung.Size = new System.Drawing.Size(110, 15);
+            this.labelBookingRuanganTanggung.TabIndex = 12;
+            this.labelBookingRuanganTanggung.Text = "Penanggung Jawab";
+            // 
+            // textBookingRuanganTanggung
+            // 
+            this.textBookingRuanganTanggung.Location = new System.Drawing.Point(152, 157);
+            this.textBookingRuanganTanggung.Name = "textBookingRuanganTanggung";
+            this.textBookingRuanganTanggung.Size = new System.Drawing.Size(365, 23);
+            this.textBookingRuanganTanggung.TabIndex = 13;
+            // 
+            // buttonBookingRuangan
+            // 
+            this.buttonBookingRuangan.FlatAppearance.BorderSize = 0;
+            this.buttonBookingRuangan.Location = new System.Drawing.Point(152, 186);
+            this.buttonBookingRuangan.Name = "buttonBookingRuangan";
+            this.buttonBookingRuangan.Size = new System.Drawing.Size(84, 36);
+            this.buttonBookingRuangan.TabIndex = 14;
+            this.buttonBookingRuangan.Text = "Booking";
+            this.buttonBookingRuangan.Click += new System.EventHandler(this.buttonBookingRuangan_Click);
             // 
             // panelData
             // 
@@ -1321,392 +1805,6 @@
             this.labelStatistikPeminjam.TabIndex = 0;
             this.labelStatistikPeminjam.Text = "Statistik Frekuensi Peminjam";
             // 
-            // panelBooking
-            // 
-            this.panelBooking.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBooking.Controls.Add(this.panelBookingCek);
-            this.panelBooking.Controls.Add(this.panelBookingRuangan);
-            this.panelBooking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBooking.Location = new System.Drawing.Point(0, 0);
-            this.panelBooking.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBooking.Name = "panelBooking";
-            this.panelBooking.Size = new System.Drawing.Size(524, 521);
-            this.panelBooking.TabIndex = 5;
-            // 
-            // panelBookingCek
-            // 
-            this.panelBookingCek.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBookingCek.Controls.Add(this.labelBookingCekRuangan);
-            this.panelBookingCek.Controls.Add(this.comboBookingCek);
-            this.panelBookingCek.Controls.Add(this.labelBookingCekKapasitas);
-            this.panelBookingCek.Controls.Add(this.numBookingCek);
-            this.panelBookingCek.Controls.Add(this.labelBookingCekTanggal);
-            this.panelBookingCek.Controls.Add(this.dateBookingCek);
-            this.panelBookingCek.Controls.Add(this.labelBookingCekPukul);
-            this.panelBookingCek.Controls.Add(this.numBookingCekMulai);
-            this.panelBookingCek.Controls.Add(this.labelBookingCekPukulSd);
-            this.panelBookingCek.Controls.Add(this.numBookingCekSelesai);
-            this.panelBookingCek.Controls.Add(this.buttonBookingCek);
-            this.panelBookingCek.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBookingCek.Location = new System.Drawing.Point(0, 0);
-            this.panelBookingCek.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBookingCek.Name = "panelBookingCek";
-            this.panelBookingCek.Size = new System.Drawing.Size(524, 521);
-            this.panelBookingCek.TabIndex = 0;
-            // 
-            // labelBookingCekRuangan
-            // 
-            this.labelBookingCekRuangan.AutoSize = true;
-            this.labelBookingCekRuangan.Location = new System.Drawing.Point(9, 18);
-            this.labelBookingCekRuangan.Name = "labelBookingCekRuangan";
-            this.labelBookingCekRuangan.Size = new System.Drawing.Size(54, 15);
-            this.labelBookingCekRuangan.TabIndex = 0;
-            this.labelBookingCekRuangan.Text = "Ruangan";
-            // 
-            // comboBookingCek
-            // 
-            this.comboBookingCek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBookingCek.FormattingEnabled = true;
-            this.comboBookingCek.Location = new System.Drawing.Point(152, 12);
-            this.comboBookingCek.Name = "comboBookingCek";
-            this.comboBookingCek.Size = new System.Drawing.Size(365, 23);
-            this.comboBookingCek.TabIndex = 1;
-            // 
-            // labelBookingCekKapasitas
-            // 
-            this.labelBookingCekKapasitas.AutoSize = true;
-            this.labelBookingCekKapasitas.Location = new System.Drawing.Point(9, 46);
-            this.labelBookingCekKapasitas.Name = "labelBookingCekKapasitas";
-            this.labelBookingCekKapasitas.Size = new System.Drawing.Size(56, 15);
-            this.labelBookingCekKapasitas.TabIndex = 2;
-            this.labelBookingCekKapasitas.Text = "Kapasitas";
-            // 
-            // numBookingCek
-            // 
-            this.numBookingCek.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numBookingCek.Location = new System.Drawing.Point(152, 41);
-            this.numBookingCek.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numBookingCek.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numBookingCek.Name = "numBookingCek";
-            this.numBookingCek.Size = new System.Drawing.Size(64, 23);
-            this.numBookingCek.TabIndex = 3;
-            this.numBookingCek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingCek.ThousandsSeparator = true;
-            this.numBookingCek.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // labelBookingCekTanggal
-            // 
-            this.labelBookingCekTanggal.AutoSize = true;
-            this.labelBookingCekTanggal.Location = new System.Drawing.Point(9, 74);
-            this.labelBookingCekTanggal.Name = "labelBookingCekTanggal";
-            this.labelBookingCekTanggal.Size = new System.Drawing.Size(49, 15);
-            this.labelBookingCekTanggal.TabIndex = 4;
-            this.labelBookingCekTanggal.Text = "Tanggal";
-            // 
-            // dateBookingCek
-            // 
-            this.dateBookingCek.CustomFormat = "dddd, dd MMMM yyyy";
-            this.dateBookingCek.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateBookingCek.Location = new System.Drawing.Point(152, 70);
-            this.dateBookingCek.Name = "dateBookingCek";
-            this.dateBookingCek.Size = new System.Drawing.Size(224, 23);
-            this.dateBookingCek.TabIndex = 5;
-            // 
-            // labelBookingCekPukul
-            // 
-            this.labelBookingCekPukul.AutoSize = true;
-            this.labelBookingCekPukul.Location = new System.Drawing.Point(9, 102);
-            this.labelBookingCekPukul.Name = "labelBookingCekPukul";
-            this.labelBookingCekPukul.Size = new System.Drawing.Size(37, 15);
-            this.labelBookingCekPukul.TabIndex = 6;
-            this.labelBookingCekPukul.Text = "Pukul";
-            // 
-            // numBookingCekMulai
-            // 
-            this.numBookingCekMulai.Location = new System.Drawing.Point(152, 99);
-            this.numBookingCekMulai.Maximum = new decimal(new int[] {
-            22,
-            0,
-            0,
-            0});
-            this.numBookingCekMulai.Minimum = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            this.numBookingCekMulai.Name = "numBookingCekMulai";
-            this.numBookingCekMulai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingCekMulai.TabIndex = 7;
-            this.numBookingCekMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingCekMulai.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            // 
-            // labelBookingCekPukulSd
-            // 
-            this.labelBookingCekPukulSd.AutoSize = true;
-            this.labelBookingCekPukulSd.Location = new System.Drawing.Point(214, 102);
-            this.labelBookingCekPukulSd.Name = "labelBookingCekPukulSd";
-            this.labelBookingCekPukulSd.Size = new System.Drawing.Size(25, 15);
-            this.labelBookingCekPukulSd.TabIndex = 8;
-            this.labelBookingCekPukulSd.Text = "s.d.";
-            // 
-            // numBookingCekSelesai
-            // 
-            this.numBookingCekSelesai.Location = new System.Drawing.Point(245, 99);
-            this.numBookingCekSelesai.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numBookingCekSelesai.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numBookingCekSelesai.Name = "numBookingCekSelesai";
-            this.numBookingCekSelesai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingCekSelesai.TabIndex = 9;
-            this.numBookingCekSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingCekSelesai.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // buttonBookingCek
-            // 
-            this.buttonBookingCek.FlatAppearance.BorderSize = 0;
-            this.buttonBookingCek.Location = new System.Drawing.Point(152, 128);
-            this.buttonBookingCek.Name = "buttonBookingCek";
-            this.buttonBookingCek.Size = new System.Drawing.Size(84, 36);
-            this.buttonBookingCek.TabIndex = 10;
-            this.buttonBookingCek.Text = "Cek";
-            this.buttonBookingCek.Click += new System.EventHandler(this.buttonBookingCek_Click);
-            // 
-            // panelBookingRuangan
-            // 
-            this.panelBookingRuangan.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuangan);
-            this.panelBookingRuangan.Controls.Add(this.comboBookingRuangan);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganKapasitas);
-            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganKapasitas);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganTanggal);
-            this.panelBookingRuangan.Controls.Add(this.dateBookingRuangan);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganWaktu);
-            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganMulai);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganSd);
-            this.panelBookingRuangan.Controls.Add(this.numBookingRuanganSelesai);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganKegiatan);
-            this.panelBookingRuangan.Controls.Add(this.textBookingRuanganKegiatan);
-            this.panelBookingRuangan.Controls.Add(this.labelBookingRuanganTanggung);
-            this.panelBookingRuangan.Controls.Add(this.textBookingRuanganTanggung);
-            this.panelBookingRuangan.Controls.Add(this.buttonBookingRuangan);
-            this.panelBookingRuangan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBookingRuangan.Location = new System.Drawing.Point(0, 0);
-            this.panelBookingRuangan.Margin = new System.Windows.Forms.Padding(0);
-            this.panelBookingRuangan.Name = "panelBookingRuangan";
-            this.panelBookingRuangan.Size = new System.Drawing.Size(524, 521);
-            this.panelBookingRuangan.TabIndex = 4;
-            // 
-            // labelBookingRuangan
-            // 
-            this.labelBookingRuangan.AutoSize = true;
-            this.labelBookingRuangan.Location = new System.Drawing.Point(9, 18);
-            this.labelBookingRuangan.Name = "labelBookingRuangan";
-            this.labelBookingRuangan.Size = new System.Drawing.Size(54, 15);
-            this.labelBookingRuangan.TabIndex = 0;
-            this.labelBookingRuangan.Text = "Ruangan";
-            // 
-            // comboBookingRuangan
-            // 
-            this.comboBookingRuangan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBookingRuangan.FormattingEnabled = true;
-            this.comboBookingRuangan.Location = new System.Drawing.Point(152, 12);
-            this.comboBookingRuangan.Name = "comboBookingRuangan";
-            this.comboBookingRuangan.Size = new System.Drawing.Size(365, 23);
-            this.comboBookingRuangan.TabIndex = 1;
-            // 
-            // labelBookingRuanganKapasitas
-            // 
-            this.labelBookingRuanganKapasitas.AutoSize = true;
-            this.labelBookingRuanganKapasitas.Location = new System.Drawing.Point(9, 46);
-            this.labelBookingRuanganKapasitas.Name = "labelBookingRuanganKapasitas";
-            this.labelBookingRuanganKapasitas.Size = new System.Drawing.Size(56, 15);
-            this.labelBookingRuanganKapasitas.TabIndex = 2;
-            this.labelBookingRuanganKapasitas.Text = "Kapasitas";
-            // 
-            // numBookingRuanganKapasitas
-            // 
-            this.numBookingRuanganKapasitas.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numBookingRuanganKapasitas.Location = new System.Drawing.Point(152, 41);
-            this.numBookingRuanganKapasitas.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numBookingRuanganKapasitas.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numBookingRuanganKapasitas.Name = "numBookingRuanganKapasitas";
-            this.numBookingRuanganKapasitas.Size = new System.Drawing.Size(64, 23);
-            this.numBookingRuanganKapasitas.TabIndex = 3;
-            this.numBookingRuanganKapasitas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingRuanganKapasitas.ThousandsSeparator = true;
-            this.numBookingRuanganKapasitas.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // labelBookingRuanganTanggal
-            // 
-            this.labelBookingRuanganTanggal.AutoSize = true;
-            this.labelBookingRuanganTanggal.Location = new System.Drawing.Point(9, 74);
-            this.labelBookingRuanganTanggal.Name = "labelBookingRuanganTanggal";
-            this.labelBookingRuanganTanggal.Size = new System.Drawing.Size(49, 15);
-            this.labelBookingRuanganTanggal.TabIndex = 4;
-            this.labelBookingRuanganTanggal.Text = "Tanggal";
-            // 
-            // dateBookingRuangan
-            // 
-            this.dateBookingRuangan.CustomFormat = "dddd, dd MMMM yyyy";
-            this.dateBookingRuangan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateBookingRuangan.Location = new System.Drawing.Point(152, 70);
-            this.dateBookingRuangan.Name = "dateBookingRuangan";
-            this.dateBookingRuangan.Size = new System.Drawing.Size(224, 23);
-            this.dateBookingRuangan.TabIndex = 5;
-            // 
-            // labelBookingRuanganWaktu
-            // 
-            this.labelBookingRuanganWaktu.AutoSize = true;
-            this.labelBookingRuanganWaktu.Location = new System.Drawing.Point(9, 102);
-            this.labelBookingRuanganWaktu.Name = "labelBookingRuanganWaktu";
-            this.labelBookingRuanganWaktu.Size = new System.Drawing.Size(37, 15);
-            this.labelBookingRuanganWaktu.TabIndex = 6;
-            this.labelBookingRuanganWaktu.Text = "Pukul";
-            // 
-            // numBookingRuanganMulai
-            // 
-            this.numBookingRuanganMulai.Location = new System.Drawing.Point(152, 99);
-            this.numBookingRuanganMulai.Maximum = new decimal(new int[] {
-            22,
-            0,
-            0,
-            0});
-            this.numBookingRuanganMulai.Minimum = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            this.numBookingRuanganMulai.Name = "numBookingRuanganMulai";
-            this.numBookingRuanganMulai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingRuanganMulai.TabIndex = 7;
-            this.numBookingRuanganMulai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingRuanganMulai.Value = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            // 
-            // labelBookingRuanganSd
-            // 
-            this.labelBookingRuanganSd.AutoSize = true;
-            this.labelBookingRuanganSd.Location = new System.Drawing.Point(214, 102);
-            this.labelBookingRuanganSd.Name = "labelBookingRuanganSd";
-            this.labelBookingRuanganSd.Size = new System.Drawing.Size(25, 15);
-            this.labelBookingRuanganSd.TabIndex = 8;
-            this.labelBookingRuanganSd.Text = "s.d.";
-            // 
-            // numBookingRuanganSelesai
-            // 
-            this.numBookingRuanganSelesai.Location = new System.Drawing.Point(245, 99);
-            this.numBookingRuanganSelesai.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numBookingRuanganSelesai.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numBookingRuanganSelesai.Name = "numBookingRuanganSelesai";
-            this.numBookingRuanganSelesai.Size = new System.Drawing.Size(56, 23);
-            this.numBookingRuanganSelesai.TabIndex = 9;
-            this.numBookingRuanganSelesai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numBookingRuanganSelesai.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // labelBookingRuanganKegiatan
-            // 
-            this.labelBookingRuanganKegiatan.AutoSize = true;
-            this.labelBookingRuanganKegiatan.Location = new System.Drawing.Point(9, 131);
-            this.labelBookingRuanganKegiatan.Name = "labelBookingRuanganKegiatan";
-            this.labelBookingRuanganKegiatan.Size = new System.Drawing.Size(88, 15);
-            this.labelBookingRuanganKegiatan.TabIndex = 10;
-            this.labelBookingRuanganKegiatan.Text = "Nama Kegiatan";
-            // 
-            // textBookingRuanganKegiatan
-            // 
-            this.textBookingRuanganKegiatan.Location = new System.Drawing.Point(152, 128);
-            this.textBookingRuanganKegiatan.Name = "textBookingRuanganKegiatan";
-            this.textBookingRuanganKegiatan.Size = new System.Drawing.Size(365, 23);
-            this.textBookingRuanganKegiatan.TabIndex = 11;
-            // 
-            // labelBookingRuanganTanggung
-            // 
-            this.labelBookingRuanganTanggung.AutoSize = true;
-            this.labelBookingRuanganTanggung.Location = new System.Drawing.Point(10, 160);
-            this.labelBookingRuanganTanggung.Name = "labelBookingRuanganTanggung";
-            this.labelBookingRuanganTanggung.Size = new System.Drawing.Size(110, 15);
-            this.labelBookingRuanganTanggung.TabIndex = 12;
-            this.labelBookingRuanganTanggung.Text = "Penanggung Jawab";
-            // 
-            // textBookingRuanganTanggung
-            // 
-            this.textBookingRuanganTanggung.Location = new System.Drawing.Point(152, 157);
-            this.textBookingRuanganTanggung.Name = "textBookingRuanganTanggung";
-            this.textBookingRuanganTanggung.Size = new System.Drawing.Size(365, 23);
-            this.textBookingRuanganTanggung.TabIndex = 13;
-            // 
-            // buttonBookingRuangan
-            // 
-            this.buttonBookingRuangan.FlatAppearance.BorderSize = 0;
-            this.buttonBookingRuangan.Location = new System.Drawing.Point(152, 186);
-            this.buttonBookingRuangan.Name = "buttonBookingRuangan";
-            this.buttonBookingRuangan.Size = new System.Drawing.Size(84, 36);
-            this.buttonBookingRuangan.TabIndex = 14;
-            this.buttonBookingRuangan.Text = "Booking";
-            this.buttonBookingRuangan.Click += new System.EventHandler(this.buttonBookingRuangan_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1727,9 +1825,21 @@
             this.panelTitle.PerformLayout();
             this.panelTab.ResumeLayout(false);
             this.panelPage.ResumeLayout(false);
+            this.panelPageBooking.ResumeLayout(false);
             this.panelPageData.ResumeLayout(false);
             this.panelPageStatistik.ResumeLayout(false);
-            this.panelPageBooking.ResumeLayout(false);
+            this.panelBooking.ResumeLayout(false);
+            this.panelBookingJadwal.ResumeLayout(false);
+            this.panelBookingCek.ResumeLayout(false);
+            this.panelBookingCek.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCek)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekMulai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekSelesai)).EndInit();
+            this.panelBookingRuangan.ResumeLayout(false);
+            this.panelBookingRuangan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganKapasitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganMulai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganSelesai)).EndInit();
             this.panelData.ResumeLayout(false);
             this.panelDataJadwal.ResumeLayout(false);
             this.panelDataRuangan.ResumeLayout(false);
@@ -1745,17 +1855,6 @@
             this.panelStatistikPeminjam.ResumeLayout(false);
             this.panelStatistikPeminjam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).EndInit();
-            this.panelBooking.ResumeLayout(false);
-            this.panelBookingCek.ResumeLayout(false);
-            this.panelBookingCek.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCek)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekMulai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingCekSelesai)).EndInit();
-            this.panelBookingRuangan.ResumeLayout(false);
-            this.panelBookingRuangan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganKapasitas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganMulai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numBookingRuanganSelesai)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1891,5 +1990,13 @@
         private System.Windows.Forms.DateTimePicker datePickerTanggalAwalStatistikPeminjam;
         private System.Windows.Forms.Label labelTanggalAwalStatistikPeminjam;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistikPeminjam;
+        private System.Windows.Forms.Button pageBookingJadwal;
+        private System.Windows.Forms.Panel panelBookingJadwal;
+        private System.Windows.Forms.Button buttonBookingJadwalHapus;
+        private System.Windows.Forms.ListView viewBookingJadwal;
+        private System.Windows.Forms.ColumnHeader colBookingJadwalRuangan;
+        private System.Windows.Forms.ColumnHeader colBookingJadwal;
+        private System.Windows.Forms.ColumnHeader colBookingJadwalKegiatan;
+        private System.Windows.Forms.ColumnHeader colBookingJadwalTanggung;
     }
 }

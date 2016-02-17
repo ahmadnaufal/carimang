@@ -103,6 +103,12 @@ namespace CariMang {
             this.panelBookingRuangan.BringToFront();
         }
 
+        private void pageBookingJadwal_Click(object sender, EventArgs e) {
+            if (!this.page_Click(sender, e)) return;
+            activePage[tabBooking] = (Button)sender;
+            this.panelBookingJadwal.BringToFront();
+        }
+
         private void pageStatistikRuangan_Click(object sender, EventArgs e) {
             if (!this.page_Click(sender, e)) return;
             activePage[tabStatistik] = (Button)sender;
