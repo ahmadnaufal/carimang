@@ -28,82 +28,140 @@ namespace CariMang {
         public static List<Peminjam> GetAll() {
             List<Peminjam> listPeminjam = new List<Peminjam>();
 
-            using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-                String query = String.Format(
-                    "SELECT * FROM {0}", TBL_PEMINJAM);
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    String query = String.Format(
+                        "SELECT * FROM {0}", TBL_PEMINJAM);
 
-                MySqlCommand command = new MySqlCommand(query, connection);
+                    MySqlCommand command = new MySqlCommand(query, connection);
 
-                connection.Open();
-                using (MySqlDataReader reader = command.ExecuteReader()) {
-                    while (reader.Read()) {
-                        listPeminjam.Add(new Peminjam(
-                            (int)reader[COL_ID_PEMINJAM],
-                            (string)reader[COL_NAMA_PEMINJAM]));
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader()) {
+                        while (reader.Read()) {
+                            listPeminjam.Add(new Peminjam(
+                                (int)reader[COL_ID_PEMINJAM],
+                                (string)reader[COL_NAMA_PEMINJAM]));
+                        }
                     }
                 }
             }
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+            }
+
             return listPeminjam;
         }
 
         public static Peminjam Get(int id) {
             Peminjam peminjam = null;
 
-            using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-                string query = String.Format(
-                    "SELECT * FROM {0} WHERE {1}={2}",
-                    TBL_PEMINJAM,
-                    COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    string query = String.Format(
+                        "SELECT * FROM {0} WHERE {1}={2}",
+                        TBL_PEMINJAM,
+                        COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
 
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, id);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_ID_PEMINJAM, id);
 
-                connection.Open();
-                using (MySqlDataReader reader = command.ExecuteReader()) {
-                    if (reader.Read()) {
-                        peminjam = new Peminjam(
-                            (int)reader[COL_ID_PEMINJAM],
-                            (string)reader[COL_NAMA_PEMINJAM]);
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader()) {
+                        if (reader.Read()) {
+                            peminjam = new Peminjam(
+                                (int)reader[COL_ID_PEMINJAM],
+                                (string)reader[COL_NAMA_PEMINJAM]);
+                        }
                     }
                 }
             }
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+            }
+            
+            return peminjam;
+        }
+
+        public static Peminjam Get(string nama) {
+            Peminjam peminjam = null;
+
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    string query = String.Format(
+                        "SELECT * FROM {0} WHERE {1}={2}",
+                        TBL_PEMINJAM,
+                        COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM);
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, nama);
+
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader()) {
+                        if (reader.Read()) {
+                            peminjam = new Peminjam(
+                                (int)reader[COL_ID_PEMINJAM],
+                                (string)reader[COL_NAMA_PEMINJAM]);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+            }
+
             return peminjam;
         }
 
         public static Peminjam Add(string nama) {
             Peminjam peminjam = null;
 
-            using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-                string query = String.Format(
-                    "INSERT INTO {0} ({1}) VALUES ({2})",
-                    TBL_PEMINJAM,
-                    COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM);
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    Peminjam peminjamNama = Get(nama);
+                    if (peminjamNama != null)
+                        return peminjamNama;
 
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, nama);
+                    string query = String.Format(
+                        "INSERT INTO {0} ({1}) VALUES ({2})",
+                        TBL_PEMINJAM,
+                        COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM);
 
-                connection.Open();
-                if (command.ExecuteNonQuery() > 0)
-                    peminjam = new Peminjam((int)command.LastInsertedId, nama);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, nama);
+
+                    connection.Open();
+                    if (command.ExecuteNonQuery() > 0)
+                        peminjam = new Peminjam((int)command.LastInsertedId, nama);
+                }
             }
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+            }
+            
             return peminjam;
         }
 
         public static bool Delete(Peminjam peminjam) {
             bool result = false;
 
-            using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-                string query = String.Format(
-                    "DELETE FROM {0} WHERE {1}={2}",
-                    TBL_PEMINJAM,
-                    COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
+            try {
+                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                    string query = String.Format(
+                        "DELETE FROM {0} WHERE {1}={2}",
+                        TBL_PEMINJAM,
+                        COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
 
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue(PRM_ID_PEMINJAM, peminjam.id);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue(PRM_ID_PEMINJAM, peminjam.id);
 
-                connection.Open();
-                result = command.ExecuteNonQuery() > 0;
+                    connection.Open();
+                    result = command.ExecuteNonQuery() > 0;
+                }
             }
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
+            }
+            
             return result;
         }
 
@@ -111,20 +169,25 @@ namespace CariMang {
         public string Nama {
             get { return this.nama; }
             set {
-                using (MySqlConnection connection = MySqlConnector.GetConnection()) {
-                    string query = String.Format(
-                        "UPDATE {0} SET {1}={2} WHERE {3}={4}",
-                        TBL_PEMINJAM,
-                        COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM,
-                        COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
+                try {
+                    using (MySqlConnection connection = MySqlConnector.GetConnection()) {
+                        string query = String.Format(
+                            "UPDATE {0} SET {1}={2} WHERE {3}={4}",
+                            TBL_PEMINJAM,
+                            COL_NAMA_PEMINJAM, PRM_NAMA_PEMINJAM,
+                            COL_ID_PEMINJAM, PRM_ID_PEMINJAM);
 
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, value);
-                    command.Parameters.AddWithValue(PRM_ID_PEMINJAM, this.id);
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue(PRM_NAMA_PEMINJAM, value);
+                        command.Parameters.AddWithValue(PRM_ID_PEMINJAM, this.id);
 
-                    connection.Open();
-                    if (command.ExecuteNonQuery() > 0)
-                        this.nama = value;
+                        connection.Open();
+                        if (command.ExecuteNonQuery() > 0)
+                            this.nama = value;
+                    }
+                }
+                catch (MySqlException e) {
+                    Console.WriteLine(e.Message);
                 }
             }
         }
