@@ -51,7 +51,7 @@ namespace CariMang {
             this.Tipe = (Ruangan.TipeRuangan)comboTipe.SelectedIndex;
 
             if (String.IsNullOrWhiteSpace(this.Nama)) {
-                MessageBox.Show("Nama ruangan tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nama ruangan tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             this.DialogResult = DialogResult.OK;

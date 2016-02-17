@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CariMang {
@@ -50,7 +47,7 @@ namespace CariMang {
             if (item == null) {
                 item = new ListViewItem();
                 item.UseItemStyleForSubItems = false;
-                item.Text = ruangan.Nama;
+                item.Text = item.ToolTipText = ruangan.Nama;                
                 for (int i = 0; i < listViewJadwal.Columns.Count-1; ++i)
                     item.SubItems.Add("");
                 item.Tag = ruangan;
@@ -66,34 +63,31 @@ namespace CariMang {
         }
 
         private void GetAllRuangan() {
-            daftarRuangan.Clear();
             comboJadwalCari.Items.Clear();
             comboJadwalCari.Items.Add("(Cari semua ruangan)");
             listViewRuangan.Items.Clear();
             comboBookingCek.Items.Clear();
             comboBookingRuangan.Items.Clear();
 
-            foreach (var ruangan in Ruangan.GetAll())
-                this.AddRuangan(ruangan);
+            daftarRuangan = Ruangan.GetAll()
+                .OrderBy(i => i.Tipe)
+                .ThenBy(i => i.Nama)
+                .ToList();            
+            foreach (var ruangan in daftarRuangan) {
+                comboJadwalCari.Items.Add(ruangan);
+                var item = new ListViewItem();
+                item.Text = item.ToolTipText = ruangan.Nama;                
+                item.SubItems.Add(ruangan.Tipe.ToString());
+                item.SubItems.Add(ruangan.Kapasitas.ToString());
+                item.Tag = ruangan;
+                listViewRuangan.Items.Add(item);
+
+                comboBookingCek.Items.Add(ruangan);
+                comboBookingRuangan.Items.Add(ruangan);
+            }                
             comboJadwalCari.SelectedIndex = 0;
             comboBookingCek.SelectedIndex = comboBookingCek.Items.Count > 0 ? 0 : -1;
             comboBookingRuangan.SelectedIndex = comboBookingRuangan.Items.Count > 0 ? 0 : -1;
-        }
-
-        private void AddRuangan(Ruangan ruangan) {
-            daftarRuangan.Add(ruangan);
-
-            comboJadwalCari.Items.Add(ruangan.Nama);
-
-            var item = new ListViewItem();
-            item.Text = ruangan.Nama;
-            item.SubItems.Add(ruangan.Tipe.ToString());
-            item.SubItems.Add(ruangan.Kapasitas.ToString());            
-            item.Tag = ruangan;
-            listViewRuangan.Items.Add(item);            
-
-            comboBookingCek.Items.Add(ruangan);
-            comboBookingRuangan.Items.Add(ruangan);
         }
 
         private void EditRuangan(ListViewItem item) {
@@ -110,14 +104,14 @@ namespace CariMang {
 
         private void DeleteRuangan(ListViewItem item) {
             Ruangan ruangan = (Ruangan)item.Tag;
-            if (MessageBox.Show("Mau dihapus " + ruangan.Nama + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus " + ruangan.Nama + "?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
             if (Ruangan.Delete(ruangan)) {
                 GetAllRuangan();
             }
             else {
-                MessageBox.Show("Gagal delete ruangan.");
+                MessageBox.Show("Gagal menghapus ruangan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -129,7 +123,7 @@ namespace CariMang {
 
         private void AddPerkuliahan(Perkuliahan perkuliahan) {
             var item = new ListViewItem();
-            item.Text = perkuliahan.Kuliah.Kode;
+            item.Text = item.ToolTipText = perkuliahan.Kuliah.Kode;
             item.SubItems.Add(perkuliahan.Kuliah.Nama);
             item.SubItems.Add(perkuliahan.Ruangan.Nama);
             item.SubItems.Add(((Perkuliahan.DaftarHari)perkuliahan.HariPerkuliahan).ToString());
@@ -166,14 +160,14 @@ namespace CariMang {
         private void DeletePerkuliahan(ListViewItem item) {
             Perkuliahan perkuliahan = (Perkuliahan)item.Tag;
 
-            if (MessageBox.Show("Mau dihapus?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus jadwal perkuliahan ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
             if (Perkuliahan.Delete(perkuliahan)) {                
                 listViewKuliah.Items.Remove(item);
             }
             else {
-                MessageBox.Show("Gagal delete perkuliahan.");
+                MessageBox.Show("Gagal menghapus jadwal perkuliahan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }        
 
@@ -187,7 +181,7 @@ namespace CariMang {
         private void AddPerbaikan(Perbaikan perbaikan)
         {
             var item = new ListViewItem();
-            item.Text = perbaikan.Ruangan.Nama;
+            item.Text = item.ToolTipText = perbaikan.Ruangan.Nama;
             item.SubItems.Add(perbaikan.TanggalMulai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL));
             item.SubItems.Add(perbaikan.TanggalSelesai.ToString(Perbaikan.FMT_DISPLAY_TANGGAL));
             item.SubItems.Add(perbaikan.Deskripsi);
@@ -219,7 +213,7 @@ namespace CariMang {
         private void DeletePerbaikan(ListViewItem item)
         {
             Perbaikan perbaikan = (Perbaikan)item.Tag;
-            if (MessageBox.Show("Mau dihapus " + perbaikan.Ruangan.Nama + " ?", "Serius", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            if (MessageBox.Show("Apakah Anda yakin ingin menghapus jadwal perbaikan " + perbaikan.Ruangan.Nama + "?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                     != DialogResult.Yes)
                 return;
             if (Perbaikan.Delete(perbaikan))
@@ -227,16 +221,21 @@ namespace CariMang {
                 listViewRusak.Items.Remove(item);
             }
             else {
-                MessageBox.Show("Gagal delete ruangan.");
+                MessageBox.Show("Gagal menghapus jadwal perbaikan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void GetAllKegiatan() {
+            var daftarKegiatan = Kegiatan.GetAll()
+                .OrderBy(i => i.Tanggal)
+                .ThenBy(i => i.WaktuMulai)
+                .ThenBy(i => i.WaktuSelesai)
+                .ToList();
             viewBookingJadwal.Items.Clear();
-            foreach (var kegiatan in Kegiatan.GetAll()) {
+            foreach (var kegiatan in daftarKegiatan) {
                 var item = new ListViewItem();
                 item.Tag = kegiatan;
-                item.Text = kegiatan.Ruangan.Nama;
+                item.Text = item.ToolTipText = kegiatan.Ruangan.Nama;
                 item.SubItems.Add(
                     String.Format("{0} {1:00}:00-{2:00}:00",
                     kegiatan.Tanggal.ToShortDateString(),
@@ -311,10 +310,10 @@ namespace CariMang {
                     return;
                 var ruangan = Ruangan.Add(form.Tipe, form.Nama, form.Kapasitas);
                 if (ruangan == null) {
-                    MessageBox.Show("Gagal nambah ruangan.");
+                    MessageBox.Show("Gagal menambahkan ruangan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                this.AddRuangan(ruangan);
+                GetAllRuangan();
             }
         }
 
@@ -340,11 +339,15 @@ namespace CariMang {
             using (FormPerkuliahan form = new FormPerkuliahan()) {
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
+                if (Perkuliahan.Exists(form.Ruangan, form.HariKuliah, form.WaktuMulai, form.WaktuSelesai)) {
+                    MessageBox.Show("Telah ada jadwal perkuliahan di waktu tersebut.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 var perkuliahan = Perkuliahan.Add(
                     form.Kuliah, form.Ruangan, form.HariKuliah,
                     form.WaktuMulai, form.WaktuSelesai, form.PenanggungJawab);
                 if (perkuliahan == null) {
-                    MessageBox.Show("Gagal nambah perkuliahan.");
+                    MessageBox.Show("Gagal menambahkan jadwal perkuliahan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.AddPerkuliahan(perkuliahan);
@@ -380,7 +383,7 @@ namespace CariMang {
                     form.Deskripsi);
                 if (perbaikan == null)
                 {
-                    MessageBox.Show("Gagal nambah perbaikan.");
+                    MessageBox.Show("Gagal menambahkan jadwal perbaikan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.AddPerbaikan(perbaikan);
@@ -420,17 +423,26 @@ namespace CariMang {
             int mulai = (int)numBookingCekMulai.Value;
             int selesai = (int)numBookingCekSelesai.Value;            
             if (kapasitas > ruangan.Kapasitas) {
-                MessageBox.Show("Kapasitas ruangan tidak mencukupi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kapasitas ruangan tidak mencukupi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (mulai >= selesai) {
-                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             var status = ruangan.Status(tanggal, mulai, selesai);
             if (status.Available) {
-                MessageBox.Show("Ruangan tersedia.", "Tersedia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (MessageBox.Show("Ruangan tersedia, apakah Anda ingin membookingnya?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                    != DialogResult.Yes)
+                    return;
+                comboBookingRuangan.SelectedIndex = comboBookingCek.SelectedIndex;
+                numBookingRuanganKapasitas.Value = numBookingCek.Value;
+                dateBookingRuangan.Value = dateBookingCek.Value;
+                numBookingRuanganMulai.Value = numBookingCekMulai.Value;
+                numBookingRuanganSelesai.Value = numBookingCekSelesai.Value;
+                pageBookingRuangan.PerformClick();
+                textBookingRuanganKegiatan.Focus();
             }
             else {
                 MessageBox.Show(status.Reason, "Tidak tersedia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -440,12 +452,12 @@ namespace CariMang {
         private void buttonBookingRuangan_Click(object sender, EventArgs e) {
             string nama = textBookingRuanganKegiatan.Text.Trim();
             if (nama.Length == 0) {
-                MessageBox.Show("Nama kegiatan tidak boleh kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nama kegiatan tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string tanggung = textBookingRuanganTanggung.Text.Trim();
             if (tanggung.Length == 0) {
-                MessageBox.Show("Penanggung jawab tidak boleh kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Penanggung jawab tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -455,11 +467,11 @@ namespace CariMang {
             int mulai = (int)numBookingRuanganMulai.Value;
             int selesai = (int)numBookingRuanganSelesai.Value;
             if (kapasitas > ruangan.Kapasitas) {
-                MessageBox.Show("Kapasitas ruangan tidak mencukupi", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kapasitas ruangan tidak mencukupi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (mulai >= selesai) {
-                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -472,12 +484,12 @@ namespace CariMang {
             Peminjam peminjam = Peminjam.Add(tanggung);
             var kegiatan = Kegiatan.Add(peminjam, ruangan, nama, tanggal, mulai, selesai);
             if (kegiatan == null) {
-                MessageBox.Show("Gagal menambahkan kegiatan", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Gagal menambahkan kegiatan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             this.GetAllKegiatan();
-            MessageBox.Show("Kegiatan telah ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Kegiatan telah ditambahkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonBookingJadwalHapus_Click(object sender, EventArgs e) {
@@ -496,7 +508,7 @@ namespace CariMang {
             DateTime tanggalAwal = datePickerTanggalAwalStatistikRusak.Value.Date;
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRusak.Value.Date;
             if (tanggalAkhir < tanggalAwal) {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tanggal akhir harus lebih besar dari tanggal awal.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -518,7 +530,7 @@ namespace CariMang {
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikRuangan.Value.Date;
             if (tanggalAkhir < tanggalAwal)
             {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tanggal akhir harus lebih besar dari tanggal awal.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -541,7 +553,7 @@ namespace CariMang {
             DateTime tanggalAkhir = datePickerTanggalAkhirStatistikPeminjam.Value.Date;
             if (tanggalAkhir < tanggalAwal)
             {
-                MessageBox.Show("Maaf, periode tanggal yang diinputkan salah! Tanggal akhir harus berada setelah tanggal awal.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tanggal akhir harus lebih besar dari tanggal awal.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

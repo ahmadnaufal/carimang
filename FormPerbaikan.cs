@@ -65,7 +65,7 @@ namespace CariMang {
             this.Deskripsi = textBoxDeskripsi.Text;
 
             if (this.TanggalMulai > this.TanggalSelesai) {
-                MessageBox.Show("Tanggal mulai harus lebih kecil/sama dengan tanggal selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tanggal mulai harus lebih kecil/sama dengan tanggal selesai.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             this.DialogResult = DialogResult.OK;

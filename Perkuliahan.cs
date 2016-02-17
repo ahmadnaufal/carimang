@@ -202,8 +202,8 @@ namespace CariMang {
             return result;
         }
 
-        public static bool Exists(Ruangan ruangan, DateTime tanggal, int waktuMulai, int waktuSelesai) {
-            bool result = false;            
+        public static bool Exists(Ruangan ruangan, int hariPerkuliahan, int waktuMulai, int waktuSelesai) {
+            bool result = false;
 
             try {
                 using (MySqlConnection connection = MySqlConnector.GetConnection()) {
@@ -214,10 +214,10 @@ namespace CariMang {
                         COL_HARI_PERKULIAHAN, PRM_HARI_PERKULIAHAN,
                         PRM_WAKTU_MULAI, COL_WAKTU_MULAI, COL_WAKTU_SELESAI + "-1",
                         PRM_WAKTU_SELESAI, COL_WAKTU_MULAI + "+1", COL_WAKTU_SELESAI);
-                    
-                    MySqlCommand command = new MySqlCommand(query, connection);                    
+
+                    MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue(PRM_NAMA, ruangan.Nama);
-                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, ((int)tanggal.DayOfWeek + 6) % 7);
+                    command.Parameters.AddWithValue(PRM_HARI_PERKULIAHAN, hariPerkuliahan);
                     command.Parameters.AddWithValue(PRM_WAKTU_MULAI, waktuMulai);
                     command.Parameters.AddWithValue(PRM_WAKTU_SELESAI, waktuSelesai);
 
@@ -225,10 +225,15 @@ namespace CariMang {
                     result = (long)command.ExecuteScalar() > 0;
                 }
             }
-            catch (MySqlException) {
+            catch (MySqlException e) {
+                Console.WriteLine(e.Message);
             }
 
             return result;
+        }
+
+        public static bool Exists(Ruangan ruangan, DateTime tanggal, int waktuMulai, int waktuSelesai) {
+            return Exists(ruangan, ((int)tanggal.DayOfWeek + 6) % 7, waktuMulai, waktuSelesai);            
         }
 
         public Kuliah Kuliah {

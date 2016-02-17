@@ -86,11 +86,11 @@ namespace CariMang {
             this.PenanggungJawab = textTanggung.Text.Trim();
 
             if (String.IsNullOrWhiteSpace(this.PenanggungJawab)) {
-                MessageBox.Show("Nama penanggung jawab tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nama penanggung jawab tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (this.WaktuMulai >= this.WaktuSelesai) {
-                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Waktu mulai harus lebih kecil dari waktu selesai.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             this.DialogResult = DialogResult.OK;

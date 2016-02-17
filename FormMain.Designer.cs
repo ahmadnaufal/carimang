@@ -24,17 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitPanel = new System.Windows.Forms.SplitContainer();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.panelTab = new System.Windows.Forms.Panel();
             this.tabData = new System.Windows.Forms.Button();
@@ -167,12 +169,12 @@
             this.chartStatistikPeminjam = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelStatistikPeminjam = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanel)).BeginInit();
             this.splitPanel.Panel1.SuspendLayout();
             this.splitPanel.Panel2.SuspendLayout();
             this.splitPanel.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panelTab.SuspendLayout();
             this.panelPage.SuspendLayout();
             this.panelPageData.SuspendLayout();
@@ -200,7 +202,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikRusak)).BeginInit();
             this.panelStatistikPeminjam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // splitPanel
@@ -244,6 +245,17 @@
             this.panelTitle.Size = new System.Drawing.Size(256, 76);
             this.panelTitle.TabIndex = 7;
             // 
+            // pictureLogo
+            // 
+            this.pictureLogo.BackgroundImage = global::CariMang.Properties.Resources.logo;
+            this.pictureLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureLogo.Location = new System.Drawing.Point(58, 14);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(175, 66);
+            this.pictureLogo.TabIndex = 4;
+            this.pictureLogo.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureLogo, "CariMang: Book Your Room & Laboratory");
+            // 
             // buttonBack
             // 
             this.buttonBack.AutoSize = true;
@@ -254,7 +266,7 @@
             this.buttonBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Image = global::CariMang.Properties.Resources.back;
+            this.buttonBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonBack.Image")));
             this.buttonBack.Location = new System.Drawing.Point(22, 25);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(30, 30);
@@ -651,6 +663,7 @@
             this.listViewJadwal.Location = new System.Drawing.Point(12, 82);
             this.listViewJadwal.MultiSelect = false;
             this.listViewJadwal.Name = "listViewJadwal";
+            this.listViewJadwal.ShowItemToolTips = true;
             this.listViewJadwal.Size = new System.Drawing.Size(500, 427);
             this.listViewJadwal.TabIndex = 3;
             this.listViewJadwal.UseCompatibleStateImageBehavior = false;
@@ -794,6 +807,7 @@
             this.listViewRuangan.Location = new System.Drawing.Point(12, 82);
             this.listViewRuangan.MultiSelect = false;
             this.listViewRuangan.Name = "listViewRuangan";
+            this.listViewRuangan.ShowItemToolTips = true;
             this.listViewRuangan.Size = new System.Drawing.Size(500, 427);
             this.listViewRuangan.TabIndex = 4;
             this.listViewRuangan.UseCompatibleStateImageBehavior = false;
@@ -890,6 +904,7 @@
             this.listViewKuliah.Location = new System.Drawing.Point(12, 82);
             this.listViewKuliah.MultiSelect = false;
             this.listViewKuliah.Name = "listViewKuliah";
+            this.listViewKuliah.ShowItemToolTips = true;
             this.listViewKuliah.Size = new System.Drawing.Size(500, 427);
             this.listViewKuliah.TabIndex = 4;
             this.listViewKuliah.UseCompatibleStateImageBehavior = false;
@@ -995,6 +1010,7 @@
             this.listViewRusak.Location = new System.Drawing.Point(12, 82);
             this.listViewRusak.MultiSelect = false;
             this.listViewRusak.Name = "listViewRusak";
+            this.listViewRusak.ShowItemToolTips = true;
             this.listViewRusak.Size = new System.Drawing.Size(500, 427);
             this.listViewRusak.TabIndex = 4;
             this.listViewRusak.UseCompatibleStateImageBehavior = false;
@@ -1463,6 +1479,7 @@
             this.viewBookingJadwal.Location = new System.Drawing.Point(12, 82);
             this.viewBookingJadwal.MultiSelect = false;
             this.viewBookingJadwal.Name = "viewBookingJadwal";
+            this.viewBookingJadwal.ShowItemToolTips = true;
             this.viewBookingJadwal.Size = new System.Drawing.Size(500, 427);
             this.viewBookingJadwal.TabIndex = 4;
             this.viewBookingJadwal.UseCompatibleStateImageBehavior = false;
@@ -1578,22 +1595,22 @@
             this.chartStatistikRuangan.BackColor = System.Drawing.Color.Transparent;
             this.chartStatistikRuangan.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikRuangan.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisX2.MajorGrid.Enabled = false;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.AxisY2.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chartStatistikRuangan.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartStatistikRuangan.Legends.Add(legend4);
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX2.MajorGrid.Enabled = false;
+            chartArea1.AxisY.MajorGrid.Enabled = false;
+            chartArea1.AxisY2.MajorGrid.Enabled = false;
+            chartArea1.Name = "ChartArea1";
+            this.chartStatistikRuangan.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartStatistikRuangan.Legends.Add(legend1);
             this.chartStatistikRuangan.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRuangan.Name = "chartStatistikRuangan";
             this.chartStatistikRuangan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Pemakaian Ruangan";
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikRuangan.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Pemakaian Ruangan";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRuangan.Series.Add(series1);
             this.chartStatistikRuangan.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRuangan.TabIndex = 6;
             this.chartStatistikRuangan.Text = "Statistik Peminjaman Ruangan";
@@ -1666,22 +1683,22 @@
             this.chartStatistikRusak.BackColor = System.Drawing.Color.Transparent;
             this.chartStatistikRusak.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikRusak.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.MajorGrid.Enabled = false;
-            chartArea5.AxisX2.MajorGrid.Enabled = false;
-            chartArea5.AxisY.MajorGrid.Enabled = false;
-            chartArea5.AxisY2.MajorGrid.Enabled = false;
-            chartArea5.Name = "ChartArea1";
-            this.chartStatistikRusak.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartStatistikRusak.Legends.Add(legend5);
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisX2.MajorGrid.Enabled = false;
+            chartArea2.AxisY.MajorGrid.Enabled = false;
+            chartArea2.AxisY2.MajorGrid.Enabled = false;
+            chartArea2.Name = "ChartArea1";
+            this.chartStatistikRusak.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStatistikRusak.Legends.Add(legend2);
             this.chartStatistikRusak.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRusak.Name = "chartStatistikRusak";
             this.chartStatistikRusak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Kerusakan Ruangan";
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikRusak.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Kerusakan Ruangan";
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikRusak.Series.Add(series2);
             this.chartStatistikRusak.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikRusak.TabIndex = 6;
             this.chartStatistikRusak.Text = "Statistik Ruangan Rusak";
@@ -1765,21 +1782,21 @@
             this.chartStatistikPeminjam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chartStatistikPeminjam.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chartStatistikPeminjam.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea6.AxisX.MajorGrid.Enabled = false;
-            chartArea6.AxisX2.MajorGrid.Enabled = false;
-            chartArea6.AxisY.MajorGrid.Enabled = false;
-            chartArea6.Name = "ChartArea1";
-            this.chartStatistikPeminjam.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartStatistikPeminjam.Legends.Add(legend6);
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisX2.MajorGrid.Enabled = false;
+            chartArea3.AxisY.MajorGrid.Enabled = false;
+            chartArea3.Name = "ChartArea1";
+            this.chartStatistikPeminjam.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartStatistikPeminjam.Legends.Add(legend3);
             this.chartStatistikPeminjam.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
             this.chartStatistikPeminjam.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Banyaknya Peminjaman";
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            this.chartStatistikPeminjam.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Banyaknya Peminjaman";
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            this.chartStatistikPeminjam.Series.Add(series3);
             this.chartStatistikPeminjam.Size = new System.Drawing.Size(500, 327);
             this.chartStatistikPeminjam.TabIndex = 6;
             this.chartStatistikPeminjam.Text = "Statistik Peminjam";
@@ -1794,17 +1811,6 @@
             this.labelStatistikPeminjam.Size = new System.Drawing.Size(274, 30);
             this.labelStatistikPeminjam.TabIndex = 0;
             this.labelStatistikPeminjam.Text = "Statistik Frekuensi Peminjam";
-            // 
-            // pictureLogo
-            // 
-            this.pictureLogo.BackgroundImage = global::CariMang.Properties.Resources.logo;
-            this.pictureLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureLogo.Location = new System.Drawing.Point(58, 14);
-            this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(175, 66);
-            this.pictureLogo.TabIndex = 4;
-            this.pictureLogo.TabStop = false;
-            this.toolTip.SetToolTip(this.pictureLogo, "CariMang: Book Your Room & Laboratory");
             // 
             // FormMain
             // 
@@ -1824,6 +1830,7 @@
             this.splitPanel.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panelTab.ResumeLayout(false);
             this.panelPage.ResumeLayout(false);
             this.panelPageData.ResumeLayout(false);
@@ -1856,7 +1863,6 @@
             this.panelStatistikPeminjam.ResumeLayout(false);
             this.panelStatistikPeminjam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartStatistikPeminjam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

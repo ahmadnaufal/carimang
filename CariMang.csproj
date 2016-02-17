@@ -156,7 +156,7 @@
     <None Include="Assets\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back.bmp" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
