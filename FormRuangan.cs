@@ -50,6 +50,10 @@ namespace CariMang {
             this.Kapasitas = (int)numKapasitas.Value;
             this.Tipe = (Ruangan.TipeRuangan)comboTipe.SelectedIndex;
 
+            if (this.Kapasitas < Ruangan.MIN_KAPASITAS || this.Kapasitas > Ruangan.MAX_KAPASITAS) {
+                MessageBox.Show("Kapasitas tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (String.IsNullOrWhiteSpace(this.Nama)) {
                 MessageBox.Show("Nama ruangan tidak boleh kosong.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

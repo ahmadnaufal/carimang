@@ -28,6 +28,9 @@ namespace CariMang {
             Laboratorium
         }
 
+        public static int MIN_KAPASITAS = 1;
+        public static int MAX_KAPASITAS = 500;
+
         private static string TBL_RUANGAN = "ruangan";
 
         private static string COL_TIPE_RUANGAN = "tipe_ruangan";

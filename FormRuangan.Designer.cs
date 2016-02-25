@@ -89,12 +89,7 @@
             0});
             this.numKapasitas.Location = new System.Drawing.Point(87, 75);
             this.numKapasitas.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numKapasitas.Minimum = new decimal(new int[] {
-            1,
+            501,
             0,
             0,
             0});
