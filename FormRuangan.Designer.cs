@@ -93,6 +93,11 @@
             0,
             0,
             0});
+            this.numKapasitas.Minimum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
             this.numKapasitas.Name = "numKapasitas";
             this.numKapasitas.Size = new System.Drawing.Size(47, 20);
             this.numKapasitas.TabIndex = 5;

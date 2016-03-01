@@ -51,7 +51,7 @@ namespace CariMang {
             this.Tipe = (Ruangan.TipeRuangan)comboTipe.SelectedIndex;
 
             if (this.Kapasitas < Ruangan.MIN_KAPASITAS || this.Kapasitas > Ruangan.MAX_KAPASITAS) {
-                MessageBox.Show("Kapasitas tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(String.Format("Kapasitas tidak valid. ({0}-{1})", Ruangan.MIN_KAPASITAS, Ruangan.MAX_KAPASITAS), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             if (String.IsNullOrWhiteSpace(this.Nama)) {

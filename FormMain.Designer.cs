@@ -1605,7 +1605,9 @@
             this.chartStatistikRuangan.Legends.Add(legend1);
             this.chartStatistikRuangan.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRuangan.Name = "chartStatistikRuangan";
-            this.chartStatistikRuangan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chartStatistikRuangan.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartStatistikRuangan.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Black};
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Pemakaian Ruangan";
@@ -1693,7 +1695,9 @@
             this.chartStatistikRusak.Legends.Add(legend2);
             this.chartStatistikRusak.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikRusak.Name = "chartStatistikRusak";
-            this.chartStatistikRusak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chartStatistikRusak.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartStatistikRusak.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Black};
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Kerusakan Ruangan";
@@ -1791,7 +1795,9 @@
             this.chartStatistikPeminjam.Legends.Add(legend3);
             this.chartStatistikPeminjam.Location = new System.Drawing.Point(12, 182);
             this.chartStatistikPeminjam.Name = "chartStatistikPeminjam";
-            this.chartStatistikPeminjam.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            this.chartStatistikPeminjam.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartStatistikPeminjam.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Black};
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
             series3.Name = "Banyaknya Peminjaman";
